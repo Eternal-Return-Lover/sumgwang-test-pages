@@ -3,6 +3,8 @@ import { join, resolve } from 'node:path';
 import { Script } from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
+import * as sourceModule from '../src/fixtures.mjs';
+import {siteForProject,checkManifest,checkDeployment} from '../../site-tools.mjs';
 const root=resolve('dist');
 async function walk(dir){const files=[];for(const f of await readdir(dir,{withFileTypes:true})){const p=join(dir,f.name);files.push(...(f.isDirectory()?await walk(p):[p]));}return files;}
 const files=await walk(root);let refs=0,html=0;
@@ -13,9 +15,7 @@ for(const file of files){
  for(const match of text.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)){if(match[1].trim())new Script(match[1],{filename:file});}
  if(!file.includes(join('dist','lab')))assert(!/href="[^\"]*\/lab\//.test(text),'Target must not link to answer room');
 }
-const manifest=JSON.parse(await readFile('reference/ground-truth.json','utf8'));
-assert.equal(manifest.cases.length,35);assert.equal(manifest.negativeControls.length,12);assert.equal(manifest.cases.reduce((n,c)=>n+c.techniques.length,0),40);
-assert.equal(new Set([...manifest.cases,...manifest.negativeControls].map(c=>c.caseId)).size,47);
-for(const c of [...manifest.cases,...manifest.negativeControls]){assert((await stat(join(root,c.page.split('?')[0]))).isFile());for(const f of c.frames)assert((await stat(join(root,f.src))).isFile());}
-const totals={};for(const c of manifest.cases)for(const t of c.techniques)totals[t]=(totals[t]||0)+1;
-console.log(JSON.stringify({ok:true,htmlDocuments:html,localReferences:refs,expectedFindings:40,techniques:totals}));
+const site=await siteForProject(import.meta.url);
+const counts=await checkManifest(site,sourceModule);
+const deploymentFiles=await checkDeployment(site);
+console.log(JSON.stringify({ok:true,site:site.targetDirectory,htmlDocuments:html,localReferences:refs,deploymentFiles,...counts}));

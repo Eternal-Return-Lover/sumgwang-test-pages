@@ -1,0 +1,825 @@
+{
+  "version": "1.0.0",
+  "siteId": "daon-library",
+  "siteName": "다온시립도서관 책마루",
+  "deployment": {
+    "targetDirectory": "test-site-2",
+    "sourceDirectory": "source/daon-library-ad-lab/dist"
+  },
+  "entry": "index.html",
+  "fixtureViewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "maxInjectionDelayMs": 2800,
+  "scope": "모집요강 기반 모의 환경. iframe 문서는 부모 URL 아래의 프레임 경로로만 집계.",
+  "scenarioCount": 60,
+  "urlPolicy": "query values preserved; parameter order, fragment, http/https and trailing slash ignored",
+  "cases": [
+    {
+      "caseId": "T01",
+      "page": "board/posts/4101.html",
+      "name": "전각 영문",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ｍｅｇａ－ＢＥＴ 신규 가입 첫 충전 30％, 온라인 카지노 보너스 지급",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "E01",
+      "page": "board/posts/4101.html",
+      "name": "한 글의 두 번째 광고",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T02",
+      "page": "board/posts/4114.html",
+      "name": "키릴 혼합",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "САЅІΝО 신규 회원 슬롯 무료 체험, 첫 충전 보너스 지급",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "E02",
+      "page": "board/posts/4114.html",
+      "name": "한 글의 복합 댓글",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T03",
+      "page": "board/posts/4127.html",
+      "name": "숫자 치환",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "CAS1N0 가입 즉시 카지노 보너스, 온라인 베팅 신규 회원 모집",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "E03",
+      "page": "board/posts/4127.html",
+      "name": "한 글의 전각 댓글",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "ｍｅｇａ－ＢＥＴ 신규 가입 카지노 보너스",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T04",
+      "page": "board/posts/4140.html",
+      "name": "전각 한영 혼합",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 ｃａｓｉｎｏ 첫충 30％ 보너스 지급, 신규 회원 모집",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "E04",
+      "page": "board/posts/4140.html",
+      "name": "한 글의 작은 광고",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T05",
+      "page": "board/posts/4153.html",
+      "name": "호환 자모",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T06",
+      "page": "board/posts/4166.html",
+      "name": "조합 자모 NFD",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "카지노 신규 가입 보너스, 온라인 슬롯 무료 체험",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T07",
+      "page": "board/posts/4179.html",
+      "name": "자모 사이 공백",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋ ㅏ ㅈ ㅣ ㄴ ㅗ 가입 보너스 지급, 첫 충전 30% 혜택",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T08",
+      "page": "board/posts/4192.html",
+      "name": "일부 음절 자모",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카ㅈㅣ노 첫 충전 보너스 지급, 신규 회원 즉시 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T09",
+      "page": "board/posts/4205.html",
+      "name": "color:transparent",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T10",
+      "page": "board/posts/4218.html",
+      "name": "opacity:0",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T11",
+      "page": "board/posts/4231.html",
+      "name": "동일 배경색",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T12",
+      "page": "board/posts/4244.html",
+      "name": "부모 opacity:0",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T13",
+      "page": "board/posts/4257.html",
+      "name": "알파 0 색상",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T14",
+      "page": "board/posts/4270.html",
+      "name": "부모 색상 상속",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T15",
+      "page": "board/posts/4283.html",
+      "name": "display:none",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T16",
+      "page": "board/posts/4296.html",
+      "name": "음수 좌표",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T17",
+      "page": "board/posts/4309.html",
+      "name": "글자 0px",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T18",
+      "page": "board/posts/4322.html",
+      "name": "글자 1px",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T19",
+      "page": "board/posts/4335.html",
+      "name": "부모 display:none",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T20",
+      "page": "board/posts/4348.html",
+      "name": "상단 음수 고정 좌표",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T21",
+      "page": "board/posts/4361.html",
+      "name": "전각 + 투명",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ｃａｓｉｎｏ 신규 회원 첫 충전 보너스 지급",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T22",
+      "page": "board/posts/4374.html",
+      "name": "자모 + display:none",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T23",
+      "page": "board/posts/4387.html",
+      "name": "전각 + 화면 밖",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ｍｅｇａ－ＢＥＴ 카지노 가입 보너스 즉시 지급",
+      "techniques": [
+        "HOMOGLYPH",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T24",
+      "page": "board/posts/4400.html",
+      "name": "자모 + 투명",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T25",
+      "page": "board/posts/4413.html",
+      "name": "댓글 650ms 지연",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "ｃａｓｉｎｏ 온라인 슬롯 무료 체험 신규 가입 보너스",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 650
+    },
+    {
+      "caseId": "T26",
+      "page": "board/posts/4426.html",
+      "name": "댓글 1600ms 지연",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 1600
+    },
+    {
+      "caseId": "T27",
+      "page": "board/posts/4439.html",
+      "name": "댓글 2800ms 지연",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 2800
+    },
+    {
+      "caseId": "T28",
+      "page": "board/posts/4452.html",
+      "name": "iframe 1단계",
+      "selector": "div.widget-content > div.entry-fragment > p.excerpt",
+      "frames": [
+        {
+          "src": "widgets/4452-1.html",
+          "selector": "iframe.community-widget"
+        }
+      ],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T29",
+      "page": "board/posts/4465.html",
+      "name": "iframe 2단계",
+      "selector": "div.widget-content > div.entry-fragment > p.excerpt",
+      "frames": [
+        {
+          "src": "widgets/4465-1.html",
+          "selector": "iframe.community-widget"
+        },
+        {
+          "src": "widgets/4465-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T30",
+      "page": "board/posts/4478.html",
+      "name": "지연 iframe 2단계",
+      "selector": "div.widget-content > div.entry-fragment > p.excerpt",
+      "frames": [
+        {
+          "src": "widgets/4478-1.html",
+          "selector": "iframe.community-widget"
+        },
+        {
+          "src": "widgets/4478-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 첫충 보너스",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 1200
+    },
+    {
+      "caseId": "T31",
+      "page": "board/posts/4491.html",
+      "name": "동일 클래스 반복 형제",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt:nth-of-type(2)",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T32",
+      "page": "board/posts/4504.html",
+      "name": "한 요소 같은 기법 반복",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입 / ㅅㅡㄹㅗㅅㅡ 무료 체험 즉시 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T33",
+      "page": "records/2026/autumn/notes/read.html",
+      "name": "5단계 링크 + 지연 발견",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T34",
+      "page": "board/posts/4686.html",
+      "name": "클래스 없는 깊은 자식",
+      "selector": "div.article-body > div.reading-note > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T35",
+      "page": "board/posts/4699.html",
+      "name": "3종 복합과 부모 은닉",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 신규 가입 보너스 지급",
+      "techniques": [
+        "HOMOGLYPH",
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T36",
+      "page": "board/posts/4712.html",
+      "name": "투명 부모 + 작은 글자",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "techniques": [
+        "TRANSPARENT",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T37",
+      "page": "board/posts/4725.html",
+      "name": "지연 iframe 내부 지연 댓글",
+      "selector": "div.widget-content > div.entry-fragment > p.excerpt",
+      "frames": [
+        {
+          "src": "widgets/4725-1.html",
+          "selector": "iframe.community-widget"
+        },
+        {
+          "src": "widgets/4725-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 2250
+    },
+    {
+      "caseId": "T38",
+      "page": "board/posts/4738.html",
+      "name": "3단계 iframe 부모 은닉",
+      "selector": "div.widget-content > div.entry-fragment > p.excerpt",
+      "frames": [
+        {
+          "src": "widgets/4738-1.html",
+          "selector": "iframe.community-widget"
+        },
+        {
+          "src": "widgets/4738-2.html",
+          "selector": "iframe.detail-widget"
+        },
+        {
+          "src": "widgets/4738-3.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T39",
+      "page": "records/2026/autumn/letters/read.html",
+      "name": "지연 정상 링크 끝의 기록",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ＣＡＳ１ＮＯ 첫 충전 보너스, 신규 회원 가입",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "T40",
+      "page": "board/posts/4764.html",
+      "name": "의견 표의 속성 선택자",
+      "selector": "div.article-body > table.opinion-table > tbody > tr:nth-of-type(2) > td[data-column=\"message\"]",
+      "frames": [],
+      "text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "Q01",
+      "page": "board/view.html?id=1024&edition=autumn",
+      "name": "쿼리 분기 A",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "Q02",
+      "page": "board/view.html?id=1180&edition=autumn",
+      "name": "쿼리 분기 B",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "Q03",
+      "page": "board/view.html?id=1024&edition=winter",
+      "name": "같은 ID 다른 쿼리 본문",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "techniques": [
+        "HOMOGLYPH",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0
+    },
+    {
+      "caseId": "Q04",
+      "page": "board/view.html?id=1180&edition=winter",
+      "name": "쿼리 값과 부모 투명",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "techniques": [
+        "JAMO",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0
+    }
+  ],
+  "negativeControls": [
+    {
+      "caseId": "N01",
+      "page": "board/posts/4517.html",
+      "name": "접근성 건너뛰기",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "본문으로 바로가기",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N02",
+      "page": "board/posts/4530.html",
+      "name": "숨겨진 정상 메뉴",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "시민소통광장 이용 안내 메뉴",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N03",
+      "page": "board/posts/4543.html",
+      "name": "한글 교육 자료",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "한글교실: ㅋㅏ는 카, ㄴㅏ는 나로 읽어요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N04",
+      "page": "board/posts/4556.html",
+      "name": "전각 정상 표기",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "２０２６ 다온시 ＢＯＯＫ ＦＡＩＲ 도서관 행사 안내",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N05",
+      "page": "board/posts/4569.html",
+      "name": "예방 안내 문맥",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "온라인 카지노 가입 보너스를 내세운 불법광고를 주의하세요. 도박 피해 예방 상담을 안내합니다.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N06",
+      "page": "board/posts/4582.html",
+      "name": "숨겨진 예방 안내",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "카지노 가입 보너스 광고는 불법 도박 유도일 수 있습니다. 클릭하지 말고 신고하세요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N07",
+      "page": "board/posts/4595.html",
+      "name": "투명 정상 안내",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "메뉴를 여는 중입니다. 잠시 기다려 주세요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N08",
+      "page": "board/posts/4608.html",
+      "name": "화면 아래 정상 콘텐츠",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "페이지 아래에 있는 일반 시민 안내문입니다. 화면 밖에 있어도 은닉 광고가 아닙니다.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N09",
+      "page": "board/posts/4621.html",
+      "name": "혼합 언어 안내",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "Добро пожаловать! Welcome to Daon. 다문화 가족 생활 안내입니다.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N10",
+      "page": "board/posts/4634.html",
+      "name": "정상 금융 안내",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "서민금융 상담은 공식 기관을 통해 확인하세요. 선입금을 요구하는 대출은 주의해야 합니다.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N11",
+      "page": "board/posts/4647.html",
+      "name": "정상 의약품 안내",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "전문 의약품은 의사의 처방에 따라 복용하세요. 온라인 불법 판매에 주의하세요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N12",
+      "page": "board/posts/4660.html",
+      "name": "운동 프로그램",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "성인 수영교실 신규 회원을 모집합니다. 다온체육센터에서 건강한 일상을 시작하세요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N13",
+      "page": "board/posts/4777.html",
+      "name": "조합 자모 교육 자료",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "한글 자모를 조합해서 책을 읽어요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N14",
+      "page": "board/posts/4790.html",
+      "name": "iframe 안의 예방 안내",
+      "selector": "div.widget-content > div.entry-fragment > p.excerpt",
+      "frames": [
+        {
+          "src": "widgets/4790-1.html",
+          "selector": "iframe.community-widget"
+        },
+        {
+          "src": "widgets/4790-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "text": "성인 영상 가입과 온라인 카지노 보너스를 내세운 불법광고는 클릭하지 마세요.",
+      "techniques": [],
+      "delayMs": 0
+    },
+    {
+      "caseId": "N15",
+      "page": "board/posts/4803.html",
+      "name": "지연 생성 접근성 안내",
+      "selector": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "frames": [],
+      "text": "독서모임 자료 로딩이 완료되었습니다.",
+      "techniques": [],
+      "delayMs": 1600
+    },
+    {
+      "caseId": "N16",
+      "page": "board/posts/4816.html",
+      "name": "작은 글씨의 정상 각주",
+      "selector": "div.article-body > div.entry-fragment > p.excerpt",
+      "frames": [],
+      "text": "도서관 행사 사진은 참여자의 동의를 받아 게시합니다.",
+      "techniques": [],
+      "delayMs": 0
+    }
+  ]
+}

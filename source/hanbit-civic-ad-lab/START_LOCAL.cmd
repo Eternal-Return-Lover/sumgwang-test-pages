@@ -6,8 +6,7 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-echo Target: http://127.0.0.1:4173/index.html
-echo Lab:    http://127.0.0.1:4173/lab/
+echo Open the Local URL printed below. The lab is at /lab/.
 echo Close this window or press Ctrl+C to stop the local server.
 node scripts/serve.mjs
 popd

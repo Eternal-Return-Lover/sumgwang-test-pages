@@ -1,7 +1,9 @@
 // Deliberately imperfect result used to verify the local comparison tool.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import {siteForProject} from '../../site-tools.mjs';
+const site=await siteForProject(import.meta.url);
 const manifest=JSON.parse(await readFile('reference/ground-truth.json','utf8'));
-const base=new URL('http://127.0.0.1:4173/');
+const base=new URL(process.env.ENTRY_URL||`http://127.0.0.1:${process.env.PORT||site.port}/`);
 const expected=manifest.cases.flatMap(c=>c.techniques.map(t=>({id:`${c.caseId}_${t}`,url:new URL(c.page,base).href,is_violation:true,location:[...c.frames.map(f=>`iframe[src="${new URL(f.src,base).href}"]`),c.selector].join(' >>> '),evidence_text:c.text,technique:t})));
 expected[0].location='p'; // Ambiguous selector: FP, and expected target FN.
 expected.splice(1,1); // Missing target: second FN.
