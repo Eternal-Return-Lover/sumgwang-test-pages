@@ -1,0 +1,402 @@
+{
+  "base": "http://127.0.0.1:62876/test-site-3/",
+  "labUrl": "http://127.0.0.1:62876/source/haesol-sports-ad-lab/dist/lab/index.html",
+  "counts": {
+    "scenarios": 64,
+    "scenarioPages": 64,
+    "positiveElements": 52,
+    "negativeControls": 16,
+    "expectedFindings": 68,
+    "techniques": {
+      "HOMOGLYPH": 14,
+      "OFFSCREEN": 19,
+      "JAMO": 15,
+      "TRANSPARENT": 20
+    }
+  },
+  "checks": [
+    {
+      "name": "portal-layout",
+      "detail": {
+        "desktop": "1440x1000",
+        "mobile": "390x844",
+        "overflow": false,
+        "rootLinks": 3
+      }
+    },
+    {
+      "name": "pagination-search",
+      "detail": {
+        "pages": 8,
+        "pageSize": 8,
+        "lastPageItems": 6,
+        "search": true,
+        "empty": true,
+        "reset": true
+      }
+    },
+    {
+      "name": "query-content",
+      "detail": {
+        "sameIdDifferentVenue": true,
+        "unknownMessage": true
+      }
+    },
+    {
+      "name": "delayed-comment",
+      "detail": {
+        "delayMs": 2800,
+        "before": false,
+        "after": true
+      }
+    },
+    {
+      "name": "delayed-nested-frame",
+      "detail": {
+        "frames": 2,
+        "totalDelayMs": 2250
+      }
+    },
+    {
+      "name": "public-frame-and-scope",
+      "detail": {
+        "frames": 3,
+        "labAbsent": true
+      }
+    },
+    {
+      "name": "lab-controls-downloads",
+      "detail": {
+        "all": 68,
+        "normal": 16,
+        "findings": 68,
+        "bom": false
+      }
+    },
+    {
+      "name": "DOM-audit",
+      "detail": {
+        "result": "검증 완료 · 68 / 68개 요소 위치·원문 일치 · 12.2초. 이 검사는 사이트 자체 검증이며 탐지기 성능 점수가 아닙니다."
+      }
+    },
+    {
+      "name": "entry-link-crawl",
+      "detail": {
+        "visited": 81,
+        "reachable": 64,
+        "total": 64,
+        "maxDepth": 6,
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "lab-mobile",
+      "detail": {
+        "overflow": false
+      }
+    },
+    {
+      "name": "standalone-dist",
+      "detail": {
+        "audit": "68 / 68"
+      }
+    },
+    {
+      "name": "pages-prefix",
+      "detail": {
+        "entry": "http://127.0.0.1:62876/sumgwang-test-pages/test-site-3/index.html",
+        "tp": 68,
+        "fn": 0,
+        "fp": 0
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "name": "완전한 정답",
+      "expected": {
+        "tp": 68,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 68,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "일부 정답 누락",
+      "expected": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "정상 요소 오탐",
+      "expected": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "동일 요소 다른 선택자의 중복",
+      "expected": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "duplicates": 1
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 1,
+        "total": 68
+      }
+    },
+    {
+      "name": "다른 CSS와 원문",
+      "expected": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "모호한 선택자",
+      "expected": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "필수 필드 누락",
+      "expected": {
+        "tp": 0,
+        "fn": 68,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "잘못된 JSON",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: JSON을 읽을 수 없습니다. 문법을 확인해 주세요."
+      }
+    },
+    {
+      "name": "BOM 포함",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: UTF-8 BOM을 제거해 주세요."
+      }
+    },
+    {
+      "name": "쿼리 순서와 fragment",
+      "expected": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "쿼리 값이 다른 본문",
+      "expected": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "상대 iframe 경로",
+      "expected": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "ID 중복",
+      "expected": {
+        "tp": 1,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "일반 안내 동일 요소 오탐 중복",
+      "expected": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1,
+        "duplicates": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 1,
+        "total": 68
+      }
+    },
+    {
+      "name": "프로토콜과 끝 슬래시",
+      "expected": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "entry_url 타입 오류",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: meta.entry_url은 전체 HTTP(S) URL이어야 합니다."
+      }
+    },
+    {
+      "name": "검출 없음",
+      "expected": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "한 글의 복수 광고 요소",
+      "expected": {
+        "tp": 4,
+        "fn": 64,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 4,
+        "fn": 64,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    },
+    {
+      "name": "GitHub Pages 하위 경로",
+      "expected": {
+        "tp": 68,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 68,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 68
+      }
+    }
+  ],
+  "errors": [],
+  "ok": true
+}
