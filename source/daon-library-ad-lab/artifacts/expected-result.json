@@ -1,0 +1,500 @@
+{
+  "meta": {
+    "topic": "TOPIC",
+    "entry_url": "http://127.0.0.1:61225/test-site-2/index.html",
+    "started_at": "2026-10-04T19:26:23.014Z",
+    "finished_at": "2026-10-04T19:26:23.014Z",
+    "elapsed_sec": 0,
+    "tool_version": "reference-1.0.0"
+  },
+  "findings": [
+    {
+      "id": "T01_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4101.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 가입 첫 충전 30％, 온라인 카지노 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E01_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4101.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T02_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4114.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "САЅІΝО 신규 회원 슬롯 무료 체험, 첫 충전 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E02_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4114.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "E02_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4114.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T03_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4127.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "CAS1N0 가입 즉시 카지노 보너스, 온라인 베팅 신규 회원 모집",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E03_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4127.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 가입 카지노 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E03_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4127.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 가입 카지노 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T04_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4140.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 ｃａｓｉｎｏ 첫충 30％ 보너스 지급, 신규 회원 모집",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E04_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4140.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T05_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4153.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T06_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4166.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "카지노 신규 가입 보너스, 온라인 슬롯 무료 체험",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T07_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4179.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋ ㅏ ㅈ ㅣ ㄴ ㅗ 가입 보너스 지급, 첫 충전 30% 혜택",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T08_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4192.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카ㅈㅣ노 첫 충전 보너스 지급, 신규 회원 즉시 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T09_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4205.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T10_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4218.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T11_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4231.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T12_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4244.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T13_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4257.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T14_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4270.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T15_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4283.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T16_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4296.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T17_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4309.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T18_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4322.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T19_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4335.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T20_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4348.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T21_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4361.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ 신규 회원 첫 충전 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T21_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4361.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ 신규 회원 첫 충전 보너스 지급",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T22_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4374.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T22_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4374.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T23_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4387.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 카지노 가입 보너스 즉시 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T23_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4387.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 카지노 가입 보너스 즉시 지급",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T24_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4400.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T24_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4400.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T25_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4413.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 무료 체험 신규 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T26_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4426.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T27_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4439.html",
+      "is_violation": true,
+      "location": "section.comments > div.comment-list > div.comment-item:nth-of-type(2) > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T28_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4452.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4452-1.html\"] >>> div.widget-content > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T29_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4465.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4465-1.html\"] >>> iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4465-2.html\"] >>> div.widget-content > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T30_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4478.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4478-1.html\"] >>> iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4478-2.html\"] >>> div.widget-content > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 첫충 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T30_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4478.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4478-1.html\"] >>> iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4478-2.html\"] >>> div.widget-content > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 첫충 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T31_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4491.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt:nth-of-type(2)",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T32_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4504.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입 / ㅅㅡㄹㅗㅅㅡ 무료 체험 즉시 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T33_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/records/2026/autumn/notes/read.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T34_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4686.html",
+      "is_violation": true,
+      "location": "div.article-body > div.reading-note > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T35_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4699.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 신규 가입 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T35_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4699.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 신규 가입 보너스 지급",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T35_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4699.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 신규 가입 보너스 지급",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T36_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4712.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T36_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4712.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T37_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4725.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4725-1.html\"] >>> iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4725-2.html\"] >>> div.widget-content > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T38_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4738.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4738-1.html\"] >>> iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4738-2.html\"] >>> iframe[src=\"http://127.0.0.1:61225/test-site-2/widgets/4738-3.html\"] >>> div.widget-content > div.entry-fragment > p.excerpt",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T39_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/records/2026/autumn/letters/read.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ＣＡＳ１ＮＯ 첫 충전 보너스, 신규 회원 가입",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T39_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/records/2026/autumn/letters/read.html",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ＣＡＳ１ＮＯ 첫 충전 보너스, 신규 회원 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T40_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/posts/4764.html",
+      "is_violation": true,
+      "location": "div.article-body > table.opinion-table > tbody > tr:nth-of-type(2) > td[data-column=\"message\"]",
+      "evidence_text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "Q01_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/view.html?id=1024&edition=autumn",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q02_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/view.html?id=1180&edition=autumn",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q03_HOMOGLYPH",
+      "url": "http://127.0.0.1:61225/test-site-2/board/view.html?id=1024&edition=winter",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "Q03_OFFSCREEN",
+      "url": "http://127.0.0.1:61225/test-site-2/board/view.html?id=1024&edition=winter",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q04_JAMO",
+      "url": "http://127.0.0.1:61225/test-site-2/board/view.html?id=1180&edition=winter",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q04_TRANSPARENT",
+      "url": "http://127.0.0.1:61225/test-site-2/board/view.html?id=1180&edition=winter",
+      "is_violation": true,
+      "location": "div.article-body > div.entry-fragment > p.excerpt",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "TRANSPARENT"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "base": "http://127.0.0.1:61225/test-site-2/",
+  "labUrl": "http://127.0.0.1:61225/source/daon-library-ad-lab/dist/lab/index.html",
+  "checks": [
+    {
+      "name": "desktop",
+      "detail": {
+        "viewport": "1440x1000",
+        "overflow": false
+      }
+    },
+    {
+      "name": "mobile",
+      "detail": {
+        "viewport": "390x844",
+        "overflow": false
+      }
+    },
+    {
+      "name": "pagination-search",
+      "detail": {
+        "pages": 6,
+        "lastPageItems": 8,
+        "search": true,
+        "noResult": true
+      }
+    },
+    {
+      "name": "delayed-node",
+      "detail": {
+        "delayMs": 2800,
+        "presentBefore": false,
+        "presentAfter": true
+      }
+    },
+    {
+      "name": "nested-delayed-frame",
+      "detail": {
+        "frames": 2,
+        "totalNominalDelayMs": 2250
+      }
+    },
+    {
+      "name": "lab-filter-search",
+      "detail": {
+        "all": 64,
+        "normal": 16,
+        "search": 1
+      }
+    },
+    {
+      "name": "download",
+      "detail": {
+        "findings": 61,
+        "bom": false,
+        "baseReflected": true
+      }
+    },
+    {
+      "name": "public-deployment",
+      "detail": {
+        "rootLinks": 2,
+        "frames": 3,
+        "labAbsent": true
+      }
+    },
+    {
+      "name": "DOM-audit",
+      "detail": {
+        "result": "검증 완료 · 64 / 64개 요소 위치·원문 일치 · 11.8초. 이 검사는 사이트 자체 검증이며 탐지기 성능 점수가 아닙니다."
+      }
+    },
+    {
+      "name": "entry-link-crawl",
+      "detail": {
+        "visited": 74,
+        "reachable": 60,
+        "total": 60,
+        "maxDepth": 5,
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "lab-mobile",
+      "detail": {
+        "overflow": false
+      }
+    },
+    {
+      "name": "site-1-published-result",
+      "detail": {
+        "tp": 40,
+        "fn": 0,
+        "fp": 0,
+        "entry": "http://127.0.0.1:61225/test-site-1/index.html"
+      }
+    },
+    {
+      "name": "root-deployment",
+      "detail": {
+        "audit": "64 / 64"
+      }
+    },
+    {
+      "name": "multi-digit-pages-deployment",
+      "detail": {
+        "entry": "http://127.0.0.1:61225/sumgwang-test-pages/test-site-10/index.html",
+        "tp": 61,
+        "fn": 0,
+        "fp": 0
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "name": "완전한 정답",
+      "expected": {
+        "tp": 61,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 61,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "일부 정답 누락",
+      "expected": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "정상 요소 오탐",
+      "expected": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "중복과 다른 선택자",
+      "expected": {
+        "tp": 1,
+        "fn": 60,
+        "duplicates": 1,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 1,
+        "total": 61
+      }
+    },
+    {
+      "name": "동일 요소 다른 CSS와 원문",
+      "expected": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "모호한 선택자",
+      "expected": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "필수 필드 누락",
+      "expected": {
+        "tp": 0,
+        "fn": 61,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "잘못된 JSON",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: JSON을 읽을 수 없습니다. 문법을 확인해 주세요."
+      }
+    },
+    {
+      "name": "BOM 포함",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: UTF-8 BOM을 제거해 주세요."
+      }
+    },
+    {
+      "name": "쿼리 순서 fragment",
+      "expected": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "상대 iframe src",
+      "expected": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "고유 ID 중복",
+      "expected": {
+        "tp": 1,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "일반 페이지 오탐의 동일 요소 중복",
+      "expected": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1,
+        "duplicates": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 1,
+        "total": 61
+      }
+    },
+    {
+      "name": "다른 쿼리 값은 다른 페이지",
+      "expected": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "HTTP HTTPS 끝 슬래시 동등성",
+      "expected": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 60,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "진입 URL 필드 타입 오류",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: meta.entry_url은 전체 HTTP(S) URL이어야 합니다."
+      }
+    },
+    {
+      "name": "검출 없는 정상 스키마",
+      "expected": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 61,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    },
+    {
+      "name": "두 자리 번호와 GitHub Pages 경로",
+      "expected": {
+        "tp": 61,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 61,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 61
+      }
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

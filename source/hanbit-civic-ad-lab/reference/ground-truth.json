@@ -1,5 +1,12 @@
 {
   "version": "1.0.0",
+  "siteId": "hanbit-civic",
+  "siteName": "한빛시 시민소통광장",
+  "scenarioCount": 47,
+  "deployment": {
+    "targetDirectory": "test-site-1",
+    "sourceDirectory": "source/hanbit-civic-ad-lab/dist"
+  },
   "entry": "index.html",
   "fixtureViewport": {
     "width": 1440,
