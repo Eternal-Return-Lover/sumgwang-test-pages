@@ -10,5 +10,11 @@
     "project": "daon-library-ad-lab",
     "siteId": "daon-library",
     "title": "다온시립도서관 책마루"
+  },
+  {
+    "number": 3,
+    "project": "haesol-sports-ad-lab",
+    "siteId": "haesol-sports",
+    "title": "해솔시 생활체육센터"
   }
 ]
