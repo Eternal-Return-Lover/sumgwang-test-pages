@@ -1,0 +1,412 @@
+{
+  "meta": {
+    "topic": "TOPIC",
+    "entry_url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/index.html",
+    "started_at": "2026-10-14T15:55:01.531Z",
+    "finished_at": "2026-10-14T15:55:01.531Z",
+    "elapsed_sec": 0,
+    "tool_version": "reference-1.0.0"
+  },
+  "findings": [
+    {
+      "id": "T01_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6103.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 가입 첫 충전 30％, 온라인 카지노 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E01_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6103.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T02_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6122.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "САЅІΝО 신규 회원 슬롯 무료 체험, 첫 충전 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E02_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6122.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "E02_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6122.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T03_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6141.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "CAS1N0 가입 즉시 카지노 보너스, 온라인 베팅 신규 회원 모집",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E03_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6141.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 가입 카지노 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E03_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6141.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 가입 카지노 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T04_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6160.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 ｃａｓｉｎｏ 첫충 30％ 보너스 지급, 신규 회원 모집",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E04_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6160.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T05_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6179.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T06_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6198.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "카지노 신규 가입 보너스, 온라인 슬롯 무료 체험",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T07_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6217.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋ ㅏ ㅈ ㅣ ㄴ ㅗ 가입 보너스 지급, 첫 충전 30% 혜택",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T08_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6236.html",
+      "is_violation": true,
+      "location": "div.record-body > aside.archive-note > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "evidence_text": "온라인 카ㅈㅣ노 첫 충전 보너스 지급, 신규 회원 즉시 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T09_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6255.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T10_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6274.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T11_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6293.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T12_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6312.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T13_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6331.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T14_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6350.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T15_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6369.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T16_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6388.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T17_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6407.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T18_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6426.html",
+      "is_violation": true,
+      "location": "div.record-body > table.collection-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "evidence_text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T19_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6445.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T20_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6464.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T21_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6483.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｃａｓｉｎｏ 신규 회원 첫 충전 보너스 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T21_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6483.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｃａｓｉｎｏ 신규 회원 첫 충전 보너스 지급",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T22_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6502.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T22_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6502.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T23_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6521.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 카지노 가입 보너스 즉시 지급",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T23_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6521.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 카지노 가입 보너스 즉시 지급",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T24_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6540.html",
+      "is_violation": true,
+      "location": "div.record-body > blockquote.oral-quote > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T24_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6540.html",
+      "is_violation": true,
+      "location": "div.record-body > blockquote.oral-quote > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T25_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6559.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 무료 체험 신규 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T26_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6578.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T27_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6597.html",
+      "is_violation": true,
+      "location": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T28_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6616.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6616-1.html\"] >>> section.widget-content > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T29_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6635.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6635-1.html\"] >>> iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6635-2.html\"] >>> section.widget-content > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T30_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6654.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6654-1.html\"] >>> iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6654-2.html\"] >>> section.widget-content > div.note-wrap > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 첫충 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T30_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6654.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6654-1.html\"] >>> iframe[src=\"http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/widgets/6654-2.html\"] >>> section.widget-content > div.note-wrap > p.note",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 첫충 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T31_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/posts/6673.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note:nth-of-type(2)",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T32_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/collection/1900/market/photos/ledger/read.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T32_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/collection/1900/market/photos/ledger/read.html",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q01_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/view.html?collection=203&period=modern",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q02_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/view.html?collection=317&period=modern",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q03_HOMOGLYPH",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/view.html?collection=203&period=republic",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "Q03_OFFSCREEN",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/view.html?collection=203&period=republic",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q04_JAMO",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/view.html?collection=317&period=republic",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q04_TRANSPARENT",
+      "url": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/visitors/view.html?collection=317&period=republic",
+      "is_violation": true,
+      "location": "div.record-body > div.note-wrap > p.note",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "technique": "TRANSPARENT"
+    }
+  ]
+}
