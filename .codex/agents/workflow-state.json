@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "batch": {
+    "requestedCount": 1,
+    "completedCount": 0,
+    "status": "awaiting_start"
+  },
+  "setup": {
+    "branch": "chore/test-site-workflow",
+    "status": "awaiting_review",
+    "baseSha": "9ab1207413703b0d1bae568788677a48ddb9e6a7",
+    "prNumber": 3,
+    "prUrl": "https://github.com/Eternal-Return-Lover/sumgwang-test-pages/pull/3"
+  },
+  "current": null,
+  "sites": [],
+  "failures": [],
+  "observedRegistry": [
+    1,
+    2,
+    3
+  ],
+  "note": "Shared initial-state template only. Start no new sites until a separate user request. This setup PR must not be merged automatically.",
+  "updatedAt": "2026-10-14"
+}
