@@ -1,0 +1,246 @@
+{
+  "checks": [
+    {
+      "name": "desktop-heading-unchanged",
+      "path": "steps/index.html",
+      "style": {
+        "text": "차근차근 읽는 준비 단계",
+        "wordBreak": "normal",
+        "fontSize": "34px",
+        "lineHeight": "51px",
+        "fontWeight": "700",
+        "color": "rgb(80, 62, 66)",
+        "width": 1270,
+        "height": 51
+      }
+    },
+    {
+      "name": "desktop-heading-unchanged",
+      "path": "services/index.html",
+      "style": {
+        "text": "필요한 자료부터 살펴보세요",
+        "wordBreak": "normal",
+        "fontSize": "34px",
+        "lineHeight": "51px",
+        "fontWeight": "700",
+        "color": "rgb(80, 62, 66)",
+        "width": 1270,
+        "height": 51
+      }
+    },
+    {
+      "name": "desktop-heading-unchanged",
+      "path": "guide/index.html",
+      "style": {
+        "text": "모두를 위한 읽기 안내",
+        "wordBreak": "normal",
+        "fontSize": "34px",
+        "lineHeight": "51px",
+        "fontWeight": "700",
+        "color": "rgb(80, 62, 66)",
+        "width": 1270,
+        "height": 51
+      }
+    },
+    {
+      "name": "desktop-heading-unchanged",
+      "path": "materials/list-1.html",
+      "style": {
+        "text": "대상별 자료와 읽기 기록",
+        "wordBreak": "normal",
+        "fontSize": "34px",
+        "lineHeight": "51px",
+        "fontWeight": "700",
+        "color": "rgb(80, 62, 66)",
+        "width": 1270,
+        "height": 51
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/view.html?program=care&audience=adult",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "서비스 대상별 자료",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "steps/index.html",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "차근차근 읽는 준비 단계",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42,
+        "wordRects": [
+          {
+            "x": 254.171875,
+            "y": 275.359375,
+            "width": 54.015625,
+            "height": 37
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "guide/index.html",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "모두를 위한 읽기 안내",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/posts/16349.html",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "이용 안내",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "services/index.html",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "필요한 자료부터 살펴보세요",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/list-1.html",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "대상별 자료와 읽기 기록",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/posts/15946.html",
+      "width": 390,
+      "overflow": false,
+      "heading": {
+        "text": "자료 읽기 기록",
+        "wordBreak": "keep-all",
+        "width": 354,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/view.html?program=care&audience=adult",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "서비스 대상별 자료",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "steps/index.html",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "차근차근 읽는 준비 단계",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 84,
+        "wordRects": [
+          {
+            "x": 18,
+            "y": 315.5625,
+            "width": 54,
+            "height": 37
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "guide/index.html",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "모두를 위한 읽기 안내",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/posts/16349.html",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "이용 안내",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 42
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "services/index.html",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "필요한 자료부터 살펴보세요",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 84
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/list-1.html",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "대상별 자료와 읽기 기록",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 84
+      }
+    },
+    {
+      "name": "mobile-heading-after-typography",
+      "page": "materials/posts/15946.html",
+      "width": 320,
+      "overflow": false,
+      "heading": {
+        "text": "자료 읽기 기록",
+        "wordBreak": "keep-all",
+        "width": 284,
+        "height": 42
+      }
+    }
+  ],
+  "errors": [],
+  "ok": true
+}
