@@ -22,5 +22,11 @@
     "project": "boram-museum-ad-lab",
     "siteId": "boram-museum",
     "title": "보람시 역사박물관 기억마루"
+  },
+  {
+    "number": 5,
+    "project": "gaon-ecology-ad-lab",
+    "siteId": "gaon-ecology",
+    "title": "가온시 환경교육센터 푸른순환"
   }
 ]
