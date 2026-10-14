@@ -1,0 +1,285 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "rows": [
+        {
+          "title": "갈대습지의 작은 생물",
+          "display": "flex",
+          "columns": "none",
+          "date": {
+            "x": 100,
+            "y": 433.3125,
+            "width": 115,
+            "height": 69.578125,
+            "right": 215,
+            "bottom": 502.890625
+          },
+          "content": {
+            "x": 245,
+            "y": 417.765625,
+            "width": 220.4375,
+            "height": 100.671875,
+            "right": 465.4375,
+            "bottom": 518.4375
+          },
+          "place": {
+            "x": 1259.578125,
+            "y": 458.75,
+            "width": 80.421875,
+            "height": 18.6875,
+            "right": 1340,
+            "bottom": 477.4375
+          }
+        },
+        {
+          "title": "생활 속 수질 비교",
+          "display": "flex",
+          "columns": "none",
+          "date": {
+            "x": 100,
+            "y": 588.984375,
+            "width": 115,
+            "height": 69.578125,
+            "right": 215,
+            "bottom": 658.5625
+          },
+          "content": {
+            "x": 245,
+            "y": 573.4375,
+            "width": 244.4375,
+            "height": 100.671875,
+            "right": 489.4375,
+            "bottom": 674.109375
+          },
+          "place": {
+            "x": 1245.5625,
+            "y": 614.421875,
+            "width": 94.4375,
+            "height": 18.6875,
+            "right": 1340,
+            "bottom": 633.109375
+          }
+        },
+        {
+          "title": "고쳐 쓰는 작은 공방",
+          "display": "flex",
+          "columns": "none",
+          "date": {
+            "x": 100,
+            "y": 744.65625,
+            "width": 115,
+            "height": 69.578125,
+            "right": 215,
+            "bottom": 814.234375
+          },
+          "content": {
+            "x": 245,
+            "y": 729.109375,
+            "width": 203.046875,
+            "height": 100.671875,
+            "right": 448.046875,
+            "bottom": 829.78125
+          },
+          "place": {
+            "x": 1259.578125,
+            "y": 770.09375,
+            "width": 80.421875,
+            "height": 18.6875,
+            "right": 1340,
+            "bottom": 788.78125
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "rows": [
+        {
+          "title": "갈대습지의 작은 생물",
+          "display": "grid",
+          "columns": "73px 266px",
+          "date": {
+            "x": 18,
+            "y": 420.9375,
+            "width": 73,
+            "height": 57.6875,
+            "right": 91,
+            "bottom": 478.625
+          },
+          "content": {
+            "x": 106,
+            "y": 420.9375,
+            "width": 266,
+            "height": 90.46875,
+            "right": 372,
+            "bottom": 511.40625
+          },
+          "place": {
+            "x": 106,
+            "y": 520.40625,
+            "width": 266,
+            "height": 17,
+            "right": 372,
+            "bottom": 537.40625
+          }
+        },
+        {
+          "title": "생활 속 수질 비교",
+          "display": "grid",
+          "columns": "73px 266px",
+          "date": {
+            "x": 18,
+            "y": 584.40625,
+            "width": 73,
+            "height": 57.6875,
+            "right": 91,
+            "bottom": 642.09375
+          },
+          "content": {
+            "x": 106,
+            "y": 584.40625,
+            "width": 266,
+            "height": 90.46875,
+            "right": 372,
+            "bottom": 674.875
+          },
+          "place": {
+            "x": 106,
+            "y": 683.875,
+            "width": 266,
+            "height": 17,
+            "right": 372,
+            "bottom": 700.875
+          }
+        },
+        {
+          "title": "고쳐 쓰는 작은 공방",
+          "display": "grid",
+          "columns": "73px 266px",
+          "date": {
+            "x": 18,
+            "y": 747.875,
+            "width": 73,
+            "height": 57.6875,
+            "right": 91,
+            "bottom": 805.5625
+          },
+          "content": {
+            "x": 106,
+            "y": 747.875,
+            "width": 266,
+            "height": 90.46875,
+            "right": 372,
+            "bottom": 838.34375
+          },
+          "place": {
+            "x": 106,
+            "y": 847.34375,
+            "width": 266,
+            "height": 17,
+            "right": 372,
+            "bottom": 864.34375
+          }
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "overflow": false,
+      "rows": [
+        {
+          "title": "갈대습지의 작은 생물",
+          "display": "grid",
+          "columns": "73px 196px",
+          "date": {
+            "x": 18,
+            "y": 419.25,
+            "width": 73,
+            "height": 57.6875,
+            "right": 91,
+            "bottom": 476.9375
+          },
+          "content": {
+            "x": 106,
+            "y": 419.25,
+            "width": 196,
+            "height": 109.15625,
+            "right": 302,
+            "bottom": 528.40625
+          },
+          "place": {
+            "x": 106,
+            "y": 537.40625,
+            "width": 196,
+            "height": 17,
+            "right": 302,
+            "bottom": 554.40625
+          }
+        },
+        {
+          "title": "생활 속 수질 비교",
+          "display": "grid",
+          "columns": "73px 196px",
+          "date": {
+            "x": 18,
+            "y": 601.40625,
+            "width": 73,
+            "height": 57.6875,
+            "right": 91,
+            "bottom": 659.09375
+          },
+          "content": {
+            "x": 106,
+            "y": 601.40625,
+            "width": 196,
+            "height": 109.15625,
+            "right": 302,
+            "bottom": 710.5625
+          },
+          "place": {
+            "x": 106,
+            "y": 719.5625,
+            "width": 196,
+            "height": 17,
+            "right": 302,
+            "bottom": 736.5625
+          }
+        },
+        {
+          "title": "고쳐 쓰는 작은 공방",
+          "display": "grid",
+          "columns": "73px 196px",
+          "date": {
+            "x": 18,
+            "y": 783.5625,
+            "width": 73,
+            "height": 57.6875,
+            "right": 91,
+            "bottom": 841.25
+          },
+          "content": {
+            "x": 106,
+            "y": 783.5625,
+            "width": 196,
+            "height": 90.46875,
+            "right": 302,
+            "bottom": 874.03125
+          },
+          "place": {
+            "x": 106,
+            "y": 883.03125,
+            "width": 196,
+            "height": 17,
+            "right": 302,
+            "bottom": 900.03125
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

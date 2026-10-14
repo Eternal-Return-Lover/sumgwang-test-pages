@@ -2,7 +2,18 @@
 
 공공 웹사이트 불법광고 탐지 도구의 크롤링·DOM 수집·탐지 결과 생성을 점검하기 위한 팀 내부 테스트 사이트 모음입니다. 각 테스트 사이트는 하나의 시작 URL에서 내부 게시글, 댓글, 페이지네이션, iframe을 따라 탐색할 수 있는 정적 웹사이트로 구성합니다.
 
-현재 포함된 사이트는 **한빛시 시민소통광장**, **다온시립도서관 책마루**, **해솔시 생활체육센터**, **보람시 역사박물관 기억마루**입니다. 실제 기관이나 실제 광고·거래 기능과 무관한 합성 환경입니다.
+현재 포함된 사이트는 **한빛시 시민소통광장**, **다온시립도서관 책마루**, **해솔시 생활체육센터**, **보람시 역사박물관 기억마루**, **가온시 환경교육센터 푸른순환**입니다. 실제 기관이나 실제 광고·거래 기능과 무관한 합성 환경입니다.
+
+## 테스트 사이트 5 — 가온시 환경교육센터 푸른순환
+
+`test-site-5/`에 정적 배포본, `source/gaon-ecology-ad-lab/`에 원본·검증실·정답표·문서를 제공합니다. 콘텐츠 시나리오 52개, 광고 요소 46개, 정상 대조 12개, 기대 검출 60건입니다. 딥틸·세이지·미색의 환경교육 포털이며 생태 구역도, 관측 표, 교육 일정과 자원순환 흐름을 제공합니다. 1·3단계 iframe, 고정 지연, 최대 5단계 관측 자료와 관측소·계절별 쿼리 6분기를 포함합니다.
+
+```powershell
+cd source/gaon-ecology-ad-lab
+node scripts/serve.mjs
+```
+
+시작 주소는 `http://127.0.0.1:4177/index.html`, 검증실은 `http://127.0.0.1:4177/lab/index.html`입니다. 상세 안내는 [사이트 5 README](source/gaon-ecology-ad-lab/README.md)를 참고하세요.
 
 ## 테스트 사이트 4 — 보람시 역사박물관 기억마루
 
@@ -46,6 +57,7 @@ https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-1/
 https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-2/
 https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-3/
 https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-4/
+https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-5/
 ```
 
 로컬에서 실행할 때는 시험할 `test-site-N/`을 정적 HTTP 서버로 제공한 뒤, 해당 폴더의 `index.html` 주소를 입력합니다. 각 소스 프로젝트의 파일 서버를 사용하면 검증실도 함께 열 수 있습니다. HTML 파일을 직접 더블클릭해 여는 `file://` 방식은 iframe·모듈 동작을 보장하지 않으므로 사용하지 않습니다.
@@ -87,6 +99,14 @@ https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-4/
 │  ├─ learning/
 │  ├─ collection/
 │  └─ widgets/
+├─ test-site-5/                       # 가온시 환경교육센터 푸른순환 탐지 대상
+│  ├─ index.html
+│  ├─ assets/
+│  ├─ observations/
+│  ├─ education/
+│  ├─ resources/
+│  ├─ guide/
+│  └─ widgets/
 └─ source/
    ├─ sites.json                     # 사이트 번호·원본 폴더·이름 등록
    ├─ manage.mjs                     # 공통 목록·빌드·검사 명령
@@ -107,7 +127,12 @@ https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-4/
    │  ├─ scripts/                     # 생성·로컬 실행·검사 스크립트
    │  ├─ reference/                   # 내부 성능 측정용 정답표
    │  └─ dist/lab/                    # 내부 결과 비교용 검증실
-   └─ boram-museum-ad-lab/           # 사이트 4 수정·재생성·검증용 원본
+   ├─ boram-museum-ad-lab/           # 사이트 4 수정·재생성·검증용 원본
+   │  ├─ src/
+   │  ├─ scripts/
+   │  ├─ reference/
+   │  └─ dist/lab/
+   └─ gaon-ecology-ad-lab/           # 사이트 5 수정·재생성·검증용 원본
       ├─ src/
       ├─ scripts/
       ├─ reference/
@@ -228,3 +253,7 @@ Folder: /(root)
 - [`source/boram-museum-ad-lab/README.md`](source/boram-museum-ad-lab/README.md): 사이트 4 상세 실행·수정 안내
 - [`source/boram-museum-ad-lab/REQUIREMENTS.md`](source/boram-museum-ad-lab/REQUIREMENTS.md): 사이트 4 기획·제작 명세
 - [`source/boram-museum-ad-lab/VERIFICATION.md`](source/boram-museum-ad-lab/VERIFICATION.md): 사이트 4 검증 기록
+
+- [`source/gaon-ecology-ad-lab/README.md`](source/gaon-ecology-ad-lab/README.md): 사이트 5 상세 실행·수정 안내
+- [`source/gaon-ecology-ad-lab/REQUIREMENTS.md`](source/gaon-ecology-ad-lab/REQUIREMENTS.md): 사이트 5 기획·제작 명세
+- [`source/gaon-ecology-ad-lab/VERIFICATION.md`](source/gaon-ecology-ad-lab/VERIFICATION.md): 사이트 5 검증 기록
