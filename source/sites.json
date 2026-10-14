@@ -34,5 +34,11 @@
     "project": "onnuri-transit-ad-lab",
     "siteId": "onnuri-transit",
     "title": "온누리시 교통정보센터 길마루"
+  },
+  {
+    "number": 7,
+    "project": "dasom-welfare-ad-lab",
+    "siteId": "dasom-welfare",
+    "title": "다솜시 통합복지센터 서로마루"
   }
 ]
