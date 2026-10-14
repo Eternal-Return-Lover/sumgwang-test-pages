@@ -28,5 +28,11 @@
     "project": "gaon-ecology-ad-lab",
     "siteId": "gaon-ecology",
     "title": "가온시 환경교육센터 푸른순환"
+  },
+  {
+    "number": 6,
+    "project": "onnuri-transit-ad-lab",
+    "siteId": "onnuri-transit",
+    "title": "온누리시 교통정보센터 길마루"
   }
 ]
