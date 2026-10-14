@@ -40,5 +40,11 @@
     "project": "dasom-welfare-ad-lab",
     "siteId": "dasom-welfare",
     "title": "다솜시 통합복지센터 서로마루"
+  },
+  {
+    "number": 8,
+    "project": "byeolbit-archives-ad-lab",
+    "siteId": "byeolbit-archives",
+    "title": "별빛시 공공기록관 기록빛"
   }
 ]
