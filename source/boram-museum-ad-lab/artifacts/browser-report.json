@@ -1,0 +1,7355 @@
+{
+  "base": "http://127.0.0.1:60353/test-site-4/",
+  "labUrl": "http://127.0.0.1:60353/source/boram-museum-ad-lab/dist/lab/index.html",
+  "counts": {
+    "scenarios": 48,
+    "urls": 48,
+    "elements": 40,
+    "normals": 12,
+    "rows": 52,
+    "total": 50
+  },
+  "checks": [
+    {
+      "name": "desktop",
+      "detail": {
+        "viewport": "1440x1000",
+        "overflow": false
+      }
+    },
+    {
+      "name": "mobile",
+      "detail": {
+        "viewport": "390x844",
+        "overflow": false
+      }
+    },
+    {
+      "name": "pagination-search-reset",
+      "detail": {
+        "pages": 6,
+        "lastPageItems": 2,
+        "search": true,
+        "noResult": true,
+        "reset": true
+      }
+    },
+    {
+      "name": "delayed-node",
+      "detail": {
+        "key": "T27",
+        "delayMs": 2800,
+        "presentBefore": false,
+        "presentAfter": true
+      }
+    },
+    {
+      "name": "nested-delayed-frame",
+      "detail": {
+        "key": "T30",
+        "frames": 2,
+        "delayMs": 1200
+      }
+    },
+    {
+      "name": "deep-delayed-discovery",
+      "detail": {
+        "key": "T32",
+        "page": "collection/1900/market/photos/ledger/read.html",
+        "linkDelayMs": 1200,
+        "requiredDepth": 6
+      }
+    },
+    {
+      "name": "query-value-content",
+      "detail": {
+        "urls": 4,
+        "uniqueTitles": 4
+      }
+    },
+    {
+      "name": "all-dom-cases",
+      "detail": {
+        "elements": 52,
+        "positive": 40,
+        "normal": 12,
+        "queryUrls": 4
+      }
+    },
+    {
+      "name": "lab-filter-search",
+      "detail": {
+        "all": 52,
+        "normal": 12,
+        "search": 1
+      }
+    },
+    {
+      "name": "download",
+      "detail": {
+        "findings": 50,
+        "bom": false,
+        "baseReflected": true
+      }
+    },
+    {
+      "name": "public-deployment",
+      "detail": {
+        "rootLinks": 4,
+        "labAbsent": true,
+        "manifestAbsent": true
+      }
+    },
+    {
+      "name": "DOM-audit",
+      "detail": {
+        "result": "검증 완료 · 52 / 52개 요소 위치·원문 일치 · 8.9초. 이 검사는 사이트 자체 검증이며 탐지기 성능 점수가 아닙니다."
+      }
+    },
+    {
+      "name": "entry-link-crawl",
+      "detail": {
+        "visited": 62,
+        "reachable": 48,
+        "total": 48,
+        "maxDepth": 6,
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "lab-mobile",
+      "detail": {
+        "overflow": false
+      }
+    },
+    {
+      "name": "prior-site-result",
+      "detail": {
+        "site": 1,
+        "tp": 40
+      }
+    },
+    {
+      "name": "root-DOM-audit",
+      "detail": {
+        "result": "검증 완료 · 52 / 52개 요소 위치·원문 일치 · 8.9초. 이 검사는 사이트 자체 검증이며 탐지기 성능 점수가 아닙니다."
+      }
+    },
+    {
+      "name": "root-entry-link-crawl",
+      "detail": {
+        "visited": 62,
+        "reachable": 48,
+        "total": 48,
+        "maxDepth": 6,
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "root-deployment",
+      "detail": {
+        "entry": "http://127.0.0.1:59626/index.html",
+        "findings": 50
+      }
+    },
+    {
+      "name": "prefix-DOM-audit",
+      "detail": {
+        "result": "검증 완료 · 52 / 52개 요소 위치·원문 일치 · 9.0초. 이 검사는 사이트 자체 검증이며 탐지기 성능 점수가 아닙니다."
+      }
+    },
+    {
+      "name": "multi-digit-pages-deployment",
+      "detail": {
+        "entry": "http://127.0.0.1:60353/sumgwang-test-pages/test-site-10/index.html",
+        "tp": 50,
+        "labAbsent": true,
+        "kind": "local browser mapping"
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "name": "완전한 정답",
+      "expected": {
+        "tp": 50,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 50,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "일부 정답 누락",
+      "expected": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "정상 요소 오탐",
+      "expected": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "중복과 다른 선택자",
+      "expected": {
+        "tp": 1,
+        "fn": 49,
+        "duplicates": 1,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 1,
+        "total": 50
+      }
+    },
+    {
+      "name": "동일 요소 다른 CSS와 원문",
+      "expected": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "모호한 선택자",
+      "expected": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "필수 필드 누락",
+      "expected": {
+        "tp": 0,
+        "fn": 50,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "잘못된 JSON",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: JSON을 읽을 수 없습니다. 문법을 확인해 주세요."
+      }
+    },
+    {
+      "name": "BOM 포함",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: UTF-8 BOM을 제거해 주세요."
+      }
+    },
+    {
+      "name": "쿼리 순서 fragment",
+      "expected": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "상대 iframe src",
+      "expected": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "고유 ID 중복",
+      "expected": {
+        "tp": 1,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "일반 페이지 오탐의 동일 요소 중복",
+      "expected": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1,
+        "duplicates": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 1,
+        "total": 50
+      }
+    },
+    {
+      "name": "다른 쿼리 값은 다른 페이지",
+      "expected": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "HTTP HTTPS 끝 슬래시 동등성",
+      "expected": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 49,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "진입 URL 필드 타입 오류",
+      "expected": {},
+      "actual": {
+        "error": "확인 필요: meta.entry_url은 전체 HTTP(S) URL이어야 합니다."
+      }
+    },
+    {
+      "name": "검출 없는 정상 스키마",
+      "expected": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 50,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "기존 사이트 결과 호환",
+      "expected": {
+        "tp": 40,
+        "fn": 0,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 40,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "단독 dist 전체 정답",
+      "expected": {
+        "tp": 50,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 50,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    },
+    {
+      "name": "두 자리 번호와 GitHub Pages 경로",
+      "expected": {
+        "tp": 50,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "tp": 50,
+        "fn": 0,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 50
+      }
+    }
+  ],
+  "dom": [
+    {
+      "caseId": "T01",
+      "page": "visitors/posts/6103.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ｍｅｇａ－ＢＥＴ 신규 가입 첫 충전 30％, 온라인 카지노 보너스 지급",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1118.515625,
+            "right": 1380,
+            "bottom": 1285.515625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1439.59375,
+            "right": 1440,
+            "bottom": 1439.59375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1439.59375,
+            "right": 1440,
+            "bottom": 1439.59375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E01",
+      "page": "visitors/posts/6103.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1063.234375,
+            "width": 1240,
+            "height": 64.1875,
+            "right": 1340,
+            "bottom": 1127.421875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 970.953125,
+            "width": 1240,
+            "height": 156.46875,
+            "right": 1340,
+            "bottom": 1127.421875
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 928.0625,
+            "width": 1240,
+            "height": 199.359375,
+            "right": 1340,
+            "bottom": 1127.421875
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1118.515625,
+            "right": 1380,
+            "bottom": 1285.515625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1439.59375,
+            "right": 1440,
+            "bottom": 1439.59375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1439.59375,
+            "right": 1440,
+            "bottom": 1439.59375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T02",
+      "page": "visitors/posts/6122.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "САЅІΝО 신규 회원 슬롯 무료 체험, 첫 충전 보너스 지급",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1146.609375,
+            "right": 1380,
+            "bottom": 1313.609375
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E02",
+      "page": "visitors/posts/6122.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 110,
+        "y": 1114.421875,
+        "width": 1220,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 110,
+            "y": 1114.421875,
+            "width": 1220,
+            "height": 22.09375,
+            "right": 1330,
+            "bottom": 1136.515625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1063.234375,
+            "width": 1240,
+            "height": 92.28125,
+            "right": 1340,
+            "bottom": 1155.515625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 970.953125,
+            "width": 1240,
+            "height": 184.5625,
+            "right": 1340,
+            "bottom": 1155.515625
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 928.0625,
+            "width": 1240,
+            "height": 227.453125,
+            "right": 1340,
+            "bottom": 1155.515625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1146.609375,
+            "right": 1380,
+            "bottom": 1313.609375
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T03",
+      "page": "visitors/posts/6141.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "CAS1N0 가입 즉시 카지노 보너스, 온라인 베팅 신규 회원 모집",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1146.609375,
+            "right": 1380,
+            "bottom": 1313.609375
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E03",
+      "page": "visitors/posts/6141.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "ｍｅｇａ－ＢＥＴ 신규 가입 카지노 보너스",
+      "bounds": {
+        "x": 110,
+        "y": 1114.421875,
+        "width": 1220,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 110,
+            "y": 1114.421875,
+            "width": 1220,
+            "height": 22.09375,
+            "right": 1330,
+            "bottom": 1136.515625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1063.234375,
+            "width": 1240,
+            "height": 92.28125,
+            "right": 1340,
+            "bottom": 1155.515625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 970.953125,
+            "width": 1240,
+            "height": 184.5625,
+            "right": 1340,
+            "bottom": 1155.515625
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 928.0625,
+            "width": 1240,
+            "height": 227.453125,
+            "right": 1340,
+            "bottom": 1155.515625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1146.609375,
+            "right": 1380,
+            "bottom": 1313.609375
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1467.6875,
+            "right": 1440,
+            "bottom": 1467.6875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T04",
+      "page": "visitors/posts/6160.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "온라인 ｃａｓｉｎｏ 첫충 30％ 보너스 지급, 신규 회원 모집",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1124.515625,
+            "right": 1380,
+            "bottom": 1291.515625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1445.59375,
+            "right": 1440,
+            "bottom": 1445.59375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1445.59375,
+            "right": 1440,
+            "bottom": 1445.59375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E04",
+      "page": "visitors/posts/6160.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "bounds": {
+        "x": 110,
+        "y": 1114.421875,
+        "width": 1220,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "0px",
+          "bounds": {
+            "x": 110,
+            "y": 1114.421875,
+            "width": 1220,
+            "height": 0,
+            "right": 1330,
+            "bottom": 1114.421875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1063.234375,
+            "width": 1240,
+            "height": 70.1875,
+            "right": 1340,
+            "bottom": 1133.421875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 970.953125,
+            "width": 1240,
+            "height": 162.46875,
+            "right": 1340,
+            "bottom": 1133.421875
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 928.0625,
+            "width": 1240,
+            "height": 205.359375,
+            "right": 1340,
+            "bottom": 1133.421875
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1124.515625,
+            "right": 1380,
+            "bottom": 1291.515625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1445.59375,
+            "right": 1440,
+            "bottom": 1445.59375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1445.59375,
+            "right": 1440,
+            "bottom": 1445.59375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T05",
+      "page": "visitors/posts/6179.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T06",
+      "page": "visitors/posts/6198.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "카지노 신규 가입 보너스, 온라인 슬롯 무료 체험",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T07",
+      "page": "visitors/posts/6217.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ㅋ ㅏ ㅈ ㅣ ㄴ ㅗ 가입 보너스 지급, 첫 충전 30% 혜택",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T08",
+      "page": "visitors/posts/6236.html",
+      "selector": "div.record-body > aside.archive-note > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "온라인 카ㅈㅣ노 첫 충전 보너스 지급, 신규 회원 즉시 가입",
+      "bounds": {
+        "x": 163,
+        "y": 753.328125,
+        "width": 1116,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 163,
+            "y": 753.328125,
+            "width": 1116,
+            "height": 27.296875,
+            "right": 1279,
+            "bottom": 780.625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 163,
+            "y": 726.03125,
+            "width": 1116,
+            "height": 54.59375,
+            "right": 1279,
+            "bottom": 780.625
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 163,
+            "y": 726.03125,
+            "width": 1116,
+            "height": 54.59375,
+            "right": 1279,
+            "bottom": 780.625
+          }
+        },
+        {
+          "tag": "ASIDE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 84.59375,
+            "right": 1301,
+            "bottom": 795.625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 367.921875,
+            "right": 1339,
+            "bottom": 948.359375
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 542.796875,
+            "right": 1340,
+            "bottom": 949.359375
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1105.625,
+            "right": 1380,
+            "bottom": 1272.625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1426.703125,
+            "right": 1440,
+            "bottom": 1426.703125
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1426.703125,
+            "right": 1440,
+            "bottom": 1426.703125
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T09",
+      "page": "visitors/posts/6255.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T10",
+      "page": "visitors/posts/6274.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T11",
+      "page": "visitors/posts/6293.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(248, 245, 237)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T12",
+      "page": "visitors/posts/6312.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T13",
+      "page": "visitors/posts/6331.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(40, 36, 31, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T14",
+      "page": "visitors/posts/6350.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T15",
+      "page": "visitors/posts/6369.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T16",
+      "page": "visitors/posts/6388.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+      "bounds": {
+        "x": -9898,
+        "y": 580.4375,
+        "width": 420,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": -9898,
+            "y": 580.4375,
+            "width": 420,
+            "height": 27.296875,
+            "right": -9478,
+            "bottom": 607.734375
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T17",
+      "page": "visitors/posts/6407.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "0px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 0,
+            "right": 1301,
+            "bottom": 725.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T18",
+      "page": "visitors/posts/6426.html",
+      "selector": "div.record-body > table.collection-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "신용 조회 없는 불법 개인 대출, 선입금 후 즉시 현금 지급",
+      "bounds": {
+        "x": 234.5,
+        "y": 764.875,
+        "width": 1066,
+        "height": 50.34375
+      },
+      "ancestors": [
+        {
+          "tag": "TD",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table-cell",
+          "fontSize": "1px",
+          "bounds": {
+            "x": 234.5,
+            "y": 764.875,
+            "width": 1066,
+            "height": 50.34375,
+            "right": 1300.5,
+            "bottom": 815.21875
+          }
+        },
+        {
+          "tag": "TR",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table-row",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 139.5,
+            "y": 764.875,
+            "width": 1161,
+            "height": 50.34375,
+            "right": 1300.5,
+            "bottom": 815.21875
+          }
+        },
+        {
+          "tag": "TBODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table-row-group",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 139.5,
+            "y": 714.53125,
+            "width": 1161,
+            "height": 100.6875,
+            "right": 1300.5,
+            "bottom": 815.21875
+          }
+        },
+        {
+          "tag": "TABLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 139,
+            "y": 714.03125,
+            "width": 1162,
+            "height": 101.6875,
+            "right": 1301,
+            "bottom": 815.71875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 391.015625,
+            "right": 1339,
+            "bottom": 971.453125
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 565.890625,
+            "right": 1340,
+            "bottom": 972.453125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1128.71875,
+            "right": 1380,
+            "bottom": 1295.71875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1449.796875,
+            "right": 1440,
+            "bottom": 1449.796875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1449.796875,
+            "right": 1440,
+            "bottom": 1449.796875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T19",
+      "page": "visitors/posts/6445.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "처방전 없이 전문 의약품 판매, 해외 직구 즉시 주문",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 261.328125,
+            "right": 1339,
+            "bottom": 841.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 436.203125,
+            "right": 1340,
+            "bottom": 842.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 999.03125,
+            "right": 1380,
+            "bottom": 1166.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1320.109375,
+            "right": 1440,
+            "bottom": 1320.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1320.109375,
+            "right": 1440,
+            "bottom": 1320.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T20",
+      "page": "visitors/posts/6464.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 0,
+        "y": -4000,
+        "width": 400,
+        "height": 54.59375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": -4000,
+            "width": 400,
+            "height": 54.59375,
+            "right": 400,
+            "bottom": -3945.40625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T21",
+      "page": "visitors/posts/6483.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "ｃａｓｉｎｏ 신규 회원 첫 충전 보너스 지급",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T22",
+      "page": "visitors/posts/6502.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T23",
+      "page": "visitors/posts/6521.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "ｍｅｇａ－ＢＥＴ 카지노 가입 보너스 즉시 지급",
+      "bounds": {
+        "x": -9898,
+        "y": 725.03125,
+        "width": 300,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": -9898,
+            "y": 725.03125,
+            "width": 300,
+            "height": 27.296875,
+            "right": -9598,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T24",
+      "page": "visitors/posts/6540.html",
+      "selector": "div.record-body > blockquote.oral-quote > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 164,
+        "y": 729.03125,
+        "width": 1115,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 164,
+            "y": 729.03125,
+            "width": 1115,
+            "height": 27.296875,
+            "right": 1279,
+            "bottom": 756.328125
+          }
+        },
+        {
+          "tag": "BLOCKQUOTE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(238, 232, 218)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 714.03125,
+            "width": 1162,
+            "height": 84.59375,
+            "right": 1301,
+            "bottom": 798.625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 373.921875,
+            "right": 1339,
+            "bottom": 954.359375
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 548.796875,
+            "right": 1340,
+            "bottom": 955.359375
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1111.625,
+            "right": 1380,
+            "bottom": 1278.625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1432.703125,
+            "right": 1440,
+            "bottom": 1432.703125
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1432.703125,
+            "right": 1440,
+            "bottom": 1432.703125
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T25",
+      "page": "visitors/posts/6559.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ｃａｓｉｎｏ 온라인 슬롯 무료 체험 신규 가입 보너스",
+      "bounds": {
+        "x": 110,
+        "y": 1059.125,
+        "width": 1220,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 110,
+            "y": 1059.125,
+            "width": 1220,
+            "height": 22.09375,
+            "right": 1330,
+            "bottom": 1081.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1007.9375,
+            "width": 1240,
+            "height": 92.28125,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 915.65625,
+            "width": 1240,
+            "height": 184.5625,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 872.765625,
+            "width": 1240,
+            "height": 227.453125,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1091.3125,
+            "right": 1380,
+            "bottom": 1258.3125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1412.390625,
+            "right": 1440,
+            "bottom": 1412.390625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1412.390625,
+            "right": 1440,
+            "bottom": 1412.390625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T26",
+      "page": "visitors/posts/6578.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 110,
+        "y": 1059.125,
+        "width": 1220,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 110,
+            "y": 1059.125,
+            "width": 1220,
+            "height": 22.09375,
+            "right": 1330,
+            "bottom": 1081.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1007.9375,
+            "width": 1240,
+            "height": 92.28125,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 915.65625,
+            "width": 1240,
+            "height": 184.5625,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 872.765625,
+            "width": 1240,
+            "height": 227.453125,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1091.3125,
+            "right": 1380,
+            "bottom": 1258.3125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1412.390625,
+            "right": 1440,
+            "bottom": 1412.390625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1412.390625,
+            "right": 1440,
+            "bottom": 1412.390625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T27",
+      "page": "visitors/posts/6597.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 110,
+        "y": 1059.125,
+        "width": 1220,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 110,
+            "y": 1059.125,
+            "width": 1220,
+            "height": 22.09375,
+            "right": 1330,
+            "bottom": 1081.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1007.9375,
+            "width": 1240,
+            "height": 92.28125,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 915.65625,
+            "width": 1240,
+            "height": 184.5625,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 872.765625,
+            "width": 1240,
+            "height": 227.453125,
+            "right": 1340,
+            "bottom": 1100.21875
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1091.3125,
+            "right": 1380,
+            "bottom": 1258.3125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1412.390625,
+            "right": 1440,
+            "bottom": 1412.390625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1412.390625,
+            "right": 1440,
+            "bottom": 1412.390625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T28",
+      "page": "visitors/posts/6616.html",
+      "selector": "section.widget-content > div.note-wrap > p.note",
+      "frames": [
+        {
+          "src": "widgets/6616-1.html",
+          "selector": "iframe.memory-widget"
+        }
+      ],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1124,
+            "height": 28,
+            "right": 1142,
+            "bottom": 75.796875
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1124,
+            "height": 28,
+            "right": 1142,
+            "bottom": 75.796875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1160,
+            "height": 89.796875,
+            "right": 1160,
+            "bottom": 89.796875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1160,
+            "height": 89.796875,
+            "right": 1160,
+            "bottom": 89.796875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T29",
+      "page": "visitors/posts/6635.html",
+      "selector": "section.widget-content > div.note-wrap > p.note",
+      "frames": [
+        {
+          "src": "widgets/6635-1.html",
+          "selector": "iframe.memory-widget"
+        },
+        {
+          "src": "widgets/6635-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 18,
+        "y": 61.796875,
+        "width": 1086,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 61.796875,
+            "width": 1086,
+            "height": 22.09375,
+            "right": 1104,
+            "bottom": 83.890625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1086,
+            "height": 50.09375,
+            "right": 1104,
+            "bottom": 97.890625
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1086,
+            "height": 50.09375,
+            "right": 1104,
+            "bottom": 97.890625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1122,
+            "height": 111.890625,
+            "right": 1122,
+            "bottom": 111.890625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1122,
+            "height": 111.890625,
+            "right": 1122,
+            "bottom": 111.890625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T30",
+      "page": "visitors/posts/6654.html",
+      "selector": "section.widget-content > div.note-wrap > p.note",
+      "frames": [
+        {
+          "src": "widgets/6654-1.html",
+          "selector": "iframe.memory-widget"
+        },
+        {
+          "src": "widgets/6654-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 첫충 보너스",
+      "bounds": {
+        "x": 18,
+        "y": 61.796875,
+        "width": 1086,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 61.796875,
+            "width": 1086,
+            "height": 22.09375,
+            "right": 1104,
+            "bottom": 83.890625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1086,
+            "height": 50.09375,
+            "right": 1104,
+            "bottom": 97.890625
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1086,
+            "height": 50.09375,
+            "right": 1104,
+            "bottom": 97.890625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1122,
+            "height": 111.890625,
+            "right": 1122,
+            "bottom": 111.890625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1122,
+            "height": 111.890625,
+            "right": 1122,
+            "bottom": 111.890625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T31",
+      "page": "visitors/posts/6673.html",
+      "selector": "div.record-body > div.note-wrap > p.note:nth-of-type(2)",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 139,
+        "y": 752.328125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 752.328125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 779.625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 109.890625,
+            "right": 1301,
+            "bottom": 820.921875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 371.21875,
+            "right": 1339,
+            "bottom": 951.65625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 546.09375,
+            "right": 1340,
+            "bottom": 952.65625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1108.921875,
+            "right": 1380,
+            "bottom": 1275.921875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1430,
+            "right": 1440,
+            "bottom": 1430
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1430,
+            "right": 1440,
+            "bottom": 1430
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "T32",
+      "page": "collection/1900/market/photos/ledger/read.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "0px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 0,
+            "right": 1301,
+            "bottom": 725.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "Q01",
+      "page": "visitors/view.html?collection=203&period=modern",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 139,
+        "y": 675.734375,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 675.734375,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 703.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 661.734375,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 717.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 217.890625,
+            "right": 1339,
+            "bottom": 798.328125
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 392.765625,
+            "right": 1340,
+            "bottom": 799.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 392.765625,
+            "right": 1340,
+            "bottom": 799.328125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 760.421875,
+            "right": 1380,
+            "bottom": 927.421875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1081.5,
+            "right": 1440,
+            "bottom": 1081.5
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1081.5,
+            "right": 1440,
+            "bottom": 1081.5
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "Q02",
+      "page": "visitors/view.html?collection=317&period=modern",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 661.734375,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 689.734375
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 190.59375,
+            "right": 1339,
+            "bottom": 771.03125
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 365.46875,
+            "right": 1340,
+            "bottom": 772.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 365.46875,
+            "right": 1340,
+            "bottom": 772.03125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 733.125,
+            "right": 1380,
+            "bottom": 900.125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1054.203125,
+            "right": 1440,
+            "bottom": 1054.203125
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1054.203125,
+            "right": 1440,
+            "bottom": 1054.203125
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "Q03",
+      "page": "visitors/view.html?collection=203&period=republic",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 661.734375,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 689.734375
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 190.59375,
+            "right": 1339,
+            "bottom": 771.03125
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 365.46875,
+            "right": 1340,
+            "bottom": 772.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 365.46875,
+            "right": 1340,
+            "bottom": 772.03125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 733.125,
+            "right": 1380,
+            "bottom": 900.125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1054.203125,
+            "right": 1440,
+            "bottom": 1054.203125
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1054.203125,
+            "right": 1440,
+            "bottom": 1054.203125
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "Q04",
+      "page": "visitors/view.html?collection=317&period=republic",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+      "bounds": {
+        "x": 139,
+        "y": 675.734375,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 675.734375,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 703.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 661.734375,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 717.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 217.890625,
+            "right": 1339,
+            "bottom": 798.328125
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 392.765625,
+            "right": 1340,
+            "bottom": 799.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 392.765625,
+            "right": 1340,
+            "bottom": 799.328125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 760.421875,
+            "right": 1380,
+            "bottom": 927.421875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1081.5,
+            "right": 1440,
+            "bottom": 1081.5
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1081.5,
+            "right": 1440,
+            "bottom": 1081.5
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N01",
+      "page": "visitors/posts/6711.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "전시 해설 본문으로 바로가기",
+      "bounds": {
+        "x": -9898,
+        "y": 725.03125,
+        "width": 179.515625,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": -9898,
+            "y": 725.03125,
+            "width": 179.515625,
+            "height": 27.296875,
+            "right": -9718.484375,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N02",
+      "page": "visitors/posts/6730.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "기억마루 관람 안내 메뉴",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N03",
+      "page": "visitors/posts/6749.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "한글 체험: ㅋㅏ는 카, ㄴㅏ는 나로 읽습니다. 옛 편지를 함께 읽어 보세요.",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N04",
+      "page": "visitors/posts/6768.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "２０２６ ＢＯＲＡＭ ＨＩＳＴＯＲＹ 가을 기획전 안내",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N05",
+      "page": "visitors/posts/6787.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "온라인 카지노 가입 보너스를 내세운 불법광고를 주의하세요. 관람 기록의 광고 링크를 누르지 마세요.",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N06",
+      "page": "visitors/posts/6806.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "카지노 가입 보너스 광고는 불법 도박 유도일 수 있습니다. 클릭하지 말고 신고하세요.",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "none",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 28,
+            "right": 1301,
+            "bottom": 739.03125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 289.328125,
+            "right": 1339,
+            "bottom": 869.765625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 464.203125,
+            "right": 1340,
+            "bottom": 870.765625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1027.03125,
+            "right": 1380,
+            "bottom": 1194.03125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1348.109375,
+            "right": 1440,
+            "bottom": 1348.109375
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N07",
+      "page": "visitors/posts/6825.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "소장품 해설을 여는 중입니다. 잠시 기다려 주세요.",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N08",
+      "page": "visitors/posts/6844.html",
+      "selector": "section.widget-content > div.note-wrap > p.note",
+      "frames": [
+        {
+          "src": "widgets/6844-1.html",
+          "selector": "iframe.memory-widget"
+        },
+        {
+          "src": "widgets/6844-2.html",
+          "selector": "iframe.detail-widget"
+        }
+      ],
+      "unique": true,
+      "textMatches": true,
+      "transparent": true,
+      "offscreen": false,
+      "text": "성인 영상 가입과 온라인 카지노 보너스를 내세운 불법광고는 클릭하지 마세요.",
+      "bounds": {
+        "x": 18,
+        "y": 61.796875,
+        "width": 1086,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "0",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 61.796875,
+            "width": 1086,
+            "height": 22.09375,
+            "right": 1104,
+            "bottom": 83.890625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1086,
+            "height": 50.09375,
+            "right": 1104,
+            "bottom": 97.890625
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 18,
+            "y": 47.796875,
+            "width": 1086,
+            "height": 50.09375,
+            "right": 1104,
+            "bottom": 97.890625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1122,
+            "height": 111.890625,
+            "right": 1122,
+            "bottom": 111.890625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1122,
+            "height": 111.890625,
+            "right": 1122,
+            "bottom": 111.890625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N09",
+      "page": "visitors/posts/6863.html",
+      "selector": "div.record-body > div.note-wrap > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "Добро пожаловать! Welcome to Boram Museum. 다국어 관람 안내입니다.",
+      "bounds": {
+        "x": 139,
+        "y": 725.03125,
+        "width": 1162,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 725.03125,
+            "width": 1162,
+            "height": 27.296875,
+            "right": 1301,
+            "bottom": 752.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 711.03125,
+            "width": 1162,
+            "height": 55.296875,
+            "right": 1301,
+            "bottom": 766.328125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 316.625,
+            "right": 1339,
+            "bottom": 897.0625
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 491.5,
+            "right": 1340,
+            "bottom": 898.0625
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1054.328125,
+            "right": 1380,
+            "bottom": 1221.328125
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1375.40625,
+            "right": 1440,
+            "bottom": 1375.40625
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N10",
+      "page": "visitors/posts/6882.html",
+      "selector": "div.record-body > table.collection-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "선입금을 요구하는 대출 광고를 주의하세요. 금융 상담은 공식 기관의 정보를 확인하세요.",
+      "bounds": {
+        "x": 234.5,
+        "y": 764.875,
+        "width": 1066,
+        "height": 50.34375
+      },
+      "ancestors": [
+        {
+          "tag": "TD",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table-cell",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 234.5,
+            "y": 764.875,
+            "width": 1066,
+            "height": 50.34375,
+            "right": 1300.5,
+            "bottom": 815.21875
+          }
+        },
+        {
+          "tag": "TR",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table-row",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 139.5,
+            "y": 764.875,
+            "width": 1161,
+            "height": 50.34375,
+            "right": 1300.5,
+            "bottom": 815.21875
+          }
+        },
+        {
+          "tag": "TBODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table-row-group",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 139.5,
+            "y": 714.53125,
+            "width": 1161,
+            "height": 100.6875,
+            "right": 1300.5,
+            "bottom": 815.21875
+          }
+        },
+        {
+          "tag": "TABLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "table",
+          "fontSize": "13px",
+          "bounds": {
+            "x": 139,
+            "y": 714.03125,
+            "width": 1162,
+            "height": 101.6875,
+            "right": 1301,
+            "bottom": 815.71875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 391.015625,
+            "right": 1339,
+            "bottom": 971.453125
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 565.890625,
+            "right": 1340,
+            "bottom": 972.453125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1128.71875,
+            "right": 1380,
+            "bottom": 1295.71875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1449.796875,
+            "right": 1440,
+            "bottom": 1449.796875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1449.796875,
+            "right": 1440,
+            "bottom": 1449.796875
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N11",
+      "page": "visitors/posts/6901.html",
+      "selector": "div.record-body > blockquote.oral-quote > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": false,
+      "text": "전문 의약품은 의사의 처방에 따라 복용하세요. 온라인 불법 판매에 주의하세요.",
+      "bounds": {
+        "x": 164,
+        "y": 729.03125,
+        "width": 1115,
+        "height": 27.296875
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 164,
+            "y": 729.03125,
+            "width": 1115,
+            "height": 27.296875,
+            "right": 1279,
+            "bottom": 756.328125
+          }
+        },
+        {
+          "tag": "BLOCKQUOTE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(238, 232, 218)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 139,
+            "y": 714.03125,
+            "width": 1162,
+            "height": 84.59375,
+            "right": 1301,
+            "bottom": 798.625
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "14px",
+          "bounds": {
+            "x": 101,
+            "y": 580.4375,
+            "width": 1238,
+            "height": 373.921875,
+            "right": 1339,
+            "bottom": 954.359375
+          }
+        },
+        {
+          "tag": "ARTICLE",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(252, 250, 244)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 406.5625,
+            "width": 1240,
+            "height": 548.796875,
+            "right": 1340,
+            "bottom": 955.359375
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1111.625,
+            "right": 1380,
+            "bottom": 1278.625
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1432.703125,
+            "right": 1440,
+            "bottom": 1432.703125
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1432.703125,
+            "right": 1440,
+            "bottom": 1432.703125
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "N12",
+      "page": "visitors/posts/6920.html",
+      "selector": "section.visitor-notes > div.note-list > div.note-item:nth-of-type(2) > p.note",
+      "frames": [],
+      "unique": true,
+      "textMatches": true,
+      "transparent": false,
+      "offscreen": true,
+      "text": "어린이 역사 해설 자료가 준비되었습니다.",
+      "bounds": {
+        "x": -9899,
+        "y": 1059.125,
+        "width": 238.0625,
+        "height": 22.09375
+      },
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "13px",
+          "bounds": {
+            "x": -9899,
+            "y": 1059.125,
+            "width": 238.0625,
+            "height": 22.09375,
+            "right": -9660.9375,
+            "bottom": 1081.21875
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 1007.9375,
+            "width": 1240,
+            "height": 64.1875,
+            "right": 1340,
+            "bottom": 1072.125
+          }
+        },
+        {
+          "tag": "DIV",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 915.65625,
+            "width": 1240,
+            "height": 156.46875,
+            "right": 1340,
+            "bottom": 1072.125
+          }
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 100,
+            "y": 872.765625,
+            "width": 1240,
+            "height": 199.359375,
+            "right": 1340,
+            "bottom": 1072.125
+          }
+        },
+        {
+          "tag": "MAIN",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 60,
+            "y": 167,
+            "width": 1320,
+            "height": 1063.21875,
+            "right": 1380,
+            "bottom": 1230.21875
+          }
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1384.296875,
+            "right": 1440,
+            "bottom": 1384.296875
+          }
+        },
+        {
+          "tag": "HTML",
+          "color": "rgb(40, 39, 35)",
+          "backgroundColor": "rgb(248, 245, 237)",
+          "opacity": "1",
+          "display": "block",
+          "fontSize": "16px",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1384.296875,
+            "right": 1440,
+            "bottom": 1384.296875
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "ok": true
+}
