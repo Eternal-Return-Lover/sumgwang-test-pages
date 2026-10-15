@@ -1,5 +1,7 @@
 > 현재 실행·공통 구조는 [루트 README](../../README.md)를 따릅니다. 아래 사이트별 콘텐츠·시험 명세는 유지하며, 공통 실행 코드는 source/에 모으고 생성물·보고서는 tmp/에 둡니다.
 
+공통 결과 비교: [대시보드](../../validator/?site=4). 같은 출처의 기존 검증 엔진·정답을 재사용하며, 사이트별 검증실과 탐지 대상 주소는 유지합니다.
+
 # 사이트 4 구현 요구사항과 결정
 
 공유 규칙은 저장소 AGENTS.md, 원문은 source/test-site-request.md, 역할은 .codex/agents/site_builder.toml을 따른다. 사용자 지정 기존 폴더 형식을 유지하며 ZIP/release를 추가하지 않는다.

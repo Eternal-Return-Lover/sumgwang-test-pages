@@ -1,5 +1,7 @@
 > 현재 실행·공통 구조는 [루트 README](../../README.md)를 따릅니다. 아래 사이트별 콘텐츠·시험 명세는 유지하며, 공통 실행 코드는 source/에 모으고 생성물·보고서는 tmp/에 둡니다.
 
+공통 결과 비교: [대시보드](../../validator/?site=6). 같은 출처의 기존 검증 엔진·정답을 재사용하며, 사이트별 검증실과 탐지 대상 주소는 유지합니다.
+
 # 사이트6 요구사항과 구현 결정
 
 공유AGENTS.md·source/test-site-request.md·site_builder 역할을 따른다. source/test-site-6만 구현하고 공유/Git/모든build/배포는코디네이터가 수행한다. release·ZIP을 추가하지 않는다.

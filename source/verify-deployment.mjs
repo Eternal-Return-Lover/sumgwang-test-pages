@@ -43,6 +43,7 @@ async function walk(dir,{skip=()=>false}={}){const files=[];for(const item of aw
 const repoPath=path=>relative(root,path).replaceAll('\\','/');
 async function coreSnapshot(){
  const paths=await walk(join(root,'source'),{skip:(path,item)=>item.isDirectory()?['artifacts','node_modules','dist'].includes(item.name):/\.md$/i.test(item.name)});
+ if(existsSync(join(root,'validator')))paths.push(...await walk(join(root,'validator')));
  for(const name of['index.html','package.json','package-lock.json','.gitignore'])if(existsSync(join(root,name)))paths.push(join(root,name));
  for(const site of allSites){paths.push(...await walk(join(root,'test-site-'+site.number)));if(existsSync(buildPaths.get(site.number)))paths.push(...await walk(buildPaths.get(site.number)));}
  const files={};for(const path of[...new Set(paths)].sort((a,b)=>repoPath(a).localeCompare(repoPath(b),'en')))files[repoPath(path)]=sha(await readFile(path));
