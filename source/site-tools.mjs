@@ -21,7 +21,9 @@ export function validateSites(input){
   for(const [seen,key,label] of [[numbers,value.number,'number'],[projects,value.project,'project'],[ids,value.siteId,'siteId'],[ports,port,'port']]){
    assert(!seen.has(key),'Duplicate site '+label+': '+key);seen.add(key);
   }
-  return {...value,port,targetDirectory:'test-site-'+value.number};
+  const directory='test-site-'+value.number;
+  assert.equal(value.project,directory,'Source project must be '+directory);
+  return {...value,port,targetDirectory:directory};
  });
  return sites.sort((a,b)=>a.number-b.number);
 }
