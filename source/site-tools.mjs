@@ -16,6 +16,7 @@ export function validateSites(input){
   assert(typeof value.project==='string'&&/^[a-z][a-z0-9-]*$/.test(value.project),'Invalid source project directory');
   assert(typeof value.siteId==='string'&&/^[a-z][a-z0-9-]*$/.test(value.siteId),'Invalid siteId');
   assert(typeof value.title==='string'&&value.title.trim(),'Site title is required');
+  assert(value.description===undefined||(typeof value.description==='string'&&value.description.trim()),'Site description must be a non-empty string');
   const port=value.port??4172+value.number;
   assert(Number.isInteger(port)&&port>=1024&&port<=65535,'Set a valid port for this site');
   for(const [seen,key,label] of [[numbers,value.number,'number'],[projects,value.project,'project'],[ids,value.siteId,'siteId'],[ports,port,'port']]){
@@ -36,8 +37,84 @@ export async function siteForProject(scriptUrl){
 }
 export function deploymentFor(site){return {targetDirectory:site.targetDirectory,sourceDirectory:'source/'+site.project};}
 export function renderIndex(sites){
- const rows=validateSites(sites).map(s=>'    <li><a href="'+s.targetDirectory+'/">테스트 사이트 '+s.number+' — '+escape(s.title)+'</a></li>').join('\n');
- return '<!doctype html>\n<html lang="ko">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width,initial-scale=1">\n  <title>불법광고 탐지 테스트 페이지</title>\n</head>\n<body>\n  <h1>테스트 사이트 목록</h1>\n  <ul>\n'+rows+'\n  </ul>\n</body>\n</html>\n';
+ const entries=validateSites(sites);
+ const icon=path=>'<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+path+'</svg>';
+ const arrow=icon('<path d="M7 17 17 7M7 7h10v10"/>');
+ const chart=icon('<path d="M4 17v3h16v-3M5 13l4-5 4 4 6-8"/><path d="M15 4h4v4"/>');
+ const building=icon('<path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/>');
+ const cards=entries.map(s=>`      <li class="site-card" data-site-number="${s.number}">
+        <div class="card-top"><span class="site-number">${s.targetDirectory}</span><span class="card-icon">${building}</span></div>
+        <h3><a class="card-title" href="${s.targetDirectory}/">${escape(s.title)}</a></h3>
+        <p class="card-description">${escape(s.description||'가상 공공기관 콘텐츠에서 탐지 결과를 확인하세요.')}</p>
+        <code class="card-path">${s.targetDirectory}/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="${s.targetDirectory}/" aria-label="${escape(s.title)} 테스트 사이트 열기">사이트 열기 ${arrow}</a>
+          <a class="card-validate" data-validation-link href="validator/?site=${s.number}" aria-label="test-site-${s.number} 결과 검증하기">검증하기 ${arrow}</a>
+        </div>
+      </li>`).join('\n');
+ return `<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="숨광 테스트 사이트를 둘러보고 result.json을 공통 대시보드에서 검증하세요.">
+  <meta name="theme-color" content="#087f79">
+  <title>테스트 사이트 · 숨광</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23087f79'/%3E%3Cpath d='M10 28h20M11 22l6-9 6 7 6-10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/hub.css">
+</head>
+<body class="site-hub">
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="숨광 테스트 사이트 홈">
+        <span class="brand-mark">${chart}</span>
+        <span class="brand-copy"><strong>숨광</strong><small>TEST LAB</small></span>
+      </a>
+      <nav class="header-nav" aria-label="주요 메뉴"><a class="header-link" href="validator/">검증 대시보드 ${arrow}</a></nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">TEST &amp; VALIDATE</p>
+          <h1 id="hero-title">테스트와 결과 검증,<br><span>한곳에서 시작하세요.</span></h1>
+          <p class="hero-description">기관별 테스트 사이트에서 탐지 도구를 실행하고,<br>result.json을 올려 정답과 비교해 보세요.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="validator/">검증 대시보드 열기 ${arrow}</a>
+            <a class="button button-secondary" href="#sites">사이트 둘러보기 <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-meta"><span class="status-dot" aria-hidden="true"></span>등록된 테스트 사이트 <strong>${entries.length}개</strong> · 공통 결과 검증</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="flow-panel">
+            <div class="flow-heading"><span class="flow-icon">${chart}</span><p>탐지에서 검증까지</p></div>
+            <ol class="flow-steps">
+              <li><span class="step-number">01</span><div><strong>테스트 사이트 선택</strong><span>기관별 콘텐츠를 탐지하세요.</span></div></li>
+              <li><span class="step-number">02</span><div><strong>result.json 준비</strong><span>탐지 결과 파일을 올려 주세요.</span></div></li>
+              <li><span class="step-number">03</span><div><strong>정답과 결과 비교</strong><span>미탐·오탐과 실패 이유를 확인하세요.</span></div></li>
+            </ol>
+            <div class="flow-footer">${icon('<path d="m5 12 4 4L19 6"/>')}<span>결과 파일은 브라우저 안에서 처리합니다.</span></div>
+          </div>
+        </div>
+      </section>
+      <aside class="crawl-note" aria-labelledby="crawl-title">
+        <span class="note-icon">${icon('<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>')}</span>
+        <div><h2 id="crawl-title">탐지 시작 주소를 확인해 주세요</h2><p>각 카드의 <strong>사이트 열기</strong>로 이동한 <code>test-site-N/</code> 주소를 탐지기에 입력하세요. 이 목록 페이지에는 검증 대시보드 링크도 포함되어 있습니다.</p></div>
+      </aside>
+      <section id="sites" class="site-section" aria-labelledby="sites-title">
+        <div class="section-heading"><div><p class="eyebrow">TEST SITES</p><h2 id="sites-title">테스트 사이트 목록</h2></div><p class="section-count">총 <strong>${entries.length}</strong>개 사이트</p></div>
+        <ul class="site-grid">
+${cards}
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>모든 기관과 콘텐츠는 테스트용 합성 자료입니다.<br>비교 결과는 공식 심사 점수가 아닙니다.</p><a href="validator/">결과 검증하기 ${arrow}</a></div></footer>
+</body>
+</html>
+`;
 }
 export async function updateIndex(root=repositoryRoot){await writeFile(join(root,'index.html'),renderIndex(await loadSites(root)),'utf8');}
 export async function walk(dir){

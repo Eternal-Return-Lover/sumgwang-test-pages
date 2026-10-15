@@ -123,6 +123,8 @@
 
 저장소에서는 공통 대시보드 `validator/`를 주 결과 비교 화면으로 사용하고, 사이트별 `source/test-site-N/lab/`은 정답 사례·DOM 검사를 유지하고 사이트 2 이상의 기존 링크 검사도 보존한다. 대시보드는 source/sites.json을 읽고 같은 출처의 기존 검증실 Promise API를 사용한다. 아래 /lab 경로는 단독 생성물 tmp/build/test-site-N/ 기준이며, 저장소 정답은 각 reference/에 둔다.
 
+저장소 루트의 사이트 허브는 source/sites.json에서 생성한다. 사이트를 등록하고 선택적인 description을 작성한 뒤 공통 빌드 또는 node source/manage.mjs index로 카드·사이트별 검증 링크·총 개수를 갱신한다. 탐지기 입력은 각 test-site-N/ 시작 주소로 안내하고 대상 내부에는 검증 링크를 넣지 않는다.
+
 - `/index.html`: 탐지기에 입력할 시작 페이지
 - `/lab/index.html`: 사람이 사용하는 검증실
 - `/lab/manifest.json`: 검증실용 정답 데이터

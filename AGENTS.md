@@ -15,6 +15,7 @@
 - source/test-site-N/scripts/: 고유 생성기·브라우저 검사. 공통 도구를 복제하지 않는다.
 - source/test-site-N/lab/: 검증실 HTML과 필요한 테마만 둔다.
 - source/test-site-N/reference/: ground-truth.json, counts.json, expected-result.json을 빌드로 생성해 함께 관리한다.
+- index.html·assets/hub.css: 탐지 대상·검증 대시보드로 연결하는 정적 허브. index.html은 source/sites.json과 renderIndex로 생성하며 직접 수정하지 않는다. 등록의 description은 선택 사항이며 제목·설명을 HTML escape한다.
 - validator/: 같은 출처에서 모든 등록 사이트를 검증하는 정적 공통 대시보드. source/sites.json을 읽으며 개별 사이트 번호를 하드코딩하지 않는다.
 - source/shared/: 공통 검증 엔진·스타일·comparison-report.js 진단 API. 사이트 1의 기존 비교 동작은 legacy 엔진으로 보존한다.
 - source/sites.json, manage.mjs, site-tools.mjs, serve.mjs, check.mjs, verify*.mjs: 공통 등록·빌드·실행·검사.
@@ -63,6 +64,7 @@
 - 검색·필터·페이지네이션·빈 결과, 정답·누락·오탐·중복·선택자 동등성·모호성·필드·JSON/BOM·시간 경계 비교.
 - 데스크톱 1440×1000과 모바일 390/320의 화면·넘침·JS 오류, 단독·저장소 접두 경로.
 - 생성물이 없는 상태의 빌드, 재빌드 동일성, 해당 사이트 외 변경 없음, UTF-8/BOM·diff 공백.
+- 루트 허브의 등록 수·카드·사이트/검증 링크, JavaScript 없는 접근, 1440·768·390·320 화면·키보드·접두 경로를 확인한다. 탐지기에는 test-site-N/ 주소를 안내한다.
 - 대시보드는 자동/명시적 사이트 선택·주소 불일치, 파일 전/중/완료/오류·리셋, 전체 진단·필터·검색·다운로드, 새 등록 확장과 기존 엔진 호환을 확인한다.
 - GitHub Pages는 main / 루트 배포다. PR과 로컬·모의 접두 검사를 실제 운영 배포로 표시하지 않는다. 병합 보류 시 구현·검증·PR을 완료하고 병합 후 배포 절차와 URL을 보고한다.
 - README·명세·검증 요약과 실제 결과 일치. 미실행·실패·공식 점수를 성공으로 표시하지 않는다.
