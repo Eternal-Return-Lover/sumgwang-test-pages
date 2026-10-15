@@ -52,5 +52,11 @@
     "project": "eungaram-agri-ad-lab",
     "siteId": "eungaram-agri",
     "title": "은가람시 농업기술센터 들녘마루"
+  },
+  {
+    "number": 10,
+    "project": "hanul-astronomy-ad-lab",
+    "siteId": "hanul-astronomy",
+    "title": "한울시 천문과학관 별숲"
   }
 ]
