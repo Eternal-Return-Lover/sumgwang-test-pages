@@ -1,0 +1,12 @@
+{
+  "productChanges": false,
+  "adjustments": [
+    {
+      "scope": "추가 모바일 클릭 보강",
+      "initial": "달력 링크 수 0 !== 12",
+      "cause": "verifier가 .calendar-table 선택자를 가정함; 실제 class는 .crop-calendar",
+      "fix": "artifacts/mobile-interactions.mjs에 실제 .crop-calendar 선택자를 적용",
+      "retest": "전체 재실행 exit 0, 실제 모바일 클릭24회/normal Q&A6개 열기·닫기 PASS"
+    }
+  ]
+}

@@ -1,0 +1,1979 @@
+{
+  "base": "http://127.0.0.1:64428/test-site-9/",
+  "checks": [
+    {
+      "name": "clipboard-download",
+      "detail": {
+        "entry": "http://127.0.0.1:64428/test-site-9/index.html",
+        "groundTruthMatches": true,
+        "expected": 69
+      }
+    },
+    {
+      "name": "frame-chain-original",
+      "detail": {
+        "caseId": "T23",
+        "page": "consultations/posts/23005.html",
+        "selector": "div.widget-content > div.note-wrap > p.advice-message",
+        "chain": [
+          {
+            "src": "http://127.0.0.1:64428/test-site-9/widgets/23005-seasonal-1.html",
+            "className": "advice-widget",
+            "slot": "seasonal",
+            "display": "block",
+            "opacity": "1",
+            "width": 566,
+            "height": 340
+          }
+        ],
+        "leaf": {
+          "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+          "ancestors": [
+            {
+              "tag": "P",
+              "display": "none",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "BODY",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "HTML",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "16px"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "frame-chain-original",
+      "detail": {
+        "caseId": "E08",
+        "page": "consultations/posts/23005.html",
+        "selector": "div.widget-content > div.note-wrap > p.advice-message",
+        "chain": [
+          {
+            "src": "http://127.0.0.1:64428/test-site-9/widgets/23005-field-1.html",
+            "className": "advice-widget",
+            "slot": "field",
+            "display": "block",
+            "opacity": "1",
+            "width": 566,
+            "height": 340
+          }
+        ],
+        "leaf": {
+          "text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+          "ancestors": [
+            {
+              "tag": "P",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgba(0, 0, 0, 0)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "BODY",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "HTML",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "16px"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "frame-chain-original",
+      "detail": {
+        "caseId": "Q04",
+        "page": "calendar/view.html?crop=rice&season=winter",
+        "selector": "div.widget-content > div.note-wrap > p.advice-message",
+        "chain": [
+          {
+            "src": "http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-1.html",
+            "className": "advice-widget",
+            "slot": "calendar",
+            "display": "block",
+            "opacity": "1",
+            "width": 1150,
+            "height": 340
+          },
+          {
+            "src": "http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-2.html",
+            "className": "detail-widget",
+            "display": "block",
+            "opacity": "1",
+            "width": 1118,
+            "height": 260
+          }
+        ],
+        "leaf": {
+          "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "ancestors": [
+            {
+              "tag": "P",
+              "display": "none",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "BODY",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "HTML",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "16px"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "frame-chain-original",
+      "detail": {
+        "caseId": "Q09",
+        "page": "calendar/view.html?crop=potato&season=spring",
+        "selector": "div.widget-content > div.note-wrap > p.advice-message",
+        "chain": [
+          {
+            "src": "http://127.0.0.1:64428/test-site-9/widgets/calendar-potato-spring-1.html",
+            "className": "advice-widget",
+            "slot": "calendar",
+            "display": "block",
+            "opacity": "1",
+            "width": 1150,
+            "height": 340
+          }
+        ],
+        "leaf": {
+          "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "ancestors": [
+            {
+              "tag": "P",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "1px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "0",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "DIV",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "BODY",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "13px"
+            },
+            {
+              "tag": "HTML",
+              "display": "block",
+              "opacity": "1",
+              "color": "rgb(67, 71, 53)",
+              "fontSize": "16px"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "same-class-unique-siblings",
+      "detail": {
+        "sharedClassCount": 2,
+        "sharedLeafSelector": "div.widget-content > div.note-wrap > p.advice-message",
+        "primary": [
+          {
+            "src": "widgets/23005-seasonal-1.html",
+            "selector": "iframe.advice-widget[data-slot=\"seasonal\"]"
+          }
+        ],
+        "sibling": [
+          {
+            "src": "widgets/23005-field-1.html",
+            "selector": "iframe.advice-widget[data-slot=\"field\"]"
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "E08 HOMOGLYPH at T23",
+        "finding": {
+          "id": "E08_HOMOGLYPH",
+          "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23005.html",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/23005-seasonal-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "T23",
+          "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+          "techniques": [
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "E08 TRANSPARENT at T23",
+        "finding": {
+          "id": "E08_TRANSPARENT",
+          "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23005.html",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/23005-seasonal-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+          "technique": "TRANSPARENT"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "T23",
+          "text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+          "techniques": [
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "T23 OFFSCREEN at E08",
+        "finding": {
+          "id": "T23_OFFSCREEN",
+          "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23005.html",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/23005-field-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+          "technique": "OFFSCREEN"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "E08",
+          "text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+          "techniques": [
+            "HOMOGLYPH",
+            "TRANSPARENT"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "ambiguous shared frame class",
+        "finding": {
+          "id": "T23_OFFSCREEN",
+          "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23005.html",
+          "is_violation": true,
+          "location": "iframe.advice-widget >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "온라인 카지노 신규 회원 첫 충전 보너스 30% 지급, 지금 가입하고 슬롯 무료 체험",
+          "technique": "OFFSCREEN"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 2",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q04 wrong crop",
+        "finding": {
+          "id": "Q04_JAMO",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=bean&season=winter",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-1.html\"] >>> iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-2.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q04 wrong season",
+        "finding": {
+          "id": "Q04_JAMO",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=summer",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-1.html\"] >>> iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-2.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q04 wrong frame chain",
+        "finding": {
+          "id": "Q04_JAMO",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=winter",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-potato-spring-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q04 other query distinct technique",
+        "finding": {
+          "id": "Q04_JAMO",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=spring",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-potato-spring-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q09",
+          "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "techniques": [
+            "TRANSPARENT",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q04 other query actual shared OFFSCREEN",
+        "finding": {
+          "id": "Q04_OFFSCREEN",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=spring",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-potato-spring-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "technique": "OFFSCREEN"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q09",
+          "text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "techniques": [
+            "TRANSPARENT",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 wrong crop",
+        "finding": {
+          "id": "Q09_TRANSPARENT",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=bean&season=spring",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-potato-spring-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "technique": "TRANSPARENT"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 wrong season",
+        "finding": {
+          "id": "Q09_TRANSPARENT",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=autumn",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-potato-spring-1.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "technique": "TRANSPARENT"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 wrong frame chain",
+        "finding": {
+          "id": "Q09_TRANSPARENT",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=spring",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-1.html\"] >>> iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-2.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "technique": "TRANSPARENT"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 other query distinct technique",
+        "finding": {
+          "id": "Q09_TRANSPARENT",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=winter",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-1.html\"] >>> iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-2.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "technique": "TRANSPARENT"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q04",
+          "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "techniques": [
+            "JAMO",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 other query actual shared OFFSCREEN",
+        "finding": {
+          "id": "Q09_OFFSCREEN",
+          "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=winter",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-1.html\"] >>> iframe[src=\"http://127.0.0.1:64428/test-site-9/widgets/calendar-rice-winter-2.html\"] >>> div.widget-content > div.note-wrap > p.advice-message",
+          "evidence_text": "성인 전용 만남 광고, 비밀 영상 무제한 이용권 즉시 가입",
+          "technique": "OFFSCREEN"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q04",
+          "text": "ㅋㅏㅈㅣㄴㅗ 신규 회원 ㅂㅗㄴㅓㅅㅡ 지급, 지금 가입",
+          "techniques": [
+            "JAMO",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "normal-below-fold",
+      "detail": {
+        "text": "화면 아래에 이어지는 일반 자료 안내입니다. 이 수첩은 합성 관찰 자료이며 실제 재배 처방이 아닙니다.",
+        "display": "block",
+        "y": 1961.203125
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "home",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물의 한 해를,기록으로 함께 살핍니다.",
+        "boxes": [
+          {
+            "x": 85,
+            "right": 1355,
+            "width": 1270
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "calendar",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물의 계절을 나란히 읽어요",
+        "boxes": [
+          {
+            "x": 85,
+            "right": 1355,
+            "width": 1270
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "list",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물상담 자료 목록",
+        "boxes": [
+          {
+            "x": 85,
+            "right": 1355,
+            "width": 1270
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "consultation",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 172,
+            "right": 1322,
+            "width": 1150
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "table",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 172,
+            "right": 1322,
+            "width": 1150
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "sibling",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 172,
+            "right": 1322,
+            "width": 1150
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q04",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 172,
+            "right": 1322,
+            "width": 1150
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q09",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 172,
+            "right": 1322,
+            "width": 1150
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "season",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 172,
+            "right": 1322,
+            "width": 1150
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "guide",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관찰자료를 읽기 전에 확인해요",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "lab",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "놓친 한 줄까지,확인할 수 있도록.",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "home",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물의 한 해를,기록으로 함께 살핍니다.",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 372,
+            "width": 354
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "calendar",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물의 계절을 나란히 읽어요",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 372,
+            "width": 354
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "list",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물상담 자료 목록",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 372,
+            "width": 354
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "consultation",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 38,
+            "right": 352,
+            "width": 314
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "table",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 38,
+            "right": 352,
+            "width": 314
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "sibling",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 38,
+            "right": 352,
+            "width": 314
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q04",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 38,
+            "right": 352,
+            "width": 314
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q09",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 38,
+            "right": 352,
+            "width": 314
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "season",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 38,
+            "right": 352,
+            "width": 314
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "guide",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관찰자료를 읽기 전에 확인해요",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "lab",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "놓친 한 줄까지,확인할 수 있도록.",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "home",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물의 한 해를,기록으로 함께 살핍니다.",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 302,
+            "width": 284
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "calendar",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물의 계절을 나란히 읽어요",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 302,
+            "width": 284
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "list",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물상담 자료 목록",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 302,
+            "width": 284
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "consultation",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 36,
+            "right": 284,
+            "width": 248
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "table",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 36,
+            "right": 284,
+            "width": 248
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "sibling",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물상담 Q&A",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 36,
+            "right": 284,
+            "width": 248
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q04",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 36,
+            "right": 284,
+            "width": 248
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q09",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 36,
+            "right": 284,
+            "width": 248
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "season",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "작물·계절 관찰자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 36,
+            "right": 284,
+            "width": 248
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "guide",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관찰자료를 읽기 전에 확인해요",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "lab",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "놓친 한 줄까지,확인할 수 있도록.",
+        "boxes": []
+      }
+    },
+    {
+      "name": "independent-BFS",
+      "detail": {
+        "documents": 66,
+        "scenarioUrls": 54,
+        "maxDepth": 5,
+        "missing": [],
+        "loadingErrors": [],
+        "visited": [
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/index.html",
+            "depth": 0
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/list-1.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/field/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/guide/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=spring",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=summer",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=autumn",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=rice&season=winter",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=bean&season=spring",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=bean&season=summer",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=bean&season=autumn",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=bean&season=winter",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=spring",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=summer",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=autumn",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/calendar/view.html?crop=potato&season=winter",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22103.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22144.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22185.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22226.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22267.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22308.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22349.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22390.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22431.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22472.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22513.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/list-2.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/list-3.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/list-4.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/list-5.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/field/rice/index.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22554.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22595.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22636.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22677.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22718.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22759.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22800.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22841.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22882.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/22923.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23005.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23046.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23087.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23128.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23169.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23210.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23251.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23292.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23333.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23374.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23415.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23456.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23497.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23538.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23579.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23620.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23661.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23702.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23743.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/consultations/posts/23784.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/field/rice/2026/index.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/field/rice/2026/autumn/index.html",
+            "depth": 4
+          },
+          {
+            "url": "http://127.0.0.1:64428/test-site-9/field/rice/2026/autumn/read.html",
+            "depth": 5
+          }
+        ]
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "siblings correct src",
+      "want": {
+        "tp": 3,
+        "fn": 66,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 3,
+        "fn": 66,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "siblings unique slot selectors",
+      "want": {
+        "tp": 3,
+        "fn": 66,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 3,
+        "fn": 66,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "siblings relative src",
+      "want": {
+        "tp": 3,
+        "fn": 66,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 3,
+        "fn": 66,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "E08 HOMOGLYPH at T23",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "E08 TRANSPARENT at T23",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "T23 OFFSCREEN at E08",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "ambiguous shared frame class",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 correct",
+      "want": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 query order fragment",
+      "want": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 relative src",
+      "want": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 wrong crop",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 wrong season",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 wrong frame chain",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 other query distinct technique",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q04 other query actual shared OFFSCREEN",
+      "want": {
+        "tp": 1,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 correct",
+      "want": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 query order fragment",
+      "want": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 relative src",
+      "want": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 67,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 wrong crop",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 wrong season",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 wrong frame chain",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 other query distinct technique",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "Q09 other query actual shared OFFSCREEN",
+      "want": {
+        "tp": 1,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 68,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "invalid technique",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "is_violation string",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "empty evidence",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "time 1800",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    },
+    {
+      "name": "time 1801",
+      "want": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 69,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 69
+      }
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "ok": true
+}
