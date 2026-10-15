@@ -114,7 +114,7 @@ export async function writeLab(site){
  const html=await readFile(join(source,'index.html'),'utf8'),engine=html.includes('legacy-lab.js')?'legacy-lab.js':'lab.js';
  const standalone=html.replaceAll('../../shared/','').replace('data-manifest="../reference/ground-truth.json"','data-manifest="manifest.json"').replaceAll('../../../'+site.targetDirectory+'/', '../');
  await writeFile(join(lab,'index.html'),standalone,'utf8');
- for(const f of ['lab-base.css','lab.css',engine])await cp(join(repositoryRoot,'source/shared',f),join(lab,f));
+ for(const f of ['lab-base.css','lab.css',engine,'comparison-report.js'])await cp(join(repositoryRoot,'source/shared',f),join(lab,f));
  try{await cp(join(source,'theme.css'),join(lab,'theme.css'));}catch(e){if(e.code!=='ENOENT')throw e;}
  await writeFile(join(lab,'manifest.json'),JSON.stringify(manifest,null,2)+'\n','utf8');
  await writeFile(join(project,'reference/counts.json'),JSON.stringify(counts,null,2)+'\n','utf8');

@@ -1,9 +1,9 @@
 # test-site-10
 
-[대상](../../test-site-10/) · [검증실](lab/) · [정답](reference/ground-truth.json) · [예상 결과](reference/expected-result.json)
+[탐지 대상](../../test-site-10/) · [공통 대시보드](../../validator/?site=10) · [기존 검증실](lab/)
 
-저장소 루트: `npm run build -- 10` → `npm run check -- 10` → `npm start`
+[정답](reference/ground-truth.json) · [수량](reference/counts.json) · [예상 결과](reference/expected-result.json)
 
-브라우저 검사: `npm run verify -- 10` (루트 개발 의존성·Chrome 필요).
+대시보드에서 사이트를 선택하고 result.json을 올린 뒤 비교합니다. 검증실은 정답 사례·DOM 검사를 계속 제공합니다. 실행·배포·검사 명령은 [공통 README](../../README.md)를 참조하세요.
 
-[제작 명세](REQUIREMENTS.md) · [검증 요약](VERIFICATION.md)
+[상세 명세](REQUIREMENTS.md) · [최신 검증 요약](VERIFICATION.md)

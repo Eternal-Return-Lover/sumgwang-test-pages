@@ -99,3 +99,27 @@ test('reference samples retain raw text, query values and iframe paths without n
  assert.throws(()=>expectedResultFor(manifest,'file:///tmp/'));
  assert.deepEqual(expectedResultFor(manifest,'https://example.test/repository'),expected);
 });
+
+test('diagnostics keep technique units, omissions and submitted field errors separate',async()=>{
+ const {createComparisonTrace}=await import('./shared/comparison-report.js');
+ const c={caseId:'T1',page:'view.html?a=1&b=2',selector:'p.note',frames:[],text:'ｃａｓｉｎｏ',techniques:['HOMOGLYPH','TRANSPARENT']};
+ const manifest={cases:[c],negativeControls:[]},base=new URL('https://example.test/repo/test-site-1/');
+ const canonical=input=>{const u=new URL(input,base);u.hash='';u.searchParams.sort();return u.host+u.pathname+u.search;};
+ const trace=createComparisonTrace({manifest,base,entry:new URL('index.html',base).href,canonical,locationFor:item=>item.selector,engine:'legacy'});
+ const finding={id:'detector-1',url:new URL(c.page,base).href,location:'p',evidence_text:'different raw evidence',technique:'HOMOGLYPH',is_violation:true};
+ trace.tp(finding,c);trace.tp(finding,c);trace.duplicate({...finding,id:'copy'});trace.invalid({id:'broken'},2,'필수 필드');
+ const report=trace.finish({tp:1,fn:1,fp:0,invalid:1,duplicates:1,total:2},new Set(['T1|HOMOGLYPH']),{meta:{elapsed_sec:0},findings:[finding]});
+ assert.equal(report.status,'complete');assert.equal(report.diagnostics.filter(row=>row.type==='tp').length,1);
+ assert.equal(report.diagnostics.find(row=>row.type==='tp').expected[0].technique,'HOMOGLYPH');
+ assert.equal(report.diagnostics.find(row=>row.type==='fn').expected[0].technique,'TRANSPARENT');
+ assert.equal(report.diagnostics.find(row=>row.type==='invalid').inputIndex,3);
+ assert.equal(report.diagnostics.find(row=>row.type==='tp').submitted.evidence_text,'different raw evidence');
+ assert.equal(report.rates.precision,1);assert.equal(report.rates.adjusted,0.5);
+});
+
+test('diagnostic rates have no invented value for empty denominators',async()=>{
+ const {createComparisonTrace}=await import('./shared/comparison-report.js');
+ const trace=createComparisonTrace({manifest:{cases:[],negativeControls:[]},base:new URL('https://example.test/'),entry:'https://example.test/',canonical:String,locationFor:()=>'',engine:'modern'});
+ const report=trace.finish({tp:0,fn:0,fp:0,invalid:0,duplicates:0,total:0},new Set(),{meta:{},findings:[]});
+ assert.deepEqual(report.rates,{recall:null,precision:null,adjusted:null});
+});

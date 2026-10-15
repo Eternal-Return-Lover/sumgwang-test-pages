@@ -15,7 +15,8 @@
 - source/test-site-N/scripts/: 고유 생성기·브라우저 검사. 공통 도구를 복제하지 않는다.
 - source/test-site-N/lab/: 검증실 HTML과 필요한 테마만 둔다.
 - source/test-site-N/reference/: ground-truth.json, counts.json, expected-result.json을 빌드로 생성해 함께 관리한다.
-- source/shared/: 공통 검증 엔진·스타일. 사이트 1의 기존 비교 동작은 legacy 엔진으로 보존한다.
+- validator/: 같은 출처에서 모든 등록 사이트를 검증하는 정적 공통 대시보드. source/sites.json을 읽으며 개별 사이트 번호를 하드코딩하지 않는다.
+- source/shared/: 공통 검증 엔진·스타일·comparison-report.js 진단 API. 사이트 1의 기존 비교 동작은 legacy 엔진으로 보존한다.
 - source/sites.json, manage.mjs, site-tools.mjs, serve.mjs, check.mjs, verify*.mjs: 공통 등록·빌드·실행·검사.
 - tmp/build/test-site-N/: 단독 실행 가능한 전체 생성물. tmp/verification/: 보고서·다운로드·스크린샷·snapshot. 모두 Git에서 제외한다.
 - 사이트별 dist/, artifacts/, package.json, node_modules/, 중복 실행기·서버·정적 검사를 추가하지 않는다.
@@ -30,12 +31,15 @@
 - HOMOGLYPH·JAMO 원문을 정규화하지 않는다. TRANSPARENT·OFFSCREEN은 요소와 조상 스타일·bounds를 확인한다.
 - reference/expected-result.json은 package.json의 publicBaseUrl과 고정 합성 시각을 쓰는 재현 가능한 정답 예시다. 실제 탐지 결과가 아니다.
 - 검증실 다운로드는 현재 접속 주소를 사용한다. canonical 예시와 로컬·접두 경로의 주소를 혼동하지 않는다.
-- 검증실은 대상 경로 밖에 유지한다. 후속 공통 대시보드도 같은 출처의 별도 경로를 사용해 DOM 검증을 재사용한다. 이번 구조 정리만으로 새 대시보드를 구현·배포하지 않는다.
+- 공통 대시보드 validator/와 사이트별 검증실을 대상 경로 밖에 유지한다. 대시보드는 같은 출처의 검증실을 1440×1000 iframe으로 열고 validationLabReady/compare API를 사용한다. 결과 HTML을 긁거나 비교 알고리즘을 복제하지 않는다.
+- API는 status, metrics, rates, diagnostics, meta를 반환한다. 파일 전체 거부는 metrics:null이며 TP0/FN전체로 표시하지 않는다. 상세 진단은 TP/FN/FP/필드 오류/중복을 구분하고 기대값·제출값·이유를 제공한다.
+- TP/FN은 기법별 기대 단위, FP/필드 오류는 제출 항목, 중복은 통합 정보다. 이를 단일 실패 합계로 중복 집계하지 않는다. 정밀도 TP/(TP+FP)와 기존 필드 오류 반영 비율 TP/(TP+FP+invalid)을 구분한다.
+- 실제 DOM 접근용 검증실 iframe을 display:none, 0크기, cross-origin 또는 sandbox로 바꾸지 않는다. 사이트 1의 필드 검사·기대셋 밖 페이지·iframe 해석 차이를 의도 없이 통일하지 않는다.
 
 ## 역할
 
 - Main coordinator: 기획·번호, 공통 파일·문서, 의존성·빌드·배포 동기화, Git·완료 판정 담당.
-- site_builder: .codex/agents/site_builder.toml을 읽고 배정된 사이트 원본·고유 검사만 구현. 공통 파일·빌드·배포본·Git은 변경하지 않는다.
+- site_builder: .codex/agents/site_builder.toml을 읽고 배정된 사이트 원본·고유 검사 또는 명시적으로 배정된 대시보드 UI 범위만 구현. 공통 도구·엔진·빌드·배포본·Git은 메인이 담당한다.
 - site_verifier: .codex/agents/site_verifier.toml을 읽고 생성물과 실제 DOM을 독립 검사. tmp/verification/와 배정된 검증 요약만 작성하고 구현·정답·빌드·Git은 변경하지 않는다.
 - 하위 에이전트 이름은 영어 snake_case를 사용한다. 자동 역할 발견이 안 되면 역할과 소유 범위를 명시적으로 전달한다.
 
@@ -49,6 +53,7 @@
 - npm test: 공통 코드·경로·정답 생성 회귀 검사.
 - npm start: 저장소 전체를 한 서버에서 제공.
 - npm run verify -- N: 해당 사이트의 실제 브라우저 검사. 단독 생성물이 먼저 있어야 한다.
+- npm run verify:dashboard: 공통 대시보드의 업로드·비교·상세 진단·선택·반응형·접두 경로 독립 브라우저 검사.
 - node source/verify-deployment.mjs all: 모든 검증실의 기본·접두·단독 경로 검사.
 
 완료하려면 실제 실행한 결과로 다음을 확인한다.
@@ -58,6 +63,8 @@
 - 검색·필터·페이지네이션·빈 결과, 정답·누락·오탐·중복·선택자 동등성·모호성·필드·JSON/BOM·시간 경계 비교.
 - 데스크톱 1440×1000과 모바일 390/320의 화면·넘침·JS 오류, 단독·저장소 접두 경로.
 - 생성물이 없는 상태의 빌드, 재빌드 동일성, 해당 사이트 외 변경 없음, UTF-8/BOM·diff 공백.
+- 대시보드는 자동/명시적 사이트 선택·주소 불일치, 파일 전/중/완료/오류·리셋, 전체 진단·필터·검색·다운로드, 새 등록 확장과 기존 엔진 호환을 확인한다.
+- GitHub Pages는 main / 루트 배포다. PR과 로컬·모의 접두 검사를 실제 운영 배포로 표시하지 않는다. 병합 보류 시 구현·검증·PR을 완료하고 병합 후 배포 절차와 URL을 보고한다.
 - README·명세·검증 요약과 실제 결과 일치. 미실행·실패·공식 점수를 성공으로 표시하지 않는다.
 
 ## Git·순차 제작·재개

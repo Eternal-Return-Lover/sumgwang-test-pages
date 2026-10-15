@@ -30,3 +30,17 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const selection=process.argv[2]||'all',sites=(await loadSites()).filter(s=>selection==='all'||String(s.number)===selection);assert(sites.length,'Unknown site number: '+selection);
  for(const site of sites)console.log(JSON.stringify(await checkSite(site)));
 }
+
+export async function checkDashboard(){
+ const root=join(repositoryRoot,'validator'),html=await readFile(join(root,'index.html'),'utf8');let refs=0;
+ assert(html.includes('charset="utf-8"'),'Dashboard must declare UTF-8');
+ for(const match of html.matchAll(/<(?:a|link|script)\b[^>]*\b(?:href|src)="([^"]*)"/g)){
+  const raw=match[1];if(/^(?:https?:|data:|#)/.test(raw))continue;let file=fileURLToPath(new URL(raw,pathToFileURL(join(root,'index.html'))));
+  if((await stat(file)).isDirectory())file=join(file,'index.html');assert((await stat(file)).isFile(),'Dashboard missing '+raw);refs++;
+ }
+ for(const file of [join(root,'dashboard.js'),join(repositoryRoot,'source/shared/comparison-report.js')]){
+  const source=await readFile(file);assert(!(source[0]===239&&source[1]===187&&source[2]===191),'Unexpected BOM: '+file);new TextDecoder('utf-8',{fatal:true}).decode(source);
+  const result=spawnSync(process.execPath,['--check',file],{encoding:'utf8'});assert.equal(result.status,0,result.stderr);
+ }
+ return {ok:true,dashboard:'validator/',localReferences:refs};
+}

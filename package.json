@@ -11,7 +11,8 @@
     "check": "node source/manage.mjs check",
     "start": "node source/serve.mjs",
     "verify": "node source/verify.mjs",
-    "test": "node --test source/site-tools.test.mjs"
+    "test": "node --test source/site-tools.test.mjs",
+    "verify:dashboard": "node source/verify-dashboard.mjs all --prefix"
   },
   "config": {
     "publicBaseUrl": "https://eternal-return-lover.github.io/sumgwang-test-pages/"
