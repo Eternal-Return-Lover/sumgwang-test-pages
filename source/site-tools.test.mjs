@@ -11,17 +11,23 @@ import {validateSites,renderIndex,deploymentFor,publishSite,checkDeployment,repo
 const registration=number=>({number,project:'test-site-'+number,siteId:'site-'+number,title:'Site '+number});
 
 test('multi-digit numbers sort numerically and titles are escaped',()=>{
- const sites=validateSites([registration(11),registration(2),{...registration(10),title:'<script> & "title"'}]);
+ const sites=validateSites([registration(11),registration(2),{...registration(10),title:'<script> & "title"',description:'<img src=x> & details'}]);
  assert.deepEqual(sites.map(s=>s.number),[2,10,11]);
  const html=renderIndex(sites);
  assert(html.indexOf('test-site-2/')<html.indexOf('test-site-10/'));
  assert(html.indexOf('test-site-10/')<html.indexOf('test-site-11/'));
  assert(html.includes('&lt;script&gt; &amp; &quot;title&quot;'));
+ assert(html.includes('&lt;img src=x&gt; &amp; details'));
+ assert(html.includes('href="validator/?site=11"'));
+ assert.equal((html.match(/data-site-number=/g)||[]).length,3);
+ assert(html.includes('등록된 테스트 사이트 <strong>3개</strong>'));
+ assert(html.includes('가상 공공기관 콘텐츠에서 탐지 결과를 확인하세요.'));
+ assert(!html.includes('<script>')&&!html.includes('<img src=x>'));
  assert.equal(sites[1].port,4182);
 });
 
 test('invalid and conflicting registrations fail before file changes',()=>{
- for(const fields of [{number:0},{number:1.5},{project:'../outside'},{project:'agency-name'},{project:'test-site-11'},{project:'test-site-010'},{siteId:'a/b'},{title:''},{port:65536}]){
+ for(const fields of [{number:0},{number:1.5},{project:'../outside'},{project:'agency-name'},{project:'test-site-11'},{project:'test-site-010'},{siteId:'a/b'},{title:''},{description:''},{description:5},{port:65536}]){
   assert.throws(()=>validateSites([{...registration(10),...fields}]));
  }
  for(const fields of [{number:2},{project:'test-site-2'},{siteId:'site-2'},{port:4174}]){

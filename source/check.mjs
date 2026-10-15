@@ -44,3 +44,17 @@ export async function checkDashboard(){
  }
  return {ok:true,dashboard:'validator/',localReferences:refs};
 }
+
+export async function checkHub(){
+ const file=join(repositoryRoot,'index.html'),html=await readFile(file,'utf8');let refs=0;
+ assert(html.includes('charset="utf-8"'),'Hub must declare UTF-8');
+ for(const match of html.matchAll(/<(?:a|link|script|img)\b[^>]*\b(?:href|src)="([^"]*)"/g)){
+  const raw=match[1].replaceAll('&amp;','&');if(/^(?:https?:|data:|#|mailto:)/.test(raw))continue;
+  let target=fileURLToPath(new URL(raw,pathToFileURL(file)));if((await stat(target)).isDirectory())target=join(target,'index.html');
+  assert((await stat(target)).isFile(),'Hub missing '+raw);refs++;
+ }
+ for(const path of [file,join(repositoryRoot,'assets/hub.css')]){
+  const bytes=await readFile(path);assert(!(bytes[0]===239&&bytes[1]===187&&bytes[2]===191),'Unexpected BOM: '+path);new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+ }
+ return {ok:true,hub:'./',localReferences:refs};
+}

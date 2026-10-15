@@ -3,21 +3,159 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>불법광고 탐지 테스트 페이지</title>
+  <meta name="description" content="숨광 테스트 사이트를 둘러보고 result.json을 공통 대시보드에서 검증하세요.">
+  <meta name="theme-color" content="#087f79">
+  <title>테스트 사이트 · 숨광</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23087f79'/%3E%3Cpath d='M10 28h20M11 22l6-9 6 7 6-10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/hub.css">
 </head>
-<body>
-  <h1>테스트 사이트 목록</h1>
-  <ul>
-    <li><a href="test-site-1/">테스트 사이트 1 — 한빛시 시민소통광장</a></li>
-    <li><a href="test-site-2/">테스트 사이트 2 — 다온시립도서관 책마루</a></li>
-    <li><a href="test-site-3/">테스트 사이트 3 — 해솔시 생활체육센터</a></li>
-    <li><a href="test-site-4/">테스트 사이트 4 — 보람시 역사박물관 기억마루</a></li>
-    <li><a href="test-site-5/">테스트 사이트 5 — 가온시 환경교육센터 푸른순환</a></li>
-    <li><a href="test-site-6/">테스트 사이트 6 — 온누리시 교통정보센터 길마루</a></li>
-    <li><a href="test-site-7/">테스트 사이트 7 — 다솜시 통합복지센터 서로마루</a></li>
-    <li><a href="test-site-8/">테스트 사이트 8 — 별빛시 공공기록관 기록빛</a></li>
-    <li><a href="test-site-9/">테스트 사이트 9 — 은가람시 농업기술센터 들녘마루</a></li>
-    <li><a href="test-site-10/">테스트 사이트 10 — 한울시 천문과학관 별숲</a></li>
-  </ul>
+<body class="site-hub">
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="숨광 테스트 사이트 홈">
+        <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 17v3h16v-3M5 13l4-5 4 4 6-8"/><path d="M15 4h4v4"/></svg></span>
+        <span class="brand-copy"><strong>숨광</strong><small>TEST LAB</small></span>
+      </a>
+      <nav class="header-nav" aria-label="주요 메뉴"><a class="header-link" href="validator/">검증 대시보드 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a></nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">TEST &amp; VALIDATE</p>
+          <h1 id="hero-title">테스트와 결과 검증,<br><span>한곳에서 시작하세요.</span></h1>
+          <p class="hero-description">기관별 테스트 사이트에서 탐지 도구를 실행하고,<br>result.json을 올려 정답과 비교해 보세요.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="validator/">검증 대시보드 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+            <a class="button button-secondary" href="#sites">사이트 둘러보기 <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-meta"><span class="status-dot" aria-hidden="true"></span>등록된 테스트 사이트 <strong>10개</strong> · 공통 결과 검증</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="flow-panel">
+            <div class="flow-heading"><span class="flow-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 17v3h16v-3M5 13l4-5 4 4 6-8"/><path d="M15 4h4v4"/></svg></span><p>탐지에서 검증까지</p></div>
+            <ol class="flow-steps">
+              <li><span class="step-number">01</span><div><strong>테스트 사이트 선택</strong><span>기관별 콘텐츠를 탐지하세요.</span></div></li>
+              <li><span class="step-number">02</span><div><strong>result.json 준비</strong><span>탐지 결과 파일을 올려 주세요.</span></div></li>
+              <li><span class="step-number">03</span><div><strong>정답과 결과 비교</strong><span>미탐·오탐과 실패 이유를 확인하세요.</span></div></li>
+            </ol>
+            <div class="flow-footer"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>결과 파일은 브라우저 안에서 처리합니다.</span></div>
+          </div>
+        </div>
+      </section>
+      <aside class="crawl-note" aria-labelledby="crawl-title">
+        <span class="note-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg></span>
+        <div><h2 id="crawl-title">탐지 시작 주소를 확인해 주세요</h2><p>각 카드의 <strong>사이트 열기</strong>로 이동한 <code>test-site-N/</code> 주소를 탐지기에 입력하세요. 이 목록 페이지에는 검증 대시보드 링크도 포함되어 있습니다.</p></div>
+      </aside>
+      <section id="sites" class="site-section" aria-labelledby="sites-title">
+        <div class="section-heading"><div><p class="eyebrow">TEST SITES</p><h2 id="sites-title">테스트 사이트 목록</h2></div><p class="section-count">총 <strong>10</strong>개 사이트</p></div>
+        <ul class="site-grid">
+      <li class="site-card" data-site-number="1">
+        <div class="card-top"><span class="site-number">test-site-1</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-1/">한빛시 시민소통광장</a></h3>
+        <p class="card-description">시민 소식과 참여 게시판을 둘러보는 공공 소통 공간</p>
+        <code class="card-path">test-site-1/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-1/" aria-label="한빛시 시민소통광장 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=1" aria-label="test-site-1 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="2">
+        <div class="card-top"><span class="site-number">test-site-2</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-2/">다온시립도서관 책마루</a></h3>
+        <p class="card-description">도서 검색과 문화 프로그램을 안내하는 시립도서관</p>
+        <code class="card-path">test-site-2/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-2/" aria-label="다온시립도서관 책마루 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=2" aria-label="test-site-2 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="3">
+        <div class="card-top"><span class="site-number">test-site-3</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-3/">해솔시 생활체육센터</a></h3>
+        <p class="card-description">생활체육 프로그램과 시설 이용을 안내하는 체육센터</p>
+        <code class="card-path">test-site-3/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-3/" aria-label="해솔시 생활체육센터 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=3" aria-label="test-site-3 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="4">
+        <div class="card-top"><span class="site-number">test-site-4</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-4/">보람시 역사박물관 기억마루</a></h3>
+        <p class="card-description">지역의 역사와 전시 자료를 소개하는 역사박물관</p>
+        <code class="card-path">test-site-4/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-4/" aria-label="보람시 역사박물관 기억마루 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=4" aria-label="test-site-4 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="5">
+        <div class="card-top"><span class="site-number">test-site-5</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-5/">가온시 환경교육센터 푸른순환</a></h3>
+        <p class="card-description">환경교육과 생태 자료를 만나는 공공 교육 공간</p>
+        <code class="card-path">test-site-5/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-5/" aria-label="가온시 환경교육센터 푸른순환 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=5" aria-label="test-site-5 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="6">
+        <div class="card-top"><span class="site-number">test-site-6</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-6/">온누리시 교통정보센터 길마루</a></h3>
+        <p class="card-description">대중교통과 교통 생활 정보를 제공하는 교통센터</p>
+        <code class="card-path">test-site-6/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-6/" aria-label="온누리시 교통정보센터 길마루 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=6" aria-label="test-site-6 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="7">
+        <div class="card-top"><span class="site-number">test-site-7</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-7/">다솜시 통합복지센터 서로마루</a></h3>
+        <p class="card-description">복지 서비스와 지원 정보를 안내하는 통합복지센터</p>
+        <code class="card-path">test-site-7/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-7/" aria-label="다솜시 통합복지센터 서로마루 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=7" aria-label="test-site-7 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="8">
+        <div class="card-top"><span class="site-number">test-site-8</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-8/">별빛시 공공기록관 기록빛</a></h3>
+        <p class="card-description">지역의 공공기록을 검색하고 열람하는 기록관</p>
+        <code class="card-path">test-site-8/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-8/" aria-label="별빛시 공공기록관 기록빛 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=8" aria-label="test-site-8 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="9">
+        <div class="card-top"><span class="site-number">test-site-9</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-9/">은가람시 농업기술센터 들녘마루</a></h3>
+        <p class="card-description">작물별 농업 자료와 상담을 제공하는 농업기술센터</p>
+        <code class="card-path">test-site-9/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-9/" aria-label="은가람시 농업기술센터 들녘마루 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=9" aria-label="test-site-9 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+      <li class="site-card" data-site-number="10">
+        <div class="card-top"><span class="site-number">test-site-10</span><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 13v2m6-2v2M10 21v-3h4v3"/></svg></span></div>
+        <h3><a class="card-title" href="test-site-10/">한울시 천문과학관 별숲</a></h3>
+        <p class="card-description">천문 프로그램과 별 관측을 안내하는 천문과학관</p>
+        <code class="card-path">test-site-10/</code>
+        <div class="card-actions">
+          <a class="button button-site" data-site-link href="test-site-10/" aria-label="한울시 천문과학관 별숲 테스트 사이트 열기">사이트 열기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a class="card-validate" data-validation-link href="validator/?site=10" aria-label="test-site-10 결과 검증하기">검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>모든 기관과 콘텐츠는 테스트용 합성 자료입니다.<br>비교 결과는 공식 심사 점수가 아닙니다.</p><a href="validator/">결과 검증하기 <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div></footer>
 </body>
 </html>

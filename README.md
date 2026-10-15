@@ -2,9 +2,9 @@
 
 공모전 모집요강 기반 가상 공공 웹사이트입니다.
 
-**[검증 대시보드](https://eternal-return-lover.github.io/sumgwang-test-pages/validator/)** · GitHub Pages의 main 반영 후 사용합니다.
+**[테스트 사이트 목록](https://eternal-return-lover.github.io/sumgwang-test-pages/)** · **[검증 대시보드](https://eternal-return-lover.github.io/sumgwang-test-pages/validator/)**
 
-사이트를 선택하거나 `result.json`을 올린 뒤 **결과 비교하기**를 누르세요. 시작 URL로 사이트를 자동 선택하며, 직접 선택한 사이트와 주소가 다르면 안내합니다. 파일은 브라우저 안에서 처리합니다.
+목록의 **사이트 열기**로 탐지 대상을 열고 **검증하기**로 해당 사이트의 대시보드에 접속합니다. 사이트를 선택하거나 `result.json`을 올린 뒤 **결과 비교하기**를 누르세요. 시작 URL로 사이트를 자동 선택하며, 직접 선택한 사이트와 주소가 다르면 안내합니다. 파일은 브라우저 안에서 처리합니다.
 
 | 사이트 | 소스 | 결과 검증 |
 | --- | --- | --- |
@@ -32,9 +32,9 @@ npm start
 npm run verify:dashboard
 ```
 
-로컬 미리보기: [대시보드](http://127.0.0.1:4173/validator/). 운영 배포는 GitHub Pages의 **main / 루트** 기준이며, 기능 PR 병합 후 Pages 빌드 완료와 실제 주소를 확인합니다. 로컬·접두 경로 모의 검사는 운영 배포 검사가 아닙니다.
+로컬 미리보기: [사이트 목록](http://127.0.0.1:4173/) · [대시보드](http://127.0.0.1:4173/validator/). 운영 배포는 GitHub Pages의 **main / 루트** 기준이며, 기능 PR 병합 후 Pages 빌드 완료와 실제 주소를 확인합니다. 로컬·접두 경로 모의 검사는 운영 배포 검사가 아닙니다.
 
-- `source/sites.json`: 사이트 등록. 대시보드는 번호를 하드코딩하지 않고 이 목록을 읽습니다.
+- `source/sites.json`: 사이트 등록과 선택적인 카드 설명(`description`). 목록·대시보드가 함께 사용하며, 목록은 빌드 또는 `node source/manage.mjs index`로 갱신합니다.
 - `validator/`: 공통 대시보드. `source/shared/`: 기존 엔진·구조화 진단 API.
 - `source/test-site-N/reference/`: `ground-truth.json`·`counts.json`·`expected-result.json`.
 - `tmp/build/test-site-N/`: 단독 생성물. `tmp/verification/`: 검사 출력. 모두 Git 제외.
