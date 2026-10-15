@@ -1,0 +1,8 @@
+/node_modules/
+/tmp/
+/source/test-site-*/node_modules/
+/source/test-site-*/dist/
+/source/test-site-*/artifacts/
+.sites-runtime/
+*.zip
+*.tar.gz

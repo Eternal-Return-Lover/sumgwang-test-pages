@@ -4,7 +4,7 @@
   "siteName": "다온시립도서관 책마루",
   "deployment": {
     "targetDirectory": "test-site-2",
-    "sourceDirectory": "source/test-site-2/dist"
+    "sourceDirectory": "source/test-site-2"
   },
   "entry": "index.html",
   "fixtureViewport": {

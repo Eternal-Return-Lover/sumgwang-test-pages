@@ -1,8 +1,0 @@
-{
-  "changedSinceIndependentChecks": [
-    "source/dasom-welfare-ad-lab/dist/assets/site.css",
-    "source/dasom-welfare-ad-lab/src/templates/site.css",
-    "test-site-7/assets/site.css"
-  ],
-  "scope": "mobile-only page-heading h1 word-break"
-}

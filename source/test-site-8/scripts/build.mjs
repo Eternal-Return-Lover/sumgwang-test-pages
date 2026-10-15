@@ -2,8 +2,8 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fixtures,queryFixtures,extraElements,authors,collections,editions,listingPageSize,discoveryDelayMs} from '../src/fixtures.mjs';
-import {siteForProject,deploymentFor,publishSite} from '../../site-tools.mjs';
-const site=await siteForProject(import.meta.url),root=new URL('../dist/',import.meta.url);
+import {siteForProject,deploymentFor,publishSite,writeLab,buildRootFor} from '../../site-tools.mjs';
+const site=await siteForProject(import.meta.url),root=buildRootFor(site);
 const save=async(path,text)=>{const url=new URL(path,root);await mkdir(dirname(fileURLToPath(url)),{recursive:true});await writeFile(url,text,'utf8');};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prefix=path=>'../'.repeat(path.split('?')[0].split('/').length-1);
@@ -54,8 +54,6 @@ await save('guide/index.html',layout('guide/index.html','열람 안내',heading(
 for(const[path,title,next,text]of[['archive/index.html','기록 자료철','council/index.html','시민회의 검토 자료'],['archive/council/index.html','시민회의 검토 자료','2026/index.html','2026년 검토 기록'],['archive/council/2026/index.html','2026년 검토 기록','autumn/index.html','가을 자료 정리'],['archive/council/2026/autumn/index.html','가을 자료 정리','review/index.html','판본 검토 수첩'],['archive/council/2026/autumn/review/index.html','판본 검토 수첩','notes/index.html','등록 메모 자료철']])await save(path,layout(path,title,heading(title,'자료철을 차례로 넘기며 기록의 정리 과정을 읽습니다.')+`<div class="archive-panel"><span class="eyebrow">RECORD FILE / REVIEW NOTES</span><h2>${text}</h2><p>공개 문헌의 합성 검토 자료와 주석입니다.</p><a href="${next}">다음 자료철 열기 ↗</a></div>`));
 await save('archive/council/2026/autumn/review/notes/index.html',layout('archive/council/2026/autumn/review/notes/index.html','등록 메모 자료철',heading('등록 메모 자료철','가을 검토 자료의 마지막 기록을 불러옵니다.')+`<div class="archive-panel" id="archive-links"><p>검토 기록을 읽는 중입니다.</p></div><script>setTimeout(()=>document.querySelector('#archive-links').innerHTML='<a href="read.html">마지막 등록 메모 읽기 ↗</a>',${discoveryDelayMs})</script>`));
 const manifest={version:'1.0.0',siteId:site.siteId,siteName:site.title,deployment:deploymentFor(site),entry:'index.html',fixtureViewport:{width:1440,height:1000},maxInjectionDelayMs:2800,scope:'모집요강 기반 모의 환경. iframe 보조 문서는 쿼리를 보존한 부모 URL의 frames 경로로만 집계하며 독립 시나리오로 재집계하지 않음.',scenarioCount:fixtures.length+queryFixtures.length,urlPolicy:'query values preserved; parameter order, fragment, http/https and trailing slash ignored',cases:ledger,negativeControls:controls};
-await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);await save('lab/manifest.json',json);
-for(const[source,target]of[['lab.html','lab/index.html'],['lab.js','lab/lab.js'],['lab.css','lab/lab.css'],['lab-base.css','lab/lab-base.css']]){const text=await readFile(new URL('../src/templates/'+source,import.meta.url),'utf8');await save(target,target==='lab/index.html'?text.replace(/TEST LAB \/ \d+/,'TEST LAB / '+String(site.number).padStart(2,'0')):text);}
+await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);const counts=await writeLab(site);
 await save('robots.txt','User-agent: *\nAllow: /\nDisallow: /lab/\n');await publishSite(site);
-const counts={scenarios:manifest.scenarioCount,scenarioPages:new Set([...ledger,...controls].map(c=>c.page)).size,positiveElements:ledger.length,negativeControls:controls.length,expectedFindings:ledger.reduce((n,c)=>n+c.techniques.length,0),techniques:{}};for(const c of ledger)for(const t of c.techniques)counts.techniques[t]=(counts.techniques[t]||0)+1;
-await writeFile(new URL('../reference/counts.json',import.meta.url),JSON.stringify(counts,null,2)+'\n');console.log(JSON.stringify(counts));
+console.log(JSON.stringify(counts));

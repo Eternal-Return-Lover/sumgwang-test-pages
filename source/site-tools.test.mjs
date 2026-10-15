@@ -6,7 +6,7 @@ import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {runInNewContext} from 'node:vm';
 import {spawnSync} from 'node:child_process';
-import {validateSites,renderIndex,deploymentFor,publishSite,checkDeployment,repositoryRoot,loadSites} from './site-tools.mjs';
+import {validateSites,renderIndex,deploymentFor,publishSite,checkDeployment,repositoryRoot,loadSites,buildDirectoryFor,countsFor,expectedResultFor} from './site-tools.mjs';
 
 const registration=number=>({number,project:'test-site-'+number,siteId:'site-'+number,title:'Site '+number});
 
@@ -36,12 +36,13 @@ test('publishing site 10 removes stale target files, excludes lab and preserves 
  assert.equal(dirname(resolve(temporaryRoot)),resolve(tmpdir()));
  try{
   const site=validateSites([registration(10)])[0];
-  const dist=join(temporaryRoot,'source',site.project,'dist');
+  const dist=buildDirectoryFor(site,temporaryRoot);
   await mkdir(join(dist,'lab'),{recursive:true});
   await mkdir(join(dist,'assets'),{recursive:true});
   await writeFile(join(dist,'index.html'),'<h1>Site 10</h1>');
   await writeFile(join(dist,'assets/style.css'),'body{}');
   await writeFile(join(dist,'lab/index.html'),'private lab');
+  await mkdir(join(temporaryRoot,'source'),{recursive:true});
   await writeFile(join(temporaryRoot,'source/sites.json'),JSON.stringify([registration(10)]));
   await mkdir(join(temporaryRoot,'test-site-10'));
   await writeFile(join(temporaryRoot,'test-site-10/stale.html'),'obsolete');
@@ -59,8 +60,7 @@ test('publishing site 10 removes stale target files, excludes lab and preserves 
 });
 
 test('all actual labs resolve multi-digit sites under repository prefixes and standalone dist',async()=>{
- const paths=(await loadSites()).map(s=>s.project+'/dist/lab/lab.js');
- paths.push('test-site-2/src/templates/lab.js');
+ const paths=['shared/lab.js','shared/legacy-lab.js'];
  for(const relative of paths){
   const source=await readFile(join(repositoryRoot,'source',relative),'utf8');
   // Execute the actual path initialization up to the next helper declaration.
@@ -85,4 +85,17 @@ test('manager works from another directory and rejects an unregistered selection
  assert.equal(list.status,0,list.stderr);assert(list.stdout.includes('test-site-1'));
  const unknown=spawnSync(process.execPath,[script,'build','999'],{cwd:tmpdir(),encoding:'utf8'});
  assert.notEqual(unknown.status,0);assert.match(unknown.stderr,/Unknown site number/);
+});
+
+test('reference samples retain raw text, query values and iframe paths without normal findings',()=>{
+ const manifest={siteId:'example',entry:'index.html',scenarioCount:2,deployment:{targetDirectory:'test-site-10'},cases:[{caseId:'T1',page:'board/view.html?b=2&a=1',selector:'p.note',frames:[{src:'widgets/outer.html'}],text:'ｃａｓｉｎｏ',techniques:['HOMOGLYPH','TRANSPARENT']}],negativeControls:[{caseId:'N1',page:'normal.html',techniques:[]}]};
+ const expected=expectedResultFor(manifest,'https://example.test/repository/');
+ assert.equal(expected.meta.entry_url,'https://example.test/repository/test-site-10/index.html');
+ assert.equal(expected.meta.started_at,'2000-01-01T00:00:00.000Z');assert.equal(expected.meta.elapsed_sec,0);
+ assert.equal(expected.findings.length,2);assert.equal(expected.findings[0].evidence_text,'ｃａｓｉｎｏ');
+ assert.equal(expected.findings[0].url,'https://example.test/repository/test-site-10/board/view.html?b=2&a=1');
+ assert.equal(expected.findings[0].location,'iframe[src="https://example.test/repository/test-site-10/widgets/outer.html"] >>> p.note');
+ assert.equal(countsFor(manifest).negativeControls,1);assert.equal(countsFor(manifest).expectedFindings,2);
+ assert.throws(()=>expectedResultFor(manifest,'file:///tmp/'));
+ assert.deepEqual(expectedResultFor(manifest,'https://example.test/repository'),expected);
 });

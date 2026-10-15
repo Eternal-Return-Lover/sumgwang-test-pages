@@ -4,7 +4,7 @@
   "siteName": "가온시 환경교육센터 푸른순환",
   "deployment": {
     "targetDirectory": "test-site-5",
-    "sourceDirectory": "source/test-site-5/dist"
+    "sourceDirectory": "source/test-site-5"
   },
   "entry": "index.html",
   "fixtureViewport": {

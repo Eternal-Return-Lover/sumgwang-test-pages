@@ -1,15 +1,9 @@
 # test-site-9
 
-[대상](../../test-site-9/) · [검증실](dist/lab/) · [정답표](reference/ground-truth.json)
+[대상](../../test-site-9/) · [검증실](lab/) · [정답](reference/ground-truth.json) · [예상 결과](reference/expected-result.json)
 
-저장소 루트에서 실행합니다.
+저장소 루트: `npm run build -- 9` → `npm run check -- 9` → `npm start`
 
-```sh
-node source/manage.mjs build 9
-node source/manage.mjs check 9
-npm --prefix source/test-site-9 start
-```
+브라우저 검사: `npm run verify -- 9` (루트 개발 의존성·Chrome 필요).
 
-브라우저 검사: `npm --prefix source/test-site-9 run verify` (Playwright 개발 의존성 필요).
-
-[명세](REQUIREMENTS.md) · [검증 기록](VERIFICATION.md)
+[제작 명세](REQUIREMENTS.md) · [검증 요약](VERIFICATION.md)

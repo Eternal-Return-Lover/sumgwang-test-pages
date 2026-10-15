@@ -2,9 +2,9 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fixtures,queryFixtures,extraElements,titles,authors} from '../src/fixtures.mjs';
-import {siteForProject,deploymentFor,publishSite} from '../../site-tools.mjs';
+import {siteForProject,deploymentFor,publishSite,writeLab,buildRootFor} from '../../site-tools.mjs';
 const site=await siteForProject(import.meta.url);
-const root=new URL('../dist/',import.meta.url);
+const root=buildRootFor(site);
 const save=async(path,text)=>{const url=new URL(path,root);await mkdir(dirname(fileURLToPath(url)),{recursive:true});await writeFile(url,text,'utf8');};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prefix=path=>'../'.repeat(path.split('?')[0].split('/').length-1);
@@ -50,12 +50,7 @@ await save('records/2026/index.html',layout('records/2026/index.html','2026년�
 await save('records/2026/autumn/index.html',layout('records/2026/autumn/index.html','가을의 기록',heading('가을의 문장을 모아서','서로 다른 기억을 함께 읽습니다.')+'<div class="related-box"><a href="notes/index.html">독서모임 활동 수첩 ↗</a><a href="letters/index.html">시민의 편지 모음 ↗</a></div>'));
 for(const name of ['notes','letters'])await save(`records/2026/autumn/${name}/index.html`,layout(`records/2026/autumn/${name}/index.html`,name==='notes'?'독서모임 수첩':'시민의 편지',heading('서가에 남겨둔 이야기','지난 모임의 글을 불러오고 있습니다.')+'<div class="related-box" id="record-links"><p>기록을 읽는 중입니다.</p></div><script>setTimeout(()=>document.querySelector("#record-links").innerHTML=\'<a href="read.html">가을 저녁, 함께 읽던 날 ↗</a>\',950)</script>'));
 const manifest={version:'1.0.0',siteId:site.siteId,siteName:site.title,deployment:deploymentFor(site),entry:'index.html',fixtureViewport:{width:1440,height:1000},maxInjectionDelayMs:2800,scope:'모집요강 기반 모의 환경. iframe 문서는 부모 URL 아래의 프레임 경로로만 집계.',scenarioCount:fixtures.length+queryFixtures.length,urlPolicy:'query values preserved; parameter order, fragment, http/https and trailing slash ignored',cases:ledger,negativeControls:controls};
-const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);await save('lab/manifest.json',json);
-for(const [source,target] of [['lab.html','lab/index.html'],['lab.js','lab/lab.js'],['lab.css','lab/lab.css'],['lab-base.css','lab/lab-base.css']]){
- const contents=await readFile(new URL('../src/templates/'+source,import.meta.url),'utf8');
- await save(target,target==='lab/index.html'?contents.replace(/TEST LAB \/ \d+/,'TEST LAB / '+String(site.number).padStart(2,'0')):contents);
-}
+const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);const counts=await writeLab(site);
 await save('robots.txt','User-agent: *\nAllow: /\nDisallow: /lab/\n');
 await publishSite(site);
-const counts={scenarios:manifest.scenarioCount,scenarioPages:new Set([...ledger,...controls].map(c=>c.page)).size,positiveElements:ledger.length,negativeControls:controls.length,expectedFindings:ledger.reduce((n,c)=>n+c.techniques.length,0),techniques:{}};for(const c of ledger)for(const t of c.techniques)counts.techniques[t]=(counts.techniques[t]||0)+1;
-await writeFile(new URL('../reference/counts.json',import.meta.url),JSON.stringify(counts,null,2)+'\n');console.log(JSON.stringify(counts));
+console.log(JSON.stringify(counts));

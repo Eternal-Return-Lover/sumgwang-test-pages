@@ -4,7 +4,7 @@
   "siteName": "다솜시 통합복지센터 서로마루",
   "deployment": {
     "targetDirectory": "test-site-7",
-    "sourceDirectory": "source/test-site-7/dist"
+    "sourceDirectory": "source/test-site-7"
   },
   "entry": "index.html",
   "fixtureViewport": {

@@ -1,0 +1,22 @@
+{
+  "name": "sumgwang-test-pages",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node source/manage.mjs build",
+    "check": "node source/manage.mjs check",
+    "start": "node source/serve.mjs",
+    "verify": "node source/verify.mjs",
+    "test": "node --test source/site-tools.test.mjs"
+  },
+  "config": {
+    "publicBaseUrl": "https://eternal-return-lover.github.io/sumgwang-test-pages/"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

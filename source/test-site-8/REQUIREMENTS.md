@@ -1,3 +1,5 @@
+> 현재 실행·공통 구조는 [루트 README](../../README.md)를 따릅니다. 아래 사이트별 콘텐츠·시험 명세는 유지하며, 공통 실행 코드는 source/에 모으고 생성물·보고서는 tmp/에 둡니다.
+
 # 사이트 8 요구사항과 구현 결정
 
 공유 AGENTS.md, source/test-site-request.md, site_builder 역할을 따릅니다. source/test-site-8만 구현하며 공유 파일·Git·모든 빌드·배포는 코디네이터가 수행합니다. 마지막 배정 사이트이며 다른 사이트를 시작하지 않습니다. release·ZIP을 추가하지 않습니다.

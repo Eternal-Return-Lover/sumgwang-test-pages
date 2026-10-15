@@ -105,7 +105,7 @@
 
 - 프로젝트 디렉터리: `source/test-site-N/` (기관명 대신 사이트 번호 사용)
 - 탐지 대상 배포 디렉터리: `test-site-N/`
-- 검증실: `source/test-site-N/dist/lab/`
+- 검증실: `source/test-site-N/lab/`
 
 - 이번 요청의 배포 범위: `[로컬 실행 및 배포용 파일 준비 / 지정 서비스에 실제 배포]`
 - 지정 배포 서비스: `[없음 또는 서비스명]`
@@ -308,8 +308,8 @@ URL 비교에서는 쿼리 값을 보존한다. 파라미터 순서와 fragment�
 다음을 제공하라.
 
 - 실행 가능한 전체 소스
-- 정적 배포 디렉터리 `dist/`
-- 정적 배포용 ZIP
+- 단독 실행용 정적 생성물 `tmp/build/test-site-N/` (Git 제외)
+- 보고서·스크린샷은 `tmp/verification/`에 생성하고 Git에는 최신 검증 요약만 보관
 - `reference/ground-truth.json`
 - `README.md`: 실행·시험·배포 방법
 - `REQUIREMENTS.md`: 모집요강과 구현의 대응, 자체 가정

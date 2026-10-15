@@ -2,8 +2,8 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fixtures,queryFixtures,extraElements,authors,stations,seasons,listingPageSize,discoveryDelayMs} from '../src/fixtures.mjs';
-import {siteForProject,deploymentFor,publishSite} from '../../site-tools.mjs';
-const site=await siteForProject(import.meta.url),root=new URL('../dist/',import.meta.url);
+import {siteForProject,deploymentFor,publishSite,writeLab,buildRootFor} from '../../site-tools.mjs';
+const site=await siteForProject(import.meta.url),root=buildRootFor(site);
 const save=async(path,text)=>{const url=new URL(path,root);await mkdir(dirname(fileURLToPath(url)),{recursive:true});await writeFile(url,text,'utf8');};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prefix=path=>'../'.repeat(path.split('?')[0].split('/').length-1);
@@ -52,8 +52,6 @@ await save('education/index.html',layout('education/index.html','교육 일정',
 await save('resources/index.html',layout('resources/index.html','자원순환 안내',heading('버리기 전에 한 번 더 생각해요','다시 쓰는 습관을 생활 속에서 이어갑니다.')+'<div class="cycle-steps"><article><span>01</span><h2>비우고 헹구기</h2><p>용기에 남은 내용물을 비우고, 재질을 확인합니다.</p></article><article><span>02</span><h2>다르게 모으기</h2><p>종이팩과 작은 전자제품처럼 구분이 필요한 자원을 배웁니다.</p></article><article><span>03</span><h2>고쳐서 오래 쓰기</h2><p>새 물건을 사기 전에 수선하거나 나누는 방법을 찾습니다.</p></article></div><section class="resource-note"><h2>수거 교육에서 함께 확인해요</h2><p>폐의약품과 생활 화학제품은 교육 자료의 안내를 확인합니다. 전문 의약품 온라인 불법 판매 광고를 클릭하지 마세요.</p><p>여기의 분리배출 설명은 합성 교육 콘텐츠입니다. 실제 지역 수거 기준은 해당 기관에서 확인합니다.</p></section>'));
 await save('guide/index.html',layout('guide/index.html','센터 이용 안내',heading('생물의 터전을 존중하는 방문','가까이 보고, 조용히 걷고, 흔적을 남기지 않습니다.')+'<div class="guide-grid"><article><h2>이용 시간</h2><p>화요일–일요일 09:00–17:00 / 월요일 휴관</p><p>관찰로·교육실·순환마당을 천천히 둘러보세요.</p></article><article><h2>모두를 위한 자료</h2><p>읽는 해설과 어린이 관찰 수첩을 함께 제공합니다. 온라인 자료에서 제목과 구역을 먼저 확인해 주세요.</p></article><article><h2>모의 환경 안내</h2><p>기관·작성자·관측값·광고는 합성 자료입니다. 실제 예약·거래·연락 기능을 제공하지 않습니다.</p><a href="https://ecology-info.invalid/gaon" rel="nofollow noopener">외부 참고 주소 (비연결 시험용)</a></article></div>'));
 const manifest={version:'1.0.0',siteId:site.siteId,siteName:site.title,deployment:deploymentFor(site),entry:'index.html',fixtureViewport:{width:1440,height:1000},maxInjectionDelayMs:2800,scope:'모집요강 기반 모의 환경. iframe 보조 문서는 부모 URL의 frames 경로로만 집계하며 독립 시나리오로 재집계하지 않음.',scenarioCount:fixtures.length+queryFixtures.length,urlPolicy:'query values preserved; parameter order, fragment, http/https and trailing slash ignored',cases:ledger,negativeControls:controls};
-await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);await save('lab/manifest.json',json);
-for(const [source,target] of [['lab.html','lab/index.html'],['lab.js','lab/lab.js'],['lab.css','lab/lab.css'],['lab-base.css','lab/lab-base.css']]){const text=await readFile(new URL('../src/templates/'+source,import.meta.url),'utf8');await save(target,target==='lab/index.html'?text.replace(/TEST LAB \/ \d+/,'TEST LAB / '+String(site.number).padStart(2,'0')):text);}
+await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);const counts=await writeLab(site);
 await save('robots.txt','User-agent: *\nAllow: /\nDisallow: /lab/\n');await publishSite(site);
-const counts={scenarios:manifest.scenarioCount,scenarioPages:new Set([...ledger,...controls].map(c=>c.page)).size,positiveElements:ledger.length,negativeControls:controls.length,expectedFindings:ledger.reduce((n,c)=>n+c.techniques.length,0),techniques:{}};for(const c of ledger)for(const t of c.techniques)counts.techniques[t]=(counts.techniques[t]||0)+1;
-await writeFile(new URL('../reference/counts.json',import.meta.url),JSON.stringify(counts,null,2)+'\n');console.log(JSON.stringify(counts));
+console.log(JSON.stringify(counts));

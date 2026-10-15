@@ -3,14 +3,14 @@ import {spawn} from 'node:child_process';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
-import {siteForProject,loadSites,deploymentFor} from '../../site-tools.mjs';
+import {siteForProject,loadSites,deploymentFor,buildDirectoryFor} from '../../site-tools.mjs';
 
 const site=await siteForProject(import.meta.url),sites=await loadSites();
 const manifest=JSON.parse(await readFile('reference/ground-truth.json','utf8'));
 const counts=JSON.parse(await readFile('reference/counts.json','utf8'));
 const total=counts.expectedFindings,elements=counts.positiveElements+counts.negativeControls;
 async function startServer(root){
- const child=spawn(process.execPath,['scripts/serve.mjs'],{cwd:resolve('.'),env:{...process.env,PORT:'0',STATIC_ROOT:root},stdio:'pipe'});
+ const child=spawn(process.execPath,[resolve('../serve.mjs')],{cwd:resolve('.'),env:{...process.env,PORT:'0',STATIC_ROOT:root},stdio:'pipe'});
  let stderr='',stdout='';child.stderr.on('data',data=>stderr+=data);
  try{
   const origin=await new Promise((resolve,reject)=>{
@@ -49,16 +49,16 @@ const upload=async(name,data,want,raw)=>{
  report.comparison.push({name,expected:want,actual:result});console.log('comparison',name,JSON.stringify(result));
  return result;
 };
-await mkdir('artifacts',{recursive:true});
+await mkdir('../../tmp/verification/test-site-3',{recursive:true});
 try{
  await page.goto(server.origin);
  assert.equal(await page.locator('a').count(),sites.length);
  await page.locator('a[href="'+site.targetDirectory+'/"]').click();
  assert((await page.locator('h1').innerText()).includes('오늘의 움직임이'));
- await page.screenshot({path:'artifacts/portal-desktop.png',fullPage:true});
+ await page.screenshot({path:'../../tmp/verification/test-site-3/portal-desktop.png',fullPage:true});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await page.setViewportSize({width:390,height:844});
- await page.screenshot({path:'artifacts/portal-mobile.png',fullPage:true});
+ await page.screenshot({path:'../../tmp/verification/test-site-3/portal-mobile.png',fullPage:true});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  check('portal-layout',{desktop:'1440x1000',mobile:'390x844',overflow:false,rootLinks:sites.length});
  await page.setViewportSize({width:1440,height:1000});
@@ -96,7 +96,7 @@ try{
  await page.locator('[data-filter="OFFSCREEN"]').click();assert.equal(await page.locator('.case-row').count(),counts.techniques.OFFSCREEN);
  await page.locator('[data-filter="all"]').click();await page.locator('#case-search').fill('T44');assert.equal(await page.locator('.case-row').count(),1);await page.locator('#case-search').fill('');
  const downloaded=await downloadResult(),expected=downloaded.data;
- await writeFile('artifacts/expected-result.json',downloaded.bytes);
+ await writeFile('../../tmp/verification/test-site-3/expected-result.json',downloaded.bytes);
  assert.equal(expected.findings.length,total);assert.equal(expected.meta.entry_url,base+'index.html');
  const manifestPromise=page.waitForEvent('download');await page.locator('#download-manifest').click();
  const manifestFile=await manifestPromise,manifestStream=await manifestFile.createReadStream(),manifestChunks=[];
@@ -135,11 +135,11 @@ try{
  await page.locator('#crawl').click();await page.waitForFunction(()=>document.querySelector('#crawl-status').dataset.result,null,{timeout:240000});
  const crawl=JSON.parse(await page.locator('#crawl-status').getAttribute('data-result'));
  assert.equal(crawl.reachable,counts.scenarioPages);assert.equal(crawl.maxDepth,6);assert.deepEqual(crawl.errors,[]);assert.deepEqual(crawl.missing,[]);check('entry-link-crawl',crawl);
- await page.screenshot({path:'artifacts/lab-desktop.png',fullPage:true});await page.setViewportSize({width:390,height:844});
- await page.screenshot({path:'artifacts/lab-mobile.png',fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);check('lab-mobile',{overflow:false});
+ await page.screenshot({path:'../../tmp/verification/test-site-3/lab-desktop.png',fullPage:true});await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'../../tmp/verification/test-site-3/lab-mobile.png',fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);check('lab-mobile',{overflow:false});
  await page.setViewportSize({width:1440,height:1000});
 
- const standalone=await startServer(resolve('dist'));
+ const standalone=await startServer(buildDirectoryFor(site));
  try{await page.goto(new URL('lab/index.html',standalone.origin).href);await ready();assert.equal(await page.locator('#entry-url').textContent(),new URL('index.html',standalone.origin).href);await page.locator('#audit').click();await page.waitForFunction(()=>document.querySelector('#audit-status').textContent.startsWith('검증 완료'),null,{timeout:120000});assert((await page.locator('#audit-status').innerText()).includes(elements+' / '+elements));check('standalone-dist',{audit:elements+' / '+elements});}
  finally{standalone.child.kill();}
 
@@ -157,6 +157,6 @@ try{
  await page.unroute('**/sumgwang-test-pages/**');
  assert.deepEqual(errors,[]);report.ok=true;
 }finally{
- await writeFile('artifacts/browser-report.json',JSON.stringify(report,null,2)+'\n');
+ await writeFile('../../tmp/verification/test-site-3/browser-report.json',JSON.stringify(report,null,2)+'\n');
  await browser.close();server.child.kill();
 }

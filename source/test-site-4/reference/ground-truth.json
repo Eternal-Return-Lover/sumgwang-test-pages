@@ -4,7 +4,7 @@
   "siteName": "보람시 역사박물관 기억마루",
   "deployment": {
     "targetDirectory": "test-site-4",
-    "sourceDirectory": "source/test-site-4/dist"
+    "sourceDirectory": "source/test-site-4"
   },
   "entry": "index.html",
   "fixtureViewport": {

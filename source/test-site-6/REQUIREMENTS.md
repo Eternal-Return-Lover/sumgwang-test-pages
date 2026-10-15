@@ -1,3 +1,5 @@
+> 현재 실행·공통 구조는 [루트 README](../../README.md)를 따릅니다. 아래 사이트별 콘텐츠·시험 명세는 유지하며, 공통 실행 코드는 source/에 모으고 생성물·보고서는 tmp/에 둡니다.
+
 # 사이트6 요구사항과 구현 결정
 
 공유AGENTS.md·source/test-site-request.md·site_builder 역할을 따른다. source/test-site-6만 구현하고 공유/Git/모든build/배포는코디네이터가 수행한다. release·ZIP을 추가하지 않는다.
@@ -39,7 +41,7 @@
 
 공통lab 스키마·UI·computed style/조상검증·비교알고리즘을재사용한다.원문/유일DOM위치/기법으로검사하고다른CSS를인정한다.복합은기법별1건,정상은findings0건.
 
-검사 기대 수량·목록·검색어·쿼리 분기·프레임·지연·깊이는 fixture/manifest에서 유도한다.62DOM/56URL BFS/깊이4/8query/다양한iframe/고정지연/공통비교입력/단독dist/접두경로/두자리번호/lab404/데스크톱·모바일/기존1~5회귀를검사한다.site1 텍스트결과fallback보존.
+검사 기대 수량·목록·검색어·쿼리 분기·프레임·지연·깊이는 fixture/manifest에서 유도한다.62DOM/56URL BFS/깊이4/8query/다양한iframe/고정지연/공통비교입력/단독tmp/build/test-site-6/접두경로/두자리번호/lab404/데스크톱·모바일/기존1~5회귀를검사한다.site1 텍스트결과fallback보존.
 
 모바일출발보드는열폭을고정하고목적지열최소폭0,내부자료는노선정보세로구성·dd/정류장목록최소폭0·환승단계grid·노선행제목과시각표링크별도행으로작성한다.390/320px 내부시각표·환승안내·이용정보·dd·노선·목록스크린샷과넘침을검사한다.
 
