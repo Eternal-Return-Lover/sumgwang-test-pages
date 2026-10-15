@@ -1,9 +1,0 @@
-{
-  "status": "FAIL",
-  "page": "test-site-5/education/index.html",
-  "viewport": "390x844",
-  "screenshot": "artifacts/education-mobile-before-fix.png",
-  "observed": "Mobile schedule remains a three-item flex row. The narrow title column splits short Korean titles into several short lines, including a trailing single syllable.",
-  "expected": "Date and course content remain readable, with location/time on a separate row at mobile widths.",
-  "correctiveAction": "Use a two-column mobile grid: 73px date + minmax(0,1fr) content, location in the second column on a separate row."
-}

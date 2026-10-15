@@ -2,8 +2,8 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fixtures,queryFixtures,extraElements,authors,crops,seasons,listingPageSize,discoveryDelayMs} from '../src/fixtures.mjs';
-import {siteForProject,deploymentFor,publishSite} from '../../site-tools.mjs';
-const site=await siteForProject(import.meta.url),root=new URL('../dist/',import.meta.url);
+import {siteForProject,deploymentFor,publishSite,writeLab,buildRootFor} from '../../site-tools.mjs';
+const site=await siteForProject(import.meta.url),root=buildRootFor(site);
 const save=async(path,text)=>{const url=new URL(path,root);await mkdir(dirname(fileURLToPath(url)),{recursive:true});await writeFile(url,text,'utf8');};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prefix=path=>'../'.repeat(path.split('?')[0].split('/').length-1);
@@ -52,8 +52,6 @@ await save('guide/index.html',layout('guide/index.html','자료 이용',heading(
 for(const[path,title,next,text]of[['field/index.html','관찰수첩 자료실','rice/index.html','논에서 읽은 기록'],['field/rice/index.html','논에서 읽은 기록','2026/index.html','2026년 관찰수첩'],['field/rice/2026/index.html','2026년 관찰수첩','autumn/index.html','가을 논 관찰 모임']])await save(path,layout(path,title,heading(title,'자료를 차례로 넘기며 시민의 관찰 경험을 읽습니다.')+`<div class="field-archive"><span class="eyebrow">FIELD NOTE / READING JOURNAL</span><h2>${text}</h2><p>논과 계절에 관한 합성 관찰 메모입니다.</p><a href="${next}">다음 수첩 열기 ↗</a></div>`));
 await save('field/rice/2026/autumn/index.html',layout('field/rice/2026/autumn/index.html','가을 논 관찰 모임',heading('가을 논 관찰 모임','수첩의 마지막 상담 메모를 불러옵니다.')+`<div class="field-archive" id="archive-links"><p>관찰 메모를 읽는 중입니다.</p></div><script>setTimeout(()=>document.querySelector('#archive-links').innerHTML='<a href="read.html">마지막 상담 메모 읽기 ↗</a>',${discoveryDelayMs})</script>`));
 const manifest={version:'1.0.0',siteId:site.siteId,siteName:site.title,deployment:deploymentFor(site),entry:'index.html',fixtureViewport:{width:1440,height:1000},maxInjectionDelayMs:2800,scope:'모집요강 기반 모의 환경. iframe 보조 문서는 쿼리를 보존한 부모 URL의 frames 경로로만 집계하며 독립 시나리오로 재집계하지 않음.',scenarioCount:fixtures.length+queryFixtures.length,urlPolicy:'query values preserved; parameter order, fragment, http/https and trailing slash ignored',cases:ledger,negativeControls:controls};
-await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);await save('lab/manifest.json',json);
-for(const[source,target]of[['lab.html','lab/index.html'],['lab.js','lab/lab.js'],['lab.css','lab/lab.css'],['lab-base.css','lab/lab-base.css']]){const text=await readFile(new URL('../src/templates/'+source,import.meta.url),'utf8');await save(target,target==='lab/index.html'?text.replace(/TEST LAB \/ \d+/,'TEST LAB / '+String(site.number).padStart(2,'0')):text);}
+await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);const counts=await writeLab(site);
 await save('robots.txt','User-agent: *\nAllow: /\nDisallow: /lab/\n');await publishSite(site);
-const counts={scenarios:manifest.scenarioCount,scenarioPages:new Set([...ledger,...controls].map(c=>c.page)).size,positiveElements:ledger.length,negativeControls:controls.length,expectedFindings:ledger.reduce((n,c)=>n+c.techniques.length,0),techniques:{}};for(const c of ledger)for(const t of c.techniques)counts.techniques[t]=(counts.techniques[t]||0)+1;
-await writeFile(new URL('../reference/counts.json',import.meta.url),JSON.stringify(counts,null,2)+'\n');console.log(JSON.stringify(counts));
+console.log(JSON.stringify(counts));

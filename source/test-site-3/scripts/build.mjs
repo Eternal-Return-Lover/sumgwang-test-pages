@@ -2,10 +2,10 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fixtures,queryFixtures,extraElements,authors,titleFor} from '../src/fixtures.mjs';
-import {siteForProject,deploymentFor,publishSite} from '../../site-tools.mjs';
+import {siteForProject,deploymentFor,publishSite,writeLab,buildRootFor} from '../../site-tools.mjs';
 
 const site=await siteForProject(import.meta.url);
-const root=new URL('../dist/',import.meta.url);
+const root=buildRootFor(site);
 const save=async(path,text)=>{const url=new URL(path,root);await mkdir(dirname(fileURLToPath(url)),{recursive:true});await writeFile(url,text,'utf8');};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prefix=path=>'../'.repeat(path.split('?')[0].split('/').length-1);
@@ -88,14 +88,7 @@ for(const f of fixtures.filter(f=>f.deep)){
 const manifest={version:'1.0.0',siteId:site.siteId,siteName:site.title,deployment:deploymentFor(site),entry:'index.html',fixtureViewport:{width:1440,height:1000},maxInjectionDelayMs:2800,scenarioCount:fixtures.length+queryFixtures.length,scope:'모집요강 기반 자체 정답. 공식 심사 사이트와 무관.',urlPolicy:'query values preserved; query ordering, fragment, scheme and trailing slash ignored for comparison',iframeUrlPolicy:'findings.url is the top document URL; location contains absolute iframe src chain',cases,negativeControls};
 await mkdir(new URL('../reference/',import.meta.url),{recursive:true});
 await writeFile(new URL('../reference/ground-truth.json',import.meta.url),JSON.stringify(manifest,null,2)+'\n');
-await save('lab/manifest.json',JSON.stringify(manifest));
-for(const [source,target] of [['lab.html','lab/index.html'],['lab.js','lab/lab.js'],['lab.css','lab/lab.css'],['lab-base.css','lab/lab-base.css']]){
- const text=await readFile(new URL('../src/templates/'+source,import.meta.url),'utf8');
- await save(target,target==='lab/index.html'?text.replace(/TEST LAB \/ \d+/,'TEST LAB / '+String(site.number).padStart(2,'0')):text);
-}
+const counts=await writeLab(site);
 await save('robots.txt','User-agent: *\nAllow: /\nDisallow: /lab/\n');
 await publishSite(site);
-const counts={scenarios:manifest.scenarioCount,scenarioPages:new Set([...cases,...negativeControls].map(c=>c.page)).size,positiveElements:cases.length,negativeControls:negativeControls.length,expectedFindings:cases.reduce((n,c)=>n+c.techniques.length,0),techniques:{}};
-for(const c of cases)for(const technique of c.techniques)counts.techniques[technique]=(counts.techniques[technique]||0)+1;
-await writeFile(new URL('../reference/counts.json',import.meta.url),JSON.stringify(counts,null,2)+'\n');
 console.log(JSON.stringify(counts));

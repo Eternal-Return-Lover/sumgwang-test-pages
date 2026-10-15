@@ -4,7 +4,7 @@
   "siteName": "별빛시 공공기록관 기록빛",
   "deployment": {
     "targetDirectory": "test-site-8",
-    "sourceDirectory": "source/test-site-8/dist"
+    "sourceDirectory": "source/test-site-8"
   },
   "entry": "index.html",
   "fixtureViewport": {

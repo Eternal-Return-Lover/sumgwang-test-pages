@@ -2,8 +2,8 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fixtures,queryFixtures,extraElements,authors,zones,sessions,listingPageSize,discoveryDelayMs} from '../src/fixtures.mjs';
-import {siteForProject,deploymentFor,publishSite} from '../../site-tools.mjs';
-const site=await siteForProject(import.meta.url),root=new URL('../dist/',import.meta.url);
+import {siteForProject,deploymentFor,publishSite,writeLab,buildRootFor} from '../../site-tools.mjs';
+const site=await siteForProject(import.meta.url),root=buildRootFor(site);
 const save=async(path,text)=>{const url=new URL(path,root);await mkdir(dirname(fileURLToPath(url)),{recursive:true});await writeFile(url,text,'utf8');};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const prefix=path=>'../'.repeat(path.split('?')[0].split('/').length-1),date=f=>`2026.11.${String(20-f.index%17).padStart(2,'0')}`;
@@ -54,8 +54,6 @@ await save('visit/index.html',layout('visit/index.html','자료 이용',heading(
 for(const[path,title,next,text]of[['observations/index.html','관측수첩 자료실','2026/index.html','2026년 합성 전시 관찰수첩'],['observations/2026/index.html','2026년 관찰수첩','autumn/index.html','가을 모형 읽기 모임'],['observations/2026/autumn/index.html','가을 모형 읽기 모임','north/index.html','북쪽 전시 표식의 기록'],['observations/2026/autumn/north/index.html','북쪽 전시 표식','notebook/index.html','이어 쓰는 공동 관찰수첩']])await save(path,layout(path,title,heading(title,'수첩을 한 장씩 넘기며 합성 전시의 읽기 경험을 따라갑니다.')+`<div class="archive-panel"><span class="eyebrow">POINT / LINE / NOTEBOOK</span><h2>${text}</h2><p>실제 별자리와 무관한 전시 모형의 관찰기록입니다.</p><a href="${next}">다음 수첩 열기 ↗</a></div>`));
 await save('observations/2026/autumn/north/notebook/index.html',layout('observations/2026/autumn/north/notebook/index.html','공동 관찰수첩',heading('공동 관찰수첩','수첩의 마지막 관찰노트를 불러옵니다.')+`<div class="archive-panel" id="archive-links"><p>관찰노트 자료를 읽는 중입니다.</p></div><script>setTimeout(()=>document.querySelector('#archive-links').innerHTML='<a href="read.html">마지막 관찰노트 읽기 ↗</a>',${discoveryDelayMs})</script>`));
 const manifest={version:'1.0.0',siteId:site.siteId,siteName:site.title,deployment:deploymentFor(site),entry:'index.html',fixtureViewport:{width:1440,height:1000},maxInjectionDelayMs:2800,scope:'모집요강 기반 모의 환경. HTML body의 inline SVG text도 실제 DOM 수집 대상이며 이미지 OCR이 아님. iframe 보조 문서는 쿼리를 보존한 부모 URL의 frames 경로로만 집계함.',scenarioCount:fixtures.length+queryFixtures.length,urlPolicy:'query values preserved; parameter order, fragment, http/https and trailing slash ignored',cases:ledger,negativeControls:controls};
-await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);await save('lab/manifest.json',json);
-for(const[source,target]of[['lab.html','lab/index.html'],['lab.js','lab/lab.js'],['lab.css','lab/lab.css'],['lab-base.css','lab/lab-base.css']]){const text=await readFile(new URL('../src/templates/'+source,import.meta.url),'utf8');await save(target,target==='lab/index.html'?text.replace(/TEST LAB \/ \d+/,'TEST LAB / '+String(site.number).padStart(2,'0')):text);}
+await mkdir(new URL('../reference/',import.meta.url),{recursive:true});const json=JSON.stringify(manifest,null,2)+'\n';await writeFile(new URL('../reference/ground-truth.json',import.meta.url),json);const counts=await writeLab(site);
 await save('robots.txt','User-agent: *\nAllow: /\nDisallow: /lab/\n');await publishSite(site);
-const counts={scenarios:manifest.scenarioCount,scenarioPages:new Set([...ledger,...controls].map(c=>c.page)).size,positiveElements:ledger.length,negativeControls:controls.length,expectedFindings:ledger.reduce((n,c)=>n+c.techniques.length,0),techniques:{}};for(const c of ledger)for(const t of c.techniques)counts.techniques[t]=(counts.techniques[t]||0)+1;
-await writeFile(new URL('../reference/counts.json',import.meta.url),JSON.stringify(counts,null,2)+'\n');console.log(JSON.stringify(counts));
+console.log(JSON.stringify(counts));

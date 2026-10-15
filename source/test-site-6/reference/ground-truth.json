@@ -4,7 +4,7 @@
   "siteName": "온누리시 교통정보센터 길마루",
   "deployment": {
     "targetDirectory": "test-site-6",
-    "sourceDirectory": "source/test-site-6/dist"
+    "sourceDirectory": "source/test-site-6"
   },
   "entry": "index.html",
   "fixtureViewport": {

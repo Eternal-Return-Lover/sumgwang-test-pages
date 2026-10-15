@@ -1,0 +1,4 @@
+
+:root{--ink:#263c33;--navy:#235b49;--mint:#d4ddad;--paper:#f7f5ee}.stat-grid{grid-template-columns:repeat(5,1fr)}.audit-frame{width:1440px!important;height:1000px!important;position:fixed!important;left:-18000px!important;top:0!important}.lab-header .brand-mark{background:#235b49}.lab-intro h1 span{color:#b78742}@media(max-width:900px){.stat-grid{grid-template-columns:repeat(2,1fr)}.lab-header{flex-wrap:wrap;gap:14px}.lab-header>div{flex-wrap:wrap}.case-detail code{overflow-wrap:anywhere}}
+
+:root{--ink:#152a48;--navy:#2552cf;--mint:#d5ed60;--paper:#f6f8fc}.lab-header .brand-mark{background:#2552cf}.lab-intro h1 span{color:#2552cf}.score-panel{background:#edf2ff;border-color:#dbe3fa}.run-panel .eyebrow{color:#d5ed60}

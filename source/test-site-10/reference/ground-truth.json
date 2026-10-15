@@ -4,7 +4,7 @@
   "siteName": "한울시 천문과학관 별숲",
   "deployment": {
     "targetDirectory": "test-site-10",
-    "sourceDirectory": "source/test-site-10/dist"
+    "sourceDirectory": "source/test-site-10"
   },
   "entry": "index.html",
   "fixtureViewport": {

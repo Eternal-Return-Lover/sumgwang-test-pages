@@ -4,7 +4,7 @@
   "siteName": "해솔시 생활체육센터",
   "deployment": {
     "targetDirectory": "test-site-3",
-    "sourceDirectory": "source/test-site-3/dist"
+    "sourceDirectory": "source/test-site-3"
   },
   "entry": "index.html",
   "fixtureViewport": {

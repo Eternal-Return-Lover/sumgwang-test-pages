@@ -15,7 +15,8 @@ try{
  else if(command==='build'||command==='check'){
   for(const site of chosen){
    console.log(command+' '+site.targetDirectory);
-   const result=spawnSync(process.execPath,['scripts/'+command+'.mjs'],{cwd:join(repositoryRoot,'source',site.project),stdio:'inherit'});
+   const args=command==='build'?['scripts/build.mjs']:[join(repositoryRoot,'source/check.mjs'),String(site.number)];
+   const result=spawnSync(process.execPath,args,{cwd:join(repositoryRoot,'source',site.project),stdio:'inherit'});
    if(result.error)throw result.error;assert.equal(result.status,0,site.targetDirectory+' '+command+' failed');
    if(command==='check')await checkDeployment(site);
   }

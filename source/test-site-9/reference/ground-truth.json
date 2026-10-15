@@ -4,7 +4,7 @@
   "siteName": "은가람시 농업기술센터 들녘마루",
   "deployment": {
     "targetDirectory": "test-site-9",
-    "sourceDirectory": "source/test-site-9/dist"
+    "sourceDirectory": "source/test-site-9"
   },
   "entry": "index.html",
   "fixtureViewport": {

@@ -1,102 +1,76 @@
-# 테스트 사이트 제작 에이전트 작업 규칙
+# 테스트 사이트 작업 규칙
 
-## 적용 범위와 시작 조건
+## 범위와 공통 원칙
 
-- 이 저장소는 공공 웹사이트 불법광고 탐지 도구의 모의 테스트 사이트 모음이다.
-- 새 사이트 제작은 사용자가 명시적으로 시작을 요청한 뒤에만 실행한다. 설정 요청만으로 사이트를 생성하거나 실행 예약을 만들지 않는다.
-- 기본 배치는 새 사이트 1개이며, 사용자가 지정한 범위·개수·중단 지시가 우선한다.
-- 제작 원문은 source/test-site-request.md를 읽는다. 이 파일의 1번 공통 원칙과 3번 검증실 규격을 따르고, 2번 제작 명세는 사이트별로 기획한다.
-- 최신 사용자 지시가 원문보다 우선한다. 특히 기존 폴더 형식을 유지하고 release 디렉터리와 ZIP을 추가하지 않는다.
-- AGENTS.md, .codex/agents/의 역할 설정·초기 상태 템플릿과 source/test-site-request.md는 공유 자료이며 Git으로 관리한다. 원문과 역할 설정은 각 파일을 참조하고 다른 문서에 중복 복제하지 않는다.
-- 필요한 설정이나 원문이 없으면 내용을 추측하지 말고 누락 파일을 확인한다. 공유 설정과 원문은 새 clone에도 포함되어야 한다.
+- 공공 웹사이트 불법광고 탐지 도구의 모의 테스트 사이트 저장소다. 기관·인물·광고는 합성 자료이며 공식 심사 환경·점수라고 표시하지 않는다.
+- 새 사이트는 사용자의 명시적 시작 요청 후에만 만든다. 기본 배치는 새 사이트 1개이며 실행 수량은 최신 요청을 따른다.
+- 제작 명세는 source/test-site-request.md를 참조한다. 최신 사용자 요청이 우선하며 release 폴더·ZIP은 만들지 않는다.
+- AGENTS.md, .codex/agents/, 제작 프롬프트는 공용으로 Git 관리한다. 별도 파일에 통째로 복제하지 않는다.
+- 기존 사이트의 내용·원문·정답·기법·쿼리·프레임·지연은 관련 변경이 요청되지 않으면 보존한다.
 
-## 역할과 소유 범위
+## 최소 파일 구조
 
-### Main coordinator
+- test-site-N/: 탐지 대상 배포본. 검증실·정답표·소스 링크를 넣지 않는다.
+- source/test-site-N/src/: 사례 정의와 사이트 고유 템플릿.
+- source/test-site-N/scripts/: 고유 생성기·브라우저 검사. 공통 도구를 복제하지 않는다.
+- source/test-site-N/lab/: 검증실 HTML과 필요한 테마만 둔다.
+- source/test-site-N/reference/: ground-truth.json, counts.json, expected-result.json을 빌드로 생성해 함께 관리한다.
+- source/shared/: 공통 검증 엔진·스타일. 사이트 1의 기존 비교 동작은 legacy 엔진으로 보존한다.
+- source/sites.json, manage.mjs, site-tools.mjs, serve.mjs, check.mjs, verify*.mjs: 공통 등록·빌드·실행·검사.
+- tmp/build/test-site-N/: 단독 실행 가능한 전체 생성물. tmp/verification/: 보고서·다운로드·스크린샷·snapshot. 모두 Git에서 제외한다.
+- 사이트별 dist/, artifacts/, package.json, node_modules/, 중복 실행기·서버·정적 검사를 추가하지 않는다.
+- 루트 package.json·package-lock.json 하나로 관리한다. 런타임 의존성은 없으며 Playwright는 브라우저 검사에 필요한 공통 개발 의존성이다.
+- README는 사이트·소스·검증실 링크와 필수 명령 위주로 간결하게 유지한다. 상세 명세는 REQUIREMENTS.md, 최신 검증 요약은 VERIFICATION.md에 기록한다.
+- 과거 산출물을 소스에 쌓지 않는다. 이전 버전은 Git 이력으로 조회하며 새 검사 PASS로 재사용하지 않는다.
 
-- 메인 에이전트가 기획, 번호 예약, 공유 파일, 빌드·배포 동기화, Git 작업, 완료 판정을 맡는다.
-- site_builder와 site_verifier에 각각 독립된 역할을 위임한다. 서브 에이전트 이름은 영어 snake_case로 작성한다.
-- 위임 전에 해당 .codex/agents/<name>.toml을 읽고 작업 범위와 입력·산출물·완료 조건을 전달한다. 현재 세션에서 사용자 정의 역할이 자동 발견되지 않으면 역할 지침을 명시적으로 전달한다.
-- 번호·폴더·명세·검사 결과·수정 요청을 조율한다. 한 번에 하나의 사이트만 제작한다.
-- source/sites.json, root index.html, root README.md, 공통 관리 도구와 모든 Git 변경은 메인만 수정한다.
-- 기존 생성기는 빌드 시 test-site-N을 교체하고 root index.html도 갱신한다. 프로젝트 내부 빌드를 포함한 모든 빌드·배포 동기화는 메인만 실행한다.
-- 기존 동작에 필요한 공통 코드는 재사용하고, 실제 필요와 회귀 검증 없이 변경하지 않는다.
+## 검증 방식
 
-### site_builder
+- 비교는 같은 출처에서 실제 DOM·iframe을 열어 수행한다. 선택자 문자열만 비교하지 않고 같은 유일 요소인지 확인한다.
+- 쿼리 값 보존, 파라미터 순서·fragment 중복, iframe 경로, 고정 지연, 중첩 기법, 정상 대조군을 유지한다.
+- HOMOGLYPH·JAMO 원문을 정규화하지 않는다. TRANSPARENT·OFFSCREEN은 요소와 조상 스타일·bounds를 확인한다.
+- reference/expected-result.json은 package.json의 publicBaseUrl과 고정 합성 시각을 쓰는 재현 가능한 정답 예시다. 실제 탐지 결과가 아니다.
+- 검증실 다운로드는 현재 접속 주소를 사용한다. canonical 예시와 로컬·접두 경로의 주소를 혼동하지 않는다.
+- 검증실은 대상 경로 밖에 유지한다. 후속 공통 대시보드도 같은 출처의 별도 경로를 사용해 DOM 검증을 재사용한다. 이번 구조 정리만으로 새 대시보드를 구현·배포하지 않는다.
 
-- .codex/agents/site_builder.toml을 사용한다.
-- 배정된 source/test-site-N/의 소스, 템플릿, 생성기, 사례 정의, 브라우저 검사 스크립트와 문서를 구현한다.
-- 다른 사이트·공유 파일·Git 상태를 변경하지 않는다. 빌드를 실행하거나 test-site-N을 직접 수정하지 않는다.
-- 구현·수정 완료 후 변경 파일, 필요한 빌드, 자체 확인과 남은 문제를 메인에 보고한다.
+## 역할
 
-### site_verifier
+- Main coordinator: 기획·번호, 공통 파일·문서, 의존성·빌드·배포 동기화, Git·완료 판정 담당.
+- site_builder: .codex/agents/site_builder.toml을 읽고 배정된 사이트 원본·고유 검사만 구현. 공통 파일·빌드·배포본·Git은 변경하지 않는다.
+- site_verifier: .codex/agents/site_verifier.toml을 읽고 생성물과 실제 DOM을 독립 검사. tmp/verification/와 배정된 검증 요약만 작성하고 구현·정답·빌드·Git은 변경하지 않는다.
+- 하위 에이전트 이름은 영어 snake_case를 사용한다. 자동 역할 발견이 안 되면 역할과 소유 범위를 명시적으로 전달한다.
 
-- .codex/agents/site_verifier.toml을 사용한다.
-- 실제 생성된 배포본과 정답표를 독립적으로 검사한다. 구현 코드·공유 파일·Git 상태를 변경하지 않는다.
-- 배정된 프로젝트의 artifacts/와 VERIFICATION.md에 증거와 검증 결과를 기록할 수 있다. 브라우저 검사는 이 산출물을 쓴다는 점을 고려한다.
-- 실패 시 재현 경로·예상/실제·관련 파일을 메인에 반환한다. 통과하지 않은 검사를 성공으로 표시하지 않는다.
+## 명령과 완료 기준
 
-## 반드시 유지할 형식
+저장소 루트에서 실행한다. 검사에 숨은 자동 빌드를 넣지 않는다.
 
-- test-site-N/에는 탐지 대상 정적 배포본만 둔다. 검증실·정답표·소스 링크를 노출하지 않는다.
-- 소스와 배포본은 같은 번호를 사용한다: source/test-site-N/ ↔ test-site-N/. source/sites.json의 project도 test-site-N으로 등록하며 기관명을 폴더명으로 사용하지 않는다.
-- 원본은 source/test-site-N/ 아래 기존 src/, scripts/, reference/, dist/, artifacts/와 README.md, REQUIREMENTS.md, VERIFICATION.md 형식을 따른다.
-- 검증실은 source/test-site-N/dist/lab/에 두고 정답표의 배포 메타데이터와 기존 스키마를 유지한다.
-- source/sites.json, source/manage.mjs, source/site-tools.mjs를 이용한다. 페이지·기대 검출 수는 사례 정의로부터 산출한다.
-- 순수 HTML/CSS/JavaScript, 실제 a[href], 상대 자산·iframe 경로, 고정 지연과 재현 가능한 콘텐츠를 사용한다.
-- 기관·인물·광고는 합성 자료이다. 외부 연결 시험은 .invalid를 사용하고 실제 거래·결제·연락 기능을 넣지 않는다.
-- 대상 제목·클래스·ID에 사례 번호·정답 여부·기법 코드를 넣지 않는다.
-- README는 test-site-N 기준의 사이트·소스·검증실 목록과 필수 실행 명령만 간결하게 유지한다. 상세 수량·명세·검증은 각 사이트 문서를 참조한다.
-- 과거 검증 증거는 artifacts/history/에 보존하고 경로 변경 뒤의 검증과 구분한다. 과거 snapshot의 해시를 현재 PASS로 재사용하지 않는다.
-- 기존 사이트의 파일과 콘텐츠는 해당 변경이 명시적으로 필요한 경우 외에는 보존한다.
-- 신규 생성기는 사이트 2·3의 src/templates 기반 방식을 참고한다. 사이트 1은 dist의 홈 화면을 템플릿으로 사용하므로 dist를 무작정 삭제하지 않는다.
+- npm ci: 개발 의존성 설치.
+- npm run build [-- N]: 생성·정답·단독 패키지·대상 배포본 갱신. 메인만 수행한다.
+- npm run check: 전체 문법·링크·정답·배포 파일·루트 목록 확인.
+- npm test: 공통 코드·경로·정답 생성 회귀 검사.
+- npm start: 저장소 전체를 한 서버에서 제공.
+- npm run verify -- N: 해당 사이트의 실제 브라우저 검사. 단독 생성물이 먼저 있어야 한다.
+- node source/verify-deployment.mjs all: 모든 검증실의 기본·접두·단독 경로 검사.
 
-## 사이트별 순차 절차
+완료하려면 실제 실행한 결과로 다음을 확인한다.
 
-1. 시작 요청과 Git 메타데이터 아래의 로컬 진행 기록을 확인한다. 원격 origin/main을 fetch하고 현재 작업 트리·브랜치·기존 변경을 확인한다.
-2. 기존 변경을 임의로 stash·reset·clean·커밋하지 않는다. 깨끗한 main은 origin/main과 fast-forward로 동기화한다.
-3. 실제 사이트 등록·배포 폴더·원격 main과 관련 브랜치/PR을 대조한다. 이어서 작업할 사이트가 있으면 재개하고, 없으면 다음 번호를 예약한다. 대화의 과거 완료 주장만으로 번호를 정하지 않는다.
-4. 최신 main을 기준으로 feat/test-site-N을 만든다. 기존 동일 이름의 브랜치나 PR이 있으면 먼저 상태를 확인하고 덮어쓰지 않는다.
-5. 기관, 디자인, 페이지 구조, 규모, 정상 비중, 기법 조합, 프레임·지연·링크·쿼리 구조를 기획해 해당 프로젝트 REQUIREMENTS.md에 남긴다. 이름·색상만 바꾼 복제는 피한다.
-6. site_builder에 구현을 맡긴다. 메인은 등록·공유 문서를 갱신하고 node source/manage.mjs build N으로 생성·배포를 수행한다.
-7. site_verifier에 독립 검증을 맡긴다. 실패 시 site_builder에 재현 정보를 전달하고 수정 → 메인 재빌드 → 재검증을 반복한다.
-8. 완료 기준이 모두 충족되면 검증 대상 소스·정답표·배포 파일의 내용 해시(snapshot)를 보존한다. 해당 사이트와 필요한 공유 변경만 명시적으로 stage한다. 생성된 dist와 test-site-N도 포함하고 ignored 파일·기존의 다른 변경은 제외한다.
-9. 검증 snapshot 이후 소스·정답·배포 변경이 없음을 확인하고 영어 메시지로 커밋한다. 커밋에 담긴 내용이 검증 snapshot과 일치하는지 확인한 뒤 verifiedCommitSha에 이 커밋을 기록하여 검증 결과를 연결한다. 변경이 있으면 다시 검증한다. origin/feat/test-site-N에 push하고 원격 브랜치 SHA를 확인한다.
-10. base main, head feat/test-site-N인 PR을 생성하거나 해당 PR을 재사용한다. 제목·본문은 한글 Markdown으로 문제·변경·검증을 기록한다. 사용 가능한 도구가 지원하면 생성한 PR을 현재 작업에 연결한다.
-11. 원격 PR의 최신 head와 verifiedCommitSha가 같은지 확인한다. mergeability, 필수 검사·리뷰·규칙을 확인하고 충족된 뒤 병합한다. 대기 중인 필수 검사나 실패를 우회하지 않는다.
-12. GitHub auto-merge가 활성화되어 있으면 예약 후 실제 병합 완료를 기다린다. 비활성화되어 있으면 병합 가능한 상태에서 승인된 GitHub API/CLI로 직접 병합한다. 저장소 설정을 바꾸거나 관리자 우회·force push하지 않는다.
-13. 병합 결과가 불명확하면 같은 작업을 반복하지 말고 원격 PR과 main을 다시 읽는다. API 성공 응답이나 로컬 병합만으로 완료를 판정하지 않는다.
-14. origin/main을 fetch하고 사이트 작업 커밋 또는 원격 merge commit의 포함을 확인한다. 로컬 main을 fast-forward로 갱신하고 병합된 코드의 정적 검사를 확인한다.
-15. 원격 main 반영을 확인한 뒤에만 완료 기록과 완료 수를 갱신하고 다음 사이트 기획을 시작한다. 요청 수량이 모두 완료되면 결과를 보고하고 종료한다.
+- 대상·검증실 분리, reference 수량·원문과 생성물·배포본 일치.
+- 양성·정상 전수의 유일 선택자·원문·스타일·bounds·프레임·지연, 시작 URL에서 모든 대상 도달.
+- 검색·필터·페이지네이션·빈 결과, 정답·누락·오탐·중복·선택자 동등성·모호성·필드·JSON/BOM·시간 경계 비교.
+- 데스크톱 1440×1000과 모바일 390/320의 화면·넘침·JS 오류, 단독·저장소 접두 경로.
+- 생성물이 없는 상태의 빌드, 재빌드 동일성, 해당 사이트 외 변경 없음, UTF-8/BOM·diff 공백.
+- README·명세·검증 요약과 실제 결과 일치. 미실행·실패·공식 점수를 성공으로 표시하지 않는다.
 
-## 검증 완료 기준
+## Git·순차 제작·재개
 
-- 기존 형식, 런타임 범위, 대상/검증실 분리 및 정답 정보 비노출 확인.
-- node source/manage.mjs check로 전체 등록 사이트의 문법·로컬 참조·manifest·배포 파일·루트 목록 검사.
-- node --test source/site-tools.test.mjs로 공통 회귀 검사.
-- 신규 사이트의 정답·정상 사례 전수 실제 DOM 검사: 유일한 선택자, 정규화 전 원문, computed style·bounds 및 조상 영향, 프레임과 고정 지연.
-- 시작 URL에서 실제 내부 링크와 프레임을 따라 모든 대상 URL 도달. 고립·누락·로딩 오류 없음.
-- 게시판 검색·초기화·빈 결과·페이지네이션·쿼리 값별 본문 확인.
-- 완전한 정답, 누락, 정상 오탐, 중복, 다른 유일 CSS, 모호한 선택자, 필수 필드·JSON·BOM 오류, 쿼리·iframe 경로 등의 비교 입력 확인. 예상/실제를 기록.
-- 데스크톱 1440×1000 및 모바일 렌더링·가로 넘침·JavaScript 오류 확인과 스크린샷 시각 검사.
-- 단독 dist와 GitHub Pages 저장소 하위 경로의 자산·프레임·검증실 주소·결과 비교 확인. 로컬 매핑과 실제 원격 배포를 구분.
-- 재빌드 결과의 내용 일치 확인, UTF-8/BOM·Git diff 공백 확인.
-- 기존 사이트의 의도하지 않은 diff 없음. README·REQUIREMENTS·VERIFICATION과 실제 산출물 수량 일치.
-- 실제 실행하지 않은 검사나 해결되지 않은 실패가 있으면 완료가 아니다. 공식 점수나 실제 탐지기 성능을 검증한 것으로 표시하지 않는다.
-
-## 진행 상태와 재개
-
-- .codex/agents/workflow-state.json은 공유되는 초기 상태 템플릿이다. 실제 실행 상태는 git rev-parse --git-path test-site-workflow/state.json으로 구한 Git 메타데이터 경로에 보관한다. 작업 트리 밖의 실행 기록을 사용하므로 추가 .gitignore 없이 브랜치 전환·main 병합 후에도 보존하고 업로드하지 않는다. 실제 제작을 시작할 때만 이 템플릿에서 실행 기록을 초기화하고 실제 Git 상태를 대조한다.
-- 최소 항목: 배치 상태·요청 수량·완료 수, 현재 번호·프로젝트·브랜치·단계, 기획, 실패/수정 내용, 검사 증거, 검증 시점의 base HEAD SHA·내용 snapshot·verifiedCommitSha, 원격 push SHA, PR 번호·URL·병합 SHA, 다음 조치.
-- 단계는 planned → implementing → verifying → fixing(실패 시) → verified → pushed → merge_pending → merged로 기록한다. 설정 완료 시에는 awaiting_start이며 sites 배열은 비어 있어야 한다.
-- 상태 파일은 원자적으로 저장하고 비밀키·토큰을 기록하지 않는다. 완료 판정은 상태 파일만 믿지 말고 실제 산출물과 원격 Git 상태를 대조한다.
-- PR 또는 push의 결과가 불명확하면 원격 상태를 읽어 중복 생성·중복 커밋을 피한다.
-- 인증·권한·필수 리뷰·한도 때문에 진행할 수 없으면 정확한 실패 단계와 원인을 기록하고 보고한다. 성공으로 표시하거나 다음 번호로 넘어가지 않는다.
-
-## 권한과 Git 인증
-
-- 하위 에이전트는 부모 세션의 실제 권한을 상속한다. 설정 파일로 sandbox·승인 정책을 우회하지 않는다.
-- 사용자가 요청한 순차 제작 범위의 사이트별 커밋·push·main 병합은 승인된 작업이다. 동일한 작업 허락을 매 사이트마다 다시 묻지 않는다.
-- 자격 증명은 기존 Git credential helper 또는 인증된 CLI/커넥터를 사용하고, 토큰을 출력·파일 저장·URL 삽입하거나 PR에 넣지 않는다.
-- gh가 없으면 기존 Git 인증과 GitHub API를 사용할 수 있다. 계정·원격 주소·push 권한을 먼저 확인하고 토큰은 프로세스 메모리에서만 사용한다.
-- 외부 push·merge 전에는 구체적인 diff와 검증 증거를 준비한다. 작업 브랜치나 main의 기존 변경을 강제로 덮어쓰지 않는다.
+- 먼저 실제 작업 트리·진행 기록과 최신 origin/main을 확인한다. 기존 변경을 stash/reset/clean/커밋하지 않는다.
+- 작업 유형/영문 소문자-하이픈 이름의 새 브랜치를 사용한다. 새 사이트는 feat/test-site-N, 구조 정리는 refactor/...로 만든다.
+- 한 번에 한 사이트를 기획 → 구현 → 메인 빌드 → 독립 검증하며 실패하면 수정·재검증한다.
+- 필요한 원본·정답·배포본·공용 변경만 stage한다. tmp/·의존성·개인 파일은 포함하지 않는다.
+- 검증 내용 해시를 로컬 기록에 남기고 최종 커밋 내용과 대조한다. 검증 기준 HEAD와 최종 verifiedCommitSha를 구분한다.
+- 커밋·push·main 대상 한글 PR은 해당 요청 범위에서 수행한다. 최신 사용자 지시의 메시지·브랜치 규칙을 우선한다.
+- PR 병합·자동 병합은 명시적 승인 범위와 실제 필수 검사·리뷰를 모두 충족할 때만 수행한다. 병합 보류 요청을 유지하고 보호 규칙·force push로 우회하지 않는다.
+- 순차 배치는 이전 사이트의 원격 main 반영과 로컬 main fast-forward를 확인한 뒤 다음 사이트를 시작한다.
+- .codex/agents/workflow-state.json은 공용 초기 템플릿이다. 실제 상태는 git rev-parse --git-path test-site-workflow/state.json으로 구한 Git 메타데이터에 원자적으로 기록한다.
+- 요청·완료 수, 번호·브랜치·단계·명세, 실패·수정·검사 증거, baseline·내용 해시·verifiedCommitSha, 원격 SHA·PR·병합 SHA·다음 조치를 보존한다.
+- 원격 결과가 불명확하면 실제 PR·main을 조회해 중복 실행을 피한다. 인증·권한·리뷰로 막히면 정확한 상태를 보고한다.
+- 기존 Git credential helper를 사용하며 토큰은 메모리에만 두고 출력·파일 저장·URL 삽입하지 않는다. 하위 에이전트도 실제 권한을 상속하며 우회 설정을 넣지 않는다.
