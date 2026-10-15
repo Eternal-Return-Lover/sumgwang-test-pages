@@ -1,3 +1,4 @@
+import {categoryLabel,validateCategoryAnnotations} from '../source/shared/categories.js';
 const $=selector=>document.querySelector(selector);
 const root=new URL('../',location.href),catalog=new Map(),manifests=new Map();
 const state={site:null,manifest:null,file:null,data:null,fileError:'',siteError:'',manual:false,busy:false,reading:false,loading:false,siteToken:0,fileToken:0};
@@ -18,7 +19,7 @@ function status(kind,message){
  const el=$('#app-status');el.dataset.state=kind;el.classList.toggle('is-error',kind==='error');el.classList.toggle('is-success',kind==='complete');el.textContent=message;
  controls();
 }
-function clearReport(){lastReport=null;displayRows=[];$('#results').hidden=true;delete $('#results').dataset.result;$('#diagnostic-list').replaceChildren();$('#comparison-progress').value=0;}
+function clearReport(){$('#category-body').replaceChildren();$('#category-filter').replaceChildren(new Option('전체 정답 주제','all'));lastReport=null;displayRows=[];$('#results').hidden=true;delete $('#results').dataset.result;$('#diagnostic-list').replaceChildren();$('#comparison-progress').value=0;}
 function resetFile(){
  state.fileToken++;state.file=null;state.data=null;state.fileError='';$('#result-file').value='';$('#file-name').textContent='result.json을 올려주세요';$('#file-meta').textContent='파일을 끌어 놓거나 눌러서 선택하세요';
  clearReport();status(state.siteError?'error':'idle',state.siteError||'파일을 선택하면 비교를 시작할 수 있어요.');
@@ -45,6 +46,7 @@ async function selectSite(number,{manual=false}={}){
   if(!manifests.has(site.number)){
    const response=await fetch(new URL('source/'+site.project+'/reference/ground-truth.json',root));if(!response.ok)throw Error('정답 데이터를 불러오지 못했습니다 ('+response.status+').');
    const manifest=await response.json();if(manifest.siteId!==site.siteId||manifest.deployment?.targetDirectory!=='test-site-'+site.number||!Array.isArray(manifest.cases)||!Array.isArray(manifest.negativeControls))throw Error('사이트 등록과 정답 데이터가 일치하지 않습니다.');
+   validateCategoryAnnotations(manifest);
    manifests.set(site.number,manifest);
   }
   if(token!==state.siteToken)return;state.manifest=manifests.get(site.number);
@@ -104,13 +106,27 @@ function fields(values){
  return list;
 }
 function describe(value,{expected=false}={}){
- return fields([['ID',value.id],['URL',value.url],['위치',value.location],['기법',expected&&value.is_violation===false&&!value.technique?'정상 · 기법 없음':value.technique],['위반 여부',typeof value.is_violation==='boolean'?String(value.is_violation):value.is_violation],['원문',value.evidence_text]]);
+ return fields([['ID',value.id],['URL',value.url],['위치',value.location],['기법',expected&&value.is_violation===false&&!value.technique?'정상 · 기법 없음':value.technique],['위반 여부',typeof value.is_violation==='boolean'?String(value.is_violation):value.is_violation],['원문',value.evidence_text],...(expected&&value.primaryCategory?[['정답 주제',categoryLabel(value.primaryCategory)],['판정 근거',value.annotationReason]]:[]),...(expected&&value.relatedCategory?[['정상 대조 주제',categoryLabel(value.relatedCategory)],['정상 근거',value.normalReason]]:[])]);
+}
+function renderCategories(summary){
+ const select=$('#category-filter');select.replaceChildren(new Option('전체 정답 주제','all'));
+ const body=$('#category-body');body.replaceChildren();
+ for(const group of summary.groups){
+  select.append(new Option(group.label+' · '+group.code,group.code));
+  const row=element('tr');row.dataset.category=group.code;
+  const name=element('th');name.scope='row';name.append(element('strong','',group.label),element('small','',group.code));row.append(name);
+  for(const [key,value]of Object.entries({positiveElements:group.positiveElements,negativeControls:group.negativeControls,expectedFindings:group.expectedFindings,tp:group.tp,fn:group.fn})){const cell=element('td','',format(value));cell.dataset.field=key;row.append(cell);}
+  const detailCell=element('td'),detail=element('details'),summaryNode=element('summary','','기법별 보기'),list=element('ul');
+  for(const [code,values]of Object.entries(group.techniques))list.append(element('li','',code+' · 미탐 '+values.fn+' / 기대 '+values.expected));
+  detail.append(summaryNode,list);detailCell.append(detail);row.append(detailCell);body.append(row);
+ }
+ $('#category-unassigned').textContent='주제 미분류: 오탐 '+format(summary.unassigned.fp)+' · 필드 오류 '+format(summary.unassigned.invalid)+' · 중복 '+format(summary.unassigned.duplicates)+'건. 전체 집계에 포함되며 정상 대조 주제를 광고 범주로 추정하지 않습니다.';
 }
 function diagnostic(row){
  const detail=element('details','diagnostic');detail.dataset.type=row.type;
  const summary=element('summary','diagnostic__summary'),badge=element('span','diagnostic__badge',labels[row.type]);badge.dataset.type=row.type;
  const title=row.id||((row.inputIndex?row.inputIndex+'번':'제출')+' 항목');summary.append(badge,element('span','diagnostic__title',title),element('span','diagnostic__reason',row.reason));detail.append(summary);
- const body=element('div','diagnostic__body');body.append(element('p','',row.reason));
+ const body=element('div','diagnostic__body');body.append(element('p','',row.reason));body.append(element('p','category-diagnostic-topic','정답 주제: '+categoryLabel(row.category)));
  const expectedSection=element('section','diagnostic__expected');expectedSection.append(element('h4','','기대 결과'));
  if(row.expected.length)for(const item of row.expected)expectedSection.append(describe(item,{expected:true}));else expectedSection.append(element('p','',row.expectedRule||'이 제출 위치에 대응하는 정답이 없습니다.'));
  const submittedSection=element('section','diagnostic__submitted');submittedSection.append(element('h4','','제출 결과'));
@@ -121,13 +137,14 @@ function diagnostic(row){
 }
 function renderDiagnostics({more=false}={}){
  if(!lastReport)return;if(!more)visibleRows=50;
- const type=$('#diagnostic-filter').value,query=$('#diagnostic-search').value.trim().toLowerCase(),rows=displayRows.filter(item=>(type==='all'||item.row.type===type)&&(!query||item.search.includes(query)));
+ const category=$('#category-filter').value,type=$('#diagnostic-filter').value,query=$('#diagnostic-search').value.trim().toLowerCase(),rows=displayRows.filter(item=>(type==='all'||item.row.type===type)&&(category==='all'||(item.row.category||'UNASSIGNED')===category)&&(!query||item.search.includes(query)));
  $('#diagnostic-list').replaceChildren(...rows.slice(0,visibleRows).map(item=>diagnostic(item.row)));
  $('#diagnostic-count').textContent='진단 항목 '+format(rows.length)+'개 · '+format(Math.min(rows.length,visibleRows))+'개 표시';
  $('#empty-results').hidden=rows.length!==0;$('#show-more').hidden=rows.length<=visibleRows;
 }
 function renderReport(report){
- lastReport=report;const metrics=report.metrics;$('#results').dataset.result=JSON.stringify(metrics);$('#results').hidden=false;
+ if(!report.categorySummary)throw Error('이전 버전의 검증실이 로드되었습니다. 브라우저 캐시를 새로고침한 뒤 다시 비교해 주세요.');
+ lastReport=report;renderCategories(report.categorySummary);const metrics=report.metrics;$('#results').dataset.result=JSON.stringify(metrics);$('#results').hidden=false;
  for(const key of ['tp','fn','fp','invalid','duplicates','total'])$('#score-'+key).textContent=format(metrics[key]);
  const percent=value=>value===null?'계산 불가':(value*100).toFixed(1)+'%';
  $('#recall-value').textContent=percent(report.rates.recall);$('#precision-value').textContent=percent(report.rates.precision);$('#adjusted-value').textContent=percent(report.rates.adjusted);
@@ -151,7 +168,7 @@ async function compare(){
 $('#result-file').addEventListener('change',event=>pickFile(event.target.files[0]));
 $('#site-select').addEventListener('change',()=>{if(!locked())selectSite($('#site-select').value,{manual:Boolean($('#site-select').value)});});
 $('#compare-button').addEventListener('click',compare);$('#reset-button').addEventListener('click',()=>{if(!locked())resetFile();});
-$('#diagnostic-filter').addEventListener('change',()=>renderDiagnostics());$('#diagnostic-search').addEventListener('input',()=>renderDiagnostics());
+$('#category-filter').addEventListener('change',()=>renderDiagnostics());$('#diagnostic-filter').addEventListener('change',()=>renderDiagnostics());$('#diagnostic-search').addEventListener('input',()=>renderDiagnostics());
 $('#show-more').addEventListener('click',()=>{visibleRows+=50;renderDiagnostics({more:true});});
 $('#download-truth').addEventListener('click',()=>{if(state.manifest&&!locked())download('ground-truth.json',state.manifest);});
 $('#download-expected').addEventListener('click',async()=>{

@@ -68,5 +68,12 @@
     "siteId": "hanul-astronomy",
     "title": "한울시 천문과학관 별숲",
     "description": "천문 프로그램과 별 관측을 안내하는 천문과학관"
+  },
+  {
+    "number": 11,
+    "project": "test-site-11",
+    "siteId": "saebom-consumer",
+    "title": "새봄시 소비자안전센터 생활나침반",
+    "description": "소비자 상담과 생활안전 정보를 나누는 시민 포털"
   }
 ]
