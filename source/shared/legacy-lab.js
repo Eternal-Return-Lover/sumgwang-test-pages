@@ -1,4 +1,4 @@
-import {createComparisonTrace,createLabBridge,reportProgress} from './comparison-report.js';
+import {createComparisonTrace,createLabBridge,reportProgress} from './comparison-report.js?v=categories-1';
 const bridge=createLabBridge();
 const $=s=>document.querySelector(s);
 const labBase=new URL('../',location.href);

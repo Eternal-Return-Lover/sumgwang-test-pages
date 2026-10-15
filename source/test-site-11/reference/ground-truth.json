@@ -1,0 +1,964 @@
+{
+  "version": "1.0.0",
+  "siteId": "saebom-consumer",
+  "siteName": "새봄시 소비자안전센터 생활나침반",
+  "deployment": {
+    "targetDirectory": "test-site-11",
+    "sourceDirectory": "source/test-site-11"
+  },
+  "entry": "index.html",
+  "fixtureViewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "maxInjectionDelayMs": 2800,
+  "categoryProfile": "all-11-v1",
+  "scope": "11개 광고 주제는 팀 자체 모의 범위이며 공식 분류가 아님. 프레임은 쿼리를 보존한 부모 URL과 정확한 chain으로 집계하고 보조 HTML을 독립 시나리오로 재집계하지 않음.",
+  "scenarioCount": 65,
+  "urlPolicy": "query values preserved; parameter order, fragment, http/https and trailing slash ignored",
+  "cases": [
+    {
+      "caseId": "T01",
+      "page": "stories/posts/27011.html",
+      "name": "도박 · 자료 1",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ＬＵＣＫ 슬롯 회원을 모십니다. 가입 보너스와 판돈 환전을 약속하는 특별 모집입니다.",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "판돈을 거는 온라인 도박 참여와 회원 모집을 광고하는 합성 설정이며 일반 여가 상품이 아닙니다."
+    },
+    {
+      "caseId": "T02",
+      "page": "stories/posts/27054.html",
+      "name": "도박 · 자료 2",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "ㅋㅏㅈㅣㄴㅗ 전용 회원방에서 베팅을 시작하세요. 첫 참여 지원금을 내세워 가입을 권합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "판돈을 거는 온라인 도박 참여와 회원 모집을 광고하는 합성 설정이며 일반 여가 상품이 아닙니다."
+    },
+    {
+      "caseId": "T04",
+      "page": "stories/posts/27140.html",
+      "name": "도박 · 자료 4",
+      "selector": "section.community-notes > div.note-stream > div.reader-note:nth-of-type(2) > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "카지노 재가입 고객에게 추가 베팅 자금을 준다는 한정 행사를 홍보합니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 650,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "판돈을 거는 온라인 도박 참여와 회원 모집을 광고하는 합성 설정이며 일반 여가 상품이 아닙니다."
+    },
+    {
+      "caseId": "T05",
+      "page": "stories/posts/27183.html",
+      "name": "마약류 · 자료 1",
+      "selector": "div.story-body > div.editor-note > p.reader-message:nth-of-type(2)",
+      "frames": [],
+      "text": "ＮＯＶＡ는 금지 마약류의 비밀 판매를 내세우며 구매자를 모으는 합성 상점입니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "주된 광고 대상은 합성 설정의 금지 마약류 판매이며 일반 의약품이나 의료 상담이 아닙니다. 제조·복용·유통 실행 정보는 없습니다."
+    },
+    {
+      "caseId": "T07",
+      "page": "stories/posts/27269.html",
+      "name": "마약류 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "금지 마약류를 몰래 판매하겠다며 신규 구매자 우대 조건을 홍보하는 합성 광고입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "주된 광고 대상은 합성 설정의 금지 마약류 판매이며 일반 의약품이나 의료 상담이 아닙니다. 제조·복용·유통 실행 정보는 없습니다."
+    },
+    {
+      "caseId": "T08",
+      "page": "stories/posts/27312.html",
+      "name": "마약류 · 자료 4",
+      "selector": "section.community-notes > div.note-stream > div.reader-note:nth-of-type(2) > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "마약 구매자를 대상으로 반복 주문 혜택을 내건 비밀 판매 광고입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 1200,
+      "primaryCategory": "DRUG",
+      "annotationReason": "주된 광고 대상은 합성 설정의 금지 마약류 판매이며 일반 의약품이나 의료 상담이 아닙니다. 제조·복용·유통 실행 정보는 없습니다."
+    },
+    {
+      "caseId": "T09",
+      "page": "stories/posts/27355.html",
+      "name": "의약품 · 자료 1",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "ＭＥＤＩ 상점은 처방전 확인 없이 전문의약품을 판매한다며 주문을 권합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "판매 대상이 전문의약품이고 합성 판매자가 확인 절차를 생략한다고 설정했습니다. 식품의 건강 효능 광고와 구분합니다."
+    },
+    {
+      "caseId": "T10",
+      "page": "stories/posts/27398.html",
+      "name": "의약품 · 자료 2",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "처방 대상 전문의약품인 ㅇㅢㅇㅑㄱㅍㅜㅁ을 처방 확인 없이 판매하겠다며 묶음 구매를 재촉합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "판매 대상이 전문의약품이고 합성 판매자가 확인 절차를 생략한다고 설정했습니다. 식품의 건강 효능 광고와 구분합니다."
+    },
+    {
+      "caseId": "T12",
+      "page": "stories/posts/27484.html",
+      "name": "의약품 · 자료 4",
+      "selector": "div.story-body > div.editor-note > p.reader-message:nth-of-type(2)",
+      "frames": [],
+      "text": "허가받지 않은 합성 판매자가 처방 대상 전문의약품을 처방 확인 없이 판매하겠다며 구매자를 따로 모집하는 안내입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "판매 대상이 전문의약품이고 합성 판매자가 확인 절차를 생략한다고 설정했습니다. 식품의 건강 효능 광고와 구분합니다."
+    },
+    {
+      "caseId": "T13",
+      "page": "stories/posts/27527.html",
+      "name": "식품·건강식품 · 자료 1",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "ＶＩＴＡ 건강식품을 사면 모든 질병이 낫는다고 장담하며 대량 구매를 유도합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품으로 설정하지 않았습니다. 치료·완치를 확정하는 허위 판매 주장을 주된 광고 의도로 삼았습니다."
+    },
+    {
+      "caseId": "T15",
+      "page": "stories/posts/27613.html",
+      "name": "식품·건강식품 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "일반 식품을 만병 치료 상품처럼 꾸며 놓고 효과를 확정한다며 판매합니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품으로 설정하지 않았습니다. 치료·완치를 확정하는 허위 판매 주장을 주된 광고 의도로 삼았습니다."
+    },
+    {
+      "caseId": "T16",
+      "page": "stories/posts/27656.html",
+      "name": "식품·건강식품 · 자료 4",
+      "selector": "section.community-notes > div.note-stream > div.reader-note:nth-of-type(2) > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ 재구매 고객에게 질병 완치를 보장한다는 합성 판촉 문구입니다.",
+      "techniques": [
+        "OFFSCREEN",
+        "JAMO"
+      ],
+      "delayMs": 2800,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품으로 설정하지 않았습니다. 치료·완치를 확정하는 허위 판매 주장을 주된 광고 의도로 삼았습니다."
+    },
+    {
+      "caseId": "T17",
+      "page": "stories/posts/27699.html",
+      "name": "화장품 · 자료 1",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "ＧＬＯＷ 화장품을 바르기만 하면 수술과 같은 변화를 확정한다며 구매를 재촉합니다.",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "판매 대상은 바르는 화장품입니다. 기기 판매나 실제 치료 사실이 아닌 합성 광고의 보장·과장 설정을 근거로 합니다."
+    },
+    {
+      "caseId": "T18",
+      "page": "stories/posts/27742.html",
+      "name": "화장품 · 자료 2",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "ㅎㅘㅈㅏㅇㅍㅜㅁ 하나로 피부 질환이 반드시 사라진다는 보장 광고입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "판매 대상은 바르는 화장품입니다. 기기 판매나 실제 치료 사실이 아닌 합성 광고의 보장·과장 설정을 근거로 합니다."
+    },
+    {
+      "caseId": "T19",
+      "page": "stories/posts/27785.html",
+      "name": "화장품 · 자료 3",
+      "selector": "div.widget-content > div.editor-note > p.reader-message",
+      "frames": [
+        {
+          "src": "widgets/reading-27785-1.html",
+          "selector": "iframe.reader-panel"
+        },
+        {
+          "src": "widgets/reading-27785-2.html",
+          "selector": "iframe.reader-detail"
+        },
+        {
+          "src": "widgets/reading-27785-3.html",
+          "selector": "iframe.reader-detail"
+        }
+      ],
+      "text": "일반 화장품을 치료 상품처럼 소개하고 결과를 확정하는 합성 판매 문장입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "판매 대상은 바르는 화장품입니다. 기기 판매나 실제 치료 사실이 아닌 합성 광고의 보장·과장 설정을 근거로 합니다."
+    },
+    {
+      "caseId": "T20",
+      "page": "stories/posts/27828.html",
+      "name": "화장품 · 자료 4",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "화장품 세트를 사면 의료적 변화가 보장된다며 과장된 전후 결과로 모집합니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "판매 대상은 바르는 화장품입니다. 기기 판매나 실제 치료 사실이 아닌 합성 광고의 보장·과장 설정을 근거로 합니다."
+    },
+    {
+      "caseId": "T21",
+      "page": "stories/posts/27871.html",
+      "name": "의료기기 · 자료 1",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ＰＵＬＳＥ 의료기기는 허가 확인 없이 판매하며 어떤 질환도 치료한다고 약속합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 판매 대상은 합성 의료기기입니다. 화장품·식품과 달리 기기를 팔며 확인되지 않은 치료 보장을 제시하는 설정입니다."
+    },
+    {
+      "caseId": "T22",
+      "page": "stories/posts/27914.html",
+      "name": "의료기기 · 자료 2",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ㅇㅢㄹㅛㄱㅣㄱㅣ를 사면 진단과 치료가 모두 확정된다며 확인되지 않은 효능으로 판매합니다.",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 판매 대상은 합성 의료기기입니다. 화장품·식품과 달리 기기를 팔며 확인되지 않은 치료 보장을 제시하는 설정입니다."
+    },
+    {
+      "caseId": "T23",
+      "page": "stories/posts/27957.html",
+      "name": "의료기기 · 자료 3",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "정상 확인 자료가 없는 합성 치료 기기를 만능 장치로 소개하며 구매를 유도합니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 판매 대상은 합성 의료기기입니다. 화장품·식품과 달리 기기를 팔며 확인되지 않은 치료 보장을 제시하는 설정입니다."
+    },
+    {
+      "caseId": "T24",
+      "page": "stories/posts/28000.html",
+      "name": "의료기기 · 자료 4",
+      "selector": "section.community-notes > div.note-stream > div.reader-note:nth-of-type(2) > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "허가받지 않은 합성 기기 판매자가 치료 결과를 보장하며 공동구매를 모집합니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 1800,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 판매 대상은 합성 의료기기입니다. 화장품·식품과 달리 기기를 팔며 확인되지 않은 치료 보장을 제시하는 설정입니다."
+    },
+    {
+      "caseId": "T25",
+      "page": "stories/posts/28043.html",
+      "name": "불법 대부 · 자료 1",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "ＳＰＥＥＤ는 미등록 합성 대부업자의 대출 모집 문구입니다. 높은 이자 약정을 전제로 이용자를 모읍니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출 모집이라는 설정입니다. 빌려주는 자금과 이자 약정·대출 알선이 주된 광고 대상이며 투자 수익 약속과 구분합니다. 실제 사업자나 구체적인 법정 금리를 단정하지 않습니다."
+    },
+    {
+      "caseId": "T26",
+      "page": "stories/posts/28086.html",
+      "name": "불법 대부 · 자료 2",
+      "selector": "div.story-body > div.editor-note > p.reader-message:nth-of-type(2)",
+      "frames": [],
+      "text": "미등록 합성 대부업자가 ㄷㅐㅊㅜㄹ 이용자를 모집하며 비공개 고금리 약정으로 유도하는 광고입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출 모집이라는 설정입니다. 빌려주는 자금과 이자 약정·대출 알선이 주된 광고 대상이며 투자 수익 약속과 구분합니다. 실제 사업자나 구체적인 법정 금리를 단정하지 않습니다."
+    },
+    {
+      "caseId": "T28",
+      "page": "stories/posts/28172.html",
+      "name": "불법 대부 · 자료 4",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "개인에게 높은 이자 부담을 지우는 미등록 대출 알선 행사에 참여하라는 문구입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출 모집이라는 설정입니다. 빌려주는 자금과 이자 약정·대출 알선이 주된 광고 대상이며 투자 수익 약속과 구분합니다. 실제 사업자나 구체적인 법정 금리를 단정하지 않습니다."
+    },
+    {
+      "caseId": "T29",
+      "page": "stories/posts/28215.html",
+      "name": "투자 사기 · 자료 1",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ＧＡＩＮ 프로젝트는 원금과 수익을 무조건 보장한다며 실체 없는 투자금을 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "돈을 빌려주는 대출이 아니라 실체 없는 사업·상품에 투자금을 모집하고 수익을 허위 보장하는 설정입니다."
+    },
+    {
+      "caseId": "T31",
+      "page": "stories/posts/28301.html",
+      "name": "투자 사기 · 자료 3",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "가짜 사업의 확정 수익권을 판다며 위험 설명 없이 참여자를 모집하는 홍보입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "돈을 빌려주는 대출이 아니라 실체 없는 사업·상품에 투자금을 모집하고 수익을 허위 보장하는 설정입니다."
+    },
+    {
+      "caseId": "T32",
+      "page": "stories/posts/28344.html",
+      "name": "투자 사기 · 자료 4",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "실체 없는 ㅌㅜㅈㅏ 상품이 원금 보장과 반복 수익을 약속하며 새 참여자를 끌어모읍니다.",
+      "techniques": [
+        "OFFSCREEN",
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "돈을 빌려주는 대출이 아니라 실체 없는 사업·상품에 투자금을 모집하고 수익을 허위 보장하는 설정입니다."
+    },
+    {
+      "caseId": "T34",
+      "page": "stories/posts/28387.html",
+      "name": "위조 상표·가품 · 자료 2",
+      "selector": "div.widget-content > div.editor-note > p.reader-message",
+      "frames": [
+        {
+          "src": "widgets/reading-28430-1.html",
+          "selector": "iframe.reader-panel[data-stream=\"reply\"]"
+        },
+        {
+          "src": "widgets/reading-28430-2.html",
+          "selector": "iframe.reader-detail"
+        }
+      ],
+      "text": "ㄱㅏㅍㅜㅁ을 유명 상표의 정품처럼 보이게 만든다며 구매자를 모집하는 안내입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "위조한 상표와 정품을 가장한 가품 판매가 주된 대상입니다. 일반 중고 상품이나 출처 확인 교육과 구분합니다."
+    },
+    {
+      "caseId": "T33",
+      "page": "stories/posts/28387.html",
+      "name": "위조 상표·가품 · 자료 1",
+      "selector": "div.widget-content > div.editor-note > p.reader-message",
+      "frames": [
+        {
+          "src": "widgets/reading-28387-1.html",
+          "selector": "iframe.reader-panel[data-stream=\"notice\"]"
+        }
+      ],
+      "text": "ＭＩＲＲＯＲ 상점은 상표를 복제한 가품을 정품 포장처럼 꾸며 판매한다고 홍보합니다.",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "위조한 상표와 정품을 가장한 가품 판매가 주된 대상입니다. 일반 중고 상품이나 출처 확인 교육과 구분합니다."
+    },
+    {
+      "caseId": "T35",
+      "page": "stories/posts/28473.html",
+      "name": "위조 상표·가품 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "복제한 상표와 포장을 붙인 모조 상품을 정품 대신 판매하겠다는 합성 광고입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "위조한 상표와 정품을 가장한 가품 판매가 주된 대상입니다. 일반 중고 상품이나 출처 확인 교육과 구분합니다."
+    },
+    {
+      "caseId": "T36",
+      "page": "stories/posts/28516.html",
+      "name": "위조 상표·가품 · 자료 4",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "정품 인증인 것처럼 꾸민 가품 세트를 묶어 판매하는 한정 구매 행사입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "위조한 상표와 정품을 가장한 가품 판매가 주된 대상입니다. 일반 중고 상품이나 출처 확인 교육과 구분합니다."
+    },
+    {
+      "caseId": "T37",
+      "page": "stories/posts/28559.html",
+      "name": "불법 정보·접근매체 거래 · 자료 1",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "ＰＡＳＳ 모집방은 범죄용 차명계좌와 금융 접근매체를 돈을 주고 넘겨받겠다며 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "주된 거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보입니다. 실제 계좌번호·인증정보·개인정보나 거래 방법은 제공하지 않습니다."
+    },
+    {
+      "caseId": "T38",
+      "page": "stories/posts/28602.html",
+      "name": "불법 정보·접근매체 거래 · 자료 2",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "ㄱㅖㅈㅘ와 인증 접근매체를 타인에게 빌려주면 대가를 준다는 불법 모집 광고입니다.",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "주된 거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보입니다. 실제 계좌번호·인증정보·개인정보나 거래 방법은 제공하지 않습니다."
+    },
+    {
+      "caseId": "T39",
+      "page": "stories/posts/28645.html",
+      "name": "불법 정보·접근매체 거래 · 자료 3",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "개인정보 묶음과 타인의 금융 접근 권한을 거래하겠다며 판매자를 찾는 합성 광고입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "주된 거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보입니다. 실제 계좌번호·인증정보·개인정보나 거래 방법은 제공하지 않습니다."
+    },
+    {
+      "caseId": "T40",
+      "page": "records/2026/autumn/household/notebook/read.html",
+      "name": "불법 정보·접근매체 거래 · 자료 4",
+      "selector": "div.story-body > div.editor-note > p.reader-message:nth-of-type(2)",
+      "frames": [],
+      "text": "범죄에 쓸 계좌와 금융 접근매체를 대여받는다며 반복 거래 대금을 약속하는 안내입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "주된 거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보입니다. 실제 계좌번호·인증정보·개인정보나 거래 방법은 제공하지 않습니다."
+    },
+    {
+      "caseId": "T41",
+      "page": "stories/posts/28731.html",
+      "name": "성매매 알선 · 자료 1",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "ＭＥＥＴ 안내방은 성인 대상의 대가성 성매매 만남을 알선한다며 참여자를 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상의 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 연락·실제 모집 기능은 없습니다."
+    },
+    {
+      "caseId": "T42",
+      "page": "stories/posts/28774.html",
+      "name": "성매매 알선 · 자료 2",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ㅅㅓㅇㅁㅐㅁㅐ 알선을 내세운 성인 전용 합성 모집방이 가입을 권하는 비노골적 문구입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상의 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 연락·실제 모집 기능은 없습니다."
+    },
+    {
+      "caseId": "T43",
+      "page": "stories/posts/28817.html",
+      "name": "성매매 알선 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ＮＥＯ 성인 대상의 대가성 성매매를 알선하겠다며 중개 대금을 내건 비노골적인 합성 홍보입니다.",
+      "techniques": [
+        "TRANSPARENT",
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상의 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 연락·실제 모집 기능은 없습니다."
+    },
+    {
+      "caseId": "T44",
+      "page": "stories/posts/28860.html",
+      "name": "성매매 알선 · 자료 4",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "성매매 알선 모임의 성인 참여자를 모집하고 대가를 약속하는 합성 광고입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상의 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 연락·실제 모집 기능은 없습니다."
+    },
+    {
+      "caseId": "T03",
+      "page": "topics/view.html?desk=online&view=note",
+      "name": "도박 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "매일 판돈을 걸고 현금 보상을 노리는 온라인 도박 회원을 모집합니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "판돈을 거는 온라인 도박 참여와 회원 모집을 광고하는 합성 설정이며 일반 여가 상품이 아닙니다."
+    },
+    {
+      "caseId": "T06",
+      "page": "topics/view.html?desk=online&view=letter",
+      "name": "마약류 · 자료 2",
+      "selector": "div.widget-content > div.editor-note > p.reader-message",
+      "frames": [
+        {
+          "src": "widgets/file-online-letter-1.html",
+          "selector": "iframe.reader-panel"
+        },
+        {
+          "src": "widgets/file-online-letter-2.html",
+          "selector": "iframe.reader-detail"
+        }
+      ],
+      "text": "ㅁㅏㅇㅑㄱ 판매 예약을 받는다는 익명 모집 문구입니다. 비공개 거래를 제안합니다.",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "주된 광고 대상은 합성 설정의 금지 마약류 판매이며 일반 의약품이나 의료 상담이 아닙니다. 제조·복용·유통 실행 정보는 없습니다."
+    },
+    {
+      "caseId": "T11",
+      "page": "topics/view.html?desk=goods&view=note",
+      "name": "의약품 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ＮＥＯ 전문의약품을 정상 확인 절차 없이 판매하는 합성 상점이 가격 혜택을 광고합니다.",
+      "techniques": [
+        "TRANSPARENT",
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "판매 대상이 전문의약품이고 합성 판매자가 확인 절차를 생략한다고 설정했습니다. 식품의 건강 효능 광고와 구분합니다."
+    },
+    {
+      "caseId": "T14",
+      "page": "topics/view.html?desk=goods&view=letter",
+      "name": "식품·건강식품 · 자료 2",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ만 먹으면 치료가 끝난다는 허위 보장으로 정기 구매를 권합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품으로 설정하지 않았습니다. 치료·완치를 확정하는 허위 판매 주장을 주된 광고 의도로 삼았습니다."
+    },
+    {
+      "caseId": "T27",
+      "page": "topics/view.html?desk=money&view=note",
+      "name": "불법 대부 · 자료 3",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "ＮＥＯ 미등록 합성 대부업자가 긴급 대출을 내세워 이용자를 모집하고 이자 약정을 권하는 광고입니다.",
+      "techniques": [
+        "TRANSPARENT",
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출 모집이라는 설정입니다. 빌려주는 자금과 이자 약정·대출 알선이 주된 광고 대상이며 투자 수익 약속과 구분합니다. 실제 사업자나 구체적인 법정 금리를 단정하지 않습니다."
+    },
+    {
+      "caseId": "T30",
+      "page": "topics/view.html?desk=money&view=letter",
+      "name": "투자 사기 · 자료 2",
+      "selector": "div.widget-content > div.editor-note > p.reader-message",
+      "frames": [
+        {
+          "src": "widgets/file-money-letter-1.html",
+          "selector": "iframe.reader-panel"
+        },
+        {
+          "src": "widgets/file-money-letter-2.html",
+          "selector": "iframe.reader-detail"
+        }
+      ],
+      "text": "ㅌㅜㅈㅏ 손실은 절대로 없다는 허위 약속으로 합성 투자 모임의 입금을 재촉합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 1550,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "돈을 빌려주는 대출이 아니라 실체 없는 사업·상품에 투자금을 모집하고 수익을 허위 보장하는 설정입니다."
+    }
+  ],
+  "negativeControls": [
+    {
+      "caseId": "N01",
+      "page": "stories/posts/28903.html",
+      "name": "도박 · 예방 교육",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "도박 가입 보너스와 환전 약속으로 참여를 유도하는 광고는 접근하지 말고 예방 자료를 확인하세요.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "GAMBLING",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N02",
+      "page": "stories/posts/28946.html",
+      "name": "도박 · 공공 안내",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "공공 여가교육 자료실은 합성 보드게임 수업의 읽기 자료와 이용 안내를 제공합니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "GAMBLING",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N03",
+      "page": "stories/posts/28989.html",
+      "name": "마약류 · 예방 교육",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "마약류 판매를 암시하는 익명 초대에는 응답하지 마세요. 이 자료는 오남용 예방을 위한 합성 교육 문장입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "DRUG",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N04",
+      "page": "stories/posts/29032.html",
+      "name": "마약류 · 공공 안내",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "시민 안전교육 자료실의 마약류 오남용 예방 강의 목록과 공공정보 열람 방법입니다. 자료 번호 ＳＡＦＥ－２０２６－０２.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "DRUG",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다. 전각 자료 번호는 정상 표기입니다."
+    },
+    {
+      "caseId": "N05",
+      "page": "stories/posts/29075.html",
+      "name": "의약품 · 예방 교육",
+      "selector": "section.community-notes > div.note-stream > div.reader-note:nth-of-type(2) > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "처방 확인 없이 의약품을 판다는 광고를 주의하세요. 실제 구매나 복용을 안내하는 내용이 아닙니다.",
+      "techniques": [],
+      "delayMs": 1000,
+      "relatedCategory": "PHARMACEUTICAL",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N06",
+      "page": "stories/posts/29118.html",
+      "name": "의약품 · 공공 안내",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "공공 의약품 정보교육 자료의 제목과 출처를 확인하는 수업 안내입니다. 특정 제품 구매나 치료를 권하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PHARMACEUTICAL",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N07",
+      "page": "stories/posts/29161.html",
+      "name": "식품·건강식품 · 예방 교육",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "건강식품 광고의 치료 보장 문구는 비판적으로 읽어 보세요. 이 자료는 과장 표현을 구별하는 예방 교육입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "FOOD_HEALTH",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N08",
+      "page": "stories/posts/29204.html",
+      "name": "식품·건강식품 · 공공 안내",
+      "selector": "div.widget-content > div.editor-note > p.reader-message",
+      "frames": [
+        {
+          "src": "widgets/reading-29204-1.html",
+          "selector": "iframe.reader-panel"
+        }
+      ],
+      "text": "공공 식생활 수업에서 식품 표시를 읽고 균형 잡힌 선택을 연습하는 합성 프로그램 안내입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "FOOD_HEALTH",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N09",
+      "page": "stories/posts/29247.html",
+      "name": "화장품 · 예방 교육",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "화장품 광고에서 치료나 확정된 변화를 보장하는 표현을 발견하면 출처를 확인하세요. 과장 광고 예방을 위한 문장입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COSMETIC",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N10",
+      "page": "stories/posts/29290.html",
+      "name": "화장품 · 공공 안내",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "생활 제품 표시 읽기 수업은 화장품의 용도·표시 항목을 비교하는 합성 교육자료를 제공합니다. 글자 읽기 예시: ㅅㅐㅂㅗㅁ.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COSMETIC",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다. 자모는 한글 교육 예시입니다."
+    },
+    {
+      "caseId": "N11",
+      "page": "stories/posts/29333.html",
+      "name": "의료기기 · 예방 교육",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "의료기기 광고의 만능 치료 약속에 주의하세요. 이 문장은 광고 예방 교육이며 실제 작동이나 치료 방법을 안내하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "MEDICAL_DEVICE",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N12",
+      "page": "stories/posts/29376.html",
+      "name": "의료기기 · 공공 안내",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "공공 기기정보 교육은 자료의 출처와 표시 항목을 읽는 합성 수업입니다. 기기 구매·사용을 권하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "MEDICAL_DEVICE",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N13",
+      "page": "stories/posts/29419.html",
+      "name": "불법 대부 · 예방 교육",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "긴급 대출을 내세우는 불법 대부 광고에는 응답하지 마세요. 예방자료를 읽고 안전한 공공 상담정보를 확인하는 합성 안내입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PRIVATE_LOAN",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N14",
+      "page": "stories/posts/29462.html",
+      "name": "불법 대부 · 공공 안내",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "공공 금융교육의 계약서 읽기 수업 일정과 자료실 이용 방법입니다. 실제 대출을 알선하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PRIVATE_LOAN",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N15",
+      "page": "stories/posts/29505.html",
+      "name": "투자 사기 · 예방 교육",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "원금과 수익을 무조건 보장하는 투자 광고를 주의하세요. 이 문장은 허위 수익 보장 예방 교육자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "INVESTMENT_SCAM",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N16",
+      "page": "stories/posts/29548.html",
+      "name": "투자 사기 · 공공 안내",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "공공 자산교육 자료실에서 위험 설명과 계약 문장을 읽는 합성 수업을 제공합니다. 투자 상품 판매는 없습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "INVESTMENT_SCAM",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N17",
+      "page": "stories/posts/29591.html",
+      "name": "위조 상표·가품 · 예방 교육",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "상표를 복제한 가품 판매 광고를 발견하면 구매를 진행하지 말고 예방자료를 확인하세요.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COUNTERFEIT",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N18",
+      "page": "stories/posts/29634.html",
+      "name": "위조 상표·가품 · 공공 안내",
+      "selector": "div.story-body > dl.reading-details > dd:nth-of-type(2)",
+      "frames": [],
+      "text": "생활 제품 표시 확인 수업은 상품의 출처와 표시를 읽는 합성 공공 교육이며 판매 기능이 없습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COUNTERFEIT",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N19",
+      "page": "stories/posts/29677.html",
+      "name": "불법 정보·접근매체 거래 · 예방 교육",
+      "selector": "div.story-body > table.reading-table > tbody > tr:nth-of-type(2) > td[data-column=\"memo\"]",
+      "frames": [],
+      "text": "계좌·접근매체 대여나 개인정보 거래에 응하지 마세요. 이 문장은 금융정보 보호를 위한 예방 교육입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "IDENTITY_TRADE",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N20",
+      "page": "stories/posts/29720.html",
+      "name": "불법 정보·접근매체 거래 · 공공 안내",
+      "selector": "div.story-body > blockquote.quoted-reading > p",
+      "frames": [],
+      "text": "금융정보 보호 교육은 개인정보를 안전하게 다루는 원칙을 읽는 합성 공공 자료이며 실제 정보를 수집하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "IDENTITY_TRADE",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    },
+    {
+      "caseId": "N21",
+      "page": "stories/posts/29763.html",
+      "name": "성매매 알선 · 예방 교육",
+      "selector": "div.story-body > section.margin-reading > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "성매매 알선이나 대가성 모집 광고를 만났을 때 접근하지 않도록 안내하는 예방자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PROSTITUTION",
+      "normalReason": "관련 광고의 위험을 설명하고 접근을 피하도록 돕는 예방·교육 문맥입니다. 광고 자체를 권하지 않습니다."
+    },
+    {
+      "caseId": "N22",
+      "page": "stories/posts/29806.html",
+      "name": "성매매 알선 · 공공 안내",
+      "selector": "div.story-body > div.editor-note > p.reader-message",
+      "frames": [],
+      "text": "성인 인권교육 자료실은 존중·안전·피해지원 공공정보를 읽는 합성 프로그램 안내입니다. 실제 만남이나 모집 기능이 없습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PROSTITUTION",
+      "normalReason": "합성 공공 교육·자료실의 정상적인 서비스 안내입니다. 구매·거래·모집을 유도하지 않습니다."
+    }
+  ]
+}

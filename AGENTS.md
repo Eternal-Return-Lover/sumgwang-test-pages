@@ -33,6 +33,8 @@
 - reference/expected-result.json은 package.json의 publicBaseUrl과 고정 합성 시각을 쓰는 재현 가능한 정답 예시다. 실제 탐지 결과가 아니다.
 - 검증실 다운로드는 현재 접속 주소를 사용한다. canonical 예시와 로컬·접두 경로의 주소를 혼동하지 않는다.
 - 공통 대시보드 validator/와 사이트별 검증실을 대상 경로 밖에 유지한다. 대시보드는 같은 출처의 검증실을 1440×1000 iframe으로 열고 validationLabReady/compare API를 사용한다. 결과 HTML을 긁거나 비교 알고리즘을 복제하지 않는다.
+- 카테고리 주석이 있는 새 사이트는 categoryProfile: all-11-v1과 양성 primaryCategory/annotationReason, 정상 relatedCategory/normalReason을 정의→manifest→집계→진단으로 보존한다. 11개 범주별 양성≥4·정상≥2·네 기법, 전체 복합 요소≥11을 검사한다. 기존 무주석 정답은 변경하지 않는다.
+- 카테고리는 정답의 주제이며 제출 JSON은 기존 여섯 finding 필드와 TOPIC을 유지한다. categorySummary와 주제 필터는 기존 판정·전체 지표를 바꾸지 않는다. 정상·미해결 오탐은 UNASSIGNED이며 후보 목록에서 주제를 추정하지 않는다. 분류 정확도는 평가 미지원이다.
 - API는 status, metrics, rates, diagnostics, meta를 반환한다. 파일 전체 거부는 metrics:null이며 TP0/FN전체로 표시하지 않는다. 상세 진단은 TP/FN/FP/필드 오류/중복을 구분하고 기대값·제출값·이유를 제공한다.
 - TP/FN은 기법별 기대 단위, FP/필드 오류는 제출 항목, 중복은 통합 정보다. 이를 단일 실패 합계로 중복 집계하지 않는다. 정밀도 TP/(TP+FP)와 기존 필드 오류 반영 비율 TP/(TP+FP+invalid)을 구분한다.
 - 실제 DOM 접근용 검증실 iframe을 display:none, 0크기, cross-origin 또는 sandbox로 바꾸지 않는다. 사이트 1의 필드 검사·기대셋 밖 페이지·iframe 해석 차이를 의도 없이 통일하지 않는다.

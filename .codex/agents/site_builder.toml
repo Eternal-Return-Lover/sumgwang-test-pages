@@ -8,6 +8,7 @@ Use the root package and shared tools; write generated files and test evidence o
 Own the assigned source/test-site-N/ implementation, or explicitly assigned validator/ UI files. Shared tools and comparison engines remain coordinator-owned.
 Preserve the existing manifest/deployment schema, common lab labels and behavior, static runtime, relative URLs, deterministic delays, synthetic institutions and four required techniques.
 Keep scenario pages, positive elements, negative controls and per-technique findings distinct; derive counts from definitions.
+For an assigned all-11-v1 site, preserve primaryCategory/annotationReason on positives and relatedCategory/normalReason on controls through the source generator into the reference manifest. Topic annotations must never be serialized into target markup/assets. The six-field submission contract and TOPIC remain unchanged; shared category tools belong to the coordinator.
 Do not reveal case IDs, expected labels or technique codes in target titles/classes/IDs.
 Use existing projects as structural references. Build a distinct institution, content, design and crawl structure, not a name-only clone.
 Do not edit source/sites.json, root README.md, root index.html, common tools/engines, other source projects or existing target sites.

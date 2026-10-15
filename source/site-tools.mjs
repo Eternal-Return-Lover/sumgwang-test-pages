@@ -1,3 +1,4 @@
+import {categoryCounts,validateCategoryAnnotations} from './shared/categories.js';
 import {readFile,writeFile,readdir,mkdir,cp,rm,stat,lstat} from 'node:fs/promises';
 import {resolve,dirname,basename,join,relative,sep} from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
@@ -149,6 +150,7 @@ export async function checkDeployment(site,root=repositoryRoot){
 export async function checkManifest(site,sourceModule){
  const projectRoot=join(repositoryRoot,'source',site.project),dist=buildDirectoryFor(site);
  const manifest=JSON.parse(await readFile(join(projectRoot,'reference/ground-truth.json'),'utf8'));
+ validateCategoryAnnotations(manifest);
  assert.deepEqual(JSON.parse(await readFile(join(dist,'lab/manifest.json'),'utf8')),manifest,'Lab and reference manifests differ');
  assert.equal(manifest.siteId,site.siteId);assert.equal(manifest.siteName,site.title);assert.deepEqual(manifest.deployment,deploymentFor(site));
  const scenarios=[...sourceModule.fixtures,...(sourceModule.queryFixtures||[])];
@@ -159,6 +161,7 @@ export async function checkManifest(site,sourceModule){
  assert.equal(cases.length,definitions.length);
  for(const definition of definitions){
   const c=cases.find(c=>c.caseId===definition.key);assert(c,'Missing case '+definition.key);
+  for(const field of ['primaryCategory','annotationReason','relatedCategory','normalReason'])assert.deepEqual(c[field],definition[field],'Annotation differs: '+definition.key+' '+field);
   assert.equal(c.page,definition.path);assert.equal(c.text,definition.text);assert.deepEqual(c.techniques,definition.techniques);
   assert(typeof c.selector==='string'&&c.selector.length);assert(Array.isArray(c.frames));
   for(const code of c.techniques)assert(techniques.includes(code),'Unknown technique '+code);
@@ -177,7 +180,8 @@ export function buildRootFor(site){return pathToFileURL(buildDirectoryFor(site)+
 export function countsFor(manifest){
  const all=[...manifest.cases,...manifest.negativeControls],techniques={};
  for(const c of manifest.cases)for(const t of c.techniques)techniques[t]=(techniques[t]||0)+1;
- return {scenarios:manifest.scenarioCount,scenarioPages:new Set(all.map(c=>c.page)).size,positiveElements:manifest.cases.length,negativeControls:manifest.negativeControls.length,expectedFindings:manifest.cases.reduce((n,c)=>n+c.techniques.length,0),techniques};
+ const categories=categoryCounts(manifest);validateCategoryAnnotations(manifest);
+ return {...(categories?{categories}:{}),scenarios:manifest.scenarioCount,scenarioPages:new Set(all.map(c=>c.page)).size,positiveElements:manifest.cases.length,negativeControls:manifest.negativeControls.length,expectedFindings:manifest.cases.reduce((n,c)=>n+c.techniques.length,0),techniques};
 }
 export function expectedResultFor(manifest,publicBaseUrl){
  const publicBase=new URL(publicBaseUrl);assert(['http:','https:'].includes(publicBase.protocol),'Public base must use HTTP(S)');assert(!publicBase.search&&!publicBase.hash,'Public base must not contain query or fragment');if(!publicBase.pathname.endsWith('/'))publicBase.pathname+='/';
@@ -191,7 +195,7 @@ export async function writeLab(site){
  const html=await readFile(join(source,'index.html'),'utf8'),engine=html.includes('legacy-lab.js')?'legacy-lab.js':'lab.js';
  const standalone=html.replaceAll('../../shared/','').replace('data-manifest="../reference/ground-truth.json"','data-manifest="manifest.json"').replaceAll('../../../'+site.targetDirectory+'/', '../');
  await writeFile(join(lab,'index.html'),standalone,'utf8');
- for(const f of ['lab-base.css','lab.css',engine,'comparison-report.js'])await cp(join(repositoryRoot,'source/shared',f),join(lab,f));
+ for(const f of ['lab-base.css','lab.css',engine,'comparison-report.js','categories.js'])await cp(join(repositoryRoot,'source/shared',f),join(lab,f));
  try{await cp(join(source,'theme.css'),join(lab,'theme.css'));}catch(e){if(e.code!=='ENOENT')throw e;}
  await writeFile(join(lab,'manifest.json'),JSON.stringify(manifest,null,2)+'\n','utf8');
  await writeFile(join(project,'reference/counts.json'),JSON.stringify(counts,null,2)+'\n','utf8');

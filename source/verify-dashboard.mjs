@@ -42,15 +42,19 @@ async function snapshot(allSites){
  return{fileCount:Object.keys(files).length,files,aggregate:sha(Buffer.from(JSON.stringify(files)))};
 }
 async function preservation(allSites,baselineHead){
- const targets=allSites.map(s=>'test-site-'+s.number),references=allSites.map(s=>'source/'+s.project+'/reference');
+ const priorBytes=git(['show',baselineHead+':source/sites.json']),prior=JSON.parse(priorBytes.toString('utf8'));
+ const registryByteIdentical=priorBytes.equals(await readFile(join(root,'source/sites.json')));
+ for(const before of prior)assert.deepEqual(allSites.find(site=>site.number===before.number),before,'Existing registration changed: '+before.number);
+ const existing=allSites.filter(site=>prior.some(before=>before.number===site.number)),newSites=allSites.filter(site=>!prior.some(before=>before.number===site.number));
+ const targets=existing.map(s=>'test-site-'+s.number),references=existing.map(s=>'source/'+s.project+'/reference');
  const roots=[...targets,...references],actual=(await Promise.all(roots.map(p=>walk(join(root,p))))).flat().map(repoPath).sort();
- actual.push('source/sites.json');actual.sort();
- const records=git(['ls-tree','-r','-z',baselineHead,'--',...roots,'source/sites.json']).toString('utf8').split('\0').filter(Boolean).map(r=>{
+ actual.sort();
+ const records=git(['ls-tree','-r','-z',baselineHead,'--',...roots]).toString('utf8').split('\0').filter(Boolean).map(r=>{
   const m=r.match(/^(\d+) blob ([0-9a-f]+)\t(.+)$/);assert(m,r);return{oid:m[2],path:m[3]};});
  assert.deepEqual(actual,records.map(r=>r.path).sort(),'Public/reference file list changed');
  const bytes=git(['cat-file','--batch'],{input:records.map(r=>r.oid).join('\n')+'\n'});let offset=0;
  const files={};for(const r of records){const end=bytes.indexOf(10,offset),m=bytes.subarray(offset,end).toString('ascii').match(/^([0-9a-f]+) blob (\d+)$/);assert(m);offset=end+1;const length=Number(m[2]),original=bytes.subarray(offset,offset+length),current=await readFile(join(root,r.path));assert(current.equals(original),'Preserved content changed: '+r.path);files[r.path]=sha(current);offset+=length+1;}assert.equal(offset,bytes.length);
- return{status:'PASS',publicFiles:records.filter(r=>/^test-site-\d+\//.test(r.path)).length,referenceFiles:records.filter(r=>/\/reference\//.test(r.path)).length,registryByteIdentical:true,publicAndAllReferencesByteIdentical:true,files,aggregate:sha(Buffer.from(JSON.stringify(files)))};
+ return{status:'PASS',publicFiles:records.filter(r=>/^test-site-\d+\//.test(r.path)).length,referenceFiles:records.filter(r=>/\/reference\//.test(r.path)).length,registryByteIdentical,existingRegistrationsPreserved:true,newSites:newSites.map(s=>s.number),baselinePublicAndReferencesByteIdentical:true,files,aggregate:sha(Buffer.from(JSON.stringify(files)))};
 }
 async function startServer(){
  const child=spawn(process.execPath,[join(root,'source/serve.mjs')],{cwd:root,env:{...process.env,PORT:'0',STATIC_ROOT:root},stdio:['ignore','pipe','pipe']});
@@ -517,7 +521,7 @@ async function runContext(browser,server,site,mode,allSites,fixtures,prefixPath)
   row.phase='perfect comparison';await save();const perfect=await submit(page,site,expected);
   assert.deepEqual(perfect.metrics,expectedMetrics(row.expectedFindings,{tp:row.expectedFindings}));row.perfect=perfect.metrics;
   assert.equal(perfect.raw.status,'complete');assert.equal(perfect.raw.diagnostics.filter(d=>d.type==='fn').length,0);
-  row.perfectRates=perfect.raw.rates;
+  row.perfectRates=perfect.raw.rates;await verifyTopicUI(page,manifest,row);
   for(const width of [1440,390,320]){
    row.viewports.push(await viewport(page,width));await page.evaluate(()=>scrollTo({top:0,left:0,behavior:'instant'}));
    const top='dashboard-'+site.number+'-'+mode+'-'+width+'-top.png';await page.screenshot({path:join(output,top)});
@@ -528,6 +532,30 @@ async function runContext(browser,server,site,mode,allSites,fixtures,prefixPath)
   row.status='PASS';row.phase='complete';console.log('DASHBOARD PASS',site.number,mode,'TP',row.perfect.tp,'inputs',row.inputs.length);
  }catch(e){row.status='FAIL';row.failure={message:e.message,stack:e.stack};report.failures.push({site:site.number,mode,phase:row.phase,...row.failure});console.error('DASHBOARD FAIL',site.number,mode,e.message);}
  finally{await context?.close();await save();}
+}
+function verifyTopicUI(page,manifest,row){
+ return (async()=>{
+  const expected=new Map(),ensure=code=>{if(!expected.has(code))expected.set(code,{positiveElements:0,negativeControls:0,expectedFindings:0,techniques:{HOMOGLYPH:0,JAMO:0,TRANSPARENT:0,OFFSCREEN:0}});return expected.get(code);};
+  for(const c of manifest.cases){const g=ensure(c.primaryCategory||'UNASSIGNED');g.positiveElements++;for(const t of c.techniques){g.expectedFindings++;g.techniques[t]++;}}
+  for(const c of manifest.negativeControls)ensure(c.relatedCategory||'UNASSIGNED').negativeControls++;
+  const report=await page.evaluate(()=>window.validationDashboard.lastReport),summary=report.categorySummary;
+  assert.equal(summary.classificationSupported,false);assert.equal(summary.groups.length,expected.size);
+  const tableBefore=await page.locator('#category-body').innerText(),metricsBefore=await page.locator('#results').getAttribute('data-result');
+  for(const group of summary.groups){
+   const wanted=expected.get(group.code);assert(wanted,'Unexpected topic group '+group.code);
+   for(const field of ['positiveElements','negativeControls','expectedFindings'])assert.equal(group[field],wanted[field]);
+   assert.equal(group.tp,wanted.expectedFindings);assert.equal(group.fn,0);
+   for(const [technique,count]of Object.entries(wanted.techniques))assert.deepEqual(group.techniques[technique],{expected:count,tp:count,fn:0});
+   const cells=await page.locator('#category-body tr[data-category="'+group.code+'"] td[data-field]').evaluateAll(nodes=>Object.fromEntries(nodes.map(n=>[n.dataset.field,Number(n.textContent.replaceAll(',',''))])));
+   assert.deepEqual(cells,{positiveElements:wanted.positiveElements,negativeControls:wanted.negativeControls,expectedFindings:wanted.expectedFindings,tp:wanted.expectedFindings,fn:0});
+   await page.locator('#category-filter').selectOption(group.code);
+   assert.equal(await page.locator('#diagnostic-list .diagnostic').count(),Math.min(50,wanted.expectedFindings));
+   assert.equal(await page.locator('#results').getAttribute('data-result'),metricsBefore);assert.equal(await page.locator('#category-body').innerText(),tableBefore);
+  }
+  await page.locator('#category-filter').selectOption('all');
+  assert.equal(summary.groups.reduce((n,g)=>n+g.tp,0),report.metrics.tp);assert.equal(summary.groups.reduce((n,g)=>n+g.fn,0),report.metrics.fn);
+  row.topicVerification={status:'PASS',groups:expected.size,filterKeepsGlobalMetrics:true,classificationSupported:false};
+ })();
 }
 let browser,server;
 await mkdir(output,{recursive:true});
@@ -543,7 +571,7 @@ try{
  browser=await chromium.launch(executablePath?{executablePath,headless:true}:{channel:'chrome',headless:true});server=await startServer();report.server={pid:server.child.pid,origin:server.origin};
  let next=0;await Promise.all(Array.from({length:Math.min(options.concurrency,sites.length)},async()=>{while(next<sites.length){const site=sites[next++];for(const mode of report.scope.modes)await runContext(browser,server,site,mode,allSites,fixtures,prefixPath);}}));
  report.coreEnd=await snapshot(allSites);report.endHead=git(['rev-parse','HEAD'],{encoding:'utf8'}).trim();assert.deepEqual(report.coreEnd,report.coreStart,'Core changed while verifying');assert.equal(report.endHead,report.startHead);
- report.summary={stateTransitionProfiles:report.tests.filter(t=>t.stateTransitions).length,manifestFailureCases:report.tests.reduce((n,t)=>n+(t.manifestFailures?.length||0),0),diagnosticEdgeProfiles:report.tests.filter(t=>t.diagnosticEdges).length,contexts:report.tests.length,passed:report.tests.filter(t=>t.status==='PASS').length,inputs:report.tests.reduce((n,t)=>n+t.inputs.length,0),perfectComparisons:report.tests.filter(t=>t.perfect).length,viewports:report.tests.reduce((n,t)=>n+t.viewports.length,0),diagnosticViewports:report.tests.reduce((n,t)=>n+t.diagnosticViewports.length,0),independentProbes:report.tests.reduce((n,t)=>n+t.probes.length,0),publicFilesPreserved:report.preservation.publicFiles,referencesPreserved:report.preservation.referenceFiles,coreUnchanged:true};
+ report.summary={topicProfiles:report.tests.filter(t=>t.topicVerification?.status==='PASS').length,stateTransitionProfiles:report.tests.filter(t=>t.stateTransitions).length,manifestFailureCases:report.tests.reduce((n,t)=>n+(t.manifestFailures?.length||0),0),diagnosticEdgeProfiles:report.tests.filter(t=>t.diagnosticEdges).length,contexts:report.tests.length,passed:report.tests.filter(t=>t.status==='PASS').length,inputs:report.tests.reduce((n,t)=>n+t.inputs.length,0),perfectComparisons:report.tests.filter(t=>t.perfect).length,viewports:report.tests.reduce((n,t)=>n+t.viewports.length,0),diagnosticViewports:report.tests.reduce((n,t)=>n+t.diagnosticViewports.length,0),independentProbes:report.tests.reduce((n,t)=>n+t.probes.length,0),publicFilesPreserved:report.preservation.publicFiles,referencesPreserved:report.preservation.referenceFiles,coreUnchanged:true};
  assert.equal(report.tests.length,sites.length*report.scope.modes.length);assert.equal(report.failures.length,0);report.status='PASS';
 }catch(e){report.status='FAIL';report.failures.push({phase:'setup/preservation/final snapshot',message:e.message,stack:e.stack});console.error('DASHBOARD VERIFICATION FAIL',e.message);}
 finally{await browser?.close();server?.child.kill();report.finishedAt=new Date().toISOString();await save();await saves;console.log('FINAL',JSON.stringify({status:report.status,summary:report.summary,failures:report.failures}));if(report.status!=='PASS')process.exitCode=1;}

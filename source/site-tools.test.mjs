@@ -129,3 +129,43 @@ test('diagnostic rates have no invented value for empty denominators',async()=>{
  const report=trace.finish({tp:0,fn:0,fp:0,invalid:0,duplicates:0,total:0},new Set(),{meta:{},findings:[]});
  assert.deepEqual(report.rates,{recall:null,precision:null,adjusted:null});
 });
+
+
+test('category annotations validate complete coverage and retain the six-field submission contract',async()=>{
+ const {CATEGORY_LABELS,validateCategoryAnnotations,categoryCounts}=await import('./shared/categories.js');
+ const manifest={categoryProfile:'all-11-v1',cases:[],negativeControls:[],scenarioCount:66,siteId:'test',entry:'index.html',deployment:{targetDirectory:'test-site-11'}};
+ for(const code of Object.keys(CATEGORY_LABELS)){
+  const tags=[['HOMOGLYPH','TRANSPARENT'],['JAMO'],['TRANSPARENT'],['OFFSCREEN']];
+  tags.forEach((techniques,i)=>manifest.cases.push({caseId:code+i,primaryCategory:code,annotationReason:'합성 광고의 명시된 설정',techniques,page:'view.html?k='+code+i,selector:'p.note',frames:[],text:'원문'}));
+  for(let i=0;i<2;i++)manifest.negativeControls.push({caseId:code+'N'+i,relatedCategory:code,normalReason:'예방 및 일반 정보 문맥',techniques:[]});
+ }
+ assert.equal(validateCategoryAnnotations(manifest),true);
+ const counts=categoryCounts(manifest);assert.equal(Object.keys(counts).length,11);
+ assert(Object.values(counts).every(c=>c.positiveElements===4&&c.negativeControls===2&&c.expectedFindings===5));
+ const sample=expectedResultFor(manifest,'https://example.test/repo/');assert.equal(sample.findings.length,55);assert.equal(sample.meta.topic,'TOPIC');assert.deepEqual(Object.keys(sample.findings[0]).sort(),['evidence_text','id','is_violation','location','technique','url']);
+ for(const mutate of [
+  m=>delete m.categoryProfile,m=>m.categoryProfile='unknown',m=>m.cases[0].primaryCategory=['GAMBLING'],m=>m.cases[0].primaryCategory='__proto__',
+  m=>delete m.cases[0].annotationReason,m=>m.negativeControls[0].normalReason=' ',m=>m.cases[0].relatedCategory='GAMBLING',
+  m=>m.cases.shift(),m=>m.negativeControls.shift(),m=>m.cases.forEach(c=>c.techniques=c.techniques.filter(t=>t!=='OFFSCREEN')),
+  m=>m.cases.forEach(c=>c.techniques=c.techniques.slice(-1))
+ ]){const invalid=structuredClone(manifest);mutate(invalid);assert.throws(()=>validateCategoryAnnotations(invalid));}
+ for(const value of ['',null,false,0])assert.throws(()=>validateCategoryAnnotations({categoryProfile:value,cases:[],negativeControls:[]}));
+ assert.equal(Object.prototype.positiveElements,undefined);
+ assert.equal(categoryCounts({cases:[],negativeControls:[]}),null);assert.equal(validateCategoryAnnotations({cases:[],negativeControls:[]}),false);
+});
+
+test('category summaries never infer false positive topics from same-page candidates or normal controls',async()=>{
+ const {createComparisonTrace}=await import('./shared/comparison-report.js');
+ const c={caseId:'A',primaryCategory:'GAMBLING',annotationReason:'합성 설정',page:'view.html',selector:'p.a',frames:[],text:'raw',techniques:['HOMOGLYPH']};
+ const b={...c,caseId:'B',primaryCategory:'DRUG',selector:'p.b',techniques:['JAMO']};
+ const {CATEGORY_LABELS}=await import('./shared/categories.js');const manifest={categoryProfile:'all-11-v1',cases:[],negativeControls:[]};
+ for(const code of Object.keys(CATEGORY_LABELS)){const first=code==='GAMBLING'?c:code==='DRUG'?b:{...c,caseId:code,primaryCategory:code};manifest.cases.push(first);const extra=code==='DRUG'?[['HOMOGLYPH'],['TRANSPARENT'],['OFFSCREEN','HOMOGLYPH']]:[['JAMO'],['TRANSPARENT'],['OFFSCREEN','HOMOGLYPH']];extra.forEach((techniques,i)=>manifest.cases.push({...first,caseId:code+i,techniques}));for(let i=0;i<2;i++)manifest.negativeControls.push({caseId:code+'N'+i,page:c.page,selector:'p.normal',frames:[],text:'예방 안내',relatedCategory:code,normalReason:'예방 안내',techniques:[]});}
+ const n=manifest.negativeControls.find(c=>c.relatedCategory==='DRUG'),base=new URL('https://example.test/test-site-11/'),finding={id:'one',url:new URL(c.page,base).href,location:'p.a',evidence_text:'raw',technique:'HOMOGLYPH',is_violation:true,category:'wrong extra field'};
+ const trace=createComparisonTrace({manifest,base,entry:base.href,canonical:x=>new URL(x,base).href,locationFor:x=>x.selector,engine:'modern'});
+ trace.tp(finding,c);trace.fp({...finding,id:'normal'},'위치·기법·위반 여부가 자체 정답과 다름',n);trace.fp({...finding,id:'missing'},'선택자 없음');trace.invalid({id:'bad'},3,'필드 오류');trace.duplicate({...finding,id:'copy'});
+ const report=trace.finish({tp:1,fn:54,fp:2,invalid:1,duplicates:1,total:55},new Set(['A|HOMOGLYPH']),{meta:{},findings:[finding]});
+ const summary=report.categorySummary;assert.equal(summary.classificationSupported,false);assert.equal(summary.groups.reduce((a,g)=>a+g.tp,0),1);assert.equal(summary.groups.reduce((a,g)=>a+g.fn,0),54);
+ assert.equal(summary.groups.find(g=>g.code==='DRUG').negativeControls,2);assert.deepEqual(summary.unassigned,{fp:2,invalid:1,duplicates:1});
+ assert(report.diagnostics.filter(r=>r.type==='fp').every(r=>r.category==='UNASSIGNED'));assert.equal(report.diagnostics.find(r=>r.type==='tp').category,'GAMBLING');
+ assert(report.diagnostics.find(r=>r.id==='missing').expected.length>1);assert(!Object.hasOwn(report.diagnostics.find(r=>r.type==='tp').submitted,'category'));
+});

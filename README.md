@@ -18,8 +18,11 @@
 | [test-site-8](test-site-8/) | [source](source/test-site-8/) | [dashboard](validator/?site=8) |
 | [test-site-9](test-site-9/) | [source](source/test-site-9/) | [dashboard](validator/?site=9) |
 | [test-site-10](test-site-10/) | [source](source/test-site-10/) | [dashboard](validator/?site=10) |
+| [test-site-11](test-site-11/) | [source](source/test-site-11/) | [dashboard](validator/?site=11) |
 
 대시보드는 정탐 TP·미탐 FN·오탐 FP·필드 오류·중복을 구분하고, 기대값·제출값·실패 이유와 검색·필터를 제공합니다. 재현율은 `TP/기대 건수`, 정밀도는 `TP/(TP+FP)`, 필드 오류 반영 비율은 `TP/(TP+FP+필드 오류)`입니다. 분모가 0이면 계산 불가이며 공식 점수가 아닙니다.
+
+11번은 11개 광고 주제와 정상 대조군을 제공합니다. 정답 주제별 TP/FN·기법별 누락과 상세 주제 필터를 지원하며 필터는 전체 지표를 바꾸지 않습니다. 기존 사이트는 카테고리 미지정으로 표시하고, 제출 JSON에 예측 주제가 없으므로 카테고리 분류 정확도는 평가하지 않습니다.
 
 같은 출처의 실제 DOM·iframe을 비교합니다. 탐지기에는 `test-site-N/` 주소를 입력하세요. 검증실·정답 링크는 대상 내부에 없습니다. 사이트별 기존 검증실은 `source/test-site-N/lab/`에서 정답 사례·DOM 검사를 계속 제공하며 사이트 2 이상은 링크 검사도 지원합니다.
 

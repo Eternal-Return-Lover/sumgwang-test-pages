@@ -38,7 +38,7 @@ export async function checkDashboard(){
   const raw=match[1];if(/^(?:https?:|data:|#)/.test(raw))continue;let file=fileURLToPath(new URL(raw,pathToFileURL(join(root,'index.html'))));
   if((await stat(file)).isDirectory())file=join(file,'index.html');assert((await stat(file)).isFile(),'Dashboard missing '+raw);refs++;
  }
- for(const file of [join(root,'dashboard.js'),join(repositoryRoot,'source/shared/comparison-report.js')]){
+ for(const file of [join(root,'dashboard.js'),join(repositoryRoot,'source/shared/comparison-report.js'),join(repositoryRoot,'source/shared/categories.js')]){
   const source=await readFile(file);assert(!(source[0]===239&&source[1]===187&&source[2]===191),'Unexpected BOM: '+file);new TextDecoder('utf-8',{fatal:true}).decode(source);
   const result=spawnSync(process.execPath,['--check',file],{encoding:'utf8'});assert.equal(result.status,0,result.stderr);
  }
