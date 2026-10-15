@@ -1,0 +1,82 @@
+// Private scenario definitions. The public renderer serializes only display fields.
+const offer='온라인 카지노 슬롯 신규 가입 보너스 지급 안내',adult='성인 영상 비밀 채팅 회원 가입 이벤트',loan='무심사 즉시 대출 당일 입금 상담 신청',medicine='처방전 없이 비아그라 최저가 구매',jamo='ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스';
+export const authors=['윤서진','김도하','박은별','정시우','이하윤','최다인','문지호','한소율','서가람','배유진'];
+export const zones={dome:'관측돔',exhibit:'별빛전시실',workshop:'우주배움실'};
+export const sessions={day:'낮',evening:'초저녁',night:'밤'};
+export const fixtures=[
+ {key:'T01',name:'전각 안내 메모',title:'관측돔 모형에서 찾은 작은 표식',text:'ｃａｓｉｎｏ 온라인 슬롯 무료 체험 신규 가입 보너스',techniques:['HOMOGLYPH']},
+ {key:'T02',name:'키릴 혼합 관측 의견',title:'빛의 점을 이어 읽은 첫 번째 기록',text:'саsіnо 온라인 슬롯 가입 보너스',techniques:['HOMOGLYPH']},
+ {key:'T03',name:'자모 관찰표',title:'합성 별그림의 좌표표를 살펴보며',text:jamo,table:true,techniques:['JAMO']},
+ {key:'T04',name:'조합 자모 메타데이터',title:'관측노트의 제목을 소리 내어 읽기',text:'카지노 신규 가입 보너스'.normalize('NFD'),details:true,techniques:['JAMO']},
+ {key:'T05',name:'투명 관측 메모',title:'전시 조명의 설명을 나란히 읽었습니다',text:offer,style:'color:transparent',techniques:['TRANSPARENT']},
+ {key:'T06',name:'opacity 의견',title:'돔 천장 모형의 안내를 모았습니다',text:adult,style:'opacity:0',techniques:['TRANSPARENT']},
+ {key:'T07',name:'SVG 조상 opacity 전각',title:'합성 별자리 도해의 주석 읽기',text:'ｃａｓｉｎｏ 온라인 가입 보너스',svg:true,parentStyle:'opacity:0',techniques:['HOMOGLYPH','TRANSPARENT']},
+ {key:'T08',name:'SVG 자모와 0px',title:'빛의 연결선을 따라 남긴 도해 메모',text:jamo,svg:true,style:'font-size:0px',techniques:['JAMO','OFFSCREEN']},
+ {key:'T09',name:'동일 배경색',title:'전시실의 어두운 패널을 읽으며',text:loan,style:'color:rgb(23,36,63);background-color:rgb(23,36,63)',techniques:['TRANSPARENT']},
+ {key:'T10',name:'부모 opacity',title:'우주배움실 자료의 덧붙인 설명',text:medicine,parentStyle:'opacity:0',techniques:['TRANSPARENT']},
+ {key:'T11',name:'display none 메모',title:'모형 관찰 뒤에 남긴 짧은 소감',text:offer,style:'display:none',techniques:['OFFSCREEN']},
+ {key:'T12',name:'음수 위치',title:'전시 안내판의 여백을 기록했습니다',text:loan,style:'position:absolute;left:-9999px',techniques:['OFFSCREEN']},
+ {key:'T13',name:'0px 관측 의견',title:'밤 프로그램 자료를 다시 읽으며',text:adult,style:'font-size:0',techniques:['OFFSCREEN']},
+ {key:'T14',name:'1px 관찰표',title:'전시 비교표의 마지막 칸',text:medicine,table:true,style:'font-size:1px',techniques:['OFFSCREEN']},
+ {key:'T15',name:'부모 숨김',title:'가족 모임이 남긴 도해 읽기',text:offer,parentStyle:'display:none',techniques:['OFFSCREEN']},
+ {key:'T16',name:'전각 투명 복합',title:'합성 별무리 그림을 읽는 순서',text:'ＣＡＳ１ＮＯ 온라인 가입 보너스',style:'color:transparent',techniques:['HOMOGLYPH','TRANSPARENT']},
+ {key:'T17',name:'자모 숨김 복합',title:'돔 전시 해설의 추가 질문',text:jamo,style:'display:none',techniques:['JAMO','OFFSCREEN']},
+ {key:'T18',name:'전각 위치 복합',title:'낮 전시자료의 여백에 적은 말',text:'ｍｅｇａ－ＢＥＴ 신규 카지노 보너스',style:'position:absolute;left:-9999px',techniques:['HOMOGLYPH','OFFSCREEN']},
+ {key:'T19',name:'반복 메모 자모 투명',title:'여러 관찰자의 메모를 비교했습니다',text:jamo,repeat:true,style:'opacity:0',techniques:['JAMO','TRANSPARENT']},
+ {key:'T20',name:'네 기법 중첩',title:'합성 관측자료에서 만난 겹친 설명',text:'ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 가입 보너스',parentStyle:'opacity:0',style:'font-size:1px',techniques:['HOMOGLYPH','JAMO','TRANSPARENT','OFFSCREEN']},
+ {key:'T21',name:'클래스 없는 자모',title:'우주배움실에서 나눈 읽기 경험',text:jamo,plain:true,techniques:['JAMO']},
+ {key:'T22',name:'숫자 혼합',title:'전시 표기의 모양을 따라 적으며',text:'CAS1NO 온라인 슬롯 가입 보너스',techniques:['HOMOGLYPH']},
+ {key:'T23',name:'투명 dl 메모',title:'프로그램 자료의 등록 메모',text:loan,details:true,style:'color:transparent',techniques:['TRANSPARENT']},
+ {key:'T24',name:'인용 영역 숨김',title:'도해 해설을 인용한 관찰노트',text:offer,quote:true,style:'display:none',techniques:['OFFSCREEN']},
+ {key:'T25',name:'전각 자모 혼합',title:'빛 표식을 연결한 모둠 기록',text:'ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 보너스',techniques:['HOMOGLYPH','JAMO']},
+ {key:'T26',name:'분해 음절',title:'전시 해설 단어의 모양을 비교하기',text:'카ㅈㅣ노 신규 가입 보너스',techniques:['JAMO']},
+ {key:'T27',name:'600ms 관측 의견',title:'첫 관측자료를 읽은 뒤의 의견',text:'ｃａｓｉｎｏ 온라인 슬롯 가입 보너스',delay:600,techniques:['HOMOGLYPH']},
+ {key:'T28',name:'1300ms 관측 의견',title:'초저녁 모형 기록을 다시 펼치며',text:jamo,delay:1300,techniques:['JAMO']},
+ {key:'T29',name:'2800ms 투명 의견',title:'별빛전시실 자료를 마무리하며',text:adult,delay:2800,style:'opacity:0',techniques:['TRANSPARENT']},
+ {key:'T30',name:'template clone 2100ms',title:'관측노트에 늦게 도착한 덧글',text:jamo,template:true,delay:2100,style:'display:none',techniques:['JAMO','OFFSCREEN']},
+ {key:'T31',name:'2단계 자료 프레임',title:'돔 해설자료의 연결 주석',text:jamo,frameDepth:2,techniques:['JAMO']},
+ {key:'T32',name:'3단계 자료 프레임',title:'우주배움실의 이어진 자료함',text:'ｃａｓｉｎｏ 온라인 슬롯 가입 보너스',frameDepth:3,style:'color:transparent',techniques:['HOMOGLYPH','TRANSPARENT']},
+ {key:'T33',name:'500ms frame와 1200ms leaf',title:'밤 모형자료의 추가 해설을 읽고',text:'ｍｅｇａ－ＢＥＴ 온라인 카지노 보너스',frameDepth:2,delay:500,innerDelay:1200,style:'color:transparent',techniques:['HOMOGLYPH','TRANSPARENT']},
+ {key:'T34',name:'6단계 관측수첩',title:'북쪽 모형 관찰수첩의 마지막 페이지',text:jamo,deep:true,details:true,style:'display:none',techniques:['JAMO','OFFSCREEN']},
+ {key:'T35',name:'반복 전각 문장',title:'같은 전시를 다르게 읽은 세 사람',text:'ＣＡＳ１ＮＯ 온라인 가입 보너스',repeat:true,techniques:['HOMOGLYPH']},
+ {key:'T36',name:'작은 기록 주석',title:'관측노트 맨 끝의 조그만 메모',text:medicine,style:'font-size:1px',techniques:['OFFSCREEN']},
+ {key:'N01',name:'정상 접근성',title:'별숲 안내 음성 자료의 읽는 설명',text:'관측자료의 읽는 설명으로 바로 이동합니다.',style:'position:absolute;left:-9999px',techniques:[]},
+ {key:'N02',name:'정상 숨은 메뉴',title:'전시구역 빠른 이동 메뉴 안내',text:'관측돔 · 별빛전시실 · 우주배움실 자료 메뉴',style:'display:none',techniques:[]},
+ {key:'N03',name:'정상 전각 전시 코드',title:'모형 자료의 전시 코드 읽는 법',text:'전시 자료 번호 ＨＡＮＵＬ－２０２６－０８ 입니다.',techniques:[]},
+ {key:'N04',name:'정상 자모 교육',title:'별 이름 대신 글자 모양을 읽는 수업',text:'한글 교육용 예시: ㅂㅕㄹ, ㅅㅜㅍ, ㅂㅣㅊ의 자모를 살펴봅니다.',details:true,techniques:[]},
+ {key:'N05',name:'정상 예방 안내',title:'온라인 전시자료를 안전하게 읽기',text:'카지노 가입 보너스와 성인 영상 회원 가입을 내세운 불법광고는 클릭하지 마세요.',techniques:[]},
+ {key:'N06',name:'정상 숨은 예방',title:'읽는 설명에 담긴 광고 예방 문장',text:'무심사 즉시 대출이나 처방전 없는 의약품 구매 광고를 조심하세요.',style:'display:none',techniques:[]},
+ {key:'N07',name:'정상 투명 상태',title:'해설자료 준비 상태를 알립니다',text:'합성 전시 해설자료를 준비하고 있습니다.',style:'opacity:0',techniques:[]},
+ {key:'N08',name:'정상 2단계 프레임',title:'공동 전시자료함의 안전 읽기',text:'온라인 카지노 보너스와 비밀 채팅 가입을 권하는 불법광고에 주의하세요.',frameDepth:2,style:'opacity:0',techniques:[]},
+ {key:'N09',name:'정상 다국어',title:'가족 전시읽기 모임의 인사',text:'안녕하세요. Hello. 이 전시는 실제 별자리와 무관한 합성 모형입니다.',techniques:[]},
+ {key:'N10',name:'정상 보이는 SVG',title:'도해의 북쪽 표식을 읽는 안내',text:'합성 도해의 북쪽 안내',svg:true,style:'font-size:18px;fill:#b5e5ef',techniques:[]},
+ {key:'N11',name:'정상 표 예방',title:'전시 게시판의 금융광고 예방표',text:'당일 입금·무심사 대출을 내세운 게시물에 개인정보를 보내지 마세요.',table:true,techniques:[]},
+ {key:'N12',name:'900ms 정상 접근성',title:'읽는 도해자료 준비 완료 알림',text:'합성 전시 도해의 읽는 설명이 준비되었습니다.',delay:900,style:'position:absolute;left:-9999px',techniques:[]},
+ {key:'N13',name:'정상 NFD 교육',title:'관측노트 글자 조합 읽기',text:'별숲 글자 조합 교육 자료입니다.'.normalize('NFD'),techniques:[]},
+ {key:'N14',name:'정상 아래 본문',title:'긴 전시기록 뒤에 이어지는 안내',text:'화면 아래에 이어지는 일반 자료입니다. 실제 천문 관측시각이나 예약을 안내하지 않습니다.',parentStyle:'margin-top:1100px',techniques:[]},
+ {key:'N15',name:'정상 구역 설명',title:'낮과 밤 자료의 합성 구분을 읽기',text:'DAY · EVENING · NIGHT는 합성 프로그램의 분류 이름이며 실제 운영시각이 아닙니다.',details:true,techniques:[]},
+ {key:'N16',name:'정상 인용 예방',title:'인터넷 자료 인용을 확인하는 모임',text:'“최저가 구매”와 “신규 가입 보너스” 같은 문구가 있는 광고는 출처를 확인하고 차단합니다.',quote:true,techniques:[]}
+].map((f,index)=>({...f,index,postId:String(43017+index*37),zone:Object.keys(zones)[index%3],session:Object.keys(sessions)[index%3],path:f.deep?'observations/2026/autumn/north/notebook/read.html':`notes/records/${43017+index*37}.html`}));
+export const queryFixtures=[
+ {key:'Q01',zone:'dome',session:'day',name:'돔 낮 프로그램',text:jamo,techniques:['JAMO']},
+ {key:'Q02',zone:'dome',session:'evening',name:'돔 초저녁 프레임',text:'ｃａｓｉｎｏ 온라인 가입 보너스',frameDepth:1,style:'color:transparent',techniques:['HOMOGLYPH','TRANSPARENT']},
+ {key:'Q03',zone:'dome',session:'night',name:'돔 밤 프로그램',text:offer,style:'display:none',techniques:['OFFSCREEN']},
+ {key:'Q04',zone:'exhibit',session:'day',name:'전시실 낮 프로그램',text:'ＣＡＳ１ＮＯ 온라인 가입 보너스',techniques:['HOMOGLYPH']},
+ {key:'Q05',zone:'exhibit',session:'evening',name:'전시실 초저녁 프로그램',text:jamo,style:'opacity:0',techniques:['JAMO','TRANSPARENT']},
+ {key:'Q06',zone:'exhibit',session:'night',name:'전시실 밤 프로그램',text:'ｍｅｇａ－ＢＥＴ 신규 카지노 보너스',style:'display:none',techniques:['HOMOGLYPH','OFFSCREEN']},
+ {key:'Q07',zone:'workshop',session:'day',name:'배움실 낮 프로그램',text:loan,parentStyle:'opacity:0',techniques:['TRANSPARENT']},
+ {key:'Q08',zone:'workshop',session:'evening',name:'배움실 초저녁 프로그램',text:jamo,style:'font-size:1px',techniques:['JAMO','OFFSCREEN']},
+ {key:'Q09',zone:'workshop',session:'night',name:'배움실 밤 프레임',text:jamo,frameDepth:3,style:'display:none',techniques:['JAMO','OFFSCREEN']}
+].map((f,i)=>({...f,index:fixtures.length+i,title:`${zones[f.zone]} ${sessions[f.session]} 합성 관측 프로그램`,path:`programs/view.html?zone=${f.zone}&session=${f.session}`}));
+export const extraElements=[
+ {parent:'T01',key:'E01',name:'추가 숨김 의견',text:offer,style:'display:none',techniques:['OFFSCREEN']},
+ {parent:'T02',key:'E02',name:'추가 자모 투명',text:jamo,style:'opacity:0',techniques:['JAMO','TRANSPARENT']},
+ {parent:'T03',key:'E03',name:'추가 전각 투명',text:'ｍｅｇａ－ＢＥＴ 온라인 카지노 보너스',style:'color:transparent',techniques:['HOMOGLYPH','TRANSPARENT']},
+ {parent:'T04',key:'E04',name:'추가 작은 의약품',text:medicine,style:'font-size:0',techniques:['OFFSCREEN']},
+ {parent:'T05',key:'E05',name:'추가 자모 숨김',text:jamo,style:'display:none',techniques:['JAMO','OFFSCREEN']},
+ {parent:'T06',key:'E06',name:'추가 투명 채팅',text:adult,style:'opacity:0',techniques:['TRANSPARENT']},
+ {parent:'T11',key:'E07',name:'추가 전각 작은 글자',text:'ｃａｓｉｎｏ 온라인 슬롯 가입 보너스',style:'font-size:1px',techniques:['HOMOGLYPH','OFFSCREEN']},
+ {parent:'T16',key:'E08',name:'추가 자모 의견',text:jamo,techniques:['JAMO']},
+ {parent:'T24',key:'E09',name:'추가 전각 투명 인용 의견',text:'ＣＡＳ１ＮＯ 온라인 가입 보너스',style:'color:transparent',techniques:['HOMOGLYPH','TRANSPARENT']}
+];
+export const listingPageSize=13,deepestCaseKey='T34',discoveryDelayMs=850,maxLinkDepth=6,overviewPath='programs/index.html';

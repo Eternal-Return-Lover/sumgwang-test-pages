@@ -1,0 +1,2704 @@
+{
+  "base": "http://127.0.0.1:58273/test-site-10/",
+  "checks": [
+    {
+      "name": "clipboard-download",
+      "detail": {
+        "entry": "http://127.0.0.1:58273/test-site-10/index.html",
+        "groundTruthMatches": true,
+        "expected": 78
+      }
+    },
+    {
+      "name": "SVG-paint-and-geometry",
+      "detail": {
+        "caseId": "T07",
+        "text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+        "connected": true,
+        "namespace": "http://www.w3.org/2000/svg",
+        "localName": "text",
+        "inlineStyle": null,
+        "bounds": {
+          "x": 428.35894775390625,
+          "y": 1256.4556884765625,
+          "width": 476.671875,
+          "height": 43.0001220703125
+        },
+        "bbox": {
+          "x": 68,
+          "y": 253.23411560058594,
+          "width": 296.43389892578125,
+          "height": 26.740947723388672
+        },
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 620,
+          "height": 300
+        },
+        "ancestors": [
+          {
+            "tag": "text",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "20px",
+            "fill": "rgb(181, 229, 239)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "g",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "0",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "svg",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "figure",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "grid",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "article",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "main",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "body",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "html",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          }
+        ],
+        "effectiveOpacity": 0
+      }
+    },
+    {
+      "name": "SVG-paint-and-geometry",
+      "detail": {
+        "caseId": "T08",
+        "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+        "connected": true,
+        "namespace": "http://www.w3.org/2000/svg",
+        "localName": "text",
+        "inlineStyle": "font-size:0px",
+        "bounds": {
+          "x": 428.35894775390625,
+          "y": 1291.4556884765625,
+          "width": 0,
+          "height": 0
+        },
+        "bbox": {
+          "x": 68,
+          "y": 275,
+          "width": 0,
+          "height": 0
+        },
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 620,
+          "height": 300
+        },
+        "ancestors": [
+          {
+            "tag": "text",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "0px",
+            "fill": "rgb(181, 229, 239)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "g",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "svg",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "figure",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "grid",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "article",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "main",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "body",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "html",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          }
+        ],
+        "effectiveOpacity": 1
+      }
+    },
+    {
+      "name": "SVG-paint-and-geometry",
+      "detail": {
+        "caseId": "N10",
+        "text": "합성 도해의 북쪽 안내",
+        "connected": true,
+        "namespace": "http://www.w3.org/2000/svg",
+        "localName": "text",
+        "inlineStyle": "font-size:18px;fill:#b5e5ef",
+        "bounds": {
+          "x": 428.35894775390625,
+          "y": 1260.4556884765625,
+          "width": 284.25,
+          "height": 38
+        },
+        "bbox": {
+          "x": 68,
+          "y": 255.7216339111328,
+          "width": 176.7700958251953,
+          "height": 23.631534576416016
+        },
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 620,
+          "height": 300
+        },
+        "ancestors": [
+          {
+            "tag": "text",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "18px",
+            "fill": "rgb(181, 229, 239)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "g",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "svg",
+            "namespace": "http://www.w3.org/2000/svg",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "figure",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "grid",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "article",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "main",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "body",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          },
+          {
+            "tag": "html",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)",
+            "fillOpacity": "1"
+          }
+        ],
+        "effectiveOpacity": 1
+      }
+    },
+    {
+      "name": "template-detached-source-and-clone",
+      "detail": {
+        "before": {
+          "time": 19.899999991059303,
+          "documentCount": 0,
+          "sourceCount": 1,
+          "sourceText": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "sourceConnected": false,
+          "fragmentConnected": false,
+          "sourceHtml": "<div class=\"reader-note\"><span>별숲 관찰자</span><p class=\"observation-text\" style=\"display:none\">ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스</p></div>"
+        },
+        "after": {
+          "time": 2121.7999999970198,
+          "documentCount": 1,
+          "sourceCount": 1,
+          "sourceText": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "sourceConnected": false,
+          "fragmentConnected": false,
+          "sourceHtml": "<div class=\"reader-note\"><span>별숲 관찰자</span><p class=\"observation-text\" style=\"display:none\">ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스</p></div>",
+          "cloneConnected": true,
+          "sameNode": false,
+          "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "display": "none"
+        },
+        "duplicatesAfterExtraWait": 0
+      }
+    },
+    {
+      "name": "query-frame-raw",
+      "detail": {
+        "caseId": "Q02",
+        "page": "programs/view.html?zone=dome&session=evening",
+        "chain": [
+          {
+            "src": "http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html",
+            "display": "block",
+            "opacity": "1"
+          }
+        ],
+        "text": "ｃａｓｉｎｏ 온라인 가입 보너스"
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 wrong zone",
+        "finding": {
+          "id": "Q02_HOMOGLYPH",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=evening",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 wrong session",
+        "finding": {
+          "id": "Q02_HOMOGLYPH",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=day",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 wrong chain",
+        "finding": {
+          "id": "Q02_HOMOGLYPH",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=evening",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 truncated chain",
+        "finding": {
+          "id": "Q02_HOMOGLYPH",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=evening",
+          "is_violation": true,
+          "location": "div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "leaf count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 other actual iframe node",
+        "finding": {
+          "id": "Q02_HOMOGLYPH",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=night",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q09",
+          "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "techniques": [
+            "JAMO",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "query-frame-raw",
+      "detail": {
+        "caseId": "Q09",
+        "page": "programs/view.html?zone=workshop&session=night",
+        "chain": [
+          {
+            "src": "http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html",
+            "display": "block",
+            "opacity": "1"
+          },
+          {
+            "src": "http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html",
+            "display": "block",
+            "opacity": "1"
+          },
+          {
+            "src": "http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html",
+            "display": "block",
+            "opacity": "1"
+          }
+        ],
+        "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스"
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 wrong zone",
+        "finding": {
+          "id": "Q09_JAMO",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=night",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 wrong session",
+        "finding": {
+          "id": "Q09_JAMO",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=day",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 wrong chain",
+        "finding": {
+          "id": "Q09_JAMO",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=night",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "frame count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 truncated chain",
+        "finding": {
+          "id": "Q09_JAMO",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=night",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": false,
+          "reason": "leaf count 0",
+          "techniques": []
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 other actual iframe node",
+        "finding": {
+          "id": "Q09_JAMO",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=evening",
+          "is_violation": true,
+          "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q02",
+          "text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "techniques": [
+            "HOMOGLYPH",
+            "TRANSPARENT"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 at actual Q05 TRANSPARENT",
+        "finding": {
+          "id": "Q02_TRANSPARENT",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=evening",
+          "is_violation": true,
+          "location": "div.note-body > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "TRANSPARENT"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q05",
+          "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "techniques": [
+            "JAMO",
+            "TRANSPARENT"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q02 at actual Q05 HOMOGLYPH",
+        "finding": {
+          "id": "Q02_HOMOGLYPH",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=evening",
+          "is_violation": true,
+          "location": "div.note-body > div.observer-note > p.observation-text",
+          "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+          "technique": "HOMOGLYPH"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q05",
+          "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "techniques": [
+            "JAMO",
+            "TRANSPARENT"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 at actual Q08 JAMO",
+        "finding": {
+          "id": "Q09_JAMO",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=evening",
+          "is_violation": true,
+          "location": "div.note-body > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "JAMO"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q08",
+          "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "techniques": [
+            "JAMO",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actual-node-probe",
+      "detail": {
+        "name": "Q09 at actual Q08 OFFSCREEN",
+        "finding": {
+          "id": "Q09_OFFSCREEN",
+          "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=evening",
+          "is_violation": true,
+          "location": "div.note-body > div.observer-note > p.observation-text",
+          "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "technique": "OFFSCREEN"
+        },
+        "observed": {
+          "resolved": true,
+          "caseId": "Q08",
+          "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+          "techniques": [
+            "JAMO",
+            "OFFSCREEN"
+          ]
+        }
+      }
+    },
+    {
+      "name": "normal-below-fold",
+      "detail": {
+        "text": "화면 아래에 이어지는 일반 자료입니다. 실제 천문 관측시각이나 예약을 안내하지 않습니다.",
+        "display": "block",
+        "y": 1937.25
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "home",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "상상의 별을 잇고,우리의 이야기를 씁니다.",
+        "boxes": [
+          {
+            "x": 747.015625,
+            "right": 1334,
+            "width": 586.984375
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "exhibits",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "점과 선으로 만나는 세 구역",
+        "boxes": [
+          {
+            "x": 310,
+            "right": 1130,
+            "width": 820
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "programs",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측 프로그램",
+        "boxes": [
+          {
+            "x": 85,
+            "right": 1355,
+            "width": 1270
+          },
+          {
+            "x": 85,
+            "right": 1355,
+            "width": 1270
+          },
+          {
+            "x": 85,
+            "right": 1355,
+            "width": 1270
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "record",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "table",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "template",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-T07",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          },
+          {
+            "x": 318,
+            "right": 1317,
+            "width": 999
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-T08",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          },
+          {
+            "x": 318,
+            "right": 1317,
+            "width": 999
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-N10",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          },
+          {
+            "x": 318,
+            "right": 1317,
+            "width": 999
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q02",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측 프로그램 자료",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q09",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "관측 프로그램 자료",
+        "boxes": [
+          {
+            "x": 86,
+            "right": 1354,
+            "width": 1268
+          },
+          {
+            "x": 86,
+            "right": 281,
+            "width": 195
+          },
+          {
+            "x": 281,
+            "right": 1354,
+            "width": 1073
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "visit",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "별숲 자료를 읽기 전에",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "lab",
+        "width": 1440,
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "heading": "놓친 한 줄까지,확인할 수 있도록.",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "home",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "상상의 별을 잇고,우리의 이야기를 씁니다.",
+        "boxes": [
+          {
+            "x": 31,
+            "right": 359,
+            "width": 328
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "exhibits",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "점과 선으로 만나는 세 구역",
+        "boxes": [
+          {
+            "x": 32,
+            "right": 358,
+            "width": 326
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "programs",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측 프로그램",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 372,
+            "width": 354
+          },
+          {
+            "x": 18,
+            "right": 372,
+            "width": 354
+          },
+          {
+            "x": 18,
+            "right": 372,
+            "width": 354
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "record",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "table",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "template",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-T07",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 40,
+            "right": 350,
+            "width": 310
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-T08",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 40,
+            "right": 350,
+            "width": 310
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-N10",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 40,
+            "right": 350,
+            "width": 310
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q02",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측 프로그램 자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q09",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "관측 프로그램 자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          },
+          {
+            "x": 19,
+            "right": 371,
+            "width": 352
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "visit",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "별숲 자료를 읽기 전에",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "lab",
+        "width": 390,
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "heading": "놓친 한 줄까지,확인할 수 있도록.",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "home",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "상상의 별을 잇고,우리의 이야기를 씁니다.",
+        "boxes": [
+          {
+            "x": 31,
+            "right": 289,
+            "width": 258
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "exhibits",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "점과 선으로 만나는 세 구역",
+        "boxes": [
+          {
+            "x": 32,
+            "right": 288,
+            "width": 256
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "programs",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측 프로그램",
+        "boxes": [
+          {
+            "x": 18,
+            "right": 302,
+            "width": 284
+          },
+          {
+            "x": 18,
+            "right": 302,
+            "width": 284
+          },
+          {
+            "x": 18,
+            "right": 302,
+            "width": 284
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "record",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "table",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "template",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-T07",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 37,
+            "right": 283,
+            "width": 246
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-T08",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 37,
+            "right": 283,
+            "width": 246
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "SVG-N10",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측노트",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 37,
+            "right": 283,
+            "width": 246
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q02",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측 프로그램 자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "query-Q09",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "관측 프로그램 자료",
+        "boxes": [
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          },
+          {
+            "x": 19,
+            "right": 301,
+            "width": 282
+          }
+        ]
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "visit",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "별숲 자료를 읽기 전에",
+        "boxes": []
+      }
+    },
+    {
+      "name": "visual-layout",
+      "detail": {
+        "name": "lab",
+        "width": 320,
+        "innerWidth": 320,
+        "scrollWidth": 320,
+        "heading": "놓친 한 줄까지,확인할 수 있도록.",
+        "boxes": []
+      }
+    },
+    {
+      "name": "program-actual-clicks",
+      "detail": {
+        "clicks": 27,
+        "widths": [
+          1440,
+          390,
+          320
+        ],
+        "conditions": 9
+      }
+    },
+    {
+      "name": "independent-BFS",
+      "detail": {
+        "documents": 75,
+        "scenarioUrls": 61,
+        "maxDepth": 6,
+        "missing": [],
+        "loadingErrors": [],
+        "visited": [
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/index.html",
+            "depth": 0
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/exhibits/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/list-1.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/visit/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=day&zone=dome",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=day&zone=exhibit",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=day&zone=workshop",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=evening&zone=exhibit",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=night&zone=workshop",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43017.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43054.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43091.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43128.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/observations/index.html",
+            "depth": 1
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=evening&zone=dome",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=night&zone=dome",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=night&zone=exhibit",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?session=evening&zone=workshop",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43165.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43202.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43239.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43276.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43313.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43350.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43387.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43424.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43461.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/list-2.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/list-3.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/list-4.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/list-5.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/observations/2026/index.html",
+            "depth": 2
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43498.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43535.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43572.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43609.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43646.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43683.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43720.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43757.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43794.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43831.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43868.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43905.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43942.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/43979.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44016.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44053.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44090.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44127.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44164.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44201.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44275.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44312.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44349.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44386.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44423.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44460.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44497.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44534.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44571.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44608.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44645.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44682.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44719.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44756.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44793.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44830.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44867.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/notes/records/44904.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/observations/2026/autumn/index.html",
+            "depth": 3
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/observations/2026/autumn/north/index.html",
+            "depth": 4
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/observations/2026/autumn/north/notebook/index.html",
+            "depth": 5
+          },
+          {
+            "url": "http://127.0.0.1:58273/test-site-10/observations/2026/autumn/north/notebook/read.html",
+            "depth": 6
+          }
+        ]
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "Q02 correct",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 order fragment",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 relative src",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 unique selector chain",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 wrong zone",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 wrong session",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 wrong chain",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 truncated chain",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 other actual iframe node",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 correct",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 order fragment",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 relative src",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 unique selector chain",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 wrong zone",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 wrong session",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 wrong chain",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 truncated chain",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 other actual iframe node",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 at actual Q05 TRANSPARENT",
+      "want": {
+        "tp": 1,
+        "fn": 77,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 77,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q02 at actual Q05 HOMOGLYPH",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 at actual Q08 JAMO",
+      "want": {
+        "tp": 1,
+        "fn": 77,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 77,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "Q09 at actual Q08 OFFSCREEN",
+      "want": {
+        "tp": 1,
+        "fn": 77,
+        "fp": 0,
+        "invalid": 0
+      },
+      "actual": {
+        "tp": 1,
+        "fn": 77,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "two SVG positives",
+      "want": {
+        "tp": 4,
+        "fn": 74,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 4,
+        "fn": 74,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "normal visible SVG FP",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 1,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "template live DOM result",
+      "want": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 2,
+        "fn": 76,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "invalid technique",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "is_violation string",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "empty evidence",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "invalid": 1
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0,
+        "invalid": 1,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "time 1800",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    },
+    {
+      "name": "time 1801",
+      "want": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0
+      },
+      "actual": {
+        "tp": 0,
+        "fn": 78,
+        "fp": 0,
+        "invalid": 0,
+        "duplicates": 0,
+        "total": 78
+      }
+    }
+  ],
+  "programClicks": [
+    {
+      "width": 1440,
+      "zone": "dome",
+      "session": "day",
+      "heading": "관측돔 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "dome",
+      "session": "evening",
+      "heading": "관측돔 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "dome",
+      "session": "night",
+      "heading": "관측돔 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "exhibit",
+      "session": "day",
+      "heading": "별빛전시실 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "exhibit",
+      "session": "evening",
+      "heading": "별빛전시실 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "exhibit",
+      "session": "night",
+      "heading": "별빛전시실 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "workshop",
+      "session": "day",
+      "heading": "우주배움실 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "workshop",
+      "session": "evening",
+      "heading": "우주배움실 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 1440,
+      "zone": "workshop",
+      "session": "night",
+      "heading": "우주배움실 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "dome",
+      "session": "day",
+      "heading": "관측돔 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "dome",
+      "session": "evening",
+      "heading": "관측돔 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "dome",
+      "session": "night",
+      "heading": "관측돔 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "exhibit",
+      "session": "day",
+      "heading": "별빛전시실 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "exhibit",
+      "session": "evening",
+      "heading": "별빛전시실 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "exhibit",
+      "session": "night",
+      "heading": "별빛전시실 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "workshop",
+      "session": "day",
+      "heading": "우주배움실 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "workshop",
+      "session": "evening",
+      "heading": "우주배움실 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 390,
+      "zone": "workshop",
+      "session": "night",
+      "heading": "우주배움실 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "dome",
+      "session": "day",
+      "heading": "관측돔 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "dome",
+      "session": "evening",
+      "heading": "관측돔 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "dome",
+      "session": "night",
+      "heading": "관측돔 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "exhibit",
+      "session": "day",
+      "heading": "별빛전시실 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "exhibit",
+      "session": "evening",
+      "heading": "별빛전시실 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "exhibit",
+      "session": "night",
+      "heading": "별빛전시실 밤 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "workshop",
+      "session": "day",
+      "heading": "우주배움실 낮 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "workshop",
+      "session": "evening",
+      "heading": "우주배움실 초저녁 합성 관측 프로그램"
+    },
+    {
+      "width": 320,
+      "zone": "workshop",
+      "session": "night",
+      "heading": "우주배움실 밤 합성 관측 프로그램"
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "ok": true
+}

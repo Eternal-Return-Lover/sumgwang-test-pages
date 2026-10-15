@@ -1,0 +1,636 @@
+{
+  "meta": {
+    "topic": "TOPIC",
+    "entry_url": "http://127.0.0.1:58273/test-site-10/index.html",
+    "started_at": "2026-10-15T05:14:22.038Z",
+    "finished_at": "2026-10-15T05:14:22.038Z",
+    "elapsed_sec": 0,
+    "tool_version": "reference-1.0.0"
+  },
+  "findings": [
+    {
+      "id": "T01_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43017.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 무료 체험 신규 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E01_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43017.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "온라인 카지노 슬롯 신규 가입 보너스 지급 안내",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T02_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43054.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "саsіnо 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E02_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43054.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "E02_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43054.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T03_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43091.html",
+      "is_violation": true,
+      "location": "div.note-body > table.observation-table > tbody > tr:nth-of-type(2) > td[data-column=\"note\"]",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "E03_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43091.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E03_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43091.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T04_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43128.html",
+      "is_violation": true,
+      "location": "div.note-body > dl.record-metadata > dd:nth-of-type(2)",
+      "evidence_text": "카지노 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "E04_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43128.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "처방전 없이 비아그라 최저가 구매",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T05_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43165.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "온라인 카지노 슬롯 신규 가입 보너스 지급 안내",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "E05_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43165.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "E05_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43165.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T06_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43202.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "성인 영상 비밀 채팅 회원 가입 이벤트",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "E06_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43202.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "성인 영상 비밀 채팅 회원 가입 이벤트",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T07_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43239.html",
+      "is_violation": true,
+      "location": "div.note-body > figure.inline-chart > svg.constellation-svg > g.annotation-layer > text.diagram-caption",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T07_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43239.html",
+      "is_violation": true,
+      "location": "div.note-body > figure.inline-chart > svg.constellation-svg > g.annotation-layer > text.diagram-caption",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T08_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43276.html",
+      "is_violation": true,
+      "location": "div.note-body > figure.inline-chart > svg.constellation-svg > g.annotation-layer > text.diagram-caption",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T08_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43276.html",
+      "is_violation": true,
+      "location": "div.note-body > figure.inline-chart > svg.constellation-svg > g.annotation-layer > text.diagram-caption",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T09_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43313.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "무심사 즉시 대출 당일 입금 상담 신청",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T10_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43350.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "처방전 없이 비아그라 최저가 구매",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T11_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43387.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "온라인 카지노 슬롯 신규 가입 보너스 지급 안내",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "E07_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43387.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E07_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43387.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T12_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43424.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "무심사 즉시 대출 당일 입금 상담 신청",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T13_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43461.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "성인 영상 비밀 채팅 회원 가입 이벤트",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T14_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43498.html",
+      "is_violation": true,
+      "location": "div.note-body > table.observation-table > tbody > tr:nth-of-type(2) > td[data-column=\"note\"]",
+      "evidence_text": "처방전 없이 비아그라 최저가 구매",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T15_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43535.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "온라인 카지노 슬롯 신규 가입 보너스 지급 안내",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T16_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43572.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ＣＡＳ１ＮＯ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T16_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43572.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ＣＡＳ１ＮＯ 온라인 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "E08_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43572.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T17_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43609.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T17_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43609.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T18_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43646.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 카지노 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T18_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43646.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 카지노 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T19_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43683.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text:nth-of-type(2)",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T19_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43683.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text:nth-of-type(2)",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T20_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43720.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T20_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43720.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T20_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43720.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T20_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43720.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T21_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43757.html",
+      "is_violation": true,
+      "location": "div.note-body > section.margin-notes > div:nth-of-type(1) > p:nth-of-type(2)",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T22_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43794.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "CAS1NO 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T23_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43831.html",
+      "is_violation": true,
+      "location": "div.note-body > dl.record-metadata > dd:nth-of-type(2)",
+      "evidence_text": "무심사 즉시 대출 당일 입금 상담 신청",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T24_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43868.html",
+      "is_violation": true,
+      "location": "div.note-body > blockquote.quoted-note > p",
+      "evidence_text": "온라인 카지노 슬롯 신규 가입 보너스 지급 안내",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "E09_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43868.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ＣＡＳ１ＮＯ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "E09_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43868.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ＣＡＳ１ＮＯ 온라인 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T25_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43905.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T25_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43905.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ ㅋㅏㅈㅣㄴㅗ 온라인 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T26_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43942.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "카ㅈㅣ노 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T27_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/43979.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T28_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44016.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T29_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44053.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "성인 영상 비밀 채팅 회원 가입 이벤트",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T30_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44090.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T30_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44090.html",
+      "is_violation": true,
+      "location": "section.reader-notes > div.note-stream > div.reader-note:nth-of-type(2) > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T31_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44127.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44127-notes-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44127-notes-2.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T32_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44164.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44164-notes-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44164-notes-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44164-notes-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T32_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44164.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44164-notes-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44164-notes-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44164-notes-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 슬롯 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T33_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44201.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44201-notes-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44201-notes-2.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T33_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44201.html",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44201-notes-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/44201-notes-2.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 온라인 카지노 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T34_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/observations/2026/autumn/north/notebook/read.html",
+      "is_violation": true,
+      "location": "div.note-body > dl.record-metadata > dd:nth-of-type(2)",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T34_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/observations/2026/autumn/north/notebook/read.html",
+      "is_violation": true,
+      "location": "div.note-body > dl.record-metadata > dd:nth-of-type(2)",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T35_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44275.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text:nth-of-type(2)",
+      "evidence_text": "ＣＡＳ１ＮＯ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T36_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/notes/records/44312.html",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "처방전 없이 비아그라 최저가 구매",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q01_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=day",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q02_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=evening",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "Q02_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=evening",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-dome-evening-1.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "Q03_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=dome&session=night",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "온라인 카지노 슬롯 신규 가입 보너스 지급 안내",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q04_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=day",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ＣＡＳ１ＮＯ 온라인 가입 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "Q05_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=evening",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q05_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=evening",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "Q06_HOMOGLYPH",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=night",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 카지노 보너스",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "Q06_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=exhibit&session=night",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ｍｅｇａ－ＢＥＴ 신규 카지노 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q07_TRANSPARENT",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=day",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "무심사 즉시 대출 당일 입금 상담 신청",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "Q08_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=evening",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q08_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=evening",
+      "is_violation": true,
+      "location": "div.note-body > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "Q09_JAMO",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=night",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "JAMO"
+    },
+    {
+      "id": "Q09_OFFSCREEN",
+      "url": "http://127.0.0.1:58273/test-site-10/programs/view.html?zone=workshop&session=night",
+      "is_violation": true,
+      "location": "iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-1.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-2.html\"] >>> iframe[src=\"http://127.0.0.1:58273/test-site-10/widgets/program-workshop-night-3.html\"] >>> div.widget-content > div.observer-note > p.observation-text",
+      "evidence_text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "technique": "OFFSCREEN"
+    }
+  ]
+}

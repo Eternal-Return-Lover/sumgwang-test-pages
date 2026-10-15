@@ -1,0 +1,851 @@
+{
+  "measurements": [
+    {
+      "caseId": "T07",
+      "width": 1440,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "ctm": {
+        "a": 1.6080208333333332,
+        "b": 0,
+        "c": 0,
+        "d": 1.6080208333333332,
+        "e": 319.0135416666667,
+        "f": 849.25
+      },
+      "screenScale": 1.6080208333333332,
+      "screenFontSize": 32.16041666666666,
+      "fontSize": "20px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 428.35894775390625,
+        "y": 1256.4556884765625,
+        "width": 476.671875,
+        "height": 43.0001220703125
+      },
+      "bbox": {
+        "x": 68,
+        "y": 253.23411560058594,
+        "width": 296.43389892578125,
+        "height": 26.740947723388672
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "0",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 0
+    },
+    {
+      "caseId": "T08",
+      "width": 1440,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "ctm": {
+        "a": 1.6080208333333332,
+        "b": 0,
+        "c": 0,
+        "d": 1.6080208333333332,
+        "e": 319.0135416666667,
+        "f": 849.25
+      },
+      "screenScale": 1.6080208333333332,
+      "screenFontSize": 0,
+      "fontSize": "0px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 428.35894775390625,
+        "y": 1291.4556884765625,
+        "width": 0,
+        "height": 0
+      },
+      "bbox": {
+        "x": 68,
+        "y": 275,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 1
+    },
+    {
+      "caseId": "N10",
+      "width": 1440,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "합성 도해의 북쪽 안내",
+      "ctm": {
+        "a": 1.6080208333333332,
+        "b": 0,
+        "c": 0,
+        "d": 1.6080208333333332,
+        "e": 319.0135416666667,
+        "f": 849.25
+      },
+      "screenScale": 1.6080208333333332,
+      "screenFontSize": 28.944374999999997,
+      "fontSize": "18px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 428.35894775390625,
+        "y": 1260.4556884765625,
+        "width": 284.25,
+        "height": 38
+      },
+      "bbox": {
+        "x": 68,
+        "y": 255.7216339111328,
+        "width": 176.7700958251953,
+        "height": 23.631534576416016
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 1
+    },
+    {
+      "caseId": "T07",
+      "width": 390,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "ctm": {
+        "a": 0.49677083333333333,
+        "b": 0,
+        "c": 0,
+        "d": 0.49677083333333333,
+        "e": 41.00104166666668,
+        "f": 1076.53125
+      },
+      "screenScale": 0.49677083333333333,
+      "screenFontSize": 9.935416666666667,
+      "fontSize": "20px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 74.78146362304688,
+        "y": 1202.1431884765625,
+        "width": 147.25013732910156,
+        "height": 13.0001220703125
+      },
+      "bbox": {
+        "x": 68,
+        "y": 252.8570098876953,
+        "width": 296.4146423339844,
+        "height": 26.169010162353516
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "0",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 0
+    },
+    {
+      "caseId": "T08",
+      "width": 390,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "ctm": {
+        "a": 0.49677083333333333,
+        "b": 0,
+        "c": 0,
+        "d": 0.49677083333333333,
+        "e": 41.00104166666668,
+        "f": 1115.625
+      },
+      "screenScale": 0.49677083333333333,
+      "screenFontSize": 0,
+      "fontSize": "0px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 74.78146362304688,
+        "y": 1252.237060546875,
+        "width": 0,
+        "height": 0
+      },
+      "bbox": {
+        "x": 68,
+        "y": 275.0000305175781,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 1
+    },
+    {
+      "caseId": "N10",
+      "width": 390,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "합성 도해의 북쪽 안내",
+      "ctm": {
+        "a": 0.49677083333333333,
+        "b": 0,
+        "c": 0,
+        "d": 0.49677083333333333,
+        "e": 41.00104166666668,
+        "f": 1076.53125
+      },
+      "screenScale": 0.49677083333333333,
+      "screenFontSize": 8.941875,
+      "fontSize": "18px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 74.78146362304688,
+        "y": 1203.1431884765625,
+        "width": 87.86654663085938,
+        "height": 12.0001220703125
+      },
+      "bbox": {
+        "x": 68,
+        "y": 254.87001037597656,
+        "width": 176.87542724609375,
+        "height": 24.156009674072266
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 1
+    },
+    {
+      "caseId": "T07",
+      "width": 320,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "ｃａｓｉｎｏ 온라인 가입 보너스",
+      "ctm": {
+        "a": 0.3935416666666667,
+        "b": 0,
+        "c": 0,
+        "d": 0.3935416666666667,
+        "e": 38.00208333333334,
+        "f": 1106.96875
+      },
+      "screenScale": 0.3935416666666667,
+      "screenFontSize": 7.870833333333334,
+      "fontSize": "20px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 64.7629165649414,
+        "y": 1207.1927490234375,
+        "width": 116.7773208618164,
+        "height": 10
+      },
+      "bbox": {
+        "x": 68,
+        "y": 254.6717987060547,
+        "width": 296.73431396484375,
+        "height": 25.41027069091797
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "0",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 0
+    },
+    {
+      "caseId": "T08",
+      "width": 320,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "ㅋㅏㅈㅣㄴㅗ 온라인 슬롯 신규 가입 보너스",
+      "ctm": {
+        "a": 0.3935416666666667,
+        "b": 0,
+        "c": 0,
+        "d": 0.3935416666666667,
+        "e": 38.00208333333334,
+        "f": 1106.96875
+      },
+      "screenScale": 0.3935416666666667,
+      "screenFontSize": 0,
+      "fontSize": "0px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 64.7629165649414,
+        "y": 1215.1927490234375,
+        "width": 0,
+        "height": 0
+      },
+      "bbox": {
+        "x": 68,
+        "y": 275,
+        "width": 0,
+        "height": 0
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 1
+    },
+    {
+      "caseId": "N10",
+      "width": 320,
+      "namespace": "http://www.w3.org/2000/svg",
+      "text": "합성 도해의 북쪽 안내",
+      "ctm": {
+        "a": 0.3935416666666667,
+        "b": 0,
+        "c": 0,
+        "d": 0.3935416666666667,
+        "e": 38.00208333333334,
+        "f": 1106.96875
+      },
+      "screenScale": 0.3935416666666667,
+      "screenFontSize": 7.08375,
+      "fontSize": "18px",
+      "fill": "rgb(181, 229, 239)",
+      "fillOpacity": "1",
+      "bounds": {
+        "x": 64.7629165649414,
+        "y": 1207.1927490234375,
+        "width": 69.54686737060547,
+        "height": 10
+      },
+      "bbox": {
+        "x": 68,
+        "y": 254.6717987060547,
+        "width": 176.72048950195312,
+        "height": 25.41027069091797
+      },
+      "ancestors": [
+        {
+          "tag": "text",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "g",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "inline"
+        },
+        {
+          "tag": "svg",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "figure",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "div",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "grid"
+        },
+        {
+          "tag": "article",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "main",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "body",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        },
+        {
+          "tag": "html",
+          "opacity": "1",
+          "visibility": "visible",
+          "display": "block"
+        }
+      ],
+      "effectiveOpacity": 1
+    }
+  ],
+  "ok": true
+}
