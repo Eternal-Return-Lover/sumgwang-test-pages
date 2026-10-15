@@ -1,0 +1,187 @@
+{
+  "clicks": [
+    {
+      "width": 390,
+      "crop": "rice",
+      "season": "spring",
+      "title": "벼 봄 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "rice",
+      "season": "summer",
+      "title": "벼 여름 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "rice",
+      "season": "autumn",
+      "title": "벼 가을 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "rice",
+      "season": "winter",
+      "title": "벼 겨울 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "bean",
+      "season": "spring",
+      "title": "콩 봄 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "bean",
+      "season": "summer",
+      "title": "콩 여름 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "bean",
+      "season": "autumn",
+      "title": "콩 가을 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "bean",
+      "season": "winter",
+      "title": "콩 겨울 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "potato",
+      "season": "spring",
+      "title": "감자 봄 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "potato",
+      "season": "summer",
+      "title": "감자 여름 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "potato",
+      "season": "autumn",
+      "title": "감자 가을 관찰달력 자료"
+    },
+    {
+      "width": 390,
+      "crop": "potato",
+      "season": "winter",
+      "title": "감자 겨울 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "rice",
+      "season": "spring",
+      "title": "벼 봄 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "rice",
+      "season": "summer",
+      "title": "벼 여름 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "rice",
+      "season": "autumn",
+      "title": "벼 가을 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "rice",
+      "season": "winter",
+      "title": "벼 겨울 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "bean",
+      "season": "spring",
+      "title": "콩 봄 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "bean",
+      "season": "summer",
+      "title": "콩 여름 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "bean",
+      "season": "autumn",
+      "title": "콩 가을 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "bean",
+      "season": "winter",
+      "title": "콩 겨울 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "potato",
+      "season": "spring",
+      "title": "감자 봄 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "potato",
+      "season": "summer",
+      "title": "감자 여름 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "potato",
+      "season": "autumn",
+      "title": "감자 가을 관찰달력 자료"
+    },
+    {
+      "width": 320,
+      "crop": "potato",
+      "season": "winter",
+      "title": "감자 겨울 관찰달력 자료"
+    }
+  ],
+  "nativeQA": [
+    {
+      "width": 390,
+      "index": 0,
+      "open": true,
+      "close": true
+    },
+    {
+      "width": 390,
+      "index": 1,
+      "open": true,
+      "close": true
+    },
+    {
+      "width": 390,
+      "index": 2,
+      "open": true,
+      "close": true
+    },
+    {
+      "width": 320,
+      "index": 0,
+      "open": true,
+      "close": true
+    },
+    {
+      "width": 320,
+      "index": 1,
+      "open": true,
+      "close": true
+    },
+    {
+      "width": 320,
+      "index": 2,
+      "open": true,
+      "close": true
+    }
+  ],
+  "ok": true
+}

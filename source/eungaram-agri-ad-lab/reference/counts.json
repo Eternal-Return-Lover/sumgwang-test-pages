@@ -1,0 +1,13 @@
+{
+  "scenarios": 54,
+  "scenarioPages": 54,
+  "positiveElements": 48,
+  "negativeControls": 14,
+  "expectedFindings": 69,
+  "techniques": {
+    "HOMOGLYPH": 15,
+    "OFFSCREEN": 20,
+    "JAMO": 16,
+    "TRANSPARENT": 18
+  }
+}
