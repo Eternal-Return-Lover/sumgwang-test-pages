@@ -6,9 +6,9 @@ import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {runInNewContext} from 'node:vm';
 import {spawnSync} from 'node:child_process';
-import {validateSites,renderIndex,deploymentFor,publishSite,checkDeployment,repositoryRoot} from './site-tools.mjs';
+import {validateSites,renderIndex,deploymentFor,publishSite,checkDeployment,repositoryRoot,loadSites} from './site-tools.mjs';
 
-const registration=number=>({number,project:'project-'+number,siteId:'site-'+number,title:'Site '+number});
+const registration=number=>({number,project:'test-site-'+number,siteId:'site-'+number,title:'Site '+number});
 
 test('multi-digit numbers sort numerically and titles are escaped',()=>{
  const sites=validateSites([registration(11),registration(2),{...registration(10),title:'<script> & "title"'}]);
@@ -21,10 +21,10 @@ test('multi-digit numbers sort numerically and titles are escaped',()=>{
 });
 
 test('invalid and conflicting registrations fail before file changes',()=>{
- for(const fields of [{number:0},{number:1.5},{project:'../outside'},{siteId:'a/b'},{title:''},{port:65536}]){
+ for(const fields of [{number:0},{number:1.5},{project:'../outside'},{project:'agency-name'},{project:'test-site-11'},{project:'test-site-010'},{siteId:'a/b'},{title:''},{port:65536}]){
   assert.throws(()=>validateSites([{...registration(10),...fields}]));
  }
- for(const fields of [{number:2},{project:'project-2'},{siteId:'site-2'},{port:4174}]){
+ for(const fields of [{number:2},{project:'test-site-2'},{siteId:'site-2'},{port:4174}]){
   assert.throws(()=>validateSites([registration(2),{...registration(10),...fields}]),/Duplicate/);
  }
  assert.equal(validateSites([{...registration(100000),port:8000}])[0].targetDirectory,'test-site-100000');
@@ -58,8 +58,10 @@ test('publishing site 10 removes stale target files, excludes lab and preserves 
  }finally{await rm(temporaryRoot,{recursive:true,force:true});}
 });
 
-test('both actual labs resolve multi-digit sites under repository prefixes and standalone dist',async()=>{
- for(const relative of ['hanbit-civic-ad-lab/dist/lab/lab.js','daon-library-ad-lab/src/templates/lab.js']){
+test('all actual labs resolve multi-digit sites under repository prefixes and standalone dist',async()=>{
+ const paths=(await loadSites()).map(s=>s.project+'/dist/lab/lab.js');
+ paths.push('test-site-2/src/templates/lab.js');
+ for(const relative of paths){
   const source=await readFile(join(repositoryRoot,'source',relative),'utf8');
   // Execute the actual path initialization up to the next helper declaration.
   const init=source.slice(source.indexOf('const labBase='),source.indexOf('const esc='));

@@ -25,7 +25,7 @@
 ### site_builder
 
 - .codex/agents/site_builder.toml을 사용한다.
-- 배정된 source/<project>/의 소스, 템플릿, 생성기, 사례 정의, 브라우저 검사 스크립트와 문서를 구현한다.
+- 배정된 source/test-site-N/의 소스, 템플릿, 생성기, 사례 정의, 브라우저 검사 스크립트와 문서를 구현한다.
 - 다른 사이트·공유 파일·Git 상태를 변경하지 않는다. 빌드를 실행하거나 test-site-N을 직접 수정하지 않는다.
 - 구현·수정 완료 후 변경 파일, 필요한 빌드, 자체 확인과 남은 문제를 메인에 보고한다.
 
@@ -39,12 +39,15 @@
 ## 반드시 유지할 형식
 
 - test-site-N/에는 탐지 대상 정적 배포본만 둔다. 검증실·정답표·소스 링크를 노출하지 않는다.
-- 원본은 source/<project>/ 아래 기존 src/, scripts/, reference/, dist/, artifacts/와 README.md, REQUIREMENTS.md, VERIFICATION.md 형식을 따른다.
-- 검증실은 source/<project>/dist/lab/에 두고 정답표의 배포 메타데이터와 기존 스키마를 유지한다.
+- 소스와 배포본은 같은 번호를 사용한다: source/test-site-N/ ↔ test-site-N/. source/sites.json의 project도 test-site-N으로 등록하며 기관명을 폴더명으로 사용하지 않는다.
+- 원본은 source/test-site-N/ 아래 기존 src/, scripts/, reference/, dist/, artifacts/와 README.md, REQUIREMENTS.md, VERIFICATION.md 형식을 따른다.
+- 검증실은 source/test-site-N/dist/lab/에 두고 정답표의 배포 메타데이터와 기존 스키마를 유지한다.
 - source/sites.json, source/manage.mjs, source/site-tools.mjs를 이용한다. 페이지·기대 검출 수는 사례 정의로부터 산출한다.
 - 순수 HTML/CSS/JavaScript, 실제 a[href], 상대 자산·iframe 경로, 고정 지연과 재현 가능한 콘텐츠를 사용한다.
 - 기관·인물·광고는 합성 자료이다. 외부 연결 시험은 .invalid를 사용하고 실제 거래·결제·연락 기능을 넣지 않는다.
 - 대상 제목·클래스·ID에 사례 번호·정답 여부·기법 코드를 넣지 않는다.
+- README는 test-site-N 기준의 사이트·소스·검증실 목록과 필수 실행 명령만 간결하게 유지한다. 상세 수량·명세·검증은 각 사이트 문서를 참조한다.
+- 과거 검증 증거는 artifacts/history/에 보존하고 경로 변경 뒤의 검증과 구분한다. 과거 snapshot의 해시를 현재 PASS로 재사용하지 않는다.
 - 기존 사이트의 파일과 콘텐츠는 해당 변경이 명시적으로 필요한 경우 외에는 보존한다.
 - 신규 생성기는 사이트 2·3의 src/templates 기반 방식을 참고한다. 사이트 1은 dist의 홈 화면을 템플릿으로 사용하므로 dist를 무작정 삭제하지 않는다.
 
