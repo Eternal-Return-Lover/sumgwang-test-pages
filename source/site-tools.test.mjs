@@ -169,3 +169,83 @@ test('category summaries never infer false positive topics from same-page candid
  assert(report.diagnostics.filter(r=>r.type==='fp').every(r=>r.category==='UNASSIGNED'));assert.equal(report.diagnostics.find(r=>r.type==='tp').category,'GAMBLING');
  assert(report.diagnostics.find(r=>r.id==='missing').expected.length>1);assert(!Object.hasOwn(report.diagnostics.find(r=>r.type==='tp').submitted,'category'));
 });
+
+
+function exportFixture(){
+ const c={caseId:'T1',page:'view.html?b=2&a=1',selector:'p.note',frames:[{src:'widgets/outer.html',selector:'iframe.reader'}],text:'ｍｅｇａ ㅋㅏㅈㅣㄴㅗ',techniques:['HOMOGLYPH','TRANSPARENT'],delayMs:0};
+ const n={caseId:'N1',page:c.page,selector:'p.notice',frames:[],text:'예방 안내',techniques:[],delayMs:0};
+ const site={number:2,project:'test-site-2',siteId:'example',title:'합성 도서관'},base=new URL('https://example.test/repo/test-site-2/');
+ const manifest={version:'1.0.0',siteId:site.siteId,entry:'index.html',fixtureViewport:{width:1440,height:1000},cases:[c],negativeControls:[n]};
+ const f={id:'source',url:new URL(c.page,base).href,location:'iframe.reader >>> p.note',evidence_text:'submitted text differs from reference',technique:'HOMOGLYPH',is_violation:true,confidence:0.7};
+ const payload={meta:{topic:'TOPIC',entry_url:new URL('index.html',base).href,elapsed_sec:12,tool_version:'claimed-model',model_name:'unverified'},findings:[f]};
+ return {c,n,site,base,manifest,f,payload,entryUrl:payload.meta.entry_url,dashboardUrl:'https://example.test/repo/validator/?site=2',comparisonViewport:{width:1440,height:1000}};
+}
+async function fixtureReport(v){
+ const {createComparisonTrace}=await import('./shared/comparison-report.js');
+ const trace=createComparisonTrace({manifest:v.manifest,base:v.base,entry:v.entryUrl,canonical:x=>new URL(x,v.base).href,locationFor:c=>c.selector,engine:'modern'});
+ trace.tp(v.f,v.c);
+ return trace.finish({tp:1,fn:1,fp:0,invalid:0,duplicates:0,total:2},new Set(['T1|HOMOGLYPH']),v.payload);
+}
+test('diagnostic provenance links actual fixtures without turning candidates or evidence into labels',async()=>{
+ const {createComparisonTrace}=await import('./shared/comparison-report.js'),v=exportFixture(),wrong={...v.f,id:'wrong',technique:'OFFSCREEN'},normal={...v.f,id:'normal'},unknown={...v.f,id:'unknown'},copy={...v.f,id:'copy'};
+ const values=[v.f,wrong,normal,unknown,null,copy,null];
+ const trace=createComparisonTrace({manifest:v.manifest,base:v.base,entry:v.entryUrl,canonical:x=>new URL(x,v.base).href,locationFor:c=>c.selector,engine:'legacy'});
+ trace.tp(v.f,v.c);trace.fp(wrong,'wrong technique',v.c);trace.fp(normal,'normal',v.n);trace.fp(unknown,'unresolved selector');trace.invalid(null,4,'invalid');trace.duplicate(copy);trace.invalid(null,6,'invalid');
+ const r=trace.finish({tp:1,fn:1,fp:3,invalid:2,duplicates:1,total:2},new Set(['T1|HOMOGLYPH']),{meta:v.payload.meta,findings:values});
+ assert.equal(r.diagnosticSchemaVersion,'1.0.0');
+ assert.deepEqual(r.diagnostics.slice(0,7).map(d=>d.submissionIndex),[0,1,2,3,4,5,6]);
+ assert.deepEqual(r.diagnostics.filter(d=>d.type==='invalid').map(d=>d.inputIndex),[5,7]);
+ const tp=r.diagnostics[0];assert.equal(tp.reference.caseId,'T1');assert.equal(tp.reference.expectedTechnique,'HOMOGLYPH');assert.equal(tp.reference.contentLabelSource,'reference_manifest_element');assert.notEqual(tp.submitted.evidence_text,tp.expected[0].evidence_text);
+ assert.equal(r.diagnostics[1].reference.contentLabel,'positive');assert.equal(r.diagnostics[1].reference.expectedTechnique,null);
+ assert.equal(r.diagnostics[2].reference.status,'matched_control');assert.equal(r.diagnostics[2].reference.contentLabel,'normal');
+ assert.equal(r.diagnostics[3].reference.status,'candidates_only');assert.equal(r.diagnostics[3].reference.contentLabel,null);assert.deepEqual(r.diagnostics[3].reference.candidateCaseIds,['T1','N1']);
+ assert.equal(r.diagnostics[5].reference.status,'not_evaluated');assert.equal(r.diagnostics[5].reference.caseId,null);
+ const fn=r.diagnostics.at(-1);assert.equal(fn.submissionIndex,null);assert.equal(fn.reference.status,'expected_missing');assert.equal(fn.reference.expectedTechnique,'TRANSPARENT');
+});
+test('diagnostic indices do not consume occurrences when an API caller repeats object identity',async()=>{
+ const {createComparisonTrace}=await import('./shared/comparison-report.js'),v=exportFixture();
+ const trace=createComparisonTrace({manifest:v.manifest,base:v.base,entry:v.entryUrl,canonical:x=>new URL(x,v.base).href,locationFor:c=>c.selector,engine:'modern'});
+ trace.tp(v.f,v.c);trace.fp(v.f,'existing exception observation');
+ const r=trace.finish({tp:1,fn:1,fp:1,invalid:0,duplicates:0,total:2},new Set(['T1|HOMOGLYPH']),{meta:{},findings:[v.f,v.f]});
+ assert(r.diagnostics.slice(0,2).every(d=>d.submissionIndex===null&&d.submissionIndexStatus==='ambiguous'));
+});
+test('export snapshots preserve full API data and hash exact input bytes and parsed reference serialization',async()=>{
+ const {createReportSnapshot,exportReport}=await import('../validator/report-export.js'),{createHash}=await import('node:crypto'),v=exportFixture(),report=await fixtureReport(v);
+ const text=JSON.stringify(v.payload,null,4)+'\n',file=new File([text],'input.json',{lastModified:123}),snapshot=await createReportSnapshot({...v,report,submissionFile:file,submissionPayload:v.payload});
+ const hash=b=>createHash('sha256').update(b).digest('hex');
+ assert.equal(snapshot.schema_version,'1.0.0');assert.match(snapshot.report_id,/^[0-9a-f-]{36}$/);
+ assert.equal(snapshot.submission.file.sha256,hash(Buffer.from(text)));assert.equal(snapshot.submission.file.size_bytes,Buffer.byteLength(text));
+ assert.equal(snapshot.reference.sha256,hash(Buffer.from(JSON.stringify(v.manifest))));assert.deepEqual(snapshot.reference.manifest,v.manifest);
+ assert.deepEqual(snapshot.comparison,report);assert.deepEqual(snapshot.submission.payload,v.payload);assert.equal(snapshot.execution.engine.version,null);assert.equal(snapshot.execution.git_sha,null);assert.equal(snapshot.execution.detector_coverage,null);assert.equal(snapshot.interpretation.tn,null);
+ assert(Object.isFrozen(snapshot.reference.manifest.cases[0]));assert.throws(()=>{snapshot.comparison.metrics.tp=9;});
+ const first=await exportReport(snapshot,{exportedAt:'2026-10-19T05:00:00Z'}),second=await exportReport(snapshot,{exportedAt:'2026-10-19T05:00:01Z'});
+ assert.equal(first.filename,'validation-report-test-site-2-20261019T050000Z.json');assert.equal(first.data.exported_at,'2026-10-19T05:00:00.000Z');assert.equal(first.data.report_id,second.data.report_id);first.data.comparison.metrics.tp=9;assert.equal(second.data.comparison.metrics.tp,1);
+});
+test('export capture is synchronous before delayed file reads and never mixes a later site or report',async()=>{
+ const {createReportSnapshot}=await import('../validator/report-export.js'),v=exportFixture(),report=await fixtureReport(v),raw=Buffer.from(JSON.stringify(v.payload)),original=structuredClone({site:v.site,manifest:v.manifest,payload:v.payload,report});
+ let release;const gate=new Promise(r=>{release=r;}),file={name:'delayed.json',size:raw.length,lastModified:1,arrayBuffer:async()=>{await gate;return raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.length);}};
+ const pending=createReportSnapshot({...v,report,submissionFile:file,submissionPayload:v.payload});
+ v.site.number=11;v.manifest.cases[0].text='mutated';v.payload.findings[0].evidence_text='mutated';report.metrics.tp=99;v.comparisonViewport.width=320;release();
+ const snapshot=await pending;assert.equal(snapshot.site.number,original.site.number);assert.deepEqual(snapshot.reference.manifest,original.manifest);assert.deepEqual(snapshot.submission.payload,original.payload);assert.deepEqual(snapshot.comparison,original.report);assert.equal(snapshot.execution.comparison_host_viewport.width,1440);
+});
+test('export refuses stale contracts or mismatched input and preserves null rates',async()=>{
+ const {createReportSnapshot,exportReport}=await import('../validator/report-export.js'),v=exportFixture(),report=await fixtureReport(v),file=new File([JSON.stringify(v.payload)],'result.json'),args={...v,report,submissionFile:file,submissionPayload:v.payload};
+ for(const change of [{report:{...report,status:'rejected',metrics:null}},{report:{...report,diagnosticSchemaVersion:undefined}},{entryUrl:'https://wrong.test/'},{site:{...v.site,siteId:'wrong'}},{submissionPayload:{}}])await assert.rejects(createReportSnapshot({...args,...change}));
+ const empty=structuredClone(report);empty.metrics={tp:0,fn:2,fp:0,invalid:0,duplicates:0,total:2};empty.rates={recall:0,precision:null,adjusted:null};
+ const snapshot=await createReportSnapshot({...args,report:empty}),output=await exportReport(snapshot);assert.equal(output.data.comparison.rates.precision,null);assert.equal(output.data.comparison.rates.adjusted,null);
+ await assert.rejects(exportReport(snapshot,{exportedAt:'bad'}));
+});
+
+
+test('export keeps exact numeric tokens and records exceptional parsed number serialization',async()=>{
+ const {createReportSnapshot,exportReport}=await import('../validator/report-export.js'),{createComparisonTrace}=await import('./shared/comparison-report.js'),v=exportFixture();
+ const raw='{"meta":{"topic":"TOPIC","entry_url":'+JSON.stringify(v.entryUrl)+',"elapsed_sec":0,"huge":1e999},"findings":[1e999,-0]}',payload=JSON.parse(raw);
+ const trace=createComparisonTrace({manifest:v.manifest,base:v.base,entry:v.entryUrl,canonical:x=>new URL(x,v.base).href,locationFor:c=>c.selector,engine:'modern'});trace.invalid(payload.findings[0],0,'object required');trace.invalid(payload.findings[1],1,'object required');
+ const report=trace.finish({tp:0,fn:2,fp:0,invalid:2,duplicates:0,total:2},new Set(),payload),args={...v,report,submissionFile:new File([raw],'numbers.json'),submissionPayload:payload};
+ const snap=await createReportSnapshot(args),{data}=await exportReport(snap),roundtrip=JSON.parse(JSON.stringify(data));
+ assert.equal(roundtrip.submission.raw_text,raw);assert.equal(roundtrip.submission.payload.meta.huge,null);assert.equal(roundtrip.submission.payload.findings[1],0);
+ assert(roundtrip.serialization.numeric_exceptions.some(e=>e.path==='/submission/payload/findings/0'&&e.kind==='positive_infinity'));
+ assert(roundtrip.serialization.numeric_exceptions.some(e=>e.path==='/submission/payload/findings/1'&&e.kind==='negative_zero'));
+ assert(roundtrip.serialization.numeric_exceptions.some(e=>e.path==='/comparison/diagnostics/0/submitted/value'&&e.kind==='positive_infinity'));
+ const mismatch=structuredClone(payload);mismatch.findings[1]=0;await assert.rejects(createReportSnapshot({...args,submissionPayload:mismatch}),/일치하지/);
+});
