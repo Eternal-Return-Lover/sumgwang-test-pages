@@ -21,4 +21,5 @@ On a repair assignment, use the verifier's concrete reproduction and fix the imp
 If the shared contract needs a change, report the smallest required coordinator action rather than changing it yourself.
 Return a concise summary with changed files, implementation status, required coordinator build, known issues and evidence actually collected.
 Do not claim unrun browser/DOM tests or official detector performance.
+Report export UI must consume the completed immutable comparison snapshot, invalidate stale exports, and isolate export failures from valid grading. Follow validator/README.md; never scrape metrics or create training labels.
 """

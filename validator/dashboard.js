@@ -1,25 +1,32 @@
 import {categoryLabel,validateCategoryAnnotations} from '../source/shared/categories.js';
+import {createReportSnapshot,exportReport} from './report-export.js?v=report-export-1';
 const $=selector=>document.querySelector(selector);
 const root=new URL('../',location.href),catalog=new Map(),manifests=new Map();
-const state={site:null,manifest:null,file:null,data:null,fileError:'',siteError:'',manual:false,busy:false,reading:false,loading:false,siteToken:0,fileToken:0};
-let lastReport=null,engineHost=null,engineSite=null,enginePromise=null,visibleRows=50,displayRows=[];
+const state={site:null,manifest:null,file:null,data:null,fileError:'',siteError:'',manual:false,busy:false,reading:false,loading:false,siteToken:0,fileToken:0,reportToken:0};
+let lastReport=null,exportSnapshot=null,exportIdentity=null,engineHost=null,engineSite=null,enginePromise=null,visibleRows=50,displayRows=[];
 const labels={tp:'정탐 TP',fn:'미탐 FN',fp:'오탐 FP',invalid:'필드 오류',duplicate:'중복 통합'};
 const format=value=>new Intl.NumberFormat('ko-KR').format(value);
 const canonical=value=>{const u=new URL(value);u.hash='';u.searchParams.sort();return u.host+u.pathname.replace(/\/$/,'')+u.search;};
 const entryFor=site=>new URL('test-site-'+site.number+'/index.html',root).href;
 const baseFor=site=>new URL('test-site-'+site.number+'/',root).href;
 const locked=()=>state.busy||state.reading||state.loading;
+const currentRun=run=>Boolean(run&&run.site===state.site&&run.file===state.file&&run.data===state.data&&run.siteToken===state.siteToken&&run.fileToken===state.fileToken&&run.reportToken===state.reportToken);
+const exportAvailable=()=>Boolean(exportSnapshot&&exportIdentity?.report===lastReport&&lastReport?.status==='complete'&&currentRun(exportIdentity));
+function clearExport(){exportSnapshot=null;exportIdentity=null;$('#download-report').hidden=true;$('#download-report').disabled=true;$('#report-export-status').hidden=true;$('#report-export-status').textContent='';}
+function exportError(message){clearExport();$('#report-export-status').textContent='비교 결과는 유지됩니다. 채점 결과 JSON 저장 오류: '+message;$('#report-export-status').hidden=false;}
 function controls(){
  const disabled=locked();$('#site-select').disabled=disabled||!catalog.size;$('#result-file').disabled=disabled;
  $('#compare-button').disabled=disabled||!state.file||!state.data||!state.manifest||Boolean(state.fileError);
  $('#reset-button').disabled=disabled;$('#download-truth').disabled=disabled||!state.manifest;$('#download-expected').disabled=disabled||!state.manifest;
+ const downloadable=exportAvailable();$('#download-report').hidden=!downloadable;$('#download-report').disabled=disabled||!downloadable;
  $('#upload-zone').setAttribute('aria-busy',String(disabled));$('#results').setAttribute('aria-busy',String(state.busy));
 }
 function status(kind,message){
+ if(kind==='error')clearExport();
  const el=$('#app-status');el.dataset.state=kind;el.classList.toggle('is-error',kind==='error');el.classList.toggle('is-success',kind==='complete');el.textContent=message;
  controls();
 }
-function clearReport(){$('#category-body').replaceChildren();$('#category-filter').replaceChildren(new Option('전체 정답 주제','all'));lastReport=null;displayRows=[];$('#results').hidden=true;delete $('#results').dataset.result;$('#diagnostic-list').replaceChildren();$('#comparison-progress').value=0;}
+function clearReport(){state.reportToken++;clearExport();$('#category-body').replaceChildren();$('#category-filter').replaceChildren(new Option('전체 정답 주제','all'));lastReport=null;displayRows=[];$('#results').hidden=true;delete $('#results').dataset.result;$('#diagnostic-list').replaceChildren();$('#comparison-progress').value=0;}
 function resetFile(){
  state.fileToken++;state.file=null;state.data=null;state.fileError='';$('#result-file').value='';$('#file-name').textContent='result.json을 올려주세요';$('#file-meta').textContent='파일을 끌어 놓거나 눌러서 선택하세요';
  clearReport();status(state.siteError?'error':'idle',state.siteError||'파일을 선택하면 비교를 시작할 수 있어요.');
@@ -157,20 +164,47 @@ function renderReport(report){
 async function compare(){
  if(locked()||!state.file||!state.manifest)return;const mismatch=addressError();if(mismatch){clearReport();status('error',mismatch);return;}
  state.busy=true;clearReport();$('#comparison-progress').removeAttribute('value');status('loading','비교를 준비하고 있습니다…');
+ const run={site:state.site,file:state.file,data:state.data,siteToken:state.siteToken,fileToken:state.fileToken,reportToken:state.reportToken};
  try{
-  const api=await engineFor(state.site);status('comparing','실제 요소 위치를 대조하고 있습니다…');
-  const report=await api.compare(state.file,{onProgress:({done,total})=>{$('#comparison-progress').max=Math.max(1,total);$('#comparison-progress').value=done;status('comparing','요소 위치 대조 중 · '+done+' / '+total+'개 페이지');}});
+  const api=await engineFor(run.site);if(!currentRun(run))return;
+  const comparisonHost=engineHost;let capturedInputs=null,captureError=null;
+  try{
+   capturedInputs={site:structuredClone(run.site),submissionPayload:structuredClone(run.data),manifest:structuredClone(api.manifest),comparisonViewport:{width:comparisonHost.clientWidth,height:comparisonHost.clientHeight},entryUrl:entryFor(run.site),dashboardUrl:location.href};
+  }catch(error){captureError=error instanceof Error?error:Error(error?.message||String(error));}
+  status('comparing','실제 요소 위치를 대조하고 있습니다…');
+  const report=await api.compare(run.file,{onProgress:({done,total})=>{if(!currentRun(run))return;$('#comparison-progress').max=Math.max(1,total);$('#comparison-progress').value=done;status('comparing','요소 위치 대조 중 · '+done+' / '+total+'개 페이지');}});
+  if(!currentRun(run))return;
   if(!report||report.status!=='complete')throw Error(report?.error||'비교 결과를 만들지 못했습니다.');
-  renderReport(report);$('#comparison-progress').max=100;$('#comparison-progress').value=100;status('complete','비교를 완료했습니다. 정탐·미탐·오탐·필드 오류를 각각 확인해 주세요.');
+  renderReport(report);$('#comparison-progress').max=100;$('#comparison-progress').value=100;
+  try{
+   if(captureError)throw captureError;
+   const snapshot=await createReportSnapshot({...capturedInputs,report,submissionFile:run.file});
+   if(!currentRun(run)||engineHost!==comparisonHost||!comparisonHost.isConnected)return;
+   if(!snapshot||typeof snapshot.report_id!=='string'||!snapshot.report_id)throw Error('채점 결과 저장 정보를 만들지 못했습니다. 다시 비교해 주세요.');
+   exportSnapshot=snapshot;exportIdentity={...run,report};
+  }catch(error){if(currentRun(run))exportError(error.message);}
+  if(currentRun(run))status('complete','비교를 완료했습니다. 정탐·미탐·오탐·필드 오류를 각각 확인해 주세요.');
  }catch(error){clearReport();status('error',error.message);}
+ finally{state.busy=false;controls();}
+}
+async function downloadReport(){
+ if(locked()||!exportAvailable())return;
+ const snapshot=exportSnapshot,identity=exportIdentity;state.busy=true;status('loading','채점 결과 JSON을 준비하고 있습니다…');
+ try{
+  const result=await exportReport(snapshot,{exportedAt:new Date().toISOString()});
+  if(!currentRun(identity)||lastReport!==identity.report)return;
+  if(exportSnapshot!==snapshot||exportIdentity!==identity||!exportAvailable())throw Error('비교 결과가 변경되었습니다. 다시 비교한 뒤 저장해 주세요.');
+  download(result.filename,result.data);status('complete','채점 결과 JSON을 저장했습니다.');
+ }catch(error){if(currentRun(identity)&&lastReport===identity.report){exportError(error.message);status('complete','비교는 완료되었습니다. JSON 저장 오류를 확인해 주세요.');}}
  finally{state.busy=false;controls();}
 }
 $('#result-file').addEventListener('change',event=>pickFile(event.target.files[0]));
 $('#site-select').addEventListener('change',()=>{if(!locked())selectSite($('#site-select').value,{manual:Boolean($('#site-select').value)});});
+$('#download-report').addEventListener('click',downloadReport);
 $('#compare-button').addEventListener('click',compare);$('#reset-button').addEventListener('click',()=>{if(!locked())resetFile();});
 $('#category-filter').addEventListener('change',()=>renderDiagnostics());$('#diagnostic-filter').addEventListener('change',()=>renderDiagnostics());$('#diagnostic-search').addEventListener('input',()=>renderDiagnostics());
 $('#show-more').addEventListener('click',()=>{visibleRows+=50;renderDiagnostics({more:true});});
-$('#download-truth').addEventListener('click',()=>{if(state.manifest&&!locked())download('ground-truth.json',state.manifest);});
+$('#download-truth').addEventListener('click',()=>{if(!state.manifest||locked())return;try{download('ground-truth.json',state.manifest);}catch(error){status('error',error.message);}});
 $('#download-expected').addEventListener('click',async()=>{
  if(!state.manifest||locked())return;state.busy=true;status('loading','결과 예시를 준비하고 있습니다…');
  try{const api=await engineFor(state.site);download('expected-result.json',api.expectedResult());const error=state.fileError||state.siteError||addressError();status(error?'error':lastReport?'complete':state.file&&state.data?'ready':'idle','현재 배포 주소의 결과 예시를 저장했습니다. 예시의 0초는 합성 기록입니다.'+(error?' '+error:''));}catch(error){status('error',error.message);}finally{state.busy=false;controls();}

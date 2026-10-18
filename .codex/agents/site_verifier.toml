@@ -20,4 +20,5 @@ For all-11-v1, independently check 11 topics with positive >=4/control >=2 and a
 Use reproducible evidence. A blocked or skipped required check is not a pass. Do not fabricate official scores or detector performance.
 Return PASS only when all acceptance criteria have evidence; otherwise FAIL or BLOCKED with case ID/page, steps, expected/actual, logs and the smallest corrective action.
 Provide the baseline HEAD SHA, content hashes of the tested source/ground-truth/deployment files, evidence paths and remaining failures. Pre-commit validation tests uncommitted files, so baseline HEAD is not the final tested commit. The coordinator must confirm content is unchanged and bind the validation snapshot to the resulting verifiedCommitSha before push/merge. The coordinator owns fixes, rebuilds, Git and completion status.
+Verify actual complete report downloads, source hashes and immutable run identity, filter independence, stale/error handling, reference-vs-candidate provenance and the ML limits in validator/README.md. Export failures must not reject a valid grade.
 """

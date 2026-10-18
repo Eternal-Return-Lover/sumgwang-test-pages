@@ -486,6 +486,17 @@ async function viewport(page,width){
  const value=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth}));
  assert(value.scrollWidth<=width&&value.bodyWidth<=width,'Horizontal overflow at '+width);await assertSkipHidden(page);return{...value,overflow:false,nonfocusedSkipHidden:true};
 }
+async function verifyReportExport(page,site,manifest,raw,row,expectedData=null){
+ const button=page.locator('#download-report');assert(await button.isVisible()&&await button.isEnabled(),'Completed result can export');
+ const item=await uiDownload(page,'#download-report'),data=item.data;
+ assert.equal(data.schema_version,'1.0.0');assert.match(data.report_id,/^[0-9a-f-]{36}$/);assert.match(item.filename,/^validation-report-test-site-\d+-\d{8}T\d{6}Z\.json$/);assert(item.filename.startsWith('validation-report-test-site-'+site.number+'-'));
+ assert.deepEqual(data.comparison,raw);assert.deepEqual(data.reference.manifest,manifest);assert.equal(data.reference.sha256,sha(Buffer.from(JSON.stringify(manifest))));
+ assert.equal(data.site.number,site.number);assert.equal(data.site.site_id,site.siteId);assert.equal(data.site.entry_url,raw.entryUrl);assert.equal(data.execution.engine.kind,raw.engine);
+ assert.equal(data.execution.detector_coverage,null);assert.equal(data.interpretation.tn,null);assert.equal(data.interpretation.classification_accuracy_supported,false);assert.deepEqual(data.serialization.numeric_exceptions,[]);
+ if(expectedData){assert.deepEqual(data.submission.payload,expectedData);assert.equal(data.submission.raw_text,JSON.stringify(expectedData));assert.equal(data.submission.file.sha256,sha(Buffer.from(JSON.stringify(expectedData))));}
+ assert.deepEqual(await page.evaluate(()=>window.validationDashboard.lastReport),raw,'Export cannot change grading');
+ (row.reportExports??=[]).push({status:'PASS',diagnostics:data.comparison.diagnostics.length,bytes:item.bytes,sha256:item.sha256,filename:item.filename});
+}
 async function runContext(browser,server,site,mode,allSites,fixtures,prefixPath){
  const row={site:site.number,mode,status:'RUNNING',phase:'setup',inputs:[],probes:[],pageErrors:[],consoleErrors:[],httpErrors:[],viewports:[],diagnosticViewports:[],screenshots:[]};report.tests.push(row);await save();
  let context;
@@ -511,7 +522,7 @@ async function runContext(browser,server,site,mode,allSites,fixtures,prefixPath)
   if(mode==='root'&&[1,2].includes(site.number)){row.phase='representative missing technique/normal false diagnostics';await save();await diagnosticEdgeProfile(context,site,allSites,fixtures,dashboard,base,row);}
 
   row.phase='negative and canonical inputs';await save();const mixed=await inputSuite(page,context,site,manifest,base,expected,row);
-  row.phase='diagnostic UI';await save();await diagnosticUI(page,site,row,mixed.mixed);
+  row.phase='diagnostic UI';await save();await diagnosticUI(page,site,row,mixed.mixed);await verifyReportExport(page,site,manifest,mixed.mixed.raw,row);
   await page.locator(UI.filter).selectOption('fp');await page.locator(UI.search).fill('qa_normal_fp');
   for(const width of [1440,390,320]){
    row.diagnosticViewports.push(await viewport(page,width));
@@ -521,7 +532,7 @@ async function runContext(browser,server,site,mode,allSites,fixtures,prefixPath)
   row.phase='perfect comparison';await save();const perfect=await submit(page,site,expected);
   assert.deepEqual(perfect.metrics,expectedMetrics(row.expectedFindings,{tp:row.expectedFindings}));row.perfect=perfect.metrics;
   assert.equal(perfect.raw.status,'complete');assert.equal(perfect.raw.diagnostics.filter(d=>d.type==='fn').length,0);
-  row.perfectRates=perfect.raw.rates;await verifyTopicUI(page,manifest,row);
+  row.perfectRates=perfect.raw.rates;await verifyTopicUI(page,manifest,row);await verifyReportExport(page,site,manifest,perfect.raw,row,expected);
   for(const width of [1440,390,320]){
    row.viewports.push(await viewport(page,width));await page.evaluate(()=>scrollTo({top:0,left:0,behavior:'instant'}));
    const top='dashboard-'+site.number+'-'+mode+'-'+width+'-top.png';await page.screenshot({path:join(output,top)});
@@ -571,7 +582,7 @@ try{
  browser=await chromium.launch(executablePath?{executablePath,headless:true}:{channel:'chrome',headless:true});server=await startServer();report.server={pid:server.child.pid,origin:server.origin};
  let next=0;await Promise.all(Array.from({length:Math.min(options.concurrency,sites.length)},async()=>{while(next<sites.length){const site=sites[next++];for(const mode of report.scope.modes)await runContext(browser,server,site,mode,allSites,fixtures,prefixPath);}}));
  report.coreEnd=await snapshot(allSites);report.endHead=git(['rev-parse','HEAD'],{encoding:'utf8'}).trim();assert.deepEqual(report.coreEnd,report.coreStart,'Core changed while verifying');assert.equal(report.endHead,report.startHead);
- report.summary={topicProfiles:report.tests.filter(t=>t.topicVerification?.status==='PASS').length,stateTransitionProfiles:report.tests.filter(t=>t.stateTransitions).length,manifestFailureCases:report.tests.reduce((n,t)=>n+(t.manifestFailures?.length||0),0),diagnosticEdgeProfiles:report.tests.filter(t=>t.diagnosticEdges).length,contexts:report.tests.length,passed:report.tests.filter(t=>t.status==='PASS').length,inputs:report.tests.reduce((n,t)=>n+t.inputs.length,0),perfectComparisons:report.tests.filter(t=>t.perfect).length,viewports:report.tests.reduce((n,t)=>n+t.viewports.length,0),diagnosticViewports:report.tests.reduce((n,t)=>n+t.diagnosticViewports.length,0),independentProbes:report.tests.reduce((n,t)=>n+t.probes.length,0),publicFilesPreserved:report.preservation.publicFiles,referencesPreserved:report.preservation.referenceFiles,coreUnchanged:true};
+ report.summary={reportDownloads:report.tests.reduce((n,t)=>n+(t.reportExports?.length||0),0),topicProfiles:report.tests.filter(t=>t.topicVerification?.status==='PASS').length,stateTransitionProfiles:report.tests.filter(t=>t.stateTransitions).length,manifestFailureCases:report.tests.reduce((n,t)=>n+(t.manifestFailures?.length||0),0),diagnosticEdgeProfiles:report.tests.filter(t=>t.diagnosticEdges).length,contexts:report.tests.length,passed:report.tests.filter(t=>t.status==='PASS').length,inputs:report.tests.reduce((n,t)=>n+t.inputs.length,0),perfectComparisons:report.tests.filter(t=>t.perfect).length,viewports:report.tests.reduce((n,t)=>n+t.viewports.length,0),diagnosticViewports:report.tests.reduce((n,t)=>n+t.diagnosticViewports.length,0),independentProbes:report.tests.reduce((n,t)=>n+t.probes.length,0),publicFilesPreserved:report.preservation.publicFiles,referencesPreserved:report.preservation.referenceFiles,coreUnchanged:true};
  assert.equal(report.tests.length,sites.length*report.scope.modes.length);assert.equal(report.failures.length,0);report.status='PASS';
 }catch(e){report.status='FAIL';report.failures.push({phase:'setup/preservation/final snapshot',message:e.message,stack:e.stack});console.error('DASHBOARD VERIFICATION FAIL',e.message);}
 finally{await browser?.close();server?.child.kill();report.finishedAt=new Date().toISOString();await save();await saves;console.log('FINAL',JSON.stringify({status:report.status,summary:report.summary,failures:report.failures}));if(report.status!=='PASS')process.exitCode=1;}
