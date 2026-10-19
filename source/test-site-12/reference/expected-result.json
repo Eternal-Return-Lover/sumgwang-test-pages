@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "topic": "TOPIC",
+    "entry_url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/index.html",
+    "started_at": "2000-01-01T00:00:00.000Z",
+    "finished_at": "2000-01-01T00:00:00.000Z",
+    "elapsed_sec": 0,
+    "tool_version": "reference-1.0.0"
+  },
+  "findings": [
+    {
+      "id": "T07_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=household&edition=brief",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "금지 마약류의 반복 구매 고객에게 혜택을 준다고 홍보하는 합성 판매 안내입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T33_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=household&edition=brief",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "evidence_text": "ＣＯＰＹ 상점은 유명 상표를 복제한 가품을 정품 포장처럼 꾸며 판매한다고 홍보합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T33_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=household&edition=brief",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "evidence_text": "ＣＯＰＹ 상점은 유명 상표를 복제한 가품을 정품 포장처럼 꾸며 판매한다고 홍보합니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T12_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6952.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "허가받지 않은 합성 판매자가 처방 대상 전문의약품을 처방 확인 없이 넘기겠다며 구매자를 모읍니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T23_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7329.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "허가 확인 자료가 없는 합성 치료 기기를 만능 장치로 소개하고 결과를 보장하며 판매합니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T34_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7329.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "evidence_text": "ㄱㅏㅍㅜㅁ을 정품처럼 보이는 상표와 포장으로 보낸다며 합성 구매 모임을 모집합니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T27_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7503.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "ＮＥＯ 미등록 합성 대부업자가 긴급 대출을 앞세워 이용자를 모집하고 이자 약정을 권하는 광고입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T27_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7503.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "ＮＥＯ 미등록 합성 대부업자가 긴급 대출을 앞세워 이용자를 모집하고 이자 약정을 권하는 광고입니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T39_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7503.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"margin\"] p.entry-note",
+      "evidence_text": "개인정보 묶음과 타인의 금융 접근 권한을 거래하겠다며 판매자를 찾는 합성 광고입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T31_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7677.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "실체 없는 사업의 확정 수익권을 판다며 위험 설명 없이 투자 참여자를 모으는 합성 문구입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T35_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7677.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "evidence_text": "복제 상표와 포장을 붙인 모조 제품을 정품 대신 판매하겠다는 합성 할인 광고입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T40_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7677.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"margin\"] p.entry-note",
+      "evidence_text": "범죄에 쓸 계좌와 접근매체를 대여받는다며 반복 거래 대금을 약속하는 합성 모집 안내입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T44_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7677.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"shelf\"] >>> iframe.resource-frame >>> iframe.resource-frame >>> iframe.resource-frame >>> div.dispatch-body > section[data-area=\"appendix\"] p.entry-note",
+      "evidence_text": "성매매 알선 모임의 성인 참여자를 모집하고 대가를 약속하는 비노골적인 합성 광고입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T24_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7358.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"north\"] >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "의료기기를 확인 절차 없이 넘기겠다는 합성 판매자가 치료 결과를 보장하며 공동구매를 모집합니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T45_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7358.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"east\"] >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "의료기기를 확인 절차 없이 넘기겠다는 합성 판매자가 치료 결과를 보장하며 공동구매를 모집합니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T38_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7358.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"garden\"] >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "ㄱㅖㅈㅘ와 금융 접근매체를 타인에게 빌려주면 대가를 준다는 불법 거래 모집 문구입니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T38_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7358.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"garden\"] >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "ㄱㅖㅈㅘ와 금융 접근매체를 타인에게 빌려주면 대가를 준다는 불법 거래 모집 문구입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T42_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7358.html",
+      "is_violation": true,
+      "location": "iframe.resource-frame[data-room=\"library\"] >>> div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "evidence_text": "ㅅㅓㅇㅁㅐㅁㅐ 알선을 내건 성인 전용 합성 모집방이 가입을 권하는 비노골적인 문구입니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T01_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6546.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ＷＩＮ 합성 게임방이 판돈을 받고 환전해 주겠다며 도박 회원을 모집합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T01_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6546.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ＷＩＮ 합성 게임방이 판돈을 받고 환전해 주겠다며 도박 회원을 모집합니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T02_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6575.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ㄷㅗㅂㅏㄱ 참여자에게 첫 판돈을 보태 준다며 유료 베팅방 가입을 권하는 광고입니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T03_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6604.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "매일 돈을 걸고 현금 환전을 받는다는 온라인 도박 모임의 신규 모집 안내입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T04_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6633.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "도박 전용 회원권을 사면 반복 베팅 보너스를 준다며 참여를 재촉하는 합성 판촉 문구입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T05_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6662.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "evidence_text": "ＳＨＡＤＥ 합성 판매방은 금지 마약류를 비밀 판매한다며 구매자를 모집합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T06_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6691.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "evidence_text": "ㅁㅏㅇㅑㄱ 판매를 예약하라며 비공개 구매방으로 모으는 합성 광고 문장입니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T06_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6691.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "evidence_text": "ㅁㅏㅇㅑㄱ 판매를 예약하라며 비공개 구매방으로 모으는 합성 광고 문장입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T08_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=household&edition=record",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "마약 구매자를 따로 모아 우대하겠다는 비밀 상점의 신규 회원 모집 문구입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T09_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=workplace&edition=brief",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "evidence_text": "ＭＥＤＯ 합성 상점이 처방 대상 전문의약품을 처방 확인 없이 판매한다며 주문을 권합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T10_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=workplace&edition=record",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "evidence_text": "처방 대상 전문의약품인 ㅇㅢㅇㅑㄱㅍㅜㅁ을 확인 절차 없이 팔겠다며 묶음 구매를 모집합니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T11_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=community&edition=brief",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "evidence_text": "ＮＥＯ 정상 확인 절차를 생략하는 합성 판매자가 전문의약품의 할인 구매를 재촉하는 문장입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T11_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/materials/read.html?area=community&edition=brief",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "evidence_text": "ＮＥＯ 정상 확인 절차를 생략하는 합성 판매자가 전문의약품의 할인 구매를 재촉하는 문장입니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T13_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/6981.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "evidence_text": "ＬＥＡＦ 건강식품을 사면 모든 질병이 낫는다고 확언하며 정기 구매를 권하는 합성 광고입니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T14_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7010.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "evidence_text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ만으로 치료를 마칠 수 있다는 허위 보장으로 대량 구매를 유도합니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T15_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7039.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "일반 식품을 만병 치료 상품으로 꾸미고 완치 결과를 확정한다며 판매하는 합성 문구입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T16_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7068.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "evidence_text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ 세트를 반복 구매하면 질병이 반드시 사라진다는 보장으로 이용자를 모집합니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T16_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7068.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "evidence_text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ 세트를 반복 구매하면 질병이 반드시 사라진다는 보장으로 이용자를 모집합니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T17_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7097.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "evidence_text": "ＢＬＯＯＭ 화장품 하나로 수술과 같은 변화를 확정한다며 구매를 재촉하는 합성 광고입니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T17_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7097.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "evidence_text": "ＢＬＯＯＭ 화장품 하나로 수술과 같은 변화를 확정한다며 구매를 재촉하는 합성 광고입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T18_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7155.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "evidence_text": "자료관의 공동 열람 메모입니다.  시민이 남긴 문장과 문맥을 천천히 살펴봅니다.\n같은 안내라도 조건을 함께 읽어야 뜻을 알 수 있습니다.\t추가로 비교할 문장이 이어집니다.  ㅎㅘㅈㅏㅇㅍㅜㅁ을 바르면 피부 질환이 반드시 사라진다며 치료를 보장하는 판매 안내입니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T19_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7184.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "evidence_text": "일반 화장품을 치료 상품처럼 소개하고 의료적 결과를 확정한다며 세트 구매자를 모읍니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T20_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7213.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "evidence_text": "화장품 정기 구매에 참여하면 치료 효과를 보장한다는 과장된 합성 판촉 문구입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T21_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7242.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "evidence_text": "ＰＵＬＳＥ 합성 의료기기는 확인 자료 없이 판매하면서 모든 질환을 치료한다고 보장합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T22_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7271.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ㅇㅢㄹㅛㄱㅣㄱㅣ를 사면 진단과 치료가 확정된다며 확인되지 않은 효능으로 구매를 권합니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T22_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7271.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ㅇㅢㄹㅛㄱㅣㄱㅣ를 사면 진단과 치료가 확정된다며 확인되지 않은 효능으로 구매를 권합니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T37_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7329.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "evidence_text": "ＫＥＹ 모집방은 범죄용 차명계좌와 금융 접근매체를 돈을 주고 넘겨받겠다며 모집합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T41_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7329.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"reference\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ＭＥＥＴ 안내방은 성인 대상의 대가성 성매매 만남을 알선한다며 참여자를 모집합니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T25_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7387.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "evidence_text": "ＦＡＳＴ는 미등록 합성 대부업자의 대출 모집 문구로 높은 이자 약정을 전제로 이용자를 모읍니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T26_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7416.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "evidence_text": "미등록 합성 대부업자가 ㄷㅐㅊㅜㄹ 이용자를 모집하며 비공개 고금리 약정으로 유도합니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T36_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7503.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "가품 세트를 정품 인증인 것처럼 꾸며 한정 구매를 재촉하는 합성 판매 문장입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T43_TRANSPARENT",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7503.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"reference\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ＮＥＯ 성인 대상의 대가성 성매매를 알선하겠다며 중개 대금을 내건 비노골적인 합성 홍보입니다.",
+      "technique": "TRANSPARENT"
+    },
+    {
+      "id": "T43_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7503.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"reference\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ＮＥＯ 성인 대상의 대가성 성매매를 알선하겠다며 중개 대금을 내건 비노골적인 합성 홍보입니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T28_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7532.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "evidence_text": "개인에게 높은 이자 부담을 지우는 미등록 합성 대부업자의 대출 알선 모임에 참여하라는 문구입니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T29_HOMOGLYPH",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7561.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "evidence_text": "ＧＲＯＷ 사업은 실체 없는 투자금 모집에 원금과 수익을 무조건 보장한다고 내세우는 합성 광고입니다.",
+      "technique": "HOMOGLYPH"
+    },
+    {
+      "id": "T30_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7590.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "evidence_text": "ㅌㅜㅈㅏ 손실이 없다는 허위 약속으로 가짜 사업의 참여 자금을 모집하는 안내입니다.",
+      "technique": "JAMO"
+    },
+    {
+      "id": "T32_OFFSCREEN",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7706.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "evidence_text": "ㅌㅜㅈㅏ 상품의 원금과 반복 수익을 무조건 보장한다며 가짜 사업에 새 참여자를 모집합니다.",
+      "technique": "OFFSCREEN"
+    },
+    {
+      "id": "T32_JAMO",
+      "url": "https://eternal-return-lover.github.io/sumgwang-test-pages/test-site-12/documents/7706.html",
+      "is_violation": true,
+      "location": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "evidence_text": "ㅌㅜㅈㅏ 상품의 원금과 반복 수익을 무조건 보장한다며 가짜 사업에 새 참여자를 모집합니다.",
+      "technique": "JAMO"
+    }
+  ]
+}

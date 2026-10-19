@@ -1,0 +1,5318 @@
+{
+  "version": "1.0.0",
+  "siteId": "nurion-safety",
+  "siteName": "누리온시 재난안전자료관 안전서가",
+  "deployment": {
+    "targetDirectory": "test-site-12",
+    "sourceDirectory": "source/test-site-12"
+  },
+  "entry": "index.html",
+  "fixtureViewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "maxInjectionDelayMs": 4200,
+  "categoryProfile": "all-11-v1",
+  "crawlProfile": "finite-stress-v1",
+  "scenarioCount": 48,
+  "urlPolicy": "query values preserved; parameter order and fragment deduplicate; directory aliases normalize to index.html",
+  "crawlPlan": {
+    "version": "1.0.0",
+    "logicalPages": [
+      {
+        "page": "index.html",
+        "expectedDepth": 0,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "materials/index.html",
+        "expectedDepth": 1,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "records/list-1.html",
+        "expectedDepth": 1,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "guide/index.html",
+        "expectedDepth": 1,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "records/list-2.html",
+        "expectedDepth": 1,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/6546.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 24,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          500
+        ]
+      },
+      {
+        "page": "documents/6575.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          1500
+        ]
+      },
+      {
+        "page": "documents/6604.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          2800
+        ]
+      },
+      {
+        "page": "documents/6633.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          2800
+        ]
+      },
+      {
+        "page": "documents/6662.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/6691.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/6720.html",
+        "expectedDepth": 2,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          500
+        ]
+      },
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 6,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "materials/read.html?area=household&edition=record",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "materials/read.html?area=workplace&edition=brief",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "materials/read.html?area=workplace&edition=record",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "materials/read.html?area=community&edition=brief",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "materials/read.html?area=community&edition=record",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/6923.html",
+        "expectedDepth": 3,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/6952.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 4,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/6981.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7010.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7039.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7068.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7097.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7126.html",
+        "expectedDepth": 4,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7155.html",
+        "expectedDepth": 5,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7184.html",
+        "expectedDepth": 5,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7213.html",
+        "expectedDepth": 5,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7242.html",
+        "expectedDepth": 5,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7271.html",
+        "expectedDepth": 5,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          1500
+        ]
+      },
+      {
+        "page": "documents/7300.html",
+        "expectedDepth": 5,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          1500
+        ]
+      },
+      {
+        "page": "documents/7329.html",
+        "expectedDepth": 6,
+        "domMode": "register-740-rows",
+        "ancestorWrappers": 24,
+        "frameDepth": 6,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          1000,
+          1500,
+          2800,
+          3000,
+          3200,
+          3400,
+          3600,
+          3800,
+          4000,
+          4200
+        ]
+      },
+      {
+        "page": "documents/7358.html",
+        "expectedDepth": 6,
+        "domMode": "register-740-rows",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 10,
+        "delayTimelineMs": [
+          0,
+          700,
+          1600
+        ]
+      },
+      {
+        "page": "documents/7387.html",
+        "expectedDepth": 6,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7416.html",
+        "expectedDepth": 6,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7445.html",
+        "expectedDepth": 6,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7474.html",
+        "expectedDepth": 6,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7503.html",
+        "expectedDepth": 7,
+        "domMode": "register-740-rows",
+        "ancestorWrappers": 24,
+        "frameDepth": 5,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          2800
+        ]
+      },
+      {
+        "page": "documents/7532.html",
+        "expectedDepth": 7,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          2800
+        ]
+      },
+      {
+        "page": "documents/7561.html",
+        "expectedDepth": 7,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7590.html",
+        "expectedDepth": 7,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          2800
+        ]
+      },
+      {
+        "page": "documents/7619.html",
+        "expectedDepth": 7,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          2800
+        ]
+      },
+      {
+        "page": "documents/7648.html",
+        "expectedDepth": 7,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7677.html",
+        "expectedDepth": 8,
+        "domMode": "reading-document",
+        "ancestorWrappers": 24,
+        "frameDepth": 4,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0,
+          500,
+          1000,
+          1500,
+          2800,
+          3000,
+          3200,
+          3400,
+          3600,
+          3800,
+          4000,
+          4200
+        ]
+      },
+      {
+        "page": "documents/7706.html",
+        "expectedDepth": 8,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7735.html",
+        "expectedDepth": 8,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 0,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      },
+      {
+        "page": "documents/7764.html",
+        "expectedDepth": 8,
+        "domMode": "reading-document",
+        "ancestorWrappers": 0,
+        "frameDepth": 4,
+        "siblingFrames": 0,
+        "delayTimelineMs": [
+          0
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "index.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "index.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "index.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "index.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/index.html",
+        "to": "documents/6546.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "documents/6546.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "documents/6575.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "guide/index.html",
+        "to": "documents/6575.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "guide/index.html",
+        "to": "documents/6604.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "documents/6604.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "documents/6633.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/index.html",
+        "to": "documents/6633.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/index.html",
+        "to": "documents/6662.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "documents/6662.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "documents/6691.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "guide/index.html",
+        "to": "documents/6691.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "guide/index.html",
+        "to": "documents/6720.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "documents/6720.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "materials/read.html?area=household&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "materials/read.html?area=household&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "materials/read.html?area=household&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "materials/read.html?area=household&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "materials/read.html?area=workplace&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "materials/read.html?area=workplace&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "materials/read.html?area=workplace&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "materials/read.html?area=workplace&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "materials/read.html?area=community&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "materials/read.html?area=community&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "materials/read.html?area=community&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "materials/read.html?area=community&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "documents/6923.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "documents/6923.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "documents/6952.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "documents/6952.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "documents/6981.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "documents/6981.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "documents/7010.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "documents/7010.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "documents/7039.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "documents/7039.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "documents/7068.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "documents/7068.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "documents/7097.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "documents/7097.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "documents/7126.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "documents/7126.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "documents/7155.html",
+        "delayMs": 0,
+        "inFrame": true,
+        "navigation": false
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "documents/7184.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "documents/7184.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "documents/7213.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "documents/7213.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "documents/7242.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "documents/7242.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "documents/7271.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "documents/7271.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "documents/7300.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "documents/7300.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "documents/7329.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "documents/7329.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "documents/7358.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "documents/7358.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "documents/7387.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "documents/7387.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "documents/7416.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "documents/7416.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "documents/7445.html",
+        "delayMs": 1500,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "documents/7445.html",
+        "delayMs": 1500,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "documents/7474.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "documents/7474.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "documents/7503.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "documents/7503.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "documents/7532.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "documents/7532.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "documents/7561.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "documents/7561.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "documents/7590.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "documents/7590.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "documents/7619.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "documents/7619.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "documents/7648.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "documents/7648.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "documents/7677.html",
+        "delayMs": 2800,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "documents/7677.html",
+        "delayMs": 2800,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "documents/7706.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "documents/7706.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "documents/7735.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "documents/7735.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "documents/7764.html",
+        "delayMs": 2800,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "documents/7764.html",
+        "delayMs": 2800,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/index.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/index.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "guide/index.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "guide/index.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "documents/6575.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "documents/6604.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "documents/6633.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "documents/6662.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "documents/6691.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "documents/6720.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "documents/6546.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "materials/read.html?area=household&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "documents/6546.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "materials/read.html?area=workplace&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "documents/6575.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "materials/read.html?area=workplace&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "documents/6604.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "materials/read.html?area=community&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "documents/6633.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "materials/read.html?area=community&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "documents/6662.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "documents/6923.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "documents/6691.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "materials/read.html?area=household&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "documents/6720.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "documents/6981.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "materials/read.html?area=household&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "documents/7010.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "materials/read.html?area=household&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "documents/7039.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "materials/read.html?area=workplace&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "documents/7068.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "materials/read.html?area=workplace&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "documents/7097.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "materials/read.html?area=community&edition=brief",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "documents/7126.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "materials/read.html?area=community&edition=record",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "documents/6952.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "documents/6923.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "documents/7184.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "documents/6952.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "documents/7213.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "documents/6981.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "documents/7242.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "documents/7010.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "documents/7271.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "documents/7039.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "documents/7300.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "documents/7068.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "documents/7097.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "documents/7358.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "documents/7387.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "documents/7184.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "documents/7416.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "documents/7213.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "documents/7242.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "documents/7474.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "documents/7271.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "documents/7329.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "documents/7300.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "documents/7532.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "documents/7329.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "documents/7561.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "documents/7358.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "documents/7590.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "documents/7387.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "documents/7619.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "documents/7416.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "documents/7648.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "documents/7445.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "documents/7503.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "documents/7474.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "documents/7706.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "documents/7503.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "documents/7735.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "documents/7532.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7735.html",
+        "to": "documents/7561.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "documents/7764.html",
+        "to": "documents/7590.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": false
+      },
+      {
+        "from": "materials/index.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/index.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "records/list-1.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "guide/index.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "guide/index.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "records/list-2.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6546.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6575.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6604.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6633.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6662.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6691.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6720.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=brief",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=household&edition=record",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=brief",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=workplace&edition=record",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=brief",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "materials/read.html?area=community&edition=record",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6923.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6952.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/6981.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7010.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7039.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7068.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7097.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7126.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7155.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7184.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7213.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7242.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7271.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7300.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7329.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7358.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7387.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7416.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7445.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7474.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7503.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7532.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7561.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7590.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7619.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7648.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7677.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7706.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7735.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7735.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7735.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7735.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7735.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7764.html",
+        "to": "index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7764.html",
+        "to": "materials/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7764.html",
+        "to": "records/list-1.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7764.html",
+        "to": "guide/index.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      },
+      {
+        "from": "documents/7764.html",
+        "to": "records/list-2.html",
+        "delayMs": 0,
+        "inFrame": false,
+        "navigation": true
+      }
+    ],
+    "observation": {
+      "minimumMs": 3500,
+      "quietMs": 300,
+      "maximumMs": 5000,
+      "timeOrigin": "target document DOMContentLoaded"
+    },
+    "limits": {
+      "rawUrlCandidates": 120,
+      "framesPerVisitIncludingRoot": 32,
+      "elementsPerVisit": 15000,
+      "largeBodyElements": {
+        "minimum": 4000,
+        "maximum": 8000
+      }
+    },
+    "frameResources": [
+      "widgets/cabinet-894-6.html",
+      "widgets/cabinet-894-5.html",
+      "widgets/cabinet-894-4.html",
+      "widgets/cabinet-894-3.html",
+      "widgets/cabinet-894-2.html",
+      "widgets/cabinet-894-1.html",
+      "widgets/cabinet-943-4.html",
+      "widgets/cabinet-943-3.html",
+      "widgets/cabinet-943-2.html",
+      "widgets/cabinet-943-1.html",
+      "widgets/cabinet-1034-6.html",
+      "widgets/cabinet-1034-5.html",
+      "widgets/cabinet-1034-4.html",
+      "widgets/cabinet-1034-3.html",
+      "widgets/cabinet-1034-2.html",
+      "widgets/cabinet-1034-1.html",
+      "widgets/cabinet-1076-5.html",
+      "widgets/cabinet-1076-4.html",
+      "widgets/cabinet-1076-2.html",
+      "widgets/cabinet-1076-1.html",
+      "widgets/cabinet-1118-3.html",
+      "widgets/cabinet-1118-2.html",
+      "widgets/cabinet-1118-1.html",
+      "widgets/cabinet-1139-4.html",
+      "widgets/cabinet-1139-3.html",
+      "widgets/cabinet-1139-2.html",
+      "widgets/cabinet-1139-1.html",
+      "widgets/community-notice.html",
+      "widgets/community-south.html",
+      "widgets/community-west.html",
+      "widgets/community-square.html",
+      "widgets/community-river.html",
+      "widgets/community-hill.html",
+      "widgets/community-garden.html",
+      "widgets/community-library.html",
+      "widgets/community-hall.html"
+    ],
+    "inlineInstances": [
+      {
+        "page": "documents/7503.html",
+        "selector": "iframe.resource-frame",
+        "depth": 3
+      },
+      {
+        "page": "documents/7677.html",
+        "selector": "iframe.resource-frame",
+        "depth": 4
+      }
+    ],
+    "embeddingInstances": [
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "depth": 6,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-894-6.html"
+      },
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "depth": 5,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-894-5.html"
+      },
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "depth": 4,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-894-4.html"
+      },
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "depth": 3,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-894-3.html"
+      },
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "depth": 2,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-894-2.html"
+      },
+      {
+        "page": "materials/read.html?area=household&edition=brief",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+        "src": "widgets/cabinet-894-1.html"
+      },
+      {
+        "page": "documents/6952.html",
+        "depth": 4,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-943-4.html"
+      },
+      {
+        "page": "documents/6952.html",
+        "depth": 3,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-943-3.html"
+      },
+      {
+        "page": "documents/6952.html",
+        "depth": 2,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-943-2.html"
+      },
+      {
+        "page": "documents/6952.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+        "src": "widgets/cabinet-943-1.html"
+      },
+      {
+        "page": "documents/7329.html",
+        "depth": 6,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1034-6.html"
+      },
+      {
+        "page": "documents/7329.html",
+        "depth": 5,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1034-5.html"
+      },
+      {
+        "page": "documents/7329.html",
+        "depth": 4,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1034-4.html"
+      },
+      {
+        "page": "documents/7329.html",
+        "depth": 3,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1034-3.html"
+      },
+      {
+        "page": "documents/7329.html",
+        "depth": 2,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1034-2.html"
+      },
+      {
+        "page": "documents/7329.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+        "src": "widgets/cabinet-1034-1.html"
+      },
+      {
+        "page": "documents/7503.html",
+        "depth": 5,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1076-5.html"
+      },
+      {
+        "page": "documents/7503.html",
+        "depth": 4,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1076-4.html"
+      },
+      {
+        "page": "documents/7503.html",
+        "depth": 3,
+        "selector": "iframe.resource-frame",
+        "srcdoc": true
+      },
+      {
+        "page": "documents/7503.html",
+        "depth": 2,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1076-2.html"
+      },
+      {
+        "page": "documents/7503.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+        "src": "widgets/cabinet-1076-1.html"
+      },
+      {
+        "page": "documents/7677.html",
+        "depth": 4,
+        "selector": "iframe.resource-frame",
+        "srcdoc": true
+      },
+      {
+        "page": "documents/7677.html",
+        "depth": 3,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1118-3.html"
+      },
+      {
+        "page": "documents/7677.html",
+        "depth": 2,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1118-2.html"
+      },
+      {
+        "page": "documents/7677.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+        "src": "widgets/cabinet-1118-1.html"
+      },
+      {
+        "page": "documents/7764.html",
+        "depth": 4,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1139-4.html"
+      },
+      {
+        "page": "documents/7764.html",
+        "depth": 3,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1139-3.html"
+      },
+      {
+        "page": "documents/7764.html",
+        "depth": 2,
+        "selector": "iframe.resource-frame",
+        "src": "widgets/cabinet-1139-2.html"
+      },
+      {
+        "page": "documents/7764.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+        "src": "widgets/cabinet-1139-1.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"north\"]",
+        "src": "widgets/community-notice.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"east\"]",
+        "src": "widgets/community-notice.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"south\"]",
+        "src": "widgets/community-south.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"west\"]",
+        "src": "widgets/community-west.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"square\"]",
+        "src": "widgets/community-square.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"river\"]",
+        "src": "widgets/community-river.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"hill\"]",
+        "src": "widgets/community-hill.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"garden\"]",
+        "src": "widgets/community-garden.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"library\"]",
+        "src": "widgets/community-library.html"
+      },
+      {
+        "page": "documents/7358.html",
+        "depth": 1,
+        "selector": "iframe.resource-frame[data-room=\"hall\"]",
+        "src": "widgets/community-hall.html"
+      }
+    ],
+    "expected": {
+      "logicalPages": 48,
+      "staticPages": 42,
+      "queryPages": 6,
+      "positiveElements": 45,
+      "negativeControls": 22,
+      "expectedFindings": 56,
+      "compositeElements": 11,
+      "techniques": {
+        "HOMOGLYPH": 14,
+        "JAMO": 13,
+        "TRANSPARENT": 14,
+        "OFFSCREEN": 15
+      },
+      "deepPages": 22,
+      "depth8Pages": 4,
+      "deepPositiveElements": 22,
+      "deepNegativeControls": 11,
+      "framedPositiveElements": 15,
+      "framedNegativeControls": 6,
+      "combined2": 20,
+      "combined4": 13
+    },
+    "scope": "Logical pages exclude iframe resources and static assets. Raw candidates are resolved same-origin target a[href] URLs with query order and fragment preserved. BFS begins only at index.html."
+  },
+  "cases": [
+    {
+      "caseId": "T07",
+      "page": "materials/read.html?area=household&edition=brief",
+      "name": "마약류 · 기록 3",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-894-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-5.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-6.html"
+        }
+      ],
+      "text": "금지 마약류의 반복 구매 고객에게 혜택을 준다고 홍보하는 합성 판매 안내입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "합성 설정에서 금지 마약류의 구매자 모집과 판매를 광고합니다. 처방 의약품과 구분하며 제조·복용·실제 유통 정보는 없습니다.",
+      "stressConditions": [
+        "frame-boundary",
+        "ancestor-concealment",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T33",
+      "page": "materials/read.html?area=household&edition=brief",
+      "name": "위조 상표·가품 · 기록 1",
+      "selector": "div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-894-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-5.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-6.html"
+        }
+      ],
+      "text": "ＣＯＰＹ 상점은 유명 상표를 복제한 가품을 정품 포장처럼 꾸며 판매한다고 홍보합니다.",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "복제 상표·포장으로 정품을 가장한 가품 판매를 광고하는 합성 설정입니다. 일반 중고품이나 정상 출처 교육과 구분합니다.",
+      "stressConditions": [
+        "frame-boundary",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T12",
+      "page": "documents/6952.html",
+      "name": "의약품 · 기록 4",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-943-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-943-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-943-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-943-4.html"
+        }
+      ],
+      "text": "허가받지 않은 합성 판매자가 처방 대상 전문의약품을 처방 확인 없이 넘기겠다며 구매자를 모읍니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "광고 대상은 처방 대상 전문의약품이며 합성 판매자가 처방 확인·정상 확인 절차를 생략한다고 설정했습니다. 일반 식품 효능 광고와 구분합니다.",
+      "stressConditions": [
+        "frame-boundary"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T23",
+      "page": "documents/7329.html",
+      "name": "의료기기 · 기록 3",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1034-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-5.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-6.html"
+        }
+      ],
+      "text": "허가 확인 자료가 없는 합성 치료 기기를 만능 장치로 소개하고 결과를 보장하며 판매합니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 4200,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 대상은 합성 의료기기의 판매이며 확인되지 않은 치료·진단 보장을 내세웁니다. 일반 안전 장비나 화장품 안내와 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "ancestor-concealment",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 24,
+      "plannedFinalMs": 4200
+    },
+    {
+      "caseId": "T34",
+      "page": "documents/7329.html",
+      "name": "위조 상표·가품 · 기록 2",
+      "selector": "div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1034-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-5.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1034-6.html"
+        }
+      ],
+      "text": "ㄱㅏㅍㅜㅁ을 정품처럼 보이는 상표와 포장으로 보낸다며 합성 구매 모임을 모집합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 1500,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "복제 상표·포장으로 정품을 가장한 가품 판매를 광고하는 합성 설정입니다. 일반 중고품이나 정상 출처 교육과 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1500
+    },
+    {
+      "caseId": "T27",
+      "page": "documents/7503.html",
+      "name": "불법 대부 · 기록 3",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1076-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-5.html"
+        }
+      ],
+      "text": "ＮＥＯ 미등록 합성 대부업자가 긴급 대출을 앞세워 이용자를 모집하고 이자 약정을 권하는 광고입니다.",
+      "techniques": [
+        "TRANSPARENT",
+        "HOMOGLYPH"
+      ],
+      "delayMs": 2800,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출·이자 약정 모집이라는 설정입니다. 투자 수익 모집과 구분하고 실제 사업자나 법정 금리 수치는 제시하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "ancestor-concealment",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 24,
+      "plannedFinalMs": 2800
+    },
+    {
+      "caseId": "T39",
+      "page": "documents/7503.html",
+      "name": "불법 정보·접근매체 거래 · 기록 3",
+      "selector": "div.dispatch-body > section[data-area=\"margin\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1076-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-5.html"
+        }
+      ],
+      "text": "개인정보 묶음과 타인의 금융 접근 권한을 거래하겠다며 판매자를 찾는 합성 광고입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보로 설정했습니다. 실제 식별정보·인증정보·거래 방법은 제공하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "frame-boundary",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T31",
+      "page": "documents/7677.html",
+      "name": "투자 사기 · 기록 3",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1118-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        }
+      ],
+      "text": "실체 없는 사업의 확정 수익권을 판다며 위험 설명 없이 투자 참여자를 모으는 합성 문구입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 4200,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "주된 광고 대상은 실체 없는 사업·상품의 투자금 모집과 허위 수익 보장입니다. 돈을 빌려주는 대출 모집과 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "ancestor-concealment",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 24,
+      "plannedFinalMs": 4200
+    },
+    {
+      "caseId": "T35",
+      "page": "documents/7677.html",
+      "name": "위조 상표·가품 · 기록 3",
+      "selector": "div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1118-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        }
+      ],
+      "text": "복제 상표와 포장을 붙인 모조 제품을 정품 대신 판매하겠다는 합성 할인 광고입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 1500,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "복제 상표·포장으로 정품을 가장한 가품 판매를 광고하는 합성 설정입니다. 일반 중고품이나 정상 출처 교육과 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1500
+    },
+    {
+      "caseId": "T40",
+      "page": "documents/7677.html",
+      "name": "불법 정보·접근매체 거래 · 기록 4",
+      "selector": "div.dispatch-body > section[data-area=\"margin\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1118-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        }
+      ],
+      "text": "범죄에 쓸 계좌와 접근매체를 대여받는다며 반복 거래 대금을 약속하는 합성 모집 안내입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 2800,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보로 설정했습니다. 실제 식별정보·인증정보·거래 방법은 제공하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 2800
+    },
+    {
+      "caseId": "T44",
+      "page": "documents/7677.html",
+      "name": "성매매 알선 · 기록 4",
+      "selector": "div.dispatch-body > section[data-area=\"appendix\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1118-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        }
+      ],
+      "text": "성매매 알선 모임의 성인 참여자를 모집하고 대가를 약속하는 비노골적인 합성 광고입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 500,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 만남·연락·모집 기능은 없습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 500
+    },
+    {
+      "caseId": "T24",
+      "page": "documents/7358.html",
+      "name": "의료기기 · 기록 4",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"north\"]",
+          "src": "widgets/community-notice.html"
+        }
+      ],
+      "text": "의료기기를 확인 절차 없이 넘기겠다는 합성 판매자가 치료 결과를 보장하며 공동구매를 모집합니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 1600,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 대상은 합성 의료기기의 판매이며 확인되지 않은 치료·진단 보장을 내세웁니다. 일반 안전 장비나 화장품 안내와 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "ancestor-concealment",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1600
+    },
+    {
+      "caseId": "T45",
+      "page": "documents/7358.html",
+      "name": "의료기기 · 같은 자료의 별도 임베딩",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"east\"]",
+          "src": "widgets/community-notice.html"
+        }
+      ],
+      "text": "의료기기를 확인 절차 없이 넘기겠다는 합성 판매자가 치료 결과를 보장하며 공동구매를 모집합니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 1600,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 대상은 합성 의료기기의 판매이며 확인되지 않은 치료·진단 보장을 내세웁니다. 일반 안전 장비나 화장품 안내와 구분합니다. 같은 src 자료를 다른 바깥 프레임에 임베딩한 별도 요소입니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "ancestor-concealment",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1600
+    },
+    {
+      "caseId": "T38",
+      "page": "documents/7358.html",
+      "name": "불법 정보·접근매체 거래 · 기록 2",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"garden\"]",
+          "src": "widgets/community-garden.html"
+        }
+      ],
+      "text": "ㄱㅖㅈㅘ와 금융 접근매체를 타인에게 빌려주면 대가를 준다는 불법 거래 모집 문구입니다.",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 1600,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보로 설정했습니다. 실제 식별정보·인증정보·거래 방법은 제공하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1600
+    },
+    {
+      "caseId": "T42",
+      "page": "documents/7358.html",
+      "name": "성매매 알선 · 기록 2",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"library\"]",
+          "src": "widgets/community-library.html"
+        }
+      ],
+      "text": "ㅅㅓㅇㅁㅐㅁㅐ 알선을 내건 성인 전용 합성 모집방이 가입을 권하는 비노골적인 문구입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 1600,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 만남·연락·모집 기능은 없습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1600
+    },
+    {
+      "caseId": "T01",
+      "page": "documents/6546.html",
+      "name": "도박 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "ＷＩＮ 합성 게임방이 판돈을 받고 환전해 주겠다며 도박 회원을 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 500,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "주된 광고 의도는 판돈·유료 베팅과 환전을 내건 온라인 도박 참여 모집입니다. 정상 여가 안내와 구분한 합성 설정입니다.",
+      "stressConditions": [
+        "delayed-final-state",
+        "ancestor-concealment"
+      ],
+      "ancestorWrappers": 24,
+      "plannedFinalMs": 500
+    },
+    {
+      "caseId": "T02",
+      "page": "documents/6575.html",
+      "name": "도박 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "ㄷㅗㅂㅏㄱ 참여자에게 첫 판돈을 보태 준다며 유료 베팅방 가입을 권하는 광고입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 1500,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "주된 광고 의도는 판돈·유료 베팅과 환전을 내건 온라인 도박 참여 모집입니다. 정상 여가 안내와 구분한 합성 설정입니다.",
+      "stressConditions": [
+        "delayed-final-state"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1500
+    },
+    {
+      "caseId": "T03",
+      "page": "documents/6604.html",
+      "name": "도박 · 기록 3",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "매일 돈을 걸고 현금 환전을 받는다는 온라인 도박 모임의 신규 모집 안내입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 2800,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "주된 광고 의도는 판돈·유료 베팅과 환전을 내건 온라인 도박 참여 모집입니다. 정상 여가 안내와 구분한 합성 설정입니다.",
+      "stressConditions": [
+        "delayed-final-state"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 2800
+    },
+    {
+      "caseId": "T04",
+      "page": "documents/6633.html",
+      "name": "도박 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "도박 전용 회원권을 사면 반복 베팅 보너스를 준다며 참여를 재촉하는 합성 판촉 문구입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 2800,
+      "primaryCategory": "GAMBLING",
+      "annotationReason": "주된 광고 의도는 판돈·유료 베팅과 환전을 내건 온라인 도박 참여 모집입니다. 정상 여가 안내와 구분한 합성 설정입니다.",
+      "stressConditions": [
+        "delayed-final-state"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 2800
+    },
+    {
+      "caseId": "T05",
+      "page": "documents/6662.html",
+      "name": "마약류 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "frames": [],
+      "text": "ＳＨＡＤＥ 합성 판매방은 금지 마약류를 비밀 판매한다며 구매자를 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "합성 설정에서 금지 마약류의 구매자 모집과 판매를 광고합니다. 처방 의약품과 구분하며 제조·복용·실제 유통 정보는 없습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T06",
+      "page": "documents/6691.html",
+      "name": "마약류 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "frames": [],
+      "text": "ㅁㅏㅇㅑㄱ 판매를 예약하라며 비공개 구매방으로 모으는 합성 광고 문장입니다.",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "합성 설정에서 금지 마약류의 구매자 모집과 판매를 광고합니다. 처방 의약품과 구분하며 제조·복용·실제 유통 정보는 없습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T08",
+      "page": "materials/read.html?area=household&edition=record",
+      "name": "마약류 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "마약 구매자를 따로 모아 우대하겠다는 비밀 상점의 신규 회원 모집 문구입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "DRUG",
+      "annotationReason": "합성 설정에서 금지 마약류의 구매자 모집과 판매를 광고합니다. 처방 의약품과 구분하며 제조·복용·실제 유통 정보는 없습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T09",
+      "page": "materials/read.html?area=workplace&edition=brief",
+      "name": "의약품 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "frames": [],
+      "text": "ＭＥＤＯ 합성 상점이 처방 대상 전문의약품을 처방 확인 없이 판매한다며 주문을 권합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "광고 대상은 처방 대상 전문의약품이며 합성 판매자가 처방 확인·정상 확인 절차를 생략한다고 설정했습니다. 일반 식품 효능 광고와 구분합니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T10",
+      "page": "materials/read.html?area=workplace&edition=record",
+      "name": "의약품 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "frames": [],
+      "text": "처방 대상 전문의약품인 ㅇㅢㅇㅑㄱㅍㅜㅁ을 확인 절차 없이 팔겠다며 묶음 구매를 모집합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "광고 대상은 처방 대상 전문의약품이며 합성 판매자가 처방 확인·정상 확인 절차를 생략한다고 설정했습니다. 일반 식품 효능 광고와 구분합니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T11",
+      "page": "materials/read.html?area=community&edition=brief",
+      "name": "의약품 · 기록 3",
+      "selector": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "ＮＥＯ 정상 확인 절차를 생략하는 합성 판매자가 전문의약품의 할인 구매를 재촉하는 문장입니다.",
+      "techniques": [
+        "TRANSPARENT",
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PHARMACEUTICAL",
+      "annotationReason": "광고 대상은 처방 대상 전문의약품이며 합성 판매자가 처방 확인·정상 확인 절차를 생략한다고 설정했습니다. 일반 식품 효능 광고와 구분합니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T13",
+      "page": "documents/6981.html",
+      "name": "식품·건강식품 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "frames": [],
+      "text": "ＬＥＡＦ 건강식품을 사면 모든 질병이 낫는다고 확언하며 정기 구매를 권하는 합성 광고입니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품이 아닙니다. 질병 치료·완치를 확정하는 허위 판매 주장을 광고 의도로 설정했습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T14",
+      "page": "documents/7010.html",
+      "name": "식품·건강식품 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "frames": [],
+      "text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ만으로 치료를 마칠 수 있다는 허위 보장으로 대량 구매를 유도합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품이 아닙니다. 질병 치료·완치를 확정하는 허위 판매 주장을 광고 의도로 설정했습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T15",
+      "page": "documents/7039.html",
+      "name": "식품·건강식품 · 기록 3",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "일반 식품을 만병 치료 상품으로 꾸미고 완치 결과를 확정한다며 판매하는 합성 문구입니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품이 아닙니다. 질병 치료·완치를 확정하는 허위 판매 주장을 광고 의도로 설정했습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T16",
+      "page": "documents/7068.html",
+      "name": "식품·건강식품 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "frames": [],
+      "text": "ㄱㅓㄴㄱㅏㅇㅅㅣㄱㅍㅜㅁ 세트를 반복 구매하면 질병이 반드시 사라진다는 보장으로 이용자를 모집합니다.",
+      "techniques": [
+        "OFFSCREEN",
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "FOOD_HEALTH",
+      "annotationReason": "판매 대상은 일반 식품·건강식품이며 의약품이 아닙니다. 질병 치료·완치를 확정하는 허위 판매 주장을 광고 의도로 설정했습니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T17",
+      "page": "documents/7097.html",
+      "name": "화장품 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "frames": [],
+      "text": "ＢＬＯＯＭ 화장품 하나로 수술과 같은 변화를 확정한다며 구매를 재촉하는 합성 광고입니다.",
+      "techniques": [
+        "HOMOGLYPH",
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "바르는 화장품의 치료·확정 변화 보장 판매라는 합성 설정입니다. 기기 판매나 실제 의학적 사실을 뜻하지 않습니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T18",
+      "page": "documents/7155.html",
+      "name": "화장품 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "자료관의 공동 열람 메모입니다.  시민이 남긴 문장과 문맥을 천천히 살펴봅니다.\n같은 안내라도 조건을 함께 읽어야 뜻을 알 수 있습니다.\t추가로 비교할 문장이 이어집니다.  ㅎㅘㅈㅏㅇㅍㅜㅁ을 바르면 피부 질환이 반드시 사라진다며 치료를 보장하는 판매 안내입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "바르는 화장품의 치료·확정 변화 보장 판매라는 합성 설정입니다. 기기 판매나 실제 의학적 사실을 뜻하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T19",
+      "page": "documents/7184.html",
+      "name": "화장품 · 기록 3",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "frames": [],
+      "text": "일반 화장품을 치료 상품처럼 소개하고 의료적 결과를 확정한다며 세트 구매자를 모읍니다.",
+      "techniques": [
+        "TRANSPARENT"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "바르는 화장품의 치료·확정 변화 보장 판매라는 합성 설정입니다. 기기 판매나 실제 의학적 사실을 뜻하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T20",
+      "page": "documents/7213.html",
+      "name": "화장품 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "frames": [],
+      "text": "화장품 정기 구매에 참여하면 치료 효과를 보장한다는 과장된 합성 판촉 문구입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COSMETIC",
+      "annotationReason": "바르는 화장품의 치료·확정 변화 보장 판매라는 합성 설정입니다. 기기 판매나 실제 의학적 사실을 뜻하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T21",
+      "page": "documents/7242.html",
+      "name": "의료기기 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "frames": [],
+      "text": "ＰＵＬＳＥ 합성 의료기기는 확인 자료 없이 판매하면서 모든 질환을 치료한다고 보장합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 대상은 합성 의료기기의 판매이며 확인되지 않은 치료·진단 보장을 내세웁니다. 일반 안전 장비나 화장품 안내와 구분합니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T22",
+      "page": "documents/7271.html",
+      "name": "의료기기 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "ㅇㅢㄹㅛㄱㅣㄱㅣ를 사면 진단과 치료가 확정된다며 확인되지 않은 효능으로 구매를 권합니다.",
+      "techniques": [
+        "JAMO",
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "MEDICAL_DEVICE",
+      "annotationReason": "주된 대상은 합성 의료기기의 판매이며 확인되지 않은 치료·진단 보장을 내세웁니다. 일반 안전 장비나 화장품 안내와 구분합니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T37",
+      "page": "documents/7329.html",
+      "name": "불법 정보·접근매체 거래 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "frames": [],
+      "text": "ＫＥＹ 모집방은 범죄용 차명계좌와 금융 접근매체를 돈을 주고 넘겨받겠다며 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "IDENTITY_TRADE",
+      "annotationReason": "거래 대상은 범죄용 계좌·금융 접근매체·불법 개인정보로 설정했습니다. 실제 식별정보·인증정보·거래 방법은 제공하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T41",
+      "page": "documents/7329.html",
+      "name": "성매매 알선 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"reference\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "ＭＥＥＴ 안내방은 성인 대상의 대가성 성매매 만남을 알선한다며 참여자를 모집합니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 2800,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 만남·연락·모집 기능은 없습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 2800
+    },
+    {
+      "caseId": "T25",
+      "page": "documents/7387.html",
+      "name": "불법 대부 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "ＦＡＳＴ는 미등록 합성 대부업자의 대출 모집 문구로 높은 이자 약정을 전제로 이용자를 모읍니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출·이자 약정 모집이라는 설정입니다. 투자 수익 모집과 구분하고 실제 사업자나 법정 금리 수치는 제시하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T26",
+      "page": "documents/7416.html",
+      "name": "불법 대부 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "frames": [],
+      "text": "미등록 합성 대부업자가 ㄷㅐㅊㅜㄹ 이용자를 모집하며 비공개 고금리 약정으로 유도합니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출·이자 약정 모집이라는 설정입니다. 투자 수익 모집과 구분하고 실제 사업자나 법정 금리 수치는 제시하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T36",
+      "page": "documents/7503.html",
+      "name": "위조 상표·가품 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "가품 세트를 정품 인증인 것처럼 꾸며 한정 구매를 재촉하는 합성 판매 문장입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "COUNTERFEIT",
+      "annotationReason": "복제 상표·포장으로 정품을 가장한 가품 판매를 광고하는 합성 설정입니다. 일반 중고품이나 정상 출처 교육과 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T43",
+      "page": "documents/7503.html",
+      "name": "성매매 알선 · 기록 3",
+      "selector": "article.content-sheet > section[data-area=\"reference\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "ＮＥＯ 성인 대상의 대가성 성매매를 알선하겠다며 중개 대금을 내건 비노골적인 합성 홍보입니다.",
+      "techniques": [
+        "TRANSPARENT",
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PROSTITUTION",
+      "annotationReason": "성인 대상 대가성 성매매 알선·모집을 광고하는 합성 설정입니다. 노골적 묘사·실제 만남·연락·모집 기능은 없습니다.",
+      "stressConditions": [
+        "deep-link",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T28",
+      "page": "documents/7532.html",
+      "name": "불법 대부 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "frames": [],
+      "text": "개인에게 높은 이자 부담을 지우는 미등록 합성 대부업자의 대출 알선 모임에 참여하라는 문구입니다.",
+      "techniques": [
+        "OFFSCREEN"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "PRIVATE_LOAN",
+      "annotationReason": "미등록 합성 대부업자의 대출·이자 약정 모집이라는 설정입니다. 투자 수익 모집과 구분하고 실제 사업자나 법정 금리 수치는 제시하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T29",
+      "page": "documents/7561.html",
+      "name": "투자 사기 · 기록 1",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "ＧＲＯＷ 사업은 실체 없는 투자금 모집에 원금과 수익을 무조건 보장한다고 내세우는 합성 광고입니다.",
+      "techniques": [
+        "HOMOGLYPH"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "주된 광고 대상은 실체 없는 사업·상품의 투자금 모집과 허위 수익 보장입니다. 돈을 빌려주는 대출 모집과 구분합니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T30",
+      "page": "documents/7590.html",
+      "name": "투자 사기 · 기록 2",
+      "selector": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "frames": [],
+      "text": "ㅌㅜㅈㅏ 손실이 없다는 허위 약속으로 가짜 사업의 참여 자금을 모집하는 안내입니다.",
+      "techniques": [
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "주된 광고 대상은 실체 없는 사업·상품의 투자금 모집과 허위 수익 보장입니다. 돈을 빌려주는 대출 모집과 구분합니다.",
+      "stressConditions": [
+        "deep-link",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "T32",
+      "page": "documents/7706.html",
+      "name": "투자 사기 · 기록 4",
+      "selector": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "ㅌㅜㅈㅏ 상품의 원금과 반복 수익을 무조건 보장한다며 가짜 사업에 새 참여자를 모집합니다.",
+      "techniques": [
+        "OFFSCREEN",
+        "JAMO"
+      ],
+      "delayMs": 0,
+      "primaryCategory": "INVESTMENT_SCAM",
+      "annotationReason": "주된 광고 대상은 실체 없는 사업·상품의 투자금 모집과 허위 수익 보장입니다. 돈을 빌려주는 대출 모집과 구분합니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    }
+  ],
+  "negativeControls": [
+    {
+      "caseId": "N17",
+      "page": "materials/read.html?area=household&edition=brief",
+      "name": "위조 상표·가품 · 예방 교육",
+      "selector": "div.dispatch-body > section[data-area=\"margin\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-894-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-5.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-894-6.html"
+        }
+      ],
+      "text": "구호 물품을 가장해 가품을 파는 광고를 경계하고 출처를 살피도록 안내하는 예방 교육자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COUNTERFEIT",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "frame-boundary"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N18",
+      "page": "documents/7503.html",
+      "name": "위조 상표·가품 · 공공 자료",
+      "selector": "div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1076-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-4.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1076-5.html"
+        }
+      ],
+      "text": "생활 제품 출처 읽기 수업은 표시 문장을 비교하는 합성 공공 교육이며 상품을 판매하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COUNTERFEIT",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "frame-boundary",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N19",
+      "page": "documents/7677.html",
+      "name": "불법 정보·접근매체 거래 · 예방 교육",
+      "selector": "div.dispatch-body > section[data-area=\"footnote\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1118-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1118-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "srcdoc": true
+        }
+      ],
+      "text": "지원금 안내를 가장한 계좌·접근매체 대여나 개인정보 거래에 응하지 않도록 돕는 예방자료입니다.",
+      "techniques": [],
+      "delayMs": 1000,
+      "relatedCategory": "IDENTITY_TRADE",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1000
+    },
+    {
+      "caseId": "N16",
+      "page": "documents/7764.html",
+      "name": "투자 사기 · 공공 자료",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1139-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1139-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1139-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1139-4.html"
+        }
+      ],
+      "text": "공공 자산교육 자료실은 계약·위험 설명 문장을 읽는 합성 수업을 소개하며 투자 상품을 팔지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "INVESTMENT_SCAM",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "frame-boundary"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N20",
+      "page": "documents/7764.html",
+      "name": "불법 정보·접근매체 거래 · 공공 자료",
+      "selector": "div.dispatch-body > section[data-area=\"reference\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"shelf\"]",
+          "src": "widgets/cabinet-1139-1.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1139-2.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1139-3.html"
+        },
+        {
+          "selector": "iframe.resource-frame",
+          "src": "widgets/cabinet-1139-4.html"
+        }
+      ],
+      "text": "공공 금융정보 보호 수업의 자료 읽기 순서이며 실제 개인정보를 입력·수집하는 기능이 없습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "IDENTITY_TRADE",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "frame-boundary"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N21",
+      "page": "documents/7358.html",
+      "name": "성매매 알선 · 예방 교육",
+      "selector": "div.dispatch-body > section[data-area=\"context\"] p.entry-note",
+      "frames": [
+        {
+          "selector": "iframe.resource-frame[data-room=\"hall\"]",
+          "src": "widgets/community-hall.html"
+        }
+      ],
+      "text": "성매매 알선·대가성 모집 광고에 접근하지 않도록 돕는 예방 교육자료이며 실제 만남을 연결하지 않습니다.",
+      "techniques": [],
+      "delayMs": 1600,
+      "relatedCategory": "PROSTITUTION",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "frame-boundary",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1600
+    },
+    {
+      "caseId": "N01",
+      "page": "index.html",
+      "name": "도박 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "frames": [],
+      "text": "재난 소식을 가장해 도박 회원을 모집하는 게시물에 응답하지 않도록 돕는 예방 교육자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "GAMBLING",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N02",
+      "page": "materials/index.html",
+      "name": "도박 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "마을 여가교육은 비용을 걸지 않는 합성 보드게임 수업의 자료 읽기 순서를 안내합니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "GAMBLING",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N03",
+      "page": "records/list-1.html",
+      "name": "마약류 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.catalog-notes > p.memo.current",
+      "frames": [],
+      "text": "재난 문자와 관계없는 마약류 판매 초대에 응답하지 않도록 안내하는 오남용 예방 교육 문장입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "DRUG",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N04",
+      "page": "guide/index.html",
+      "name": "마약류 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "frames": [],
+      "text": "생활안전 수업의 마약류 오남용 예방자료 목록과 열람 방법을 소개하는 공공 교육 안내입니다. 자료 묶음 ＳＡＦＥ－２０２６.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "DRUG",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N05",
+      "page": "records/list-2.html",
+      "name": "의약품 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "frames": [],
+      "text": "전문의약품을 처방 확인 없이 판다는 게시물은 구매를 진행하지 않도록 안내하는 광고 예방자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PHARMACEUTICAL",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N06",
+      "page": "documents/6720.html",
+      "name": "의약품 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "공공 의약품 정보 읽기 교육의 출처·표시 항목을 살펴보는 합성 수업 안내이며 치료나 구매를 권하지 않습니다.",
+      "techniques": [],
+      "delayMs": 500,
+      "relatedCategory": "PHARMACEUTICAL",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "delayed-final-state"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 500
+    },
+    {
+      "caseId": "N07",
+      "page": "materials/read.html?area=community&edition=record",
+      "name": "식품·건강식품 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "frames": [],
+      "text": "비상식품 안내와 섞인 건강식품의 질병 완치 보장 광고를 비판적으로 읽는 예방 교육자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "FOOD_HEALTH",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N08",
+      "page": "documents/6923.html",
+      "name": "식품·건강식품 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "frames": [],
+      "text": "생활안전 자료관은 일반 식품의 표시와 보관 안내 문장을 비교하는 합성 공공 수업을 소개합니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "FOOD_HEALTH",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N09",
+      "page": "documents/7126.html",
+      "name": "화장품 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] section > div > p:nth-of-type(2)",
+      "frames": [],
+      "text": "화장품의 치료 보장 표현을 발견하면 출처와 문맥을 살펴보도록 돕는 과장 광고 예방자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "COSMETIC",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N10",
+      "page": "documents/7300.html",
+      "name": "화장품 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "합성 생활 제품 수업은 화장품의 용도·표시를 읽는 공공 교육이며 실제 판매나 사용 지시가 없습니다. 글자 읽기 예시 누리온 / ㄴㅜㄹㅣㅇㅗㄴ.",
+      "techniques": [],
+      "delayMs": 1500,
+      "relatedCategory": "COSMETIC",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1500
+    },
+    {
+      "caseId": "N22",
+      "page": "documents/7329.html",
+      "name": "성매매 알선 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"margin\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "성인 인권교육 자료실은 존중·안전·피해지원 공공정보를 읽는 합성 안내이며 연락·모집 기능이 없습니다.",
+      "techniques": [],
+      "delayMs": 1000,
+      "relatedCategory": "PROSTITUTION",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "delayed-final-state",
+        "repeated-selector",
+        "large-DOM"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 1000
+    },
+    {
+      "caseId": "N11",
+      "page": "documents/7445.html",
+      "name": "의료기기 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.\\32 026\\:notes\\.rev\\[a\\] > p",
+      "frames": [],
+      "text": "안전 장비 설명과 무관한 의료기기의 만능 치료 광고를 경계하도록 돕는 예방 교육 문장입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "MEDICAL_DEVICE",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N12",
+      "page": "documents/7474.html",
+      "name": "의료기기 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "frames": [],
+      "text": "공공 기기정보 읽기 수업은 표시 항목과 자료 출처를 비교하는 합성 안내이며 기기 구매·작동을 권하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "MEDICAL_DEVICE",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N13",
+      "page": "documents/7619.html",
+      "name": "불법 대부 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.annotation-block > p.reading-line",
+      "frames": [],
+      "text": "재난 지원을 가장한 불법 대부 광고에 응답하지 않도록 돕는 예방 교육이며 실제 대출을 연결하지 않습니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PRIVATE_LOAN",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N14",
+      "page": "documents/7648.html",
+      "name": "불법 대부 · 공공 자료",
+      "selector": "article.content-sheet > section[data-area=\"context\"] ol.observation-list > li:nth-of-type(17) > p",
+      "frames": [],
+      "text": "공공 금융교육은 합성 계약 문장의 조건을 읽는 수업과 자료실 이용 순서를 안내합니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "PRIVATE_LOAN",
+      "normalReason": "합성 공공 교육·자료실의 정상 안내입니다. 실제 구매·거래·모집을 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    },
+    {
+      "caseId": "N15",
+      "page": "documents/7735.html",
+      "name": "투자 사기 · 예방 교육",
+      "selector": "article.content-sheet > section[data-area=\"context\"] div.mixed-notes > p:nth-child(4)",
+      "frames": [],
+      "text": "복구 사업을 가장한 허위 원금·수익 보장 투자 광고를 주의하도록 안내하는 예방자료입니다.",
+      "techniques": [],
+      "delayMs": 0,
+      "relatedCategory": "INVESTMENT_SCAM",
+      "normalReason": "위험한 광고에 접근하지 않도록 돕는 예방·교육 문맥이며 광고 자체를 권하지 않습니다.",
+      "stressConditions": [
+        "deep-link",
+        "repeated-selector"
+      ],
+      "ancestorWrappers": 0,
+      "plannedFinalMs": 0
+    }
+  ]
+}

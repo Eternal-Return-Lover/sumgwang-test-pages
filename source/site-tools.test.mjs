@@ -249,3 +249,46 @@ test('export keeps exact numeric tokens and records exceptional parsed number se
  assert(roundtrip.serialization.numeric_exceptions.some(e=>e.path==='/comparison/diagnostics/0/submitted/value'&&e.kind==='positive_infinity'));
  const mismatch=structuredClone(payload);mismatch.findings[1]=0;await assert.rejects(createReportSnapshot({...args,submissionPayload:mismatch}),/일치하지/);
 });
+
+test('stress references distinguish same-src instances and srcdoc with the unchanged submission fields',()=>{
+ const item={page:'board/view.html?id=2',selector:'p.note',text:'raw\n\t\u00a0ㅎㅏㄴ ｆｕｌｌ',techniques:['HOMOGLYPH']};
+ const manifest={crawlProfile:'finite-stress-v1',siteId:'probe',entry:'index.html',deployment:{targetDirectory:'test-site-12'},cases:[
+  {...item,caseId:'A',frames:[{selector:'iframe.panel:nth-of-type(1)',src:'widgets/shared.html'}]},
+  {...item,caseId:'B',frames:[{selector:'iframe.panel:nth-of-type(2)',src:'widgets/shared.html'}]},
+  {...item,caseId:'C',frames:[{selector:'iframe.inline',srcdoc:true}]}
+ ],negativeControls:[]};
+ const actual=expectedResultFor(manifest,'https://example.test/prefix/');
+ assert.equal(actual.findings.length,3);assert.equal(new Set(actual.findings.map(f=>f.location)).size,3);
+ assert.equal(actual.findings[2].location,'iframe.inline >>> p.note');
+ for(const f of actual.findings){assert.deepEqual(Object.keys(f).sort(),['evidence_text','id','is_violation','location','technique','url']);assert.equal(f.evidence_text,item.text);}
+});
+async function targetObserver(){
+ const code=await readFile(new URL('./shared/lab.js',import.meta.url),'utf8');
+ const start=code.indexOf('export function observeTarget('),end=code.indexOf('function setBusy(',start);
+ assert(start>0&&end>start);return runInNewContext(code.slice(start,end).replace('export function','function')+'\nobserveTarget;');
+}
+function observationFixture(){
+ const defaults={opacity:'1',display:'block',fontSize:'16px',color:'rgb(40, 40, 40)',backgroundColor:'rgba(0, 0, 0, 0)',paddingLeft:'0px',paddingTop:'0px'};
+ const doc=()=>({defaultView:{getComputedStyle:n=>n.style,frameElement:null}});
+ const node=(owner,style={},bounds={left:10,top:10,right:90,bottom:30},parent=null)=>({ownerDocument:owner,tagName:'DIV',style:{...defaults,...style},parentElement:parent,clientLeft:0,clientTop:0,getBoundingClientRect:()=>({...bounds,width:bounds.right-bounds.left,height:bounds.bottom-bounds.top})});
+ return{doc,node};
+}
+test('stress style observation stops at the target root and uses the effective leaf font',async()=>{
+ const observe=await targetObserver(),{doc,node}=observationFixture(),outside=doc(),root=doc();
+ root.defaultView.frameElement=node(outside,{opacity:'0',display:'none'},{left:-18000,top:0,right:-17000,bottom:1000});
+ const parent=node(root,{fontSize:'0px'}),leaf=node(root,{fontSize:'16px'},undefined,parent);
+ const value=observe(leaf,root);assert.equal(value.transparent,false);assert.equal(value.offscreen,false);assert.equal(value.effectiveOpacity,1);assert.equal(value.chain.length,2);
+});
+test('stress coordinates include frame border and padding while preserving local clipping',async()=>{
+ const observe=await targetObserver(),{doc,node}=observationFixture(),root=doc(),inner=doc();
+ const outer=node(root,{paddingLeft:'5px',paddingTop:'7px'},{left:100,top:50,right:300,bottom:250});outer.tagName='IFRAME';outer.clientLeft=3;outer.clientTop=2;inner.defaultView.frameElement=outer;
+ const leaf=node(inner,{}, {left:-80,top:10,right:-20,bottom:30});
+ const value=observe(leaf,root);assert.equal(value.rect.left,28);assert.equal(value.rect.top,69);assert.equal(value.rect.right,88);assert.equal(value.offscreen,true);
+});
+test('stress styles observe outer opacity/display without treating partial opacity or outer text color as hidden',async()=>{
+ const observe=await targetObserver(),{doc,node}=observationFixture(),root=doc(),inner=doc();
+ const outer=node(root,{opacity:'0.5',color:'rgb(255, 255, 255)',backgroundColor:'rgb(255, 255, 255)'});inner.defaultView.frameElement=outer;
+ const leaf=node(inner,{opacity:'0.4'});let value=observe(leaf,root);assert.equal(value.effectiveOpacity,0.2);assert.equal(value.transparent,false);assert.equal(value.offscreen,false);
+ outer.style.opacity='0';value=observe(leaf,root);assert.equal(value.transparent,true);
+ outer.style.opacity='1';outer.style.display='none';value=observe(leaf,root);assert.equal(value.offscreen,true);
+});

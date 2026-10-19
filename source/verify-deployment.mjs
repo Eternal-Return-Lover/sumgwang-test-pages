@@ -83,9 +83,11 @@ async function download(page,selector){
  const bytes=Buffer.concat(chunks);assert(!bytes.subarray(0,3).equals(Buffer.from([239,187,191])),'Downloaded JSON BOM');
  return{data:JSON.parse(bytes.toString('utf8')),bytes:bytes.length,sha256:sha(bytes),filename:item.suggestedFilename()};
 }
-const locationFor=(entry,base)=>[...entry.frames.map(f=>'iframe[src="'+new URL(f.src,base).href+'"]'),entry.selector].join(' >>> ');
-function relativeLocationFor(entry,base){let owner=new URL(entry.page,base);const parts=[];for(const f of entry.frames){const target=new URL(f.src,base);parts.push('iframe[src="'+posix.relative(posix.dirname(owner.pathname),target.pathname)+target.search+'"]');owner=target;}return[...parts,entry.selector].join(' >>> ');}
-function findingsFor(manifest,base){return manifest.cases.flatMap(c=>c.techniques.map(technique=>({id:c.caseId+'_'+technique,url:new URL(c.page,base).href,is_violation:true,location:locationFor(c,base),evidence_text:c.text,technique})));}
+const selectorFrameCases=new WeakSet();
+const registerProfile=m=>{if(m.crawlProfile==='finite-stress-v1')for(const c of [...m.cases,...m.negativeControls])selectorFrameCases.add(c);};
+const locationFor=(entry,base)=>[...entry.frames.map(f=>selectorFrameCases.has(entry)?f.selector:'iframe[src="'+new URL(f.src,base).href+'"]'),entry.selector].join(' >>> ');
+function relativeLocationFor(entry,base){if(selectorFrameCases.has(entry))return [...entry.frames.map(f=>':is('+f.selector+')'),entry.selector].join(' >>> ');let owner=new URL(entry.page,base);const parts=[];for(const f of entry.frames){const target=new URL(f.src,base);parts.push('iframe[src="'+posix.relative(posix.dirname(owner.pathname),target.pathname)+target.search+'"]');owner=target;}return[...parts,entry.selector].join(' >>> ');}
+function findingsFor(manifest,base){registerProfile(manifest);return manifest.cases.flatMap(c=>c.techniques.map(technique=>({id:c.caseId+'_'+technique,url:new URL(c.page,base).href,is_violation:true,location:locationFor(c,base),evidence_text:c.text,technique})));}
 async function readMetrics(page,site,forceText=false){
  return page.locator('#score-output').evaluate((el,opts)=>{
   if(el.dataset.result&&!opts.forceText)return{...JSON.parse(el.dataset.result),source:'dataset'};
@@ -103,22 +105,43 @@ async function upload(page,value,{raw=false}={}){
  return page.locator('#score-output').innerText();
 }
 function assertMetrics(actual,counts,total,name){const expected={tp:0,fp:0,invalid:0,duplicates:0,...counts};expected.fn=total-expected.tp;for(const key of['tp','fn','fp','invalid','duplicates'])assert.equal(actual[key],expected[key],name+' '+key);}
-async function probe(context,entry,base){
+async function probe(context,c,base){
  const page=await context.newPage();
  try{
-  const response=await page.goto(new URL(entry.page,base).href);assert.equal(response.status(),200);
-  await page.waitForTimeout((entry.delayMs||0)+(entry.frames.length?700:120));let frame=page.mainFrame();const chain=[];
-  for(const f of entry.frames){const node=frame.locator(f.selector);await node.waitFor({state:'attached',timeout:5000});assert.equal(await node.count(),1,entry.caseId+' frame selector');
-   const actual=await node.evaluate(el=>({src:el.getAttribute('src'),href:el.src}));assert.equal(actual.href,new URL(f.src,base).href,entry.caseId+' frame src');chain.push({selector:f.selector,...actual});frame=await(await frame.$(f.selector)).contentFrame();assert(frame);}
-  const node=frame.locator(entry.selector);await node.waitFor({state:'attached',timeout:5000});assert.equal(await node.count(),1,entry.caseId+' leaf selector');
-  const state=await node.evaluate(el=>{const box=el.getBoundingClientRect(),ancestors=[];for(let p=el;p;p=p.parentElement){const s=getComputedStyle(p),r=p.getBoundingClientRect();ancestors.push({tag:p.tagName,opacity:s.opacity,display:s.display,color:s.color,background:s.backgroundColor,fontSize:s.fontSize,fill:s.fill,fillOpacity:s.fillOpacity,x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom});}
-   return{text:el.textContent,namespaceURI:el.namespaceURI,codepoints:Array.from(el.textContent,c=>'U+'+c.codePointAt(0).toString(16).toUpperCase()),bounds:{x:box.x,y:box.y,width:box.width,height:box.height},ancestors};});
-  assert.equal(state.text,entry.text,entry.caseId+' raw text');
-  if(entry.techniques.includes('TRANSPARENT'))assert(state.ancestors.some(s=>s.opacity==='0'||(s.color.startsWith('rgba(')&&parseFloat(s.color.split(',').at(-1))===0)||(s.color===s.background&&s.color!=='rgba(0, 0, 0, 0)')),entry.caseId+' transparent style');
-  if(entry.techniques.includes('OFFSCREEN'))assert(state.ancestors.some(s=>s.display==='none'||parseFloat(s.fontSize)<=1||s.right<0||s.bottom<0),entry.caseId+' offscreen style');
-  return{caseId:entry.caseId,page:entry.page,delayMs:entry.delayMs,frameChain:chain,...state};
+  const response=await page.goto(new URL(c.page,base).href);assert.equal(response.status(),200);
+  await page.waitForTimeout((c.delayMs||0)+(c.frames.length?700:120));let frame=page.mainFrame();const frames=[];
+  for(const f of c.frames){
+   const element=frame.locator(f.selector);await element.waitFor({state:'attached',timeout:5000});assert.equal(await element.count(),1);
+   const actual=await element.evaluate(n=>({src:n.src,srcdoc:n.hasAttribute('srcdoc')}));
+   if(f.srcdoc===true)assert(actual.srcdoc,'Expected actual srcdoc attribute');else assert.equal(actual.src,new URL(f.src,base).href);
+   frames.push({selector:f.selector,...actual});frame=await(await frame.$(f.selector)).contentFrame();assert(frame);
+  }
+  const element=frame.locator(c.selector);await element.waitFor({state:'attached',timeout:5000});assert.equal(await element.count(),1);
+  const state=await element.evaluate(n=>{
+   const r=n.getBoundingClientRect(),ancestors=[];let doc=n.ownerDocument,node=n,rect={left:r.left,top:r.top,right:r.right,bottom:r.bottom},effectiveOpacity=1,localNegative=false;
+   const leaf=getComputedStyle(n),fg=leaf.color;let background=null;
+   for(;;){
+    for(let p=node;p;p=p.parentElement){
+     const s=p.ownerDocument.defaultView.getComputedStyle(p),b=p.getBoundingClientRect();
+     ancestors.push({tag:p.tagName,opacity:s.opacity,color:s.color,background:s.backgroundColor,display:s.display,fontSize:s.fontSize,right:b.right,bottom:b.bottom,width:b.width,height:b.height});
+     effectiveOpacity*=Number(s.opacity);if(!background&&s.backgroundColor!=='rgba(0, 0, 0, 0)'&&!s.backgroundColor.startsWith('rgba('))background=s.backgroundColor;
+    }
+    localNegative ||= rect.right<0||rect.bottom<0;
+    if(doc.defaultView===doc.defaultView.top)break;
+    const f=doc.defaultView.frameElement;assertFrame(f);const b=f.getBoundingClientRect(),s=f.ownerDocument.defaultView.getComputedStyle(f);
+    const x=b.left+f.clientLeft+(parseFloat(s.paddingLeft)||0),y=b.top+f.clientTop+(parseFloat(s.paddingTop)||0);
+    rect={left:rect.left+x,right:rect.right+x,top:rect.top+y,bottom:rect.bottom+y};node=f;doc=f.ownerDocument;
+   }
+   function assertFrame(f){if(!f)throw Error('Missing outer frame');}
+   return{text:n.textContent,namespaceURI:n.namespaceURI,codepoints:Array.from(n.textContent,ch=>'U+'+ch.codePointAt(0).toString(16).toUpperCase()),bounds:{x:r.x,y:r.y,width:r.width,height:r.height},topBounds:rect,effectiveOpacity,localNegative,foreground:fg,background,leafFontSize:leaf.fontSize,ancestors};
+  });
+  assert.equal(state.text,c.text,c.caseId+' exact raw text');
+  if(c.techniques.includes('TRANSPARENT'))assert(state.effectiveOpacity===0||(state.foreground.startsWith('rgba(')&&parseFloat(state.foreground.split(',').at(-1))===0)||state.foreground===state.background,c.caseId+' actual transparent state');
+  if(c.techniques.includes('OFFSCREEN'))assert(state.ancestors.some(s=>s.display==='none')||parseFloat(state.leafFontSize)<=1||state.localNegative,c.caseId+' actual offscreen state');
+  return{caseId:c.caseId,page:c.page,frames,frameChain:frames,delayMs:c.delayMs,...state};
  }finally{await page.close();}
 }
+
 async function exerciseFilters(page,manifest){
  const all=[...manifest.cases,...manifest.negativeControls],counts={};
  for(const filter of['all','HOMOGLYPH','JAMO','TRANSPARENT','OFFSCREEN','normal']){await page.locator('[data-filter="'+filter+'"]').click();const expected=filter==='all'?all.length:filter==='normal'?manifest.negativeControls.length:manifest.cases.filter(c=>c.techniques.includes(filter)).length;assert.equal(await page.locator('#case-list .case-row').count(),expected,'Filter '+filter);counts[filter]=expected;}
@@ -184,12 +207,12 @@ async function exerciseSubmissions(page,context,site,manifest,base,expected,row)
   await check('nested absolute iframe location',make([clone(one)]),{tp:1});
   // Site 1 retains its legacy relative-src resolution contract; verify its supported absolute chain.
   if(site.number!==1)await check('nested relative iframe src location',make([{...clone(one),location:relativeLocationFor(framed,base)}]),{tp:1});
-  await check('wrong iframe src',make([{...clone(one),location:one.location.replace(new URL(framed.frames[0].src,base).href,new URL('widgets/__verification_missing__.html',base).href)}]),{fp:1});
+  await check('wrong iframe src',make([{...clone(one),location:selectorFrameCases.has(framed)?['iframe.__verification_missing__',...one.location.split(' >>> ').slice(1)].join(' >>> '):one.location.replace(new URL(framed.frames[0].src,base).href,new URL('widgets/__verification_missing__.html',base).href)}]),{fp:1});
  }
  const queryFrame=queryCases.find(c=>c.frames.length);
  if(queryFrame){row.independentProbes.push(await probe(context,queryFrame,base));const one=findingsFor({...manifest,cases:[queryFrame]},base)[0];
   await check('query parent and exact iframe chain',make([clone(one)]),{tp:1});
-  const other=queryCases.find(c=>c.page!==queryFrame.page&&new URL(c.page,base).pathname===new URL(queryFrame.page,base).pathname&&c.frames[0]?.src!==queryFrame.frames[0].src);
+  const other=!selectorFrameCases.has(queryFrame)&&queryCases.find(c=>c.page!==queryFrame.page&&new URL(c.page,base).pathname===new URL(queryFrame.page,base).pathname&&c.frames[0]?.src!==queryFrame.frames[0].src);
   if(other){row.independentProbes.push(await probe(context,other,base));await check('different query cannot reuse original iframe chain',make([{...clone(one),url:new URL(other.page,base).href}]),{fp:1});}
  }
  let siblingPair;
@@ -201,6 +224,21 @@ async function exerciseSubmissions(page,context,site,manifest,base,expected,row)
   const absent=left.techniques.find(t=>!right.techniques.includes(t)),one=findingsFor({...manifest,cases:[right]},base)[0];
   await check('actual sibling rejects other sibling technique',make([{...clone(one),technique:absent,evidence_text:left.text}]),{fp:1});
   await check('ambiguous sibling iframe selector',make([{...clone(one),location:'iframe >>> '+right.selector}]),{fp:1});
+ }
+ const srcdocCase=manifest.cases.find(c=>c.frames.some(f=>f.srcdoc===true));
+ if(srcdocCase){
+  row.independentProbes.push(await probe(context,srcdocCase,base));const one=findingsFor({...manifest,cases:[srcdocCase]},base)[0];
+  await check('srcdoc exact selector chain',make([clone(one)]),{tp:1});
+ }
+ let sharedSrcPair;
+ for(const left of manifest.cases.filter(c=>c.frames.length===1&&c.frames[0].src)){
+  const right=manifest.cases.find(c=>c!==left&&c.page===left.page&&c.frames.length===1&&c.frames[0].src===left.frames[0].src&&c.frames[0].selector!==left.frames[0].selector&&c.selector===left.selector&&left.techniques.some(t=>c.techniques.includes(t)));
+  if(right){sharedSrcPair=[left,right];break;}
+ }
+ if(sharedSrcPair){
+  const[left,right]=sharedSrcPair,technique=left.techniques.find(t=>right.techniques.includes(t)),a={...findingsFor({...manifest,cases:[left]},base)[0],technique},b={...findingsFor({...manifest,cases:[right]},base)[0],technique};
+  row.independentProbes.push(await probe(context,left,base),await probe(context,right,base));
+  await check('same-src sibling instances are two nodes with one repeated finding',make([clone(a),clone(b),clone(a)]),{tp:2,duplicates:1});
  }
  const delayed=[...manifest.cases,...manifest.negativeControls].sort((a,b)=>b.delayMs-a.delayMs)[0];
  if(delayed?.delayMs)row.independentProbes.push(await probe(context,delayed,base));

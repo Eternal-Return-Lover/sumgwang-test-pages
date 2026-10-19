@@ -39,6 +39,8 @@
 - 채점 보고서 내보내기는 완료된 동일 실행의 전체 API·실제 엔진 manifest·원본 File을 스냅샷으로 묶고 출처/해시를 보존한다. 필터·화면 제한은 적용하지 않는다. 새 입력·사이트·재비교·오류는 이전 저장 대상을 폐기하며 내보내기 실패는 유효한 채점 자체를 바꾸지 않는다. 상세 계약은 validator/README.md를 따른다.
 - 진단의 확정 정답과 후보·미해결을 구분한다. FP/invalid/duplicate를 콘텐츠 라벨로 변환하지 않고 미방문·미제출 대조군의 TN을 추정하지 않는다. 원본/정답/채점 정보는 향후 학습 입력과 구분한다.
 - TP/FN은 기법별 기대 단위, FP/필드 오류는 제출 항목, 중복은 통합 정보다. 이를 단일 실패 합계로 중복 집계하지 않는다. 정밀도 TP/(TP+FP)와 기존 필드 오류 반영 비율 TP/(TP+FP+invalid)을 구분한다.
+- 선택형 crawlProfile: finite-stress-v1은 frames[]에 {selector, src} 또는 {selector, srcdoc:true}를 배타적으로 사용하고, 제출 location은 유일한 frame.selector 체인을 기존 >>> 문법으로 연결한다. 기존 무프로필·legacy의 src 기반 위치와 채점은 유지한다.
+- 스트레스 시험의 시간·스타일·좌표 루트는 탐지 대상 문서다. 대시보드·검증실 호스팅 iframe은 제외한다. 난이도 수치는 사이트별 REQUIREMENTS에 두고 실제 링크 BFS·최종 DOM·시간표를 새 컨텍스트 3회로 확인한다.
 - 실제 DOM 접근용 검증실 iframe을 display:none, 0크기, cross-origin 또는 sandbox로 바꾸지 않는다. 사이트 1의 필드 검사·기대셋 밖 페이지·iframe 해석 차이를 의도 없이 통일하지 않는다.
 
 ## 역할

@@ -1,0 +1,117 @@
+import {chromium} from 'playwright';
+import {spawn} from 'node:child_process';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {siteForProject,deploymentFor,countsFor} from '../../site-tools.mjs';
+import {validateCategoryAnnotations} from '../../shared/categories.js';
+import {pages,definitions,sourceSummary,graph,maxLinkDepth} from '../src/fixtures.mjs';
+
+// Basic browser evidence for this finite site, not a detector or official score.
+// Shared comparison/download/deployment regressions remain separate checks.
+const site=await siteForProject(import.meta.url),repository=resolve('../..'),output=resolve('../../tmp/verification/test-site-12');
+const manifest=JSON.parse(await readFile('reference/ground-truth.json','utf8')),counts=JSON.parse(await readFile('reference/counts.json','utf8'));
+const all=[...manifest.cases,...manifest.negativeControls],sourceCounts=sourceSummary(),plan=manifest.crawlPlan;
+validateCategoryAnnotations(manifest);assert.equal(manifest.crawlProfile,'finite-stress-v1');assert.deepEqual(counts,countsFor(manifest));assert.equal(plan.logicalPages.length,48);assert.equal(sourceCounts.logicalPages,48);
+for(const f of definitions){const c=all.find(c=>c.caseId===f.key);assert(c,f.key);assert.equal(c.page,f.path);assert.equal(c.text,f.text);assert.deepEqual(c.techniques,f.techniques);assert.equal(c.delayMs,f.delayMs);for(const key of ['primaryCategory','annotationReason','relatedCategory','normalReason'])assert.equal(c[key],f[key]);assert.deepEqual(c.stressConditions,f.conditions);}
+assert.equal(all.length,sourceCounts.positiveElements+sourceCounts.negativeControls);assert.equal(manifest.maxInjectionDelayMs,4200);
+for(const item of plan.logicalPages)assert.equal(item.expectedDepth,pages.find(p=>p.path===item.page).depth);
+const child=spawn(process.execPath,[resolve('../serve.mjs')],{cwd:resolve('.'),env:{...process.env,PORT:'0',STATIC_ROOT:repository},stdio:'pipe'});let stderr='';child.stderr.on('data',d=>stderr+=d);
+let browser;
+try{
+ const origin=await new Promise((ok,fail)=>{let stdout='';const timer=setTimeout(()=>{cleanup();fail(Error('공통 서버 시작 시간 초과'));},10000);const cleanup=()=>{clearTimeout(timer);child.off('error',onError);child.off('exit',onExit);child.stdout.off('data',onData);};const onError=e=>{cleanup();fail(e);};const onExit=code=>{cleanup();fail(Error('공통 서버 시작 실패 '+code+': '+stderr));};const onData=d=>{stdout+=d;const m=stdout.match(/Local: (http:\/\/127\.0\.0\.1:\d+\/)/);if(m){cleanup();ok(m[1]);}};child.once('error',onError);child.once('exit',onExit);child.stdout.on('data',onData);});
+ browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});await mkdir(output,{recursive:true});
+ const base=new URL(site.targetDirectory+'/',origin).href,entry=new URL(manifest.entry,base).href;
+ const canonical=value=>{const u=new URL(value);u.hash='';u.searchParams.sort();if(u.pathname.endsWith('/'))u.pathname+='index.html';return u.origin+u.pathname+u.search;};
+ const inScope=value=>{const u=new URL(value);return u.origin===new URL(base).origin&&u.pathname.startsWith(new URL(base).pathname)&&!/^\/(?:widgets|assets|lab)\//.test(u.pathname.slice(new URL(base).pathname.length-1))&&(/\.html$/.test(u.pathname)||u.pathname.endsWith('/'));};
+ const report={kind:'basic finite-site browser evidence',entry,sourceCounts,sourceHash:createHash('sha256').update(await readFile('src/fixtures.mjs')).update(await readFile('scripts/build.mjs')).update(await readFile('src/templates/render.mjs')).digest('hex'),runs:[],ui:[],errors:[],nativeCrawlerExecuted:false};
+ const check=(name,data)=>console.log(name,JSON.stringify(data));
+ function installFiniteProbe({checks}){
+  const observedDocument=document,previous=window.__finiteProbe;
+  if(previous?.documentIdentity===observedDocument&&previous.observerActive){window.__finiteEnsure?.();return;}
+  const absoluteNow=()=>performance.timeOrigin+performance.now();
+  const groups=new Map();for(const c of checks){if(!groups.has(c.selector))groups.set(c.selector,[]);groups.get(c.selector).push(c);}
+  const installedAbs=absoluteNow(),state={documentIdentity:observedDocument,installedAbs,readyStateAtInstall:document.readyState,dclObserved:false,dclAbs:null,lastAbs:installedAbs,observerActive:false,events:[],matches:{},errors:[]};window.__finiteProbe=state;
+  const rootWindow=()=>{let w=window;for(;;){if(w.shelfContext||w===w.parent)return w;try{w=w.parent;void w.document;}catch{return w;}}};
+  function styles(el){let transparent=false,offscreen=false,opacity=1,localAncestors=0;const trace=[];const localWindow=el.ownerDocument.defaultView,owner=rootWindow();let current=el,leaf=true;let global=el.getBoundingClientRect();let gx=global.x,gy=global.y;
+   while(current){const w=current.ownerDocument.defaultView,s=w.getComputedStyle(current),r=current.getBoundingClientRect();if(w===localWindow)localAncestors++;const zeroAlpha=/rgba\([^)]*,\s*0\)$/.test(s.color);transparent ||= s.opacity==='0'||zeroAlpha||(s.color===s.backgroundColor&&s.color!=='rgba(0, 0, 0, 0)');offscreen ||= s.display==='none'||(leaf&&parseFloat(s.fontSize)<=1)||r.right<0||r.bottom<0;opacity*=Number(s.opacity);trace.push({tag:current.tagName,opacity:s.opacity,display:s.display,color:s.color,background:s.backgroundColor,fontSize:s.fontSize,transform:s.transform,bounds:{x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom}});leaf=false;
+    if(current.parentElement)current=current.parentElement;else if(w!==owner&&w.frameElement){const frame=w.frameElement,fr=frame.getBoundingClientRect(),fs=frame.ownerDocument.defaultView.getComputedStyle(frame);gx+=fr.x+frame.clientLeft+(parseFloat(fs.paddingLeft)||0);gy+=fr.y+frame.clientTop+(parseFloat(fs.paddingTop)||0);current=frame;}else break;
+   }
+   return {transparent,offscreen,opacityProduct:opacity,localAncestorElements:localAncestors,globalBounds:{x:gx,y:gy,width:global.width,height:global.height},trace};
+  }
+  window.__finiteStyles=styles;
+  function scan(){if(document!==observedDocument||document.readyState==='loading')return;const at=absoluteNow();for(const [selector,candidates]of groups){let nodes;try{nodes=document.querySelectorAll(selector);}catch(error){if(!state.errors.includes(error.message))state.errors.push(error.message);continue;}if(nodes.length!==1)continue;const el=nodes[0];for(const c of candidates){if(el.textContent!==c.text)continue;const record=state.matches[c.caseId]??={firstRawAbs:at,firstFinalAbs:null};const s=styles(el);if(c.techniques.includes('TRANSPARENT')&&!s.transparent)continue;if(c.techniques.includes('OFFSCREEN')&&!s.offscreen)continue;if(record.firstFinalAbs===null)record.firstFinalAbs=at;}}}
+  // Layout reads never run inside the product's DOMContentLoaded dispatch.
+  let scanQueued=false;
+  function deferScan(){if(scanQueued)return;scanQueued=true;setTimeout(()=>{scanQueued=false;scan();},0);}
+  const trackedFrames=new WeakSet(),installerSource='('+installFiniteProbe.toString()+')('+JSON.stringify({checks})+')';
+  function ensureFrame(frame){
+   if(!trackedFrames.has(frame)){trackedFrames.add(frame);frame.addEventListener('load',()=>{state.lastAbs=absoluteNow();ensureFrame(frame);deferScan();});}
+   try{const child=frame.contentWindow,doc=frame.contentDocument;if(!child||!doc)return;const probe=child.__finiteProbe;if(probe?.documentIdentity===doc&&probe.observerActive){child.__finiteEnsure?.();return;}child.eval(installerSource);state.lastAbs=absoluteNow();}catch{/* Navigation may replace a readable document; load/frame hooks and the next poll retry. */}
+  }
+  function ensureFrames(){if(document!==observedDocument)return;for(const frame of document.querySelectorAll('iframe'))ensureFrame(frame);}
+  window.__finiteEnsure=ensureFrames;
+  const observer=new MutationObserver(records=>{if(document!==observedDocument)return;state.lastAbs=absoluteNow();if((state.dclObserved||document.readyState!=='loading')&&state.events.length<500)state.events.push({abs:state.lastAbs,types:[...new Set(records.map(r=>r.type))],attributes:[...new Set(records.map(r=>r.attributeName).filter(Boolean))],records:records.length});ensureFrames();if(document.readyState!=='loading')deferScan();});
+  // Observe the Document before its documentElement exists and retain the same
+  // observer through parsing. A new navigation receives a new Document identity.
+  observer.observe(observedDocument,{subtree:true,childList:true,characterData:true,attributes:true});state.observerActive=true;
+  document.addEventListener('DOMContentLoaded',()=>{state.dclObserved=true;state.dclAbs=absoluteNow();state.lastAbs=state.dclAbs;deferScan();},{once:true});
+  // A late-installed srcdoc has unknown DCL, never a fabricated installation-time DCL.
+  ensureFrames();if(document.readyState!=='loading')deferScan();
+ }
+ async function installProbe(context){
+  const configuration={checks:all.map(c=>({caseId:c.caseId,selector:c.selector,text:c.text,techniques:c.techniques}))};
+  await context.addInitScript(installFiniteProbe,configuration);
+  context.on('page',page=>{const ensure=frame=>{frame.evaluate(installFiniteProbe,configuration).catch(()=>{});};page.on('frameattached',ensure);page.on('framenavigated',ensure);});
+ }
+ async function observe(page){const deadline=plan.observation.maximumMs;for(;;){const sample=await page.evaluate(()=>{
+  window.__finiteEnsure?.();
+  const start=performance.timeOrigin+window.shelfContext.started,now=performance.timeOrigin+performance.now(),states=[],unobserved=[];let readableDocuments=0;
+  const visit=doc=>{readableDocuments++;const probe=doc.defaultView.__finiteProbe;if(!probe||probe.documentIdentity!==doc||!probe.observerActive)unobserved.push({url:doc.URL,reason:'active observer missing'});else states.push(probe);if(doc.readyState==='loading'||!doc.querySelector('meta[charset]'))unobserved.push({url:doc.URL,reason:'document not ready'});for(const frame of doc.querySelectorAll('iframe')){if(frame.contentDocument)visit(frame.contentDocument);else unobserved.push({url:frame.src||'srcdoc',reason:'frame document unreadable'});}};
+  visit(document);
+  return {elapsed:now-start,lastChange:Math.max(start,...states.map(s=>s.lastAbs||start),...states.map(s=>s.installedAbs||start))-start,documents:readableDocuments,observedDocuments:states.length,unobserved};
+ });if(!sample.unobserved.length&&sample.documents===sample.observedDocuments&&sample.elapsed>=plan.observation.minimumMs&&sample.elapsed-sample.lastChange>=plan.observation.quietMs)return {...sample,stable:true};if(sample.elapsed>=deadline)return {...sample,stable:false};await page.waitForTimeout(45);}}
+ async function collect(page,fixtureBase,expectedCases){return page.evaluate(({fixtureBase,expectedCases})=>{
+  const base=new URL(fixtureBase),start=performance.timeOrigin+window.shelfContext.started,documents=[],links=[],orders=new Map();let ordinal=0;
+  const canonical=value=>{const u=new URL(value);u.hash='';u.searchParams.sort();return u.origin+u.pathname+u.search;};
+  const walk=el=>{orders.set(el,++ordinal);if(el.tagName==='IFRAME'&&el.contentDocument?.body)walk(el.contentDocument.body);for(const child of el.children)walk(child);};walk(document.body);
+  const visit=(doc,chain=[])=>{const probe=doc.defaultView.__finiteProbe;documents.push({url:doc.URL,baseURI:doc.baseURI,chain,bodyElements:doc.body.querySelectorAll('*').length,overflow:{width:doc.defaultView.innerWidth,scroll:doc.documentElement.scrollWidth},probe:{observerActive:Boolean(probe?.observerActive&&probe.documentIdentity===doc),installedAtMs:probe?probe.installedAbs-start:null,dclObserved:Boolean(probe?.dclObserved),dclAtMs:probe?.dclAbs===null||!probe?null:probe.dclAbs-start,readyStateAtInstall:probe?.readyStateAtInstall||null},probeErrors:probe?.errors||['probe missing'],events:(probe?.events||[]).map(e=>({...e,atMs:e.abs-start}))});for(const a of doc.querySelectorAll('a[href]'))links.push({href:a.getAttribute('href'),url:a.href,documentUrl:doc.URL,baseURI:doc.baseURI,frameChain:chain});for(const f of doc.querySelectorAll('iframe'))if(f.contentDocument)visit(f.contentDocument,[...chain,{src:f.getAttribute('src'),srcdoc:f.hasAttribute('srcdoc'),room:f.dataset.room||null}]);};visit(document);
+  const cases=expectedCases.map(c=>{let doc=document;const frames=[];for(const frame of c.frames){const nodes=doc.querySelectorAll(frame.selector);if(nodes.length!==1)throw Error(c.caseId+' frame uniqueness '+nodes.length);const el=nodes[0];if(frame.srcdoc){if(!el.hasAttribute('srcdoc')||Object.hasOwn(frame,'src'))throw Error(c.caseId+' srcdoc contract');}else if(canonical(el.src)!==canonical(new URL(frame.src,fixtureBase)))throw Error(c.caseId+' frame src '+el.src);frames.push({selector:frame.selector,src:el.getAttribute('src'),srcdoc:el.hasAttribute('srcdoc'),bounds:(()=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height};})()});doc=el.contentDocument;if(!doc?.querySelector('meta[charset]'))throw Error(c.caseId+' frame document');}const nodes=doc.querySelectorAll(c.selector);if(nodes.length!==1)throw Error(c.caseId+' target uniqueness '+nodes.length);const el=nodes[0],probe=doc.defaultView.__finiteProbe,match=probe?.matches[c.caseId];return {caseId:c.caseId,text:el.textContent,frames,styles:doc.defaultView.__finiteStyles(el),firstRawMs:match?Math.max(0,match.firstRawAbs-start):null,firstFinalMs:match?.firstFinalAbs===null||!match?null:Math.max(0,match.firstFinalAbs-start),globalOrder:orders.get(el),globalOrderRatio:orders.get(el)/ordinal};});
+  return {links,documents,cases,bodyElements:document.body.querySelectorAll('*').length,totalElements:documents.reduce((n,d)=>n+d.bodyElements,0),framesIncludingRoot:documents.length,maxFrameDepth:Math.max(...documents.map(d=>d.chain.length)),globalElementOrderCount:ordinal,rootDclAbs:start,elapsedMs:performance.timeOrigin+performance.now()-start,overflow:{width:innerWidth,scroll:document.documentElement.scrollWidth}};
+ },{fixtureBase,expectedCases});}
+ async function visit(page,url,depth){const response=await page.goto(url,{waitUntil:'domcontentloaded'});assert.equal(response.status(),200,url);await page.waitForFunction(()=>Number.isFinite(window.shelfContext?.started));const observation=await observe(page),expectedCases=all.filter(c=>canonical(new URL(c.page,base))===canonical(url)),data=await collect(page,base,expectedCases);assert(observation.stable,url+' did not stabilize by '+plan.observation.maximumMs+'ms');assert(observation.elapsed<=plan.observation.maximumMs+350,url+' observation overshoot');assert(data.framesIncludingRoot<=plan.limits.framesPerVisitIncludingRoot);assert(data.totalElements<=plan.limits.elementsPerVisit);
+  for(const d of data.documents){assert.deepEqual(d.probeErrors,[],url+' probe');assert(d.overflow.scroll<=d.overflow.width+1,url+' frame horizontal overflow '+JSON.stringify(d.overflow));}for(const c of expectedCases){const actual=data.cases.find(a=>a.caseId===c.caseId);assert.equal(actual.text,c.text,c.caseId+' raw Unicode/space text');assert.notEqual(actual.firstFinalMs,null,c.caseId+' final state not observed');assert(actual.firstFinalMs<=5000,c.caseId+' final time');if(c.delayMs){assert(actual.firstFinalMs>=c.delayMs-100,c.caseId+' finalized earlier than planned');assert(actual.firstFinalMs<=c.delayMs+850,c.caseId+' finalized too late');}if(c.techniques.includes('TRANSPARENT'))assert(actual.styles.transparent,c.caseId+' transparency');if(c.techniques.includes('OFFSCREEN'))assert(actual.styles.offscreen,c.caseId+' offscreen');if(c.ancestorWrappers){assert(actual.styles.localAncestorElements>=24&&actual.styles.localAncestorElements<=32,c.caseId+' ancestor range '+actual.styles.localAncestorElements);}}
+  return {url,depth,observation,...data};
+ }
+ try{
+  for(let run=1;run<=3;run++){
+   const context=await browser.newContext({viewport:{width:1440,height:1000}});await installProbe(context);context.on('response',response=>{if(response.status()>=400)report.errors.push({run,status:response.status(),url:response.url()});});const workers=await Promise.all(Array.from({length:4},()=>context.newPage()));for(const page of workers){page.on('pageerror',error=>report.errors.push({run,message:error.message}));page.on('requestfailed',request=>report.errors.push({run,message:request.failure()?.errorText,url:request.url()}));}
+   const seen=new Map([[canonical(entry),0]]),rawCandidates=new Set([entry]),visits=[];let frontier=[{url:entry,depth:0}];const begun=performance.now();
+   try{
+    while(frontier.length){const current=frontier;frontier=[];let cursor=0;const batch=[];await Promise.all(workers.map(async worker=>{while(cursor<current.length){const item=current[cursor++];batch.push(await visit(worker,item.url,item.depth));}}));
+     for(const result of batch){visits.push(result);for(const link of result.links){if(!inScope(link.url))continue;rawCandidates.add(new URL(link.url).href);assert(rawCandidates.size<=plan.limits.rawUrlCandidates,'raw URL limit');const key=canonical(link.url);if(!seen.has(key)){seen.set(key,result.depth+1);frontier.push({url:link.url,depth:result.depth+1});}}}frontier.sort((a,b)=>a.url.localeCompare(b.url));check('BFS level',{run,visited:visits.length,next:frontier.length,depth:current[0].depth});
+    }
+    // The reference plan is used only after discovery, never as navigation seeds.
+    assert.equal(seen.size,48);assert.equal(visits.length,48);for(const p of plan.logicalPages)assert.equal(seen.get(canonical(new URL(p.page,base))),p.expectedDepth,p.page+' shortest link depth');assert.equal(Math.max(...seen.values()),maxLinkDepth);
+    const deepPages=[...seen.values()].filter(d=>d>=5&&d<=8).length,depth8=[...seen.values()].filter(d=>d===8).length;assert(deepPages>=12);assert(depth8>=4);
+    const observedCases=visits.flatMap(v=>v.cases);assert.equal(observedCases.length,all.length);assert.equal(new Set(observedCases.map(c=>c.caseId)).size,all.length);
+    const deepCases=all.filter(c=>seen.get(canonical(new URL(c.page,base)))>=6);assert(deepCases.filter(c=>c.techniques.length).length>=8);assert(deepCases.filter(c=>!c.techniques.length).length>=4);
+    const bigVisits=visits.filter(v=>v.bodyElements>=4000&&v.bodyElements<=8000);assert(bigVisits.length>=3);for(const v of bigVisits){const positives=v.cases.filter(c=>manifest.cases.some(p=>p.caseId===c.caseId));assert(positives.some(c=>c.globalOrderRatio<.2),v.url+' missing front target');assert(positives.some(c=>c.globalOrderRatio>.3&&c.globalOrderRatio<.7),v.url+' missing middle target');assert(positives.some(c=>c.globalOrderRatio>.8),v.url+' missing end target');}
+    assert.equal(visits.filter(v=>v.maxFrameDepth>=4).length,plan.logicalPages.filter(p=>p.frameDepth>=4).length);assert(visits.every(v=>v.framesIncludingRoot<=32));assert.equal(Math.max(...visits.map(v=>v.maxFrameDepth)),6);
+    for(const raw of rawCandidates){const response=await context.request.get(raw);assert.equal(response.status(),200,raw+' raw candidate status');}
+    const record={run,ok:true,elapsedMs:performance.now()-begun,discovered:seen.size,depths:[...seen].map(([url,depth])=>({url,depth})).sort((a,b)=>a.url.localeCompare(b.url)),rawCandidates:[...rawCandidates].sort(),rawCandidateCount:rawCandidates.size,deepPages,depth8,caseCount:observedCases.length,bigPages:bigVisits.map(v=>({url:v.url,bodyElements:v.bodyElements,positions:v.cases.map(c=>({caseId:c.caseId,ratio:c.globalOrderRatio}))})),maxFramesIncludingRoot:Math.max(...visits.map(v=>v.framesIncludingRoot)),maxFrameDepth:Math.max(...visits.map(v=>v.maxFrameDepth)),visits};
+    report.runs.push(record);await writeFile(resolve(output,'basic-run-'+run+'.json'),JSON.stringify(record,null,2)+'\n');check('fresh-context-complete',{run,pages:record.discovered,raw:record.rawCandidateCount,cases:record.caseCount,deepPages,depth8,ms:record.elapsedMs});
+   }finally{await context.close();}
+  }
+  const context=await browser.newContext({viewport:{width:1440,height:1000}});await installProbe(context);const page=await context.newPage();page.on('pageerror',e=>report.errors.push({phase:'UI',message:e.message}));
+  try{
+   for(const p of pages.filter(p=>p.query)){await visit(page,new URL(p.path,base).href,p.depth);const reversed=new URL(p.path,base);reversed.search=[...reversed.searchParams].reverse().map(([k,v])=>encodeURIComponent(k)+'='+encodeURIComponent(v)).join('&');reversed.hash='main';const checkResult=await visit(page,reversed.href,p.depth);assert.equal(checkResult.cases.length,all.filter(c=>c.page===p.path).length);assert.equal(canonical(reversed),canonical(new URL(p.path,base)));}
+   await page.goto(base+'materials/read.html?area=unknown&edition=brief');assert.equal(await page.locator('.reading-branch h1').textContent(),'선택한 자료가 없습니다');assert.equal(await page.locator('.reading-section').count(),0);
+   await page.goto(new URL(pages[2].path,base).href);await observe(page);const firstList=page.locator('.local-search + .related-list'),initial=await firstList.locator('li').count(),sample=await firstList.locator('a span').first().evaluate(el=>el.childNodes[0].textContent.slice(0,4));await page.locator('#local-query').fill(sample);await page.locator('.local-search').evaluate(form=>form.requestSubmit());assert((await firstList.locator('li:not([hidden])').count())>0);await page.locator('button[type="reset"]').click();assert.equal(await firstList.locator('li:not([hidden])').count(),initial);await page.locator('#local-query').fill('없는 자료 묶음 7651');await page.locator('.local-search').evaluate(form=>form.requestSubmit());assert.equal(await firstList.locator('.no-match').count(),1);await page.locator('button[type="reset"]').click();assert.equal(await page.locator('.pagination a').count(),2);await page.locator('.pagination a').nth(1).click();assert.equal(page.url(),new URL(pages[4].path,base).href);report.ui.push({queryBranches:6,queryOrderAndFragment:true,invalidValue200:true,localSearch:true,reset:true,empty:true,pagination:true});
+   const views=[0,19,32,33,38,44,47];for(const width of [1440,390,320]){await page.setViewportSize({width,height:width===1440?1000:844});for(const index of views){const p=pages[index];await visit(page,new URL(p.path,base).href,p.depth);const overflow=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert(overflow.scroll<=overflow.width+1,p.path+' '+width+' horizontal overflow');await page.screenshot({path:resolve(output,'page-'+index+'-'+width+'.png'),fullPage:!p.big});report.ui.push({page:p.path,width,overflow:false});}}
+   await page.goto(new URL(deploymentFor(site).sourceDirectory+'/lab/index.html',origin).href);await page.waitForFunction(()=>Boolean(window.validationLabReady));const api=await page.evaluate(async()=>{const api=await window.validationLabReady;return {entry:api.entry,profile:api.manifest.crawlProfile,findings:api.expectedResult().findings.length};});assert.deepEqual(api,{entry,profile:manifest.crawlProfile,findings:counts.expectedFindings});report.ui.push({sharedLabBridge:true});
+  }finally{await context.close();}
+  assert.deepEqual(report.errors,[]);report.ok=true;
+ }catch(error){report.ok=false;report.failure={message:error.message,stack:error.stack};throw error;}finally{await writeFile(resolve(output,'basic-browser-report.json'),JSON.stringify(report,null,2)+'\n');}
+}finally{await browser?.close();child.kill();}

@@ -62,9 +62,12 @@ async function startServer(){
  child.stderr.on('data',d=>{errors+=d;});child.once('error',e=>{clearTimeout(timer);reject(e);});child.once('exit',c=>{clearTimeout(timer);reject(Error('Server exited '+c+' '+errors));});
  child.stdout.on('data',d=>{text+=d;const m=text.match(/http:\/\/127\.0\.0\.1:\d+\/?/);if(m){clearTimeout(timer);accept(m[0].replace(/\/?$/,'/'));}});});return{origin,child};}catch(e){child.kill();throw e;}
 }
-const locationFor=(c,base)=>[...c.frames.map(f=>'iframe[src="'+new URL(f.src,base).href+'"]'),c.selector].join(' >>> ');
+const selectorFrameCases=new WeakSet();
+const registerProfile=m=>{if(m.crawlProfile==='finite-stress-v1')for(const c of [...m.cases,...m.negativeControls])selectorFrameCases.add(c);};
+const locationFor=(c,base)=>[...c.frames.map(f=>selectorFrameCases.has(c)?f.selector:'iframe[src="'+new URL(f.src,base).href+'"]'),c.selector].join(' >>> ');
 const findingFor=(c,base,technique=c.techniques[0])=>({id:c.caseId+'_'+technique,url:new URL(c.page,base).href,is_violation:true,location:locationFor(c,base),evidence_text:c.text,technique});
 function remapReference(reference,manifest,base){
+ registerProfile(manifest);
  const before=new URL('./',reference.meta.entry_url);
  const map=value=>{const u=new URL(value);assert.equal(u.origin,before.origin);assert(u.pathname.startsWith(before.pathname),'Unexpected reference URL '+value);return new URL(u.pathname.slice(before.pathname.length)+u.search+u.hash,base).href;};
  const data=structuredClone(reference);
@@ -73,7 +76,7 @@ function remapReference(reference,manifest,base){
  assert.deepEqual(data.findings,manifest.cases.flatMap(c=>c.techniques.map(t=>findingFor(c,base,t))),'Reference remapping differs from manifest-derived expectations');
  return data;
 }
-function relativeFrames(c,base){let owner=new URL(c.page,base);const chain=[];for(const f of c.frames){const target=new URL(f.src,base);chain.push('iframe[src="'+posix.relative(posix.dirname(owner.pathname),target.pathname)+target.search+'"]');owner=target;}return[...chain,c.selector].join(' >>> ');}
+function relativeFrames(c,base){if(selectorFrameCases.has(c))return [...c.frames.map(f=>':is('+f.selector+')'),c.selector].join(' >>> ');let owner=new URL(c.page,base);const chain=[];for(const f of c.frames){const target=new URL(f.src,base);chain.push('iframe[src="'+posix.relative(posix.dirname(owner.pathname),target.pathname)+target.search+'"]');owner=target;}return[...chain,c.selector].join(' >>> ');}
 
 /* Public UI adapter. Keep implementation-dependent selectors in this one block. */
 const UI={site:'#site-select',file:'#result-file',compare:'#compare-button',status:'#app-status',results:'#results',
@@ -132,16 +135,37 @@ async function probe(context,c,base){
  try{
   const response=await page.goto(new URL(c.page,base).href);assert.equal(response.status(),200);
   await page.waitForTimeout((c.delayMs||0)+(c.frames.length?700:120));let frame=page.mainFrame();const frames=[];
-  for(const f of c.frames){const element=frame.locator(f.selector);await element.waitFor({state:'attached',timeout:5000});assert.equal(await element.count(),1);const actual=await element.evaluate(n=>n.src);assert.equal(actual,new URL(f.src,base).href);frames.push({selector:f.selector,src:actual});frame=await(await frame.$(f.selector)).contentFrame();assert(frame);}
+  for(const f of c.frames){
+   const element=frame.locator(f.selector);await element.waitFor({state:'attached',timeout:5000});assert.equal(await element.count(),1);
+   const actual=await element.evaluate(n=>({src:n.src,srcdoc:n.hasAttribute('srcdoc')}));
+   if(f.srcdoc===true)assert(actual.srcdoc,'Expected actual srcdoc attribute');else assert.equal(actual.src,new URL(f.src,base).href);
+   frames.push({selector:f.selector,...actual});frame=await(await frame.$(f.selector)).contentFrame();assert(frame);
+  }
   const element=frame.locator(c.selector);await element.waitFor({state:'attached',timeout:5000});assert.equal(await element.count(),1);
-  const state=await element.evaluate(n=>{const r=n.getBoundingClientRect(),ancestors=[];for(let p=n;p;p=p.parentElement){const s=getComputedStyle(p),b=p.getBoundingClientRect();ancestors.push({tag:p.tagName,opacity:s.opacity,color:s.color,background:s.backgroundColor,display:s.display,fontSize:s.fontSize,right:b.right,bottom:b.bottom,width:b.width,height:b.height});}return{text:n.textContent,namespaceURI:n.namespaceURI,codepoints:Array.from(n.textContent,ch=>'U+'+ch.codePointAt(0).toString(16).toUpperCase()),bounds:{x:r.x,y:r.y,width:r.width,height:r.height},ancestors};});
-  assert.equal(state.text,c.text);if(c.techniques.includes('TRANSPARENT'))assert(state.ancestors.some(s=>s.opacity==='0'||(s.color.startsWith('rgba(')&&parseFloat(s.color.split(',').at(-1))===0)||(s.color===s.background&&s.color!=='rgba(0, 0, 0, 0)')));
-  if(c.techniques.includes('OFFSCREEN'))assert(state.ancestors.some(s=>s.display==='none'||parseFloat(s.fontSize)<=1||s.right<0||s.bottom<0));
-  return{caseId:c.caseId,page:c.page,frames,delayMs:c.delayMs,...state};
+  const state=await element.evaluate(n=>{
+   const r=n.getBoundingClientRect(),ancestors=[];let doc=n.ownerDocument,node=n,rect={left:r.left,top:r.top,right:r.right,bottom:r.bottom},effectiveOpacity=1,localNegative=false;
+   const leaf=getComputedStyle(n),fg=leaf.color;let background=null;
+   for(;;){
+    for(let p=node;p;p=p.parentElement){
+     const s=p.ownerDocument.defaultView.getComputedStyle(p),b=p.getBoundingClientRect();
+     ancestors.push({tag:p.tagName,opacity:s.opacity,color:s.color,background:s.backgroundColor,display:s.display,fontSize:s.fontSize,right:b.right,bottom:b.bottom,width:b.width,height:b.height});
+     effectiveOpacity*=Number(s.opacity);if(!background&&s.backgroundColor!=='rgba(0, 0, 0, 0)'&&!s.backgroundColor.startsWith('rgba('))background=s.backgroundColor;
+    }
+    localNegative ||= rect.right<0||rect.bottom<0;
+    if(doc.defaultView===doc.defaultView.top)break;
+    const f=doc.defaultView.frameElement;assertFrame(f);const b=f.getBoundingClientRect(),s=f.ownerDocument.defaultView.getComputedStyle(f);
+    const x=b.left+f.clientLeft+(parseFloat(s.paddingLeft)||0),y=b.top+f.clientTop+(parseFloat(s.paddingTop)||0);
+    rect={left:rect.left+x,right:rect.right+x,top:rect.top+y,bottom:rect.bottom+y};node=f;doc=f.ownerDocument;
+   }
+   function assertFrame(f){if(!f)throw Error('Missing outer frame');}
+   return{text:n.textContent,namespaceURI:n.namespaceURI,codepoints:Array.from(n.textContent,ch=>'U+'+ch.codePointAt(0).toString(16).toUpperCase()),bounds:{x:r.x,y:r.y,width:r.width,height:r.height},topBounds:rect,effectiveOpacity,localNegative,foreground:fg,background,leafFontSize:leaf.fontSize,ancestors};
+  });
+  assert.equal(state.text,c.text,c.caseId+' exact raw text');
+  if(c.techniques.includes('TRANSPARENT'))assert(state.effectiveOpacity===0||(state.foreground.startsWith('rgba(')&&parseFloat(state.foreground.split(',').at(-1))===0)||state.foreground===state.background,c.caseId+' actual transparent state');
+  if(c.techniques.includes('OFFSCREEN'))assert(state.ancestors.some(s=>s.display==='none')||parseFloat(state.leafFontSize)<=1||state.localNegative,c.caseId+' actual offscreen state');
+  return{caseId:c.caseId,page:c.page,frames,frameChain:frames,delayMs:c.delayMs,...state};
  }finally{await page.close();}
 }
-
-
 
 async function uiDownload(page,selector,{allowError=false}={}){
  const ready=page.waitForEvent('download');await page.locator(selector).click();const item=await ready,stream=await item.createReadStream();assert(stream);const parts=[];for await(const part of stream)parts.push(part);const bytes=Buffer.concat(parts);assert(!bytes.subarray(0,3).equals(Buffer.from([239,187,191])));
@@ -214,12 +238,12 @@ async function inputSuite(page,context,site,manifest,base,expected,row){
   await check('actual nested iframe chain',make([clone(f)]),{tp:1});
   await check('owner-relative iframe src legacy versus modern',make([{...clone(f),location:relativeFrames(framed,base)}]),site.number===1?{fp:1}:{tp:1});
   if(site.number===1)await check('legacy base-relative iframe src remains accepted',make([{...clone(f),location:[...framed.frames.map(x=>'iframe[src="'+x.src+'"]'),framed.selector].join(' >>> ')}]),{tp:1});
-  await check('wrong iframe src FP',make([{...clone(f),location:f.location.replace(new URL(framed.frames[0].src,base).href,new URL('widgets/__qa_wrong__.html',base).href)}]),{fp:1});
+  await check('wrong iframe src FP',make([{...clone(f),location:selectorFrameCases.has(framed)?['iframe.__verification_missing__',...f.location.split(' >>> ').slice(1)].join(' >>> '):f.location.replace(new URL(framed.frames[0].src,base).href,new URL('widgets/__qa_wrong__.html',base).href)}]),{fp:1});
  }
  const queryFrame=queries.find(c=>c.frames.length);
  if(queryFrame){row.probes.push(await probe(context,queryFrame,base));const f=findingFor(queryFrame,base);
   await check('query parent plus correct iframe chain',make([clone(f)]),{tp:1});
-  const other=queries.find(c=>c.page!==queryFrame.page&&new URL(c.page,base).pathname===new URL(queryFrame.page,base).pathname&&c.frames[0]?.src!==queryFrame.frames[0].src);
+  const other=!selectorFrameCases.has(queryFrame)&&queries.find(c=>c.page!==queryFrame.page&&new URL(c.page,base).pathname===new URL(queryFrame.page,base).pathname&&c.frames[0]?.src!==queryFrame.frames[0].src);
   if(other){row.probes.push(await probe(context,other,base));await check('wrong parent query cannot reuse iframe chain',make([{...clone(f),url:new URL(other.page,base).href}]),{fp:1});}
  }
  let siblings;
@@ -227,6 +251,21 @@ async function inputSuite(page,context,site,manifest,base,expected,row){
  if(siblings){const[left,right]=siblings;row.probes.push(await probe(context,left,base),await probe(context,right,base));const f=findingFor(right,base);
   await check('wrong sibling technique is FP at actual other node',make([{...clone(f),technique:left.techniques.find(t=>!right.techniques.includes(t)),evidence_text:left.text}]),{fp:1});
   await check('same-class sibling ambiguous iframe selector',make([{...clone(f),location:'iframe >>> '+right.selector}]),{fp:1});
+ }
+ const srcdocCase=manifest.cases.find(c=>c.frames.some(f=>f.srcdoc===true));
+ if(srcdocCase){
+  row.probes.push(await probe(context,srcdocCase,base));const one=findingFor(srcdocCase,base);
+  await check('srcdoc exact selector chain',make([clone(one)]),{tp:1});
+ }
+ let sharedSrcPair;
+ for(const left of manifest.cases.filter(c=>c.frames.length===1&&c.frames[0].src)){
+  const right=manifest.cases.find(c=>c!==left&&c.page===left.page&&c.frames.length===1&&c.frames[0].src===left.frames[0].src&&c.frames[0].selector!==left.frames[0].selector&&c.selector===left.selector&&left.techniques.some(t=>c.techniques.includes(t)));
+  if(right){sharedSrcPair=[left,right];break;}
+ }
+ if(sharedSrcPair){
+  const[left,right]=sharedSrcPair,technique=left.techniques.find(t=>right.techniques.includes(t)),a={...findingFor(left,base),technique},b={...findingFor(right,base),technique};
+  row.probes.push(await probe(context,left,base),await probe(context,right,base));
+  await check('same-src sibling instances are two nodes with one repeated finding',make([clone(a),clone(b),clone(a)]),{tp:2,duplicates:1});
  }
  const delayed=manifest.cases.filter(c=>c.delayMs>0).sort((a,b)=>b.delayMs-a.delayMs)[0];
  if(delayed){row.probes.push(await probe(context,delayed,base));await check('deterministic delayed positive is still TP',make([clone(findingFor(delayed,base))]),{tp:1});}
