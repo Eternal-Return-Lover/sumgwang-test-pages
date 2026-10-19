@@ -22,4 +22,5 @@ If the shared contract needs a change, report the smallest required coordinator 
 Return a concise summary with changed files, implementation status, required coordinator build, known issues and evidence actually collected.
 Do not claim unrun browser/DOM tests or official detector performance.
 Report export UI must consume the completed immutable comparison snapshot, invalidate stale exports, and isolate export failures from valid grading. Follow validator/README.md; never scrape metrics or create training labels.
+For finite-stress-v1, preserve unique frame-selector chains and resource/srcdoc identity; keep private crawl plans and labels out of target assets. Shared compatibility changes belong to the coordinator.
 """

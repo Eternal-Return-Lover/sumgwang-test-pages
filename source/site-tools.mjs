@@ -166,7 +166,16 @@ export async function checkManifest(site,sourceModule){
   assert(typeof c.selector==='string'&&c.selector.length);assert(Array.isArray(c.frames));
   for(const code of c.techniques)assert(techniques.includes(code),'Unknown technique '+code);
   assert((await stat(join(dist,c.page.split('?')[0]))).isFile());
-  for(const f of c.frames)assert((await stat(join(dist,f.src))).isFile());
+  for(const f of c.frames){
+   if(manifest.crawlProfile==='finite-stress-v1'){
+    assert(typeof f.selector==='string'&&f.selector.length,'Frame selector required');
+    if(f.srcdoc===true){assert(!Object.hasOwn(f,'src'),'srcdoc and src are exclusive');continue;}
+    assert(!Object.hasOwn(f,'srcdoc')&&typeof f.src==='string'&&f.src.length,'Frame resource required');
+    const resource=new URL(f.src,'https://fixture.invalid/');assert.equal(resource.origin,'https://fixture.invalid');
+    const file=resolve(dist,'.'+decodeURIComponent(resource.pathname));assert(file.startsWith(resolve(dist)+sep),'Frame resource outside build');
+    assert((await stat(file)).isFile());
+   }else assert((await stat(join(dist,f.src))).isFile());
+  }
  }
  assert.equal(manifest.cases.length,definitions.filter(c=>c.techniques.length).length);
  assert.equal(manifest.negativeControls.length,definitions.filter(c=>!c.techniques.length).length);
@@ -186,7 +195,7 @@ export function countsFor(manifest){
 export function expectedResultFor(manifest,publicBaseUrl){
  const publicBase=new URL(publicBaseUrl);assert(['http:','https:'].includes(publicBase.protocol),'Public base must use HTTP(S)');assert(!publicBase.search&&!publicBase.hash,'Public base must not contain query or fragment');if(!publicBase.pathname.endsWith('/'))publicBase.pathname+='/';
  const base=new URL(manifest.deployment.targetDirectory+'/',publicBase),timestamp='2000-01-01T00:00:00.000Z';
- return {meta:{topic:'TOPIC',entry_url:new URL(manifest.entry,base).href,started_at:timestamp,finished_at:timestamp,elapsed_sec:0,tool_version:manifest.siteId==='hanbit-civic'?'hanbit-reference-1.0.0':'reference-1.0.0'},findings:manifest.cases.flatMap(c=>c.techniques.map(t=>({id:c.caseId+'_'+t,url:new URL(c.page,base).href,is_violation:true,location:[...c.frames.map(f=>'iframe[src="'+new URL(f.src,base).href+'"]'),c.selector].join(' >>> '),evidence_text:c.text,technique:t})))};
+ return {meta:{topic:'TOPIC',entry_url:new URL(manifest.entry,base).href,started_at:timestamp,finished_at:timestamp,elapsed_sec:0,tool_version:manifest.siteId==='hanbit-civic'?'hanbit-reference-1.0.0':'reference-1.0.0'},findings:manifest.cases.flatMap(c=>c.techniques.map(t=>({id:c.caseId+'_'+t,url:new URL(c.page,base).href,is_violation:true,location:[...c.frames.map(f=>manifest.crawlProfile==='finite-stress-v1'?f.selector:'iframe[src="'+new URL(f.src,base).href+'"]'),c.selector].join(' >>> '),evidence_text:c.text,technique:t})))};
 }
 export async function writeLab(site){
  const project=join(repositoryRoot,'source',site.project),dist=buildDirectoryFor(site),lab=join(dist,'lab'),source=join(project,'lab');

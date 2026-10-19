@@ -1,0 +1,33 @@
+export const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const js=value=>JSON.stringify(value).replaceAll('<','\\u003c');
+const splitText=text=>{const a=Math.floor(text.length/3),b=Math.floor(text.length*2/3);return esc(text.slice(0,a))+'<span>'+esc(text.slice(a,b))+'</span>'+esc(text.slice(b));};
+function leafStyle(f){const styles=[];if(f.techniques.includes('TRANSPARENT')&&!f.ancestorDepth&&!['T07','T33'].includes(f.key))styles.push(f.index%3===0?'opacity:0':f.index%3===1?'color:transparent':'color:var(--note-color);background-color:var(--note-color)');if(f.techniques.includes('OFFSCREEN')&&!['T24','T45'].includes(f.key))styles.push(f.key==='T20'?'transform:translate(-12000px,0)': ['font-size:0','position:absolute;left:-12000px','display:none','font-size:1px'][Math.floor(f.index/4)%4]);if(['N01','N03'].includes(f.key))styles.push('position:absolute;left:-12000px');if(f.key==='N15')styles.push('margin-top:1800px');if(f.ancestorDepth)styles.push('opacity:1');return styles.join(';');}
+function ancestors(f,html){if(!f.ancestorDepth)return f.key==='N14'?'<div style="opacity:.75"><div style="opacity:.8">'+html+'</div></div>':html;for(let i=f.ancestorDepth-1;i>=0;i--){const style=i===12?(f.key==='T27'?'--note-color:#e8edf0;color:var(--note-color);background-color:var(--note-color)':f.key==='T23'?'opacity:1':'opacity:0'):'opacity:1';html='<div class="'+(i===0?'depth-paper':i===12&&f.key==='T23'?'layer-note register-note':'layer-note')+'" style="'+style+'">'+html+'</div>';}return html;}
+export function targetMarkup(f,{scope='article.content-sheet',slot='context',frame=false}={}){
+ const base=scope+' > section[data-area="'+slot+'"]',dynamic=f.delay>0,late=f.delay===4200,style=leafStyle(f);let local='',before='',after='',tag='p',cls=frame?'entry-note':'reading-line';
+ if(frame){local='p.entry-note';}
+ else if(dynamic||f.ancestorDepth||f.position===0){before='<div class="annotation-block">';after='</div>';local='div.annotation-block > p.reading-line';}
+ else if(f.position===1){before='<ol class="observation-list">'+Array.from({length:16},(_,i)=>'<li><p>자료의 설명을 함께 읽은 시민 메모 '+(i+1)+'</p></li>').join('')+'<li>';after='</li>'+Array.from({length:19},(_,i)=>'<li><p>문맥을 비교해 남긴 열람 메모 '+(i+18)+'</p></li>').join('')+'</ol>';local='ol.observation-list > li:nth-of-type(17) > p';cls='';}
+ else if(f.position===2){before='<div class="mixed-notes"><p>표제와 작성일을 함께 살펴봅니다.</p><aside>자료를 읽는 순서</aside><p>비교한 문장이 이어집니다.</p>';after='<span>끝에 붙인 열람 표시</span></div>';local='div.mixed-notes > p:nth-child(4)';cls='';}
+ else if(f.position===3){before='<section><div><p>다음 문장을 함께 비교했습니다.</p>';after='</div></section>';local='section > div > p:nth-of-type(2)';cls='';}
+ else if(f.position===4){before='<div class="catalog-notes"><p class="memo">자료가 처음 등록된 경위를 읽었습니다.</p>';after='<p class="memo archive">관련 기록의 다음 문장을 참고합니다.</p></div>';local='div.catalog-notes > p.memo.current';cls='memo current';}
+ else if(f.position===5){before='<div class="2026:notes.rev[a]">';after='</div>';local=String.raw`div.\32 026\:notes\.rev\[a\] > p`;cls='';}
+ else{before='<table class="field-table"><tbody><tr><th>자료 항목</th><td>읽기 순서</td><td>시민의 메모</td></tr><tr><th>비교 문장</th><td>참고 기록</td>';after='</tr></tbody></table>';tag='td';local='table.field-table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)';cls='';}
+ const selector=base+' '+local;
+ const leaf=(content,final=true)=>'<'+tag+(cls?' class="'+cls+'"':'')+(final&&style?' style="'+style+'"':'')+'>'+content+'</'+tag+'>';
+ const finalLeaf=leaf(splitText(f.text));let current=finalLeaf,script='';
+ if(dynamic){
+  if(late||['T02','N10'].includes(f.key))current=leaf('자료의 문장을 읽는 중입니다.',false);
+  else if(f.key==='T03')current=leaf(splitText(f.text),false);
+  else current='<span class="pending-note" data-arrival="'+slot+'">이어지는 자료를 불러오고 있습니다.</span>';
+  if(late){script=Array.from({length:6},(_,i)=>{const at=3000+i*200;return 'atShelfTime('+at+',()=>{const e=document.querySelector('+js(selector)+');if(e)e.textContent='+js('문장을 대조하고 있습니다. 자료 묶음 '+(i+1))+';const s=document.querySelector(".revision-status");if(s)s.textContent='+js('자료 묶음 대조 중 · '+(i+1))+';});';}).join('')+'atShelfTime(4200,()=>{const e=document.querySelector('+js(selector)+');if(e){e.innerHTML='+js(splitText(f.text))+';e.style.cssText='+js(style)+';e.classList.add("ready-note");}const s=document.querySelector(".revision-status");if(s)s.textContent="자료 묶음의 문장을 모두 반영했습니다.";});';}
+  else if(['T02','N10'].includes(f.key))script='atShelfTime('+f.delay+',()=>{const e=document.querySelector('+js(selector)+');e.firstChild.nodeValue='+js(f.text)+';e.style.cssText='+js(style)+';});';
+  else if(f.key==='T03')script='atShelfTime('+f.delay+',()=>{const e=document.querySelector('+js(selector)+');e.style.cssText='+js(style)+';e.classList.add("ready-note");});';
+  else script='atShelfTime('+f.delay+',()=>{const e=document.querySelector('+js('section[data-area="'+slot+'"] [data-arrival="'+slot+'"]')+');if(e)e.replaceWith(document.createRange().createContextualFragment('+js(finalLeaf)+'));});';
+ }
+ let content=ancestors(f,before+current+after);
+ if(f.key==='N12')content='<details class="folded-reading"><summary>공공 자료의 열람 설명</summary>'+content+'</details>';
+ return {selector,html:'<section class="reading-section" data-area="'+slot+'"><h3>함께 읽은 문장</h3>'+content+'</section>'+(script?'<script>'+script+'</script>':'')};
+}
+export function inventoryRows(start,count){return '<section class="inventory-block"><h3>지역 자료 등록 기록</h3>'+Array.from({length:count},(_,offset)=>{const n=start+offset;return '<article class="inventory-row"><b>'+String(n+1).padStart(4,'0')+'</b><span>'+['가정의 준비 안내 문장','마을 공동체 열람 기록','일터의 자료 출처 비교','안전교육 설명표의 메모'][n%4]+'</span><time>2026.10.'+String(1+n%20).padStart(2,'0')+'</time><em>'+['자료실','주민모임','공동열람'][n%3]+'</em><small>출처와 조건을 차례로 읽고 정리한 합성 기록입니다.</small></article>';}).join('')+'</section>';}
+export function resourceDocument(body,{heading='함께 읽는 자료함',style=''}={}){return '<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>안전서가의 연결 자료</title><link rel="stylesheet" href="../assets/site.css"><script src="../assets/portal.js"></script>'+(style?'<style>'+style+'</style>':'')+'</head><body class="resource-body"><h2 class="resource-heading">'+esc(heading)+'</h2>'+body+'<p class="resource-note">기관·문장·자료는 합성이며 실제 접수·거래를 안내하지 않습니다.</p></body></html>';}

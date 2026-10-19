@@ -75,5 +75,12 @@
     "siteId": "saebom-consumer",
     "title": "새봄시 소비자안전센터 생활나침반",
     "description": "소비자 상담과 생활안전 정보를 나누는 시민 포털"
+  },
+  {
+    "number": 12,
+    "project": "test-site-12",
+    "siteId": "nurion-safety",
+    "title": "누리온시 재난안전자료관 안전서가",
+    "description": "재난 예방 자료와 시민의 생활안전 기록을 탐색하는 합성 자료 포털"
   }
 ]

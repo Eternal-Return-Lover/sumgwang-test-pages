@@ -1,0 +1,136 @@
+{
+  "categories": {
+    "GAMBLING": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 1,
+        "TRANSPARENT": 2,
+        "OFFSCREEN": 1
+      }
+    },
+    "DRUG": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 1,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 2
+      }
+    },
+    "PHARMACEUTICAL": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 2,
+        "JAMO": 1,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 1
+      }
+    },
+    "FOOD_HEALTH": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 2,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 1
+      }
+    },
+    "COSMETIC": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 1,
+        "TRANSPARENT": 2,
+        "OFFSCREEN": 1
+      }
+    },
+    "MEDICAL_DEVICE": {
+      "positiveElements": 5,
+      "negativeControls": 2,
+      "expectedFindings": 6,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 1,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 3
+      }
+    },
+    "PRIVATE_LOAN": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 2,
+        "JAMO": 1,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 1
+      }
+    },
+    "INVESTMENT_SCAM": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 2,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 1
+      }
+    },
+    "COUNTERFEIT": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 1,
+        "TRANSPARENT": 2,
+        "OFFSCREEN": 1
+      }
+    },
+    "IDENTITY_TRADE": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 1,
+        "JAMO": 1,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 2
+      }
+    },
+    "PROSTITUTION": {
+      "positiveElements": 4,
+      "negativeControls": 2,
+      "expectedFindings": 5,
+      "techniques": {
+        "HOMOGLYPH": 2,
+        "JAMO": 1,
+        "TRANSPARENT": 1,
+        "OFFSCREEN": 1
+      }
+    }
+  },
+  "scenarios": 48,
+  "scenarioPages": 48,
+  "positiveElements": 45,
+  "negativeControls": 22,
+  "expectedFindings": 56,
+  "techniques": {
+    "TRANSPARENT": 14,
+    "HOMOGLYPH": 14,
+    "OFFSCREEN": 15,
+    "JAMO": 13
+  }
+}
