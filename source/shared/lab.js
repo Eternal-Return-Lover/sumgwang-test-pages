@@ -28,7 +28,7 @@ async function openFixture(c){
  const url=new URL(c.page,base);
  if(url.origin!==location.origin||!url.pathname.startsWith(base.pathname))throw new Error('같은 사이트 범위의 페이지만 확인할 수 있습니다.');
  await new Promise((resolve,reject)=>{
-  const timer=setTimeout(()=>{frame.remove();reject(new Error('페이지 로딩 시간 초과'));},10000);
+  const timer=setTimeout(()=>{frame.remove();reject(new Error('페이지 로딩 시간 초과'));},30000);
   frame.onload=()=>{clearTimeout(timer);resolve();};
   frame.onerror=()=>{clearTimeout(timer);frame.remove();reject(new Error('페이지 로딩 실패'));};
   frame.src=url.href;document.body.append(frame);
